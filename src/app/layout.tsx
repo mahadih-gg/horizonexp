@@ -1,4 +1,7 @@
+import Navbar from "@/components/global/Navbar";
+import Provides from "@/components/providers";
 import SmoothScroll from "@/components/SmoothScroll";
+import "@thinkflagship/web-shorts/dist/styles.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -64,7 +67,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roobert.variable} antialiased`}>
         <SmoothScroll />
-        {children}
+        <Provides>
+          <header>
+            <Navbar />
+          </header>
+          {children}
+        </Provides>
       </body>
     </html>
   );
