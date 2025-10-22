@@ -26,13 +26,10 @@ const textVariants = cva(
 function Text({
   className,
   variant,
-  asChild = false,
   children,
   ...props
 }: React.ComponentProps<"p"> &
-  VariantProps<typeof textVariants> & {
-    asChild?: boolean
-  }) {
+  VariantProps<typeof textVariants>) {
   const getElement = (): keyof React.JSX.IntrinsicElements => {
     switch (variant) {
       case "heading":

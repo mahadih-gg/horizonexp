@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils";
 import * as React from "react";
 
-const XIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+type PropsType = {
+  className?: string;
+} & React.SVGProps<SVGElement>;
+
+const XIcon: React.FC<PropsType> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    className={cn("size-[24px]", className)}
     fill="none"
     viewBox="0 0 24 24"
   >

@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils";
 import * as React from "react";
 
-const UsersCheckIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+type PropsType = {
+  className?: string;
+} & React.SVGProps<SVGElement>;
+
+const UsersCheckIcon: React.FC<PropsType> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="30"
+    className={cn("size-[30px]", className)}
     fill="none"
     viewBox="0 0 30 30"
   >

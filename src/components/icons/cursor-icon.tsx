@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils";
 import * as React from "react";
 
-const CursorIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+type PropsType = {
+  className?: string;
+} & React.SVGProps<SVGElement>;
+
+const CursorIcon: React.FC<PropsType> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="40"
-    height="40"
+    className={cn("size-[40px]", className)}
     fill="none"
     viewBox="0 0 40 40"
   >

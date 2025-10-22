@@ -9,7 +9,7 @@ const PricingSection = () => {
         Short-form engagement <br /> for every business
       </Text>
       <Text variant="section-subheading" className="text-center pt-8 pb-[100px]">
-        Whether you're just starting out or serving millions, Horizon makes <br className="hidden md:block" /> short-form engagement effortless to launch, manage, and scale.
+        Whether you&apos;re just starting out or serving millions, Horizon makes <br className="hidden md:block" /> short-form engagement effortless to launch, manage, and scale.
       </Text>
 
       {/* Pricing Cards Grid */}

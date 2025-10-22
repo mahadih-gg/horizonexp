@@ -24,7 +24,9 @@ export const navLinks = [
 const Navbar = () => {
   return (
     <nav className="container flex items-center justify-between py-5">
-      <BrandLogo />
+      <Link href="/">
+        <BrandLogo />
+      </Link>
 
       <div className="flex items-center gap-7">
         {navLinks.map((link) => (
