@@ -22,11 +22,19 @@ type CardHeaderProps = {
   topLabel?: string | React.ReactNode;
   centered?: boolean;
   className?: string;
+  icon?: React.ReactNode;
 };
 
-function CardHeader({ title, description, topLabel, centered = true, className }: CardHeaderProps) {
+function CardHeader({ title, description, topLabel, centered = true, className, icon }: CardHeaderProps) {
   return (
     <div className={cn('text-left', centered && 'text-center', className)}>
+      {
+        icon && (
+          <div className="pb-4">
+            {icon}
+          </div>
+        )
+      }
       {
         topLabel && (
           <Text variant="top-label" className='pb-4'>

@@ -8,6 +8,7 @@ const textVariants = cva(
   {
     variants: {
       variant: {
+        "heading": "text-5xl md:text-6xl 2xl:text-8xl font-medium tracking-tight text-primary-text",
         "section-heading": "text-4xl md:text-[42px] 2xl:text-6xl font-medium tracking-tight text-primary-text",
         "section-subheading": "text-lg 2xl:text-2xl text-primary-text",
         "card-heading": "text-[28px] md:text-[30px] 2xl:text-5xl font-medium tracking-tight",
@@ -33,6 +34,8 @@ function Text({
   }) {
   const getElement = (): keyof React.JSX.IntrinsicElements => {
     switch (variant) {
+      case "heading":
+        return "h1"
       case "section-heading":
         return "h2"
       case "section-subheading":

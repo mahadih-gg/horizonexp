@@ -1,6 +1,7 @@
+import Footer from "@/components/global/Footer";
 import Navbar from "@/components/global/Navbar";
+import SmoothScroll from "@/components/global/SmoothScroll";
 import Provides from "@/components/providers";
-import SmoothScroll from "@/components/SmoothScroll";
 import "@thinkflagship/web-shorts/dist/styles.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -72,6 +73,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           {children}
+          <Footer />
         </Provides>
       </body>
     </html>

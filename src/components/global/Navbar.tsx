@@ -2,7 +2,7 @@ import Link from "next/link";
 import BrandLogo from "../svg/BrandLogo";
 import { Button } from "../ui/button";
 
-const navLinks = [
+export const navLinks = [
   {
     label: "Features",
     href: "/features",
