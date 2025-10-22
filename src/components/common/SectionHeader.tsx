@@ -15,27 +15,40 @@ type Props = {
 
 const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent }: Props) => {
 
-
-
   return (
     <div className={cn('text-left pb-20', centered && 'text-center', className)}>
       {
         topLabel && (
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <Text variant="top-label" className='pb-4'>
               {topLabel}
             </Text>
           </motion.div>
         )
       }
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         <Text variant="section-heading">
           {title}
         </Text>
       </motion.div>
       {
         description && (
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <Text variant="section-subheading" className='pt-8'>
               {description}
             </Text>
