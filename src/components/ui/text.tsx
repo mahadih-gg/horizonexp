@@ -14,6 +14,7 @@ const textVariants = cva(
         "card-heading": "text-[28px] md:text-[30px] 2xl:text-5xl font-medium tracking-tight",
         "card-subheading": "text-base 2xl:text-xl text-primary-text",
         "top-label": "text-base 2xl:text-xl font-semibold text-primary-text",
+        "body": "text-base md:text-lg 2xl:text-xl text-primary-text",
       },
     },
     defaultVariants: {
@@ -45,6 +46,8 @@ function Text({
       case "card-subheading":
         return "p"
       case "top-label":
+        return "p"
+      case "body":
         return "p"
       default:
         return "p"

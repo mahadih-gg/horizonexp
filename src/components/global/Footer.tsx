@@ -46,7 +46,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-7">
             {navLinks.map((link, index) => (
-              <Link key={index} href={link.href} className="text-white text-lg">
+              <Link key={index} href={link.href} className="text-white text-sm 2xl:text-lg">
                 {link.label}
               </Link>
             ))}
@@ -54,14 +54,14 @@ const Footer = () => {
 
         </div>
         <div className="flex items-center justify-between py-10">
-          <p className="text-white text-lg">
+          <p className="text-white text-sm 2xl:text-lg">
             Backed by Cloudflare Workers Launchpad Program <br />
             All rights reserved by Flagship Technology Inc.
           </p>
 
           <div className="flex items-center gap-5">
             {socialLinks.map((link, index) => (
-              <Link key={index} href={link.href} className="text-white text-lg">
+              <Link key={index} href={link.href}>
                 {link.icon}
               </Link>
             ))}
@@ -69,8 +69,8 @@ const Footer = () => {
 
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="text-white text-lg"> &copy; {new Date().getFullYear()} Horizon.</span>
-          <Link href="/privacy-policy" className="text-white text-lg underline">Privacy Policy</Link>
+          <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon.</span>
+          <Link href="/privacy-policy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
         </div>
       </div>
     </footer>
