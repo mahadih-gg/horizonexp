@@ -1,6 +1,6 @@
 import { Text } from '@/components/ui/text';
-import PricingCard from './components/PricingCard';
-import { pricingPlans } from './data/pricingPlans';
+import { pricingPlans } from '../data/pricingPlans';
+import PricingCard from './PricingCard';
 
 const PricingSection = () => {
   return (

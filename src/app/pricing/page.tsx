@@ -1,7 +1,7 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import FAQSection from "./components/faq";
 import FeaturesSection from "./components/FeaturesSection";
-import PricingSection from "./PricingSection";
+import PricingSection from "./components/PricingSection";
 
 const PricingPage = () => {
   return (
