@@ -8,7 +8,6 @@ import PricingSection from "./components/PricingSection";
 const PricingPage = () => {
   return (
     <main>
-
       <PricingSection />
 
       <FeaturesSection />

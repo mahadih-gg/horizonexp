@@ -23,9 +23,10 @@ type CardHeaderProps = {
   centered?: boolean;
   className?: string;
   icon?: React.ReactNode;
+  extraContent?: React.ReactNode;
 };
 
-function CardHeader({ title, description, topLabel, centered = true, className, icon }: CardHeaderProps) {
+function CardHeader({ title, description, topLabel, centered = true, className, icon, extraContent }: CardHeaderProps) {
   return (
     <div className={cn('text-left', centered && 'text-center', className)}>
       {
@@ -50,6 +51,13 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
           <Text variant="card-subheading" className='pt-4'>
             {description}
           </Text>
+        )
+      }
+      {
+        extraContent && (
+          <div className="pt-6">
+            {extraContent}
+          </div>
         )
       }
     </div>
