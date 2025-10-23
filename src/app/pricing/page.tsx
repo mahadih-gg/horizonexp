@@ -1,15 +1,21 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import FAQSection from "./components/faq";
 import FeaturesSection from "./components/FeaturesSection";
+import ForEnterpriseSection from "./components/ForEnterpriseSection";
+import OnboardingSection from "./components/OnboardingSection";
 import PricingSection from "./components/PricingSection";
 
 const PricingPage = () => {
   return (
-    <main className="container">
+    <main>
 
       <PricingSection />
 
       <FeaturesSection />
+
+      <ForEnterpriseSection />
+
+      <OnboardingSection />
 
       <FAQSection />
 

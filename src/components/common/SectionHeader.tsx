@@ -16,7 +16,7 @@ type Props = {
 const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent }: Props) => {
 
   return (
-    <div className={cn('text-left pb-20', centered && 'text-center', className)}>
+    <div className={cn('text-primary-text text-left pb-20', centered && 'text-center', className)}>
       {
         topLabel && (
           <motion.div
@@ -24,8 +24,9 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.8 }}
+            className='text-inherit'
           >
-            <Text variant="top-label" className='pb-4'>
+            <Text variant="top-label" className='pb-4 text-inherit'>
               {topLabel}
             </Text>
           </motion.div>
@@ -36,8 +37,9 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 0.8 }}
+        className='text-inherit'
       >
-        <Text variant="section-heading">
+        <Text variant="section-heading" className='text-inherit'>
           {title}
         </Text>
       </motion.div>
@@ -48,8 +50,9 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.8 }}
+            className='text-inherit'
           >
-            <Text variant="section-subheading" className='pt-8'>
+            <Text variant="section-subheading" className='pt-8 text-inherit'>
               {description}
             </Text>
           </motion.div>
