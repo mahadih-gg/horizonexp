@@ -5,7 +5,7 @@ import TiktokIcon from "../icons/tiktok-icon";
 import XIcon from "../icons/x-icon";
 import YoutubeIcon from "../icons/youtube-icon";
 import BrandLogo from "../svg/BrandLogo";
-import { navLinks } from "./Navbar";
+import { navLinks } from "@/navData";
 
 const socialLinks = [
   {
@@ -45,7 +45,7 @@ const Footer = () => {
           </Link>
 
           <div className="flex items-center gap-7">
-            {navLinks.map((link, index) => (
+            {navLinks?.map((link, index) => (
               <Link key={index} href={link.href} className="text-white text-sm 2xl:text-lg">
                 {link.label}
               </Link>

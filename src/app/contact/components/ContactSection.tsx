@@ -57,7 +57,7 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="container pt-[100px]">
+    <section className="container pt-page">
       <div>
         <Text variant="heading" className="text-center">We&apos;d love to hear from you</Text>
         <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Drop us a message and our team will get back to you within 24 hours.</Text>

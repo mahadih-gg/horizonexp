@@ -1,6 +1,6 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import { Text } from "@/components/ui/text";
-import DemoCard from "./DemoCard";
+import DemoCard from "./components/DemoCard";
 
 const demoCards = [
   {
@@ -28,8 +28,8 @@ const demoCards = [
 
 const DemoPage = () => {
   return (
-    <main>
-      <section className="container pt-[100px]">
+    <main className="pt-page">
+      <section className="container">
         <Text variant="heading" className="text-center">
           Experience Horizon in action
         </Text>

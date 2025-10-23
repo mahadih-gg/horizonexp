@@ -1,8 +1,7 @@
 const BrandLogo = ({ variant = 'default' }: { variant?: 'default' | 'white' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="118"
-    height="28"
+    className="w-auto h-[20px] md:h-[21px] 2xl:h-[28px]"
     fill="none"
     viewBox="0 0 118 28"
   >

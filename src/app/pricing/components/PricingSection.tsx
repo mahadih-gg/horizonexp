@@ -4,7 +4,7 @@ import PricingCard from './PricingCard';
 
 const PricingSection = () => {
   return (
-    <section className="container">
+    <section className="container pt-page">
       <Text variant="heading" className="text-center">
         Short-form engagement <br /> for every business
       </Text>
