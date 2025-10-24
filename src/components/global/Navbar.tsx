@@ -4,7 +4,9 @@ import { navLinks } from "@/navData";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
+import CloseIcon from "../icons/close-icon";
 import MenuIcon from "../icons/menu-icon";
+import RightIcon from "../icons/right-icon";
 import BrandLogo from "../svg/BrandLogo";
 import { Button } from "../ui/button";
 
@@ -55,7 +57,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 w-screen h-screen bg-background/10 backdrop-blur-sm! z-50"
+            className="fixed top-0 left-0 w-screen h-screen bg-primary/40 z-50"
             onClick={closeMobileMenu}
           >
             <motion.div
@@ -63,41 +65,60 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "-100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="bg-background h-full w-2/3" onClick={(e) => e.stopPropagation()}
+              className="bg-background h-full w-[calc(100%-30px)] flex flex-col justify-between items-start py-5 px-8" onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between p-4">
-                <BrandLogo />
+              <div className="w-full">
+                <div className="relative flex items-center justify-end pb-9 mb-6 border-b border-primary/10">
+                  <span className="absolute left-1/2 -translate-x-1/2!">
+                    <BrandLogo />
+                  </span>
 
-                <button className="text-primary-text text-2xl font-medium" onClick={closeMobileMenu}>
-                  X
-                </button>
+                  <button className="text-primary-text text-2xl font-medium" onClick={closeMobileMenu}>
+                    <CloseIcon />
+                  </button>
+                </div>
+                <div className="w-full flex flex-col items-start justify-start gap-8">
+                  {navLinks.map((link, i) => (
+                    <motion.div key={i}
+                      initial={{ opacity: 0, x: -100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.1 + 0.2 }}
+                      className="w-full"
+                    >
+                      <Link href={link.href} className="flex justify-between items-center text-primary-text text-2xl font-medium">
+                        {link.label}
+
+                        <RightIcon />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-col items-start justify-start p-4">
-                {navLinks.map((link, i) => (
-                  <motion.div key={i}
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.1 }}
-                  >
-                    <Link href={link.href} className="text-primary-text text-2xl font-medium py-4 block">
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut", delay: navLinks.length * 0.1 }}
-                  className="flex flex-col gap-2"
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: navLinks.length * 0.1 }}
+                className="w-full flex flex-col gap-8 border-t border-primary/10 py-5"
+              >
+                <Link
+                  href="/login"
+                  className="flex justify-between items-center text-primary-text text-2xl font-medium"
                 >
-                  <Button variant="ghost">Login</Button>
-                  <Button>Start for free</Button>
-                </motion.div>
-              </div>
+                  Login
+                  <RightIcon />
+                </Link>
 
+                <Link
+                  href="/start-for-free"
+                  className="flex justify-between items-center text-primary-text text-2xl font-medium"
+                >Start for free
+                  <RightIcon />
+                </Link>
+
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
