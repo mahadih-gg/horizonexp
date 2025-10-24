@@ -97,15 +97,15 @@
   }
 
   .py-section {
-    @apply py-6 md:py-8 lg:py-[104px] xl:py-[120px] 2xl:py-40;
+    @apply py-6 md:py-8 lg:py-[100px] xl:py-[120px] 2xl:py-40;
   }
 
   .pt-section {
-    @apply pt-6 md:pt-8 lg:pt-[104px] xl:pt-[120px] 2xl:pt-40;
+    @apply pt-6 md:pt-8 lg:pt-[100px] xl:pt-[120px] 2xl:pt-40;
   }
 
   .pb-section {
-    @apply pb-6 md:pb-8 lg:pb-[104px] xl:pb-[120px] 2xl:pb-40;
+    @apply pb-6 md:pb-8 lg:pb-[100px] xl:pb-[120px] 2xl:pb-40;
   }
 
   .flex-center {

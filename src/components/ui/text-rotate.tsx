@@ -26,9 +26,9 @@ const TextRotate = ({ texts, className }: TextRotateProps) => {
         key={currentIndex}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: -80 }}
+        exit={{ opacity: 1, y: "-100%" }}
         transition={{ duration: 0.35 }}
-        className={cn("inline-block text-grad-tertiary pb-8", className)}
+        className={cn("inline-block text-grad-tertiary pb-4 md:pb-6 2xl:pb-8", className)}
       >
         {texts[currentIndex]}
         {/* {texts[currentIndex].split("").map((char, index) => (

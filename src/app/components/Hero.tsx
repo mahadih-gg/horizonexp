@@ -24,11 +24,11 @@ const Hero = () => {
       </Text>
 
 
-      <p className="text-lg 2xl:text-2xl text-primary-text text-center pb-10">
+      <p className="text-lg 2xl:text-2xl text-primary-text text-center pb-7 md:pb-[30px] 2xl:pb-10">
         Bring immersive short-form video experience to your site, store, or app <br className="hidden md:block" /> that supercharges discovery, engagement and sales.
       </p>
 
-      <div className="flex items-center justify-center gap-3 pb-20">
+      <div className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20">
         <Button asChild>
           <Link href="/signup">
             Start for free
