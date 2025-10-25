@@ -110,19 +110,17 @@ const FeaturesSection = () => {
         title="All plans include these features"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12">
+      <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-[48px] md:gap-x-12 md:gap-y-[105px] 2xl:gap-x-[60px] 2xl:gap-y-[140px]">
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
-            <div key={index} className="flex flex-col items-center text-center space-y-3">
+            <div key={index} className="flex flex-col items-center text-center gap-1.5 md:gap-4 2xl:gap-5">
               <div className="flex-center">
-                <IconComponent />
+                <IconComponent className="size-8 md:size-10 2xl:size-[52px]" />
               </div>
-              <div className="space-y-1">
-                <h3 className="text-xl leading-tight">
-                  {feature.title}
-                </h3>
-              </div>
+              <h3 className="text-xl leading-tight">
+                {feature.title}
+              </h3>
             </div>
           );
         })}
