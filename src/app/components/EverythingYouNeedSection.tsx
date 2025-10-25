@@ -115,23 +115,24 @@ const EverythingYouNeedSection = () => {
           ))
         }
 
-        <GradientBg className='p-10 w-full md:col-span-2'>
+        <GradientBg className='py-10 w-full md:col-span-2'>
           <CardHeader
+            className='px-4'
             topLabel="Infinite Scroll"
-            title={<>Create playlists & infinite <br /> scrolling feeds</>}
+            title={<>Create playlists & infinite <br className='hidden md:block' /> scrolling feeds</>}
             description={
               <>
-                Use AI to create personalized video feeds or design the exact <br /> viewing journeys you want customers to experience.
+                Use AI to create personalized video feeds or design the exact <br className='hidden md:block' /> viewing journeys you want customers to experience.
               </>
             }
           />
-          <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
+          <div className='w-full h-full pt-[54px] md:pt-[58px] 2xl:pt-[80px] pb-[80px] 2xl:pb-[104px]'>
             <Image
-              src="/assets/images/create-playlists-and-infinite-scrolling-feeds.webp"
+              src="/assets/images/infinite-scroll.webp"
               alt="Create playlists and infinite scrolling feeds"
               width={1419}
               height={631}
-              className={cn("mx-auto object-contain object-top w-auto md:w-full h-full md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px]")}
+              className={cn("mx-auto object-contain object-top w-auto md:w-full h-full md:h-auto")}
             />
           </div>
         </GradientBg>
@@ -162,11 +163,7 @@ const EverythingYouNeedSection = () => {
             className='px-4'
             topLabel="Horizon Console"
             title={<>The control center <br className='md:hidden' /> for short-form <br className='md:hidden' /> engagement</>}
-            description={
-              <>
-                Manage everything from one powerful, no-code dashboard.
-              </>
-            }
+            description="Manage everything from one powerful, no-code dashboard."
           />
           <HorizonConsole />
         </GradientBg>
