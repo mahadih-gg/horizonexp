@@ -27,7 +27,7 @@ const CounterAnimation = ({ from = 0, to, duration = 1.2, suffix = "" }: Counter
   }, [inView, from, to, duration]);
 
   return (
-    <span ref={ref} style={{ display: "inline-block" }}>
+    <span ref={ref} className="text-black-gradient">
       {Number.isInteger(to) ? Math.round(current) : current.toFixed(1)}
       {suffix}
     </span>
