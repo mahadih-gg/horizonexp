@@ -6,21 +6,18 @@ const demoCards = [
   {
     title: "E-commerce",
     description: "Showcase products in an interactive, Insta-style feed that turns browsing into buying. With shoppable overlays, personalized recommendations, and seamless checkout integrations, Horizon helps you capture attention, increase session time, and convert views into sales.",
-    imageUrl: "https://via.placeholder.com/150",
     link: "#",
     buttonText: "View E-commerce demo",
   },
   {
     title: "Telecommunications",
     description: "Reimagine customer engagement with short-form journeys. From personalized data pack offers to loyalty campaigns and product education, Horizon makes it easy to connect with subscribers in a format they already love. Drive upsells, improve retention, and deliver more value per customer.",
-    imageUrl: "https://via.placeholder.com/150",
     link: "#",
     buttonText: "View telco demo",
   },
   {
     title: "Sports",
     description: "Turn fans into superfans with short-form. Share highlights, exclusive behind-the-scenes clips, merch drops, and interactive polls - all in one feed. Horizon keeps audiences engaged before, during, and after the game, unlocking new revenue and deeper fan loyalty.",
-    imageUrl: "https://via.placeholder.com/150",
     link: "#",
     buttonText: "View sports demo",
   },
@@ -47,7 +44,6 @@ const DemoPage = () => {
               key={card.title}
               title={card.title}
               description={card.description}
-              imageUrl={card.imageUrl}
               link={card.link}
               buttonText={card.buttonText}
               align={i % 2 === 0 ? 'left' : 'right'}

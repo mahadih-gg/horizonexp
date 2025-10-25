@@ -1,15 +1,10 @@
-"use client"
-
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { TextRotate } from "@/components/ui/text-rotate";
 import Link from "next/link";
-import { useRef } from "react";
 import CompareSection from "./CompareSection";
 
 const Hero = () => {
-
-  const textRotateRef = useRef<any>(null)
 
   const text = ["sell on autopilot", "spark real engagement", "keep customers coming back"]
 

@@ -1,10 +1,8 @@
 import * as React from "react";
 
-type PropsType = {
-  className?: string;
-} & React.SVGProps<SVGElement>;
+type PropsType = React.SVGProps<SVGElement>;
 
-const PlayButtonIcon: React.FC<PropsType> = ({ className }) => (
+const PlayButtonIcon: React.FC<PropsType> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="52"

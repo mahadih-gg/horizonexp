@@ -6,13 +6,12 @@ import Link from 'next/link';
 type Props = {
   title: string;
   description: string;
-  imageUrl: string;
   link: string;
   buttonText: string;
   align?: 'left' | 'right';
 };
 
-const DemoCard = ({ title, description, imageUrl, link, buttonText, align = 'left' }: Props) => {
+const DemoCard = ({ title, description, link, buttonText, align = 'left' }: Props) => {
   return (
     <Card className={cn("flex flex-row justify-between p-0 h-[500px] gap-0 overflow-hidden", align === 'left' ? 'md:flex-row-reverse' : 'md:flex-row')}>
       <CardHeader
