@@ -5,6 +5,9 @@ import Provides from "@/components/providers";
 import "@thinkflagship/web-shorts/dist/styles.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "./globals.css";
 
 const roobert = localFont({

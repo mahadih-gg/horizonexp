@@ -1,21 +1,19 @@
 import ConnectSection from "@/components/common/ConnectSection";
-import EngageMoreSection from "./components/EngageMoreSection";
 import EverythingYouNeedSection from "./components/EverythingYouNeedSection";
-import Hero from "./components/Hero";
 import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSection";
 import HorizonImpactSection from "./components/HorizonImpactSection";
+import HowBrandsCanUseHorizonSection from "./components/HowBrandsCanUseHorizonSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
-import PowerYourMobileSection from "./components/PowerYourMobileSection";
 import ReviewsSection from "./components/ReviewsSection";
-import SeeHorizonSection from "./components/SeeHorizonSection";
 
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      {/* <Hero />
       <EngageMoreSection />
       <PowerYourMobileSection />
-      <SeeHorizonSection />
+      <SeeHorizonSection /> */}
+      <HowBrandsCanUseHorizonSection />
       <EverythingYouNeedSection />
       <HorizonImpactSection />
       <ReviewsSection />
