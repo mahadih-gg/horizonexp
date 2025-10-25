@@ -44,57 +44,55 @@ const LaunchSteps = () => {
   ];
 
   return (
-    <div>
-      <div>
-        <Tabs defaultValue="add-site" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
-            {tabSections.map((section) => (
-              <TabsTrigger key={section.id} value={section.id}>
-                {section.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
+    <div className="hidden lg:block">
+      <Tabs defaultValue="add-site" className="w-full">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
           {tabSections.map((section) => (
-            <TabsContent key={section.id} value={section.id} className="mt-0">
-              <GradientBg className="flex flex-col items-center justify-center gap-0">
+            <TabsTrigger key={section.id} value={section.id}>
+              {section.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-                <div className="relative w-[985px] h-[624px]">
+        {tabSections.map((section) => (
+          <TabsContent key={section.id} value={section.id} className="mt-0">
+            <GradientBg className="flex flex-col items-center justify-center gap-0">
+
+              <div className="relative w-[985px] h-[624px]">
+                <motion.div
+                  initial={{ opacity: 1, scale: 0.99 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={section.primaryImage}
+                    alt={section.label}
+                    width={985}
+                    height={624}
+                    className="object-contain"
+                  />
+                </motion.div>
+
+                <div className={cn("absolute", section.smallImageContainerClass)}>
                   <motion.div
-                    initial={{ opacity: 1, scale: 0.99 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
                     <Image
-                      src={section.primaryImage}
-                      alt={section.label}
-                      width={985}
-                      height={624}
-                      className="object-contain"
+                      src={section.smallImage}
+                      alt={`${section.label} detail`}
+                      width={373}
+                      height={309}
+                      className={cn("object-contain", section.smallImageClass)}
                     />
                   </motion.div>
-
-                  <div className={cn("absolute", section.smallImageContainerClass)}>
-                    <motion.div
-                      initial={{ opacity: 0, x: 100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                    >
-                      <Image
-                        src={section.smallImage}
-                        alt={`${section.label} detail`}
-                        width={373}
-                        height={309}
-                        className={cn("object-contain", section.smallImageClass)}
-                      />
-                    </motion.div>
-                  </div>
                 </div>
-              </GradientBg>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </div>
+              </div>
+            </GradientBg>
+          </TabsContent>
+        ))}
+      </Tabs>
     </div>
   );
 };
