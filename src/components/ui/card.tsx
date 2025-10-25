@@ -1,6 +1,9 @@
+"use client"
+
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import { Text } from "./text";
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
@@ -8,7 +11,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-secondary text-background flex flex-col gap-6 rounded-3xl border p-10",
+        "bg-secondary text-background flex flex-col gap-6 rounded-3xl md:rounded-2xl 2xl:rounded-3xl p-10",
         className
       )}
       {...props}
@@ -31,33 +34,59 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
     <div className={cn('text-left', centered && 'text-center', className)}>
       {
         icon && (
-          <div className="pb-4">
+          <div className="pb-3 2xl:pb-4">
             {icon}
           </div>
         )
       }
       {
         topLabel && (
-          <Text variant="top-label" className='pb-4'>
-            {topLabel}
-          </Text>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          // viewport={{ once: true, amount: 0.8 }}
+          >
+            <Text variant="top-label" className='pb-3 2xl:pb-4'>
+              {topLabel}
+            </Text>
+          </motion.div>
         )
       }
-      <Text variant="card-heading">
-        {title}
-      </Text>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Text variant="card-heading">
+          {title}
+        </Text>
+      </motion.div>
       {
         description && (
-          <Text variant="card-subheading" className='pt-4'>
-            {description}
-          </Text>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Text variant="card-subheading" className='pt-3 2xl:pt-4'>
+              {description}
+            </Text>
+          </motion.div>
         )
       }
       {
         extraContent && (
-          <div className="pt-6">
-            {extraContent}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <div className="pt-4 2xl:pt-6">
+              {extraContent}
+            </div>
+          </motion.div>
         )
       }
     </div>

@@ -1,5 +1,8 @@
+"use client"
+
 import SectionHeader from "@/components/common/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "motion/react";
 
 const ReviewsSection = () => {
   const testimonials = [
@@ -26,15 +29,21 @@ const ReviewsSection = () => {
         title="What our users say about Horizon"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-9">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="grid grid-cols-1 lg:grid-cols-3 gap-[52px] md:gap-7 2xl:gap-9"
+      >
+
         {testimonials.map((testimonial, index) => (
-          <Card key={index}>
+          <Card key={index} className="py-10 md:py-11 2xl:py-[60px] px-5 md:px-[30px] 2xl:px-10">
             <CardContent>
-              <p className="text-black-gradient font-medium text-[32px]">
+              <p className="text-black-gradient font-medium text-2xl 2xl:text-[32px]">
                 “{testimonial.quote}”
               </p>
 
-              <div className="flex items-center space-x-4 pt-[110px]">
+              <div className="flex items-center space-x-4 pt-[80px] 2xl:pt-[110px]">
                 <div className="size-[60px] bg-black-gradient rounded-full shrink-0" />
                 <div>
                   <p className="text-primary-text text-xl">
@@ -48,7 +57,7 @@ const ReviewsSection = () => {
             </CardContent>
           </Card>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
