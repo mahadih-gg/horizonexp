@@ -8,9 +8,9 @@ import ComparisonSection from "./ComparisonSection";
 const Hero = () => {
 
   const text = [
-    <span key="sell-autopilot" className="text-inherit">Sell on <br className="block sm:hidden" /> autopilot</span>,
+    <span key="sell-autopilot" className="text-inherit">Sell on <br className="block xs:hidden" /> autopilot</span>,
     <span key="hook-customers" className="text-inherit">Hook your customers</span>,
-    <span key="turn-traffic" className="text-inherit">Turn traffic <br className="block sm:hidden" /> into fans</span>
+    <span key="turn-traffic" className="text-inherit">Turn traffic <br className="block xs:hidden" /> into fans</span>
   ]
 
   return (
