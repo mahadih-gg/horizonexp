@@ -1,8 +1,9 @@
+import GradientBg from "@/components/common/GradientBg";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { TextRotate } from "@/components/ui/text-rotate";
 import Link from "next/link";
-import CompareSection from "./CompareSection";
+import ComparisonSection from "./ComparisonSection";
 
 const Hero = () => {
 
@@ -36,7 +37,9 @@ const Hero = () => {
         </Button>
       </div>
 
-      <CompareSection />
+      <GradientBg className="flex-center">
+        <ComparisonSection />
+      </GradientBg>
 
     </section>
   );
