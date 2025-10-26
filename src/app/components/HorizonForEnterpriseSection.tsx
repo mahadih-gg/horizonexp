@@ -8,7 +8,6 @@ import ShieldIcon from "@/components/icons/shield-icon";
 import StarsIcon from "@/components/icons/stars-icon";
 import UsersCheckIcon from "@/components/icons/users-check-icon";
 import { CardHeader } from "@/components/ui/card";
-import { motion } from "motion/react";
 
 const enterpriseFeatures = [
   {
@@ -64,18 +63,7 @@ const HorizonForEnterpriseSection = () => {
             key={index}
             icon={
               <div className="bg-secondary rounded-xl flex-center size-[60px] 2xl:size-20">
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.3, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 10
-                  }}
-                >
-                  {feature.icon}
-                </motion.span>
+                {feature.icon}
               </div>
             }
             topLabel={<span className="text-black-gradient">{feature.topLabel}</span>}

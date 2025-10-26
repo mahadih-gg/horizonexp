@@ -20,7 +20,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
       {
         topLabel && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             // viewport={{ once: true, amount: 0.8 }}
@@ -33,7 +33,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
         )
       }
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         // viewport={{ once: true, amount: 0.8 }}
@@ -46,7 +46,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
       {
         description && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             // viewport={{ once: true, amount: 0.8 }}

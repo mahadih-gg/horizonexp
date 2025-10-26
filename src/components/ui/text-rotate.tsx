@@ -15,7 +15,7 @@ const TextRotate = ({ texts, className }: TextRotateProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % texts.length)
-    }, 4500)
+    }, 3500)
 
     return () => clearInterval(interval)
   }, [texts.length])
@@ -24,9 +24,17 @@ const TextRotate = ({ texts, className }: TextRotateProps) => {
     <AnimatePresence mode="wait">
       <motion.span
         key={currentIndex}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1, y: 70 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: "-100%" }}
+        exit={{
+          opacity: 1,
+          y: [0, "-50%", "-100%"],
+          transition: {
+            duration: 0.6,
+            times: [0, 0.2, 0.5, 0.3, 1],
+            ease: "easeOut"
+          }
+        }}
         transition={{ duration: 0.35 }}
         className={cn("inline-block text-grad-tertiary pb-4 md:pb-6 2xl:pb-8", className)}
       >
@@ -34,8 +42,8 @@ const TextRotate = ({ texts, className }: TextRotateProps) => {
         {/* {texts[currentIndex].split("").map((char, index) => (
           <motion.span
             key={`${currentIndex}-${index}`}
-            className="inline-block text-black/20"
-            initial={{ opacity: 0, y: 20 }}
+            className="inline-block text-black"
+            initial={{ opacity: 1, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.3,

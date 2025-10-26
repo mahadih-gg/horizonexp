@@ -1,9 +1,12 @@
+"use client"
+
 import SectionHeader from '@/components/common/SectionHeader';
 import { ConsoleIcon } from '@/components/icons/console-icon';
 import { NativeStreamingIcon } from '@/components/icons/native-streaming-icon';
 import { PerformanceIcon } from '@/components/icons/performance-icon';
 import { SocialCommerceIcon } from '@/components/icons/social-commerce-icon';
 import { Card } from '@/components/ui/card';
+import { motion } from 'motion/react';
 
 const WhyHorizonSection = () => {
   const features = [
@@ -39,9 +42,25 @@ const WhyHorizonSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 2xl:gap-9">
         {features.map((feature, index) => (
           <Card key={index} className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10">
-            {feature.icon}
-            <h3 className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]">{feature.title}</h3>
-            <p className="text-base 2xl:text-xl text-primary-text">{feature.description}</p>
+            <span>
+              {feature.icon}
+            </span>
+            <motion.h3
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]"
+            >
+              {feature.title}
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-base 2xl:text-xl text-primary-text"
+            >
+              {feature.description}
+            </motion.p>
           </Card>
         ))}
       </div>

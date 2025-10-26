@@ -42,7 +42,7 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         topLabel && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           // viewport={{ once: true, amount: 0.8 }}
@@ -55,7 +55,7 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       }
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
@@ -66,7 +66,7 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         description && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
@@ -79,7 +79,7 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         extraContent && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >

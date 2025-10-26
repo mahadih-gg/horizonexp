@@ -1,5 +1,5 @@
-import GradientBg from "@/components/common/GradientBg";
 import SectionHeader from "@/components/common/SectionHeader";
+import ResponsiveVideoPlayer from "@/components/ui/responsive-video-player";
 
 const PowerYourMobileSection = () => {
   return (
@@ -10,7 +10,15 @@ const PowerYourMobileSection = () => {
         description={<>Meet Horizon - the plug-and-play short-form video <br /> engagement platform that turns attention into revenue.</>}
       />
 
-      <GradientBg />
+      <div className="relative w-full rounded-3xl overflow-hidden">
+        <ResponsiveVideoPlayer
+          mobileVideoSrc="/assets/videos/power-your-mobile-md.webm"
+          desktopVideoSrc="/assets/videos/power-your-mobile.webm"
+          className="w-full h-full object-cover"
+          preload="metadata"
+        />
+      </div>
+
     </section>
   );
 };

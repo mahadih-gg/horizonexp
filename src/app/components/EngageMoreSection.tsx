@@ -1,4 +1,7 @@
+"use client"
+
 import SectionHeader from "@/components/common/SectionHeader";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const EngageMoreSection = () => {
@@ -33,7 +36,13 @@ const EngageMoreSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-7 2xl:gap-[36px]">
         {
           items.map((item, i) => (
-            <div key={i} className="relative w-full aspect-square rounded-3xl md:rounded-2xl 2xl:rounded-3xl bg-secondary overflow-hidden">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * i }}
+              className="relative w-full aspect-square rounded-3xl md:rounded-2xl 2xl:rounded-3xl bg-secondary overflow-hidden"
+            >
               <Image
                 src={item.image}
                 alt={item.title}
@@ -44,7 +53,7 @@ const EngageMoreSection = () => {
               <p className="w-full p-5 text-center absolute top-1/2 left-1/2 -translate-x-1/2! -translate-y-1/2! text-white text-base 2xl:text-xl font-semibold z-10">
                 {item.title}
               </p>
-            </div>
+            </motion.div>
           ))
         }
       </div>
