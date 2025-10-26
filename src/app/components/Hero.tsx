@@ -7,7 +7,11 @@ import ComparisonSection from "./ComparisonSection";
 
 const Hero = () => {
 
-  const text = ["sell on autopilot", "spark real engagement", "keep customers coming back"]
+  const text = [
+    <span key="sell-autopilot" className="text-inherit">Sell on <br className="block sm:hidden" /> autopilot</span>,
+    <span key="hook-customers" className="text-inherit">Hook your customers</span>,
+    <span key="turn-traffic" className="text-inherit">Turn traffic <br className="block sm:hidden" /> into fans</span>
+  ]
 
   return (
     <section className="container pt-page">

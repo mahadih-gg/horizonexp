@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { useEffect, useState } from "react"
 
 interface TextRotateProps {
-  texts: string[]
+  texts: React.ReactNode[]
   className?: string
 }
 

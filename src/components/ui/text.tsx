@@ -8,7 +8,7 @@ const textVariants = cva(
   {
     variants: {
       variant: {
-        "heading": "text-[60px] md:text-7xl 2xl:text-8xl font-medium leading-none tracking-tighter 2xl:tracking-tight text-primary-text",
+        "heading": "text-[48px] md:text-[56px] 2xl:text-[76px] font-medium leading-none tracking-tighter 2xl:tracking-tight text-primary-text",
         "section-heading": "text-4xl md:text-[42px] 2xl:text-6xl font-medium tracking-tight text-primary-text",
         "section-subheading": "text-lg 2xl:text-2xl text-primary-text",
         "card-heading": "text-[28px] md:text-[30px] 2xl:text-5xl font-medium tracking-tight leading-none",
