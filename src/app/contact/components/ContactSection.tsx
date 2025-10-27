@@ -64,7 +64,7 @@ const ContactSection = () => {
 
         <div>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
               <FormField
                 control={form.control}
                 name="fullName"
@@ -138,7 +138,7 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div className="col-span-2 flex justify-end">
+              <div className="sm:col-span-2 flex justify-end">
                 <Button type="submit" className="w-full md:w-auto">
                   Submit
                 </Button>

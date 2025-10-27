@@ -72,7 +72,7 @@ const ComparisonSection = () => {
 
       <h3 className="text-xl md:text-lg 2xl:text-2xl font-medium">Horizon home</h3>
       {/* Comparison Container */}
-      <div className="comparison-container w-[70.833%] mx-auto relative overflow-hidden rounded-xl md:rounded-[26px] 2xl:rounded-[36px]" style={{ aspectRatio: '1.52/1' }}>
+      <div className="comparison-container w-[70.833%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]" style={{ aspectRatio: '1.52/1' }}>
         {/* Horizon Home Image (Left) */}
         <div
           className="absolute inset-0 z-10"

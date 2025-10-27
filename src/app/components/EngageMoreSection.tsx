@@ -8,19 +8,23 @@ const EngageMoreSection = () => {
 
   const items = [
     {
-      title: "70% of shoppers prefer video over static images.",
+      heading: "70%",
+      title: <>of shoppers prefer video <br /> over static images.</>,
       image: "/assets/images/engage-more-1.webp",
     },
     {
-      title: "Short-form feeds drive 50% higher click-throughs than banners.",
+      heading: "50%",
+      title: <>higher click-throughs than banners, when driven by Short-form feeds.</>,
       image: "/assets/images/engage-more-2.webp",
     },
     {
-      title: "Session times double with short-form video browsing.",
+      heading: "2x",
+      title: <>session time with short- <br /> form video browsing.</>,
       image: "/assets/images/engage-more-3.webp",
     },
     {
-      title: "Purchase likelihood is 80% higher after watching product videos.",
+      heading: "80%",
+      title: <>higher purchase likelihood <br /> after watching product videos.</>,
       image: "/assets/images/engage-more-4.webp",
     },
   ]
@@ -29,8 +33,8 @@ const EngageMoreSection = () => {
     <section className="container py-section">
 
       <SectionHeader
-        title={<>Power your mobile and web with native <br /> short-form video experiences</>}
-        description={<>Meet Horizon - the plug-and-play short-form video <br /> engagement platform that turns attention into revenue.</>}
+        title={<>Engage more, convert faster, with short-form video</>}
+        description={<>Customers prefer to watch short-form videos instead of reading specs & looking at <br className="hidden md:block" /> static images. Show up with short-form - because video sells faster. </>}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-7 2xl:gap-[36px]">
@@ -45,14 +49,22 @@ const EngageMoreSection = () => {
             >
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={item.title.toString() || "Engage More Section Image"}
                 width={286}
                 height={286}
                 className="w-full h-full object-cover"
               />
-              <p className="w-full p-5 text-center absolute top-1/2 left-1/2 -translate-x-1/2! -translate-y-1/2! text-white text-base 2xl:text-xl font-semibold z-10">
-                {item.title}
-              </p>
+
+              <div className="absolute bottom-0 left-0 p-6 md:p-[18px] 2xl:p-6 size-full flex flex-col items-start justify-end">
+
+                <h3 className="text-white text-[28px] md:text-[30px] 2xl:text-[40px] font-medium pb-2 md:pb-1.5 2xl:pb-2 leading-normal z-10">
+                  {item.heading}
+                </h3>
+
+                <p className="w-full text-left text-white text-base 2xl:text-xl font-medium leading-tight z-10">
+                  {item.title}
+                </p>
+              </div>
             </motion.div>
           ))
         }

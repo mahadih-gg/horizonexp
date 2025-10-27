@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-5 2xl:gap-7">
+        <div className="hidden md:flex items-center justify-center gap-5 2xl:gap-7 pl-[18px] 2xl:pl-6">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-base 2xl:text-xl font-medium">
               {link.label}
@@ -84,9 +84,13 @@ const Navbar = () => {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -100 }}
                       transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.1 + 0.2 }}
-                      className="w-full"
+                      className="w-full pointer-events-none"
                     >
-                      <Link href={link.href} className="flex justify-between items-center text-primary-text text-2xl font-medium">
+                      <Link
+                        href={link.href}
+                        className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
+                        onClick={closeMobileMenu}
+                      >
                         {link.label}
 
                         <RightIcon />
@@ -105,7 +109,8 @@ const Navbar = () => {
               >
                 <Link
                   href="/login"
-                  className="flex justify-between items-center text-primary-text text-2xl font-medium"
+                  className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
+                  onClick={closeMobileMenu}
                 >
                   Login
                   <RightIcon />
@@ -113,8 +118,10 @@ const Navbar = () => {
 
                 <Link
                   href="/start-for-free"
-                  className="flex justify-between items-center text-primary-text text-2xl font-medium"
-                >Start for free
+                  className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
+                  onClick={closeMobileMenu}
+                >
+                  Start for free
                   <RightIcon />
                 </Link>
 

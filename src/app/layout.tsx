@@ -72,7 +72,7 @@ export default function RootLayout({
       <body className={`${roobert.variable} antialiased`}>
         <SmoothScroll />
         <Provides>
-          <header>
+          <header className="sticky top-0 z-50 backdrop-blur-[40px]! bg-background/16">
             <Navbar />
           </header>
           {children}
