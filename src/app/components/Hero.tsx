@@ -41,7 +41,7 @@ const Hero = () => {
         </Button>
       </div>
 
-      <GradientBg className="flex-center">
+      <GradientBg className="flex-center relative">
         <ComparisonSection />
       </GradientBg>
 

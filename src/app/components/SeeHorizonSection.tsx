@@ -8,9 +8,9 @@ const SeeHorizonSection = () => {
     <section className="container py-section">
       <SectionHeader
         title="See Horizon in action"
-        className="flex items-center justify-between"
+        className="flex items-center justify-start md:justify-between text-left"
         extraContent={
-          <Button asChild>
+          <Button asChild className="hidden md:inline-flex">
             <Link href="https://demo.horizonexp.com/" target="_blank">
               Visit demo sites
             </Link>

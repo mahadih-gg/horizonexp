@@ -90,7 +90,7 @@ const HowBrandsCanUseHorizonSection = () => {
     <section className='container pb-section'>
       <SectionHeader
         title="How brands can use Horizon"
-        className="flex items-center text-left justify-between"
+        className="text-left flex items-end justify-between"
         extraContent={(
           <div className='flex items-center gap-1.5 2xl:gap-2'>
             <button

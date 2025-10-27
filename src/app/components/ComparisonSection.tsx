@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -69,8 +70,21 @@ const ComparisonSection = () => {
 
   return (
     <div className="w-full flex md:flex-row flex-col justify-center items-center px-1 md:px-10 2xl:px-14 gap-5">
-
-      <h3 className="text-xl md:text-lg 2xl:text-2xl font-medium">Horizon home</h3>
+      {/* Desktop labels - hidden on mobile */}
+      <h3 className="hidden md:block text-lg 2xl:text-2xl font-medium">Horizon home</h3>
+      <AnimatePresence mode="wait">
+        {/* Mobile labels - only visible on mobile and based on slider position */}
+        <motion.h3
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
+          key={sliderPosition > 50 ? 'horizon-home' : 'static-home'}
+          className="md:hidden absolute top-10 left-1/2 -translate-x-1/2! text-lg 2xl:text-2xl font-medium z-10 text-primary-text"
+        >
+          {sliderPosition > 50 ? 'Horizon home' : 'Static home'}
+        </motion.h3>
+      </AnimatePresence>
       {/* Comparison Container */}
       <div className="comparison-container w-full md:w-[70.833%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]" style={{ aspectRatio: '1.52/1' }}>
         {/* Horizon Home Image (Left) */}
@@ -128,7 +142,9 @@ const ComparisonSection = () => {
           <ChevronRight strokeWidth={2.5} className="size-4 md:size-4 2xl:size-5 text-primary-text" />
         </div>
       </div>
-      <h3 className="text-xl md:text-lg 2xl:text-2xl font-medium">Static home</h3>
+
+      {/* Desktop labels - hidden on mobile */}
+      <h3 className="hidden md:block text-lg 2xl:text-2xl font-medium">Static home</h3>
     </div>
   );
 };

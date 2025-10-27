@@ -72,7 +72,7 @@ const EverythingYouNeedSection = () => {
   return (
     <section className="container">
       <SectionHeader
-        title={<>Everything you need to grow with <br /> short-form video engagement</>}
+        title={<>Everything you need to grow with <br className="hidden md:block" /> short-form video engagement</>}
         topLabel="Features"
       />
 
@@ -81,8 +81,8 @@ const EverythingYouNeedSection = () => {
           <CardHeader
             animate={false}
             topLabel="Shoppable Overlays"
-            title="Make your videos shoppable"
-            description="Turn attention into action with shoppable CTAs that capture attention and drive purchases directly from videos."
+            title={<>Make your videos <br className="block md:hidden" /> shoppable</>}
+            description={<>Turn attention into action with <br className="block md:hidden" /> shoppable CTAs that capture attention <br className="block md:hidden" /> and drive purchases directly from videos.</>}
           />
           <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
             <Image
