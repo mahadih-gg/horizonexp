@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container flex items-center justify-between py-3 md:py-4 2xl:py-5">
+      <nav className="container relative flex items-center justify-between py-3 md:py-4 2xl:py-5">
 
         <div className="flex items-center justify-start">
           <button className="inline-block md:hidden mr-4" onClick={toggleMobileMenu}>
@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center justify-center gap-5 2xl:gap-7 pl-[18px] 2xl:pl-6">
+        <div className="absolute left-1/2 -translate-x-1/2! top-1/2 -translate-y-1/2! hidden md:flex items-center justify-center gap-5 2xl:gap-7">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-base 2xl:text-xl font-medium">
               {link.label}
