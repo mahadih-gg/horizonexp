@@ -15,7 +15,7 @@ type Props = {
 
 const DemoCard = ({ title, description, imageUrl, link, buttonText, align = 'left' }: Props) => {
   return (
-    <Card className={cn("flex flex-row justify-between p-0 gap-0 overflow-hidden", align === 'left' ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col-reverse md:flex-row-reverse')}>
+    <Card className={cn("flex flex-row justify-between p-0 gap-0 overflow-hidden", align === 'left' ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col-reverse md:flex-row')}>
       <CardHeader
         title={title}
         description={description}
