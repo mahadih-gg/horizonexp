@@ -1,12 +1,12 @@
+import { cn } from "@/lib/utils";
 import * as React from "react";
 
 type PropsType = React.SVGProps<SVGElement>;
 
-const PlayButtonIcon: React.FC<PropsType> = () => (
+const PlayButtonIcon: React.FC<PropsType> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="52"
-    height="52"
+    className={cn("size-[52px]", className)}
     fill="none"
     viewBox="0 0 52 52"
   >

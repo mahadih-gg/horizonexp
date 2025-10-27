@@ -5,14 +5,14 @@ import Link from "next/link";
 const OnboardingSection = () => {
   return (
     <section className="container py-section">
-      <div className="bg-primary rounded-3xl p-10 pb-[60px] h-screen flex justify-center items-end">
+      <div className="bg-[url('/assets/images/premium-support.webp')] bg-cover bg-bottom! md:bg-center w-full aspect-191/342 md:aspect-191/100 rounded-3xl pb-10 md:pb-11 2xl:pb-[60px] flex justify-center items-end">
         <SectionHeader
-          className="text-white pb-0"
+          className="text-white pb-0 md:pb-0 2xl:pb-0 px-4"
           topLabel="Premium Support"
-          title="Onboarding made simple"
+          title={<>Onboarding <br className="block md:hidden" /> made simple</>}
           description={<>
             We&apos;ll help you go from upload to live - seamlessly connecting Horizon
-            <br />
+            <br className="hidden md:block" />
             to your site or app. Contact us for onboarding support.
           </>}
           extraContent={
