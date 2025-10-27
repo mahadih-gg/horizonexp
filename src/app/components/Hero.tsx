@@ -36,7 +36,7 @@ const Hero = () => {
         </Button>
         <Button variant="secondary" asChild>
           <Link href="https://demo.horizonexp.com/" target="_blank">
-            Visit demo site
+            Visit demo sites
           </Link>
         </Button>
       </div>

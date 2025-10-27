@@ -53,8 +53,8 @@ const HorizonForEnterpriseSection = () => {
     <section className="container py-section">
       <SectionHeader
         topLabel="Horizon for enterprise"
-        title={<>Big-tech grade short-form engagement, <br className="hidden md:block" /> built for speed, scale, and reliability</>}
-        description={<>Horizon delivers enterprise-grade performance, built to scale to <br className="block xs:hidden" /> 50 million+ MAU.</>}
+        title={<>Big-tech grade short-form engagement, <br /> built for speed, scale, and reliability</>}
+        description={<>Horizon delivers enterprise-grade <br className="block xs:hidden" /> performance, built to scale to <br className="block xs:hidden" /> 50 million+ MAU.</>}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-x-[72px] 2xl:gap-x-[94px] 2xl:gap-y-[52px]">
@@ -67,7 +67,7 @@ const HorizonForEnterpriseSection = () => {
                 {feature.icon}
               </div>
             }
-            topLabel={<span className="text-black-gradient">{feature.topLabel}</span>}
+            topLabel={<span className="text-black-gradient font-medium">{feature.topLabel}</span>}
             title={feature.title}
             description={feature.description}
             centered={false}

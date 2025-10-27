@@ -41,7 +41,7 @@ const WhyHorizonSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 2xl:gap-9">
         {features.map((feature, index) => (
-          <Card key={index} className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10">
+          <Card key={index} className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10 pb-10 md:pb-[60px] 2xl:pb-[78px]">
             <span>
               {feature.icon}
             </span>

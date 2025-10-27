@@ -19,6 +19,14 @@ const SeeHorizonSection = () => {
       />
 
       <FlagshipEntryPoint />
+
+      <div className="flex items-center justify-center md:hidden pt-[52px]">
+        <Button asChild>
+          <Link href="https://demo.horizonexp.com/" target="_blank">
+            Visit demo sites
+          </Link>
+        </Button>
+      </div>
     </section>
   );
 };

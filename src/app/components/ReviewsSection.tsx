@@ -44,7 +44,7 @@ const ReviewsSection = () => {
               </p>
 
               <div className="flex items-center space-x-4 pt-[80px] 2xl:pt-[110px]">
-                <div className="size-[60px] bg-black-gradient rounded-full shrink-0" />
+                <div className="size-[40px] 2xl:size-[60px] bg-black-gradient rounded-full shrink-0" />
                 <div>
                   <p className="text-primary-text text-base 2xl:text-xl">
                     {testimonial.author}

@@ -26,7 +26,7 @@ export default function Home() {
       <HorizonForEnterpriseSection />
       <LaunchHorizonSection />
       <ConnectSection
-        title={<>Ready to grow with short-form video? <br /> Start free today.</>}
+        title={<>Ready to grow <br className="block md:hidden" /> with short-<br className="block md:hidden" />form video? <br /> Start free today.</>}
         description="Join the new generation of brands turning attention into sales with short-form engagement."
       />
     </main>

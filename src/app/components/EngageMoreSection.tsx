@@ -33,7 +33,7 @@ const EngageMoreSection = () => {
     <section className="container py-section">
 
       <SectionHeader
-        title={<>Engage more, convert faster, with short-form video</>}
+        title={<>Engage more, convert faster, with short-<br className="block xs:hidden" />form video</>}
         description={<>Customers prefer to watch short-form videos instead of reading specs & looking at <br className="hidden md:block" /> static images. Show up with short-form - because video sells faster. </>}
       />
 

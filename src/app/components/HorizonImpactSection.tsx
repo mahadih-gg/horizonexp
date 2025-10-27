@@ -55,15 +55,15 @@ const HorizonImpactSection = () => {
           title={<>Horizon turns your site or app into an <br className="hidden lg:block" /> engagement and conversion powerhouse </>}
         />
 
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 2xl:gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6 px-[46px] md:px-0'>
           {impactMetrics.map((metric, index) => (
             <Card key={index} className="bg-white">
               <CardContent className="flex flex-col items-start justify-start gap-7">
                 <span>{metric.icon}</span>
-                <h2 className="text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-4%] 2xl:tracking-[-4%]">
+                <h2 className="text-[72px] 2xl:text-[96px] font-normal leading-none text-primary-text tracking-[-0.04em] 2xl:tracking-[-0.04em]">
                   <CounterAnimation to={metric.numericValue} suffix={metric.suffix} />
                 </h2>
-                <p className="text-base md:text-[15px] 2xl:text-xl text-primary-text">
+                <p className="text-base md:text-[15px] 2xl:text-xl text-primary-text font-medium">
                   {metric.description}
                 </p>
               </CardContent>
