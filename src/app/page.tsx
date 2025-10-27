@@ -27,7 +27,7 @@ export default function Home() {
       <LaunchHorizonSection />
       <ConnectSection
         title={<>Ready to grow with short-form video? <br /> Start free today.</>}
-        description="Join the thousands of businesses already using Horizon to grow their business."
+        description="Join the new generation of brands turning attention into sales with short-form engagement."
       />
     </main>
   );

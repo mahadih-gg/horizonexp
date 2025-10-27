@@ -34,13 +34,13 @@ const ConnectSection = ({ title, description }: Props) => {
         className="flex items-center justify-center gap-4"
       >
         <Button asChild>
-          <Link href="/signup">
+          <Link href="https://app.horizonexp.com/signup" target="_blank">
             Start for free
           </Link>
         </Button>
 
         <Button variant="secondary" asChild>
-          <Link href="/demo">
+          <Link href="https://demo.horizonexp.com/" target="_blank">
             Visit demo site
           </Link>
         </Button>

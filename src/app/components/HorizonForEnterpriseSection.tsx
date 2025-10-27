@@ -61,6 +61,7 @@ const HorizonForEnterpriseSection = () => {
         {enterpriseFeatures.map((feature, index) => (
           <CardHeader
             key={index}
+            animate={false}
             icon={
               <div className="bg-secondary rounded-xl flex-center size-[60px] 2xl:size-20">
                 {feature.icon}

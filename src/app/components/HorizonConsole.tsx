@@ -34,7 +34,10 @@ const HorizonConsole = () => {
             alt="Horizon Console"
             width={1015}
             height={554}
-            className="w-full object-cover"
+            className="w-full object-cover rounded-[10px] md:rounded-3xl 2xl:rounded-[28px]"
+            style={{
+              boxShadow: "0px 0px 20px 0px #0000000A"
+            }}
           />
         </motion.div>
 

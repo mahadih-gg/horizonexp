@@ -12,22 +12,22 @@ const WhyHorizonSection = () => {
   const features = [
     {
       icon: <NativeStreamingIcon />,
-      title: "Native Short-Form Streaming",
+      title: <>Native Short-Form <br /> Streaming</>,
       description: "The fastest, smoothest, most immersive short-form playback ever built. Horizon's native streaming drives unmatched engagement, retention, and conversion."
     },
     {
       icon: <SocialCommerceIcon />,
-      title: "Full-Stack Social Commerce",
+      title: <>Full-Stack Social <br /> Commerce</>,
       description: "The smartest, most seamless path from content to commerce. From shoppable CTAs to ad monetization, Horizon bridges storytelling and sales in one seamless layer."
     },
     {
       icon: <ConsoleIcon />,
-      title: "All-in-one Console",
+      title: <>All-in-one <br /> Console</>,
       description: "Control everything from one powerful dashboard. Create, deploy, and optimize short-form experiences with enterprise-grade precision - no code needed."
     },
     {
       icon: <PerformanceIcon className="w-8 h-8 text-gray-700" />,
-      title: "Big-Tech Grade Performance",
+      title: <>Big-Tech Grade <br /> Performance</>,
       description: "Engineered for massive, global scale and unmatched reliability. Horizon delivers ultra-fast, low-latency performance powered by edge infrastructure and intelligent caching."
     }
   ];

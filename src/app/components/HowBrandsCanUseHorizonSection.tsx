@@ -158,7 +158,7 @@ const HowBrandsCanUseHorizonSection = () => {
                             </Button>
                           ) : (
                             <Text variant="top-label" className="mb-3.5 md:mb-[18px] 2xl:mb-6 text-base md:text-xl 2xl:text-[26px] font-medium">
-                              {item.topLabel}
+                              <span className="text-primary-text">{item.topLabel}</span>
                             </Text>
                           )
                         }
@@ -176,6 +176,7 @@ const HowBrandsCanUseHorizonSection = () => {
                 </div>
 
                 <CardHeader
+                  animate={false}
                   title={item.title}
                   description={item.description}
                   centered={false}

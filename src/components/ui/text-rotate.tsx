@@ -28,10 +28,10 @@ const TextRotate = ({ texts, className }: TextRotateProps) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{
           opacity: 1,
-          y: [0, "-50%", "-100%"],
+          y: "-100%",
           transition: {
             duration: 0.6,
-            times: [0, 0.2, 0.5, 0.3, 1],
+            // times: [0, 0.2, 0.5, 0.3, 1],
             ease: "easeOut"
           }
         }}

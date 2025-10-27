@@ -93,7 +93,7 @@
   }
 
   .pt-page {
-    @apply pt-[60px] md:pt-[74px] 2xl:pt-[100px];
+    @apply pt-[80px] md:pt-[90px] 2xl:pt-[120px];
   }
 
   .py-section {
@@ -118,6 +118,10 @@
 
   .flex-end {
     @apply flex items-end justify-end;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(180deg, #F9FCFD 0%, #FCF2F8 40.41%, #FCEEF6 54.73%, #F4F2F8 68.23%, #E7ECFC 100%);
   }
 
   .bg-black-gradient {

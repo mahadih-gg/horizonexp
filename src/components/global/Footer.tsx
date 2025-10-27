@@ -45,6 +45,9 @@ const Footer = () => {
           </Link>
 
           <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-7">
+            <Link href="/" className="text-white text-sm 2xl:text-lg">
+              Home
+            </Link>
             {navLinks?.map((link, index) => (
               <Link key={index} href={link.href} className="text-white text-sm 2xl:text-lg">
                 {link.label}

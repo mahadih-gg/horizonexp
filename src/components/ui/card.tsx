@@ -27,9 +27,10 @@ type CardHeaderProps = {
   className?: string;
   icon?: React.ReactNode;
   extraContent?: React.ReactNode;
+  animate?: boolean;
 };
 
-function CardHeader({ title, description, topLabel, centered = true, className, icon, extraContent }: CardHeaderProps) {
+function CardHeader({ title, description, topLabel, centered = true, className, icon, extraContent, animate = true }: CardHeaderProps) {
   return (
     <div className={cn('text-left', centered && 'text-center', className)}>
       {
@@ -42,21 +43,23 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         topLabel && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={animate ? { opacity: 0, y: 40 } : {}}
+            whileInView={animate ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           // viewport={{ once: true, amount: 0.8 }}
           >
             <Text variant="top-label" className='pb-3 2xl:pb-4'>
-              {topLabel}
+              <span className="text-black-gradient">
+                {topLabel}
+              </span>
             </Text>
           </motion.div>
         )
       }
 
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={animate ? { opacity: 0, y: 40 } : {}}
+        whileInView={animate ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <Text variant="card-heading">
@@ -66,8 +69,8 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         description && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={animate ? { opacity: 0, y: 40 } : {}}
+            whileInView={animate ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Text variant="card-subheading" className='pt-3 2xl:pt-4'>
@@ -79,8 +82,8 @@ function CardHeader({ title, description, topLabel, centered = true, className, 
       {
         extraContent && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={animate ? { opacity: 0, y: 40 } : {}}
+            whileInView={animate ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <div className="pt-4 2xl:pt-6">

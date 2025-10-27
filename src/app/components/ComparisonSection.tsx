@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronsLeftRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -68,11 +68,11 @@ const ComparisonSection = () => {
   };
 
   return (
-    <div className="w-full flex md:flex-row flex-col justify-center items-center md:px-10 2xl:px-14 gap-5">
+    <div className="w-full flex md:flex-row flex-col justify-center items-center px-1 md:px-10 2xl:px-14 gap-5">
 
       <h3 className="text-xl md:text-lg 2xl:text-2xl font-medium">Horizon home</h3>
       {/* Comparison Container */}
-      <div className="comparison-container w-[70.833%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]" style={{ aspectRatio: '1.52/1' }}>
+      <div className="comparison-container w-full md:w-[70.833%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]" style={{ aspectRatio: '1.52/1' }}>
         {/* Horizon Home Image (Left) */}
         <div
           className="absolute inset-0 z-10"
@@ -116,7 +116,7 @@ const ComparisonSection = () => {
 
         {/* Slider Handle */}
         <div
-          className={`absolute top-1/2 z-40 flex h-12 w-12 -translate-y-1/2! -translate-x-1/2! cursor-pointer items-center justify-center rounded-full bg-white shadow-lg select-none ${isDragging ? '' : 'transition-all hover:scale-110'
+          className={`absolute top-1/2 z-40 flex size-10 md:size-11 2xl:size-12 -translate-y-1/2! -translate-x-1/2! cursor-pointer items-center justify-center rounded-full bg-white shadow-lg select-none ${isDragging ? '' : 'transition-all hover:scale-110'
             }`}
           style={{
             left: `${sliderPosition}%`,
@@ -124,7 +124,8 @@ const ComparisonSection = () => {
           onMouseDown={handleMouseDown}
           onTouchStart={handleTouchStart}
         >
-          <ChevronsLeftRight className="h-5 w-5 text-gray-600" />
+          <ChevronLeft strokeWidth={2.5} className="size-4 md:size-4 2xl:size-5 text-primary-text" />
+          <ChevronRight strokeWidth={2.5} className="size-4 md:size-4 2xl:size-5 text-primary-text" />
         </div>
       </div>
       <h3 className="text-xl md:text-lg 2xl:text-2xl font-medium">Static home</h3>

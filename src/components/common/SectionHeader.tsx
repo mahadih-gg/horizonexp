@@ -23,11 +23,12 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            // viewport={{ once: true, amount: 0.8 }}
-            className='text-inherit'
+          // viewport={{ once: true, amount: 0.8 }}
           >
-            <Text variant="top-label" className='pb-4 text-inherit'>
-              {topLabel}
+            <Text variant="top-label" className='pb-4'>
+              <span className="text-black-gradient">
+                {topLabel}
+              </span>
             </Text>
           </motion.div>
         )

@@ -79,6 +79,7 @@ const EverythingYouNeedSection = () => {
       <div className='flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-6 2xl:gap-8 w-full'>
         <GradientBg className='py-[30px] 2xl:py-10 md:col-span-2 overflow-hidden'>
           <CardHeader
+            animate={false}
             topLabel="Shoppable Overlays"
             title="Make your videos shoppable"
             description="Turn attention into action with shoppable CTAs that capture attention and drive purchases directly from videos."
@@ -98,6 +99,7 @@ const EverythingYouNeedSection = () => {
           features.map((feature, index) => (
             <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 md:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
               <CardHeader
+                animate={false}
                 topLabel={feature.topLabel}
                 title={feature.title}
                 description={feature.description}
@@ -117,6 +119,7 @@ const EverythingYouNeedSection = () => {
 
         <GradientBg className='py-10 w-full md:col-span-2'>
           <CardHeader
+            animate={false}
             className='px-4'
             topLabel="Infinite Scroll"
             title={<>Create playlists & infinite <br className='hidden md:block' /> scrolling feeds</>}
@@ -141,6 +144,7 @@ const EverythingYouNeedSection = () => {
           features2.map((feature, index) => (
             <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 md:pb-10 2xl:pb-12 overflow-hidden'>
               <CardHeader
+                animate={false}
                 topLabel={feature.topLabel}
                 title={feature.title}
                 description={feature.description}
@@ -160,6 +164,7 @@ const EverythingYouNeedSection = () => {
 
         <GradientBg className='py-10 col-span-2 overflow-hidden'>
           <CardHeader
+            animate={false}
             className='px-4'
             topLabel="Horizon Console"
             title={<>The control center <br className='md:hidden' /> for short-form <br className='md:hidden' /> engagement</>}

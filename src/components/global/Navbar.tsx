@@ -45,8 +45,16 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost">Login</Button>
-          <Button>Start for free</Button>
+          <Button variant="ghost" asChild>
+            <Link href="https://app.horizonexp.com/login" target="_blank">
+              Login
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link href="https://app.horizonexp.com/signup" target="_blank">
+              Start for free
+            </Link>
+          </Button>
         </div>
       </nav>
 
@@ -117,7 +125,8 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  href="/start-for-free"
+                  href="https://app.horizonexp.com/signup"
+                  target="_blank"
                   className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
                   onClick={closeMobileMenu}
                 >

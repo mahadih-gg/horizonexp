@@ -5,7 +5,6 @@ import FileSearchIcon from "@/components/icons/file-search-icon";
 import ShoppingCartIcon from "@/components/icons/shopping-cart-icon";
 import { Card, CardContent } from "@/components/ui/card";
 import CounterAnimation from "@/components/ui/counter-animation";
-import { Text } from "@/components/ui/text";
 
 const HorizonImpactSection = () => {
   const impactMetrics = [
@@ -40,19 +39,19 @@ const HorizonImpactSection = () => {
   ];
 
   return (
-    <section className='container py-section'>
+    <section className='py-section'>
 
       <SectionHeader
-        className="md:hidden block"
-        topLabel={<span className='text-grad-secondary'>Horizon Impact</span>}
+        className="md:hidden block container"
+        topLabel="Horizon Impact"
         title={<>Horizon turns your site or app into an <br className="hidden lg:block" /> engagement and conversion powerhouse </>}
       />
 
-      <div className='px-[46px] md:px-[57px] 2xl:px-[76px] pt-[40px] md:pt-[60px] 2xl:pt-20 pb-[40px] md:pb-[75px] 2xl:pb-[100px] rounded-3xl bg-secondary'>
+      <div className='container pt-[40px] md:pt-[60px] 2xl:pt-20 pb-[40px] md:pb-[75px] 2xl:pb-[100px] bg-secondary'>
 
         <SectionHeader
           className="md:block hidden"
-          topLabel={<span className='text-grad-secondary'>Horizon Impact</span>}
+          topLabel="Horizon Impact"
           title={<>Horizon turns your site or app into an <br className="hidden lg:block" /> engagement and conversion powerhouse </>}
         />
 
@@ -61,10 +60,10 @@ const HorizonImpactSection = () => {
             <Card key={index} className="bg-white">
               <CardContent className="flex flex-col items-start justify-start gap-7">
                 <span>{metric.icon}</span>
-                <Text variant="heading" className="font-normal text-black-gradient">
+                <h2 className="text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-4%] 2xl:tracking-[-4%]">
                   <CounterAnimation to={metric.numericValue} suffix={metric.suffix} />
-                </Text>
-                <p className="text-base 2xl:text-xl text-primary-text">
+                </h2>
+                <p className="text-base md:text-[15px] 2xl:text-xl text-primary-text">
                   {metric.description}
                 </p>
               </CardContent>

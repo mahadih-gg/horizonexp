@@ -11,7 +11,7 @@ const SeeHorizonSection = () => {
         className="flex items-center justify-between"
         extraContent={
           <Button asChild>
-            <Link href="/demo">
+            <Link href="https://demo.horizonexp.com/" target="_blank">
               Visit demo sites
             </Link>
           </Button>
