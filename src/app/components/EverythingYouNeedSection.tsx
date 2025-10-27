@@ -90,7 +90,7 @@ const EverythingYouNeedSection = () => {
               alt="Make your videos shoppable"
               width={1419}
               height={631}
-              className="w-auto md:w-full h-full md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px] mx-auto object-contain object-top"
+              className="min-w-fit md:min-w-auto w-auto md:w-full h-[373px] md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px] mx-auto object-contain object-top"
             />
           </div>
         </GradientBg>

@@ -3,7 +3,6 @@
 import SectionHeader from '@/components/common/SectionHeader';
 import { Button } from '@/components/ui/button';
 import { CardHeader } from '@/components/ui/card';
-import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
@@ -19,48 +18,48 @@ const sliderData = [
     title: "Hook visitors instantly",
     description: "Show personalized short-form videos at the top of your homepage. Grab attention in seconds and keep visitors exploring longer.",
     image: "/assets/images/slider/slider-img-1.webp",
-    imageClassName: "min-h-[182px] md:min-h-[126px] 2xl:min-h-[192px]"
+    imageClassName: "h-[120px] md:h-[126px] 2xl:h-[192px]"
   },
   {
     topLabel: "Experience our new collection",
     title: "Demonstrate products",
     description: "Highlight product features, textures, and motion through immersive short-form clips. Let customers see why they should buy.",
     image: "/assets/images/slider/slider-img-2.webp",
-    imageClassName: "min-h-[170px] md:min-h-[211px] 2xl:min-h-[282px]"
+    imageClassName: "h-[170px] md:h-[211px] 2xl:h-[282px]"
   },
   {
     topLabel: "Discover our services",
     title: "Showcase services",
     description: "Bring your service experience to life with quick demos, client stories, or before-after results. Turn expertise into visual proof.",
     image: "/assets/images/slider/slider-img-3.webp",
-    imageClassName: "min-h-[170px] md:min-h-[211px] 2xl:min-h-[282px]"
+    imageClassName: "h-[170px] md:h-[211px] 2xl:h-[282px]"
   },
   {
     topLabel: "What our customers say",
     title: "Build product trust",
     description: "Use authentic customer stories and user reviews in short-form to boost credibility and remove purchase hesitation.",
     image: "/assets/images/slider/slider-img-4.webp",
-    imageClassName: "min-h-[182px] md:min-h-[126px] 2xl:min-h-[192px]"
+    imageClassName: "h-[120px] md:h-[126px] 2xl:h-[192px]"
   },
   {
     title: "Turn content into sales",
     description: "Transform all your videos into shoppable short-form moments. Turn inspiration directly into seamless checkout.",
     image: "/assets/images/slider/slider-img-5.webp",
-    imageClassName: "min-h-[170px] md:min-h-[211px] 2xl:min-h-[282px]"
+    imageClassName: "h-[120px] md:h-[150px] 2xl:h-[225px] 3xl:h-[338px] object-center 2xl:-ml-[5%] 3xl:-ml-0"
   },
   {
     topLabel: "You might also like",
     title: "Engage after purchase",
     description: "Re-engage customers with unboxing clips, thank-you videos, or tutorials. Turn one-time buyers into loyal advocates.",
     image: "/assets/images/slider/slider-img-6.webp",
-    imageClassName: "min-h-[170px] md:min-h-[211px] 2xl:min-h-[282px]"
+    imageClassName: "h-[170px] md:h-[211px] 2xl:h-[282px]"
   },
   {
     topLabel: "Discover our top users",
     title: "Leverage UGC",
     description: "Feature your top customers' videos to create community and social proof. Let real people sell your story for you.",
     image: "/assets/images/slider/slider-img-7.webp",
-    imageClassName: "min-h-[182px] md:min-h-[126px] 2xl:min-h-[192px]"
+    imageClassName: "h-[120px] md:h-[126px] 2xl:h-[192px]"
   }
 ];
 
@@ -157,9 +156,9 @@ const HowBrandsCanUseHorizonSection = () => {
                               {item.topLabel}
                             </Button>
                           ) : (
-                            <Text variant="top-label" className="mb-3.5 md:mb-[18px] 2xl:mb-6 text-base md:text-xl 2xl:text-[26px] font-medium">
-                              <span className="text-primary-text">{item.topLabel}</span>
-                            </Text>
+                            <span className="inline-block mb-3.5 md:mb-[18px] 2xl:mb-6 text-base md:text-xl 2xl:text-[26px] text-primary-text font-medium">
+                              {item.topLabel}
+                            </span>
                           )
                         }
                       </>
@@ -171,7 +170,7 @@ const HowBrandsCanUseHorizonSection = () => {
                     height={192}
                     src={item.image}
                     alt={item.title}
-                    className={cn("w-auto! object-contain object-left", item.imageClassName)}
+                    className={cn("min-w-fit object-contain object-left", item.imageClassName)}
                   />
                 </div>
 
