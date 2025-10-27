@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { navLinks } from "@/navData";
 import Link from "next/link";
 import LinkedinIcon from "../icons/linkedin-icon";
@@ -62,21 +63,31 @@ const Footer = () => {
             All rights reserved by Flagship Technology Inc.
           </p>
 
-          <div className="flex items-center gap-5">
-            {socialLinks.map((link, index) => (
-              <Link key={index} href={link.href}>
-                {link.icon}
-              </Link>
-            ))}
-          </div>
+          <SocialLinks className="hidden md:flex" />
 
         </div>
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-start md:justify-between gap-5">
           <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon.</span>
           <Link href="/privacy-policy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
         </div>
+
+        <div className="pt-10 flex md:hidden">
+          <SocialLinks />
+        </div>
       </div>
     </footer>
+  );
+};
+
+const SocialLinks = ({ className }: { className?: string }) => {
+  return (
+    <div className={cn("flex items-center gap-5", className)}>
+      {socialLinks.map((link, index) => (
+        <Link key={index} href={link.href}>
+          {link.icon}
+        </Link>
+      ))}
+    </div>
   );
 };
 
