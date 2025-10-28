@@ -1,4 +1,4 @@
-import CheckIcon from '@/components/icons/check-icon';
+import GradCheckIcon from '@/components/icons/grad-check-icon';
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
@@ -29,57 +29,79 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
   return (
-    <div className={`
-      relative bg-secondary rounded-2xl p-6 flex flex-col h-full
-      ${plan.isHighlighted ? 'border-2' : ''}
+    <div className='w-full h-full flex-center'>
+      <div className={`
+      relative bg-secondary rounded-3xl px-4 2xl:px-5 py-4 md:py-5 2xl:py-7 flex flex-col
+      ${plan.isHighlighted ? 'border-2 border-blue-400 pb-10 xl:pb-[55px] 2xl:pb-[74px]' : ''}
     `}>
-      {/* Label */}
-      {plan.label && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-secondary text-xs px-3 py-1 rounded-full">
-            {plan.label}
-          </span>
+
+        <div className='flex justify-between items-center w-full mb-6 2xl:mb-8'>
+          {/* Plan Name */}
+          <h3 className="text-[28px] md:text-lg 2xl:text-2xl text-black-gradient font-medium tracking-tight leading-none">{plan.name}</h3>
+
+          {/* Label */}
+          <div className={cn(
+            "opacity-0 h-12 md:h-[31px] 2xl:h-[40px] rounded-full overflow-hidden flex-center",
+            plan.label && 'opacity-100',
+            plan.isHighlighted && 'bg-grad-border'
+          )}>
+            <span className={cn(
+              "inline-flex items-center justify-center h-full bg-white text-sm md:text-xs 2xl:text-base font-semibold px-3.5 md:px-3.5 2xl:px-[18px] rounded-full",
+              plan.isHighlighted && 'w-full h-[calc(100%-1.5px)]'
+            )}>
+              {plan.label ?? 'Free'}
+            </span>
+          </div>
         </div>
-      )}
 
-      {/* Plan Name */}
-      <Text variant="card-subheading" className="mb-2">{plan.name}</Text>
+        {/* Price */}
+        <div className="mb-6 2xl:mb-8 flex items-end justify-start">
+          <h2 className="text-[36px] md:text-[30px] 2xl:text-[40px] font-medium leading-none text-black-gradient tracking-[-0.04em] pb-1.5 2xl:pb-2">
+            ${plan.price}
+          </h2>
 
-      {/* Price */}
-      <div className="mb-4">
-        <Text variant="card-heading">${plan.price}</Text>
-        <Text variant="card-subheading" className="ml-2">{plan.priceUnit}</Text>
-      </div>
-
-      {/* Inclusions */}
-      <div className="mb-6 space-y-2">
-        <Text variant="body">{plan.viewsIncluded} views included</Text>
-        <Text variant="body">{plan.videosInLibrary.count} videos in library ({plan.videosInLibrary.duration} each)</Text>
-        <Text variant="body">{plan.websitesStores} website/store</Text>
-      </div>
-
-      {/* Description */}
-      <Text variant="body" className="mb-6">{plan.description}</Text>
-
-      <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient hover:bg-black-gradient/90')}>
-        {plan.buttonText}
-      </Button>
-
-      {/* Features */}
-      {plan.features.length > 0 && (
-        <div className="mt-6 space-y-2">
-          {plan.features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <CheckIcon className="w-4 h-4 shrink-0" />
-              <span className="text-sm">{feature}</span>
-            </div>
-          ))}
+          <span className="inline-block text-lg md:text-base 2xl:text-xl text-primary-text font-medium ml-1.5 2xl:ml-2">{plan.priceUnit}</span>
         </div>
-      )}
 
-      {plan.footerText && (
-        <p className="text-xs text-center mt-2">{plan.footerText}</p>
-      )}
+        {/* Inclusions */}
+        <div className="mb-6 2xl:mb-8 space-y-3.5 md:space-y-1.5 2xl:space-y-2">
+          <Text variant="body" className='font-medium'>
+            <span className="font-semibold">{plan.viewsIncluded}</span> views included
+          </Text>
+          <Text variant="body" className='font-medium'>
+            <span className="font-semibold">{plan.videosInLibrary.count}</span>
+            videos in library ({plan.videosInLibrary.duration} each)
+          </Text>
+          <Text variant="body" className='font-medium'>
+            <span className="font-semibold">{plan.websitesStores}</span> website/store
+          </Text>
+        </div>
+
+        {/* Description */}
+        <Text variant="body" className="mb-6 2xl:mb-8">{plan.description}</Text>
+
+        <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient')}>
+          {plan.buttonText}
+        </Button>
+
+        {/* Features */}
+        {plan.features.length > 0 && (
+          <div className="mt-6 2xl:mt-8 space-y-3.5 md:space-y-3 2xl:space-y-4">
+            {plan.features.map((feature, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <GradCheckIcon className="w-4 h-4 shrink-0" />
+                <Text variant="body" className="font-medium">{feature}</Text>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {plan.footerText && (
+          <div className='mt-6 2xl:mt-8 h-auto md:h-[120px] 2xl:h-[160px]'>
+            <Text variant="body" className="text-center">{plan.footerText}</Text>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

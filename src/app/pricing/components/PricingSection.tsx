@@ -13,7 +13,7 @@ const PricingSection = () => {
       </Text>
 
       {/* Pricing Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-5 max-w-[382px] md:max-w-[700px] xl:max-w-none mx-auto">
         {pricingPlans.map((plan, index) => (
           <PricingCard key={index} plan={plan} />
         ))}

@@ -125,7 +125,7 @@
   }
 
   .bg-black-gradient {
-    background: var(--black-gradient);
+    background: linear-gradient(0deg, #7A8FA4 0%, #1C2B33 60%);
   }
 
   .text-black-gradient {
@@ -138,6 +138,11 @@
 
   .bg-grad-tertiary {
     background: var(--grad-tertiary);
+  }
+
+  .bg-grad-border {
+    background: linear-gradient(159.67deg, #DCEFFF 0%, #DAEEFF 15.49%, #D3E7FF 35.14%, #D5E3FF 49.5%, #E9EFFF 66.2%, #E9EFFF 84.77%, #E3F1FF 100%);
+    @apply rounded-full px-px;
   }
 
   .text-grad-tertiary {
