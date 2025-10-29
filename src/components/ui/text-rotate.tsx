@@ -28,7 +28,7 @@ const TextRotate = ({
   return (
     <div className={cn("overflow-hidden", className)}>
       <AnimatePresence mode="wait">
-        <motion.h1
+        <motion.span
           key={index}
           initial={{ y: -50, opacity: 0 }}
           animate={{
@@ -51,7 +51,7 @@ const TextRotate = ({
           className="text-center text-grad-tertiary"
         >
           {words[index]}
-        </motion.h1>
+        </motion.span>
       </AnimatePresence>
     </div>
   )

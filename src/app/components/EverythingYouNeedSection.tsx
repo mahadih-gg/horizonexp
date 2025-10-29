@@ -56,7 +56,7 @@ const features2 = [
   {
     topLabel: "Analytics",
     title: "Track what truly works",
-    description: "Measure views, clicks, and performance across every video & entry point to know exactly what drives engagement and sales.",
+    description: "Measure performance across every video and entry point to know exactly what drives engagement and sales.",
     image: "/assets/images/analytics.webp",
     imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
   },

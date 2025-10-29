@@ -41,7 +41,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
 
           {/* Label */}
           <div className={cn(
-            "opacity-0 h-12 md:h-[31px] 2xl:h-[40px] rounded-full overflow-hidden flex-center",
+            "opacity-0 h-[36px] md:h-[31px] 2xl:h-[42px] rounded-full overflow-hidden flex-center",
             plan.label && 'opacity-100',
             plan.isHighlighted && 'bg-grad-border'
           )}>
@@ -69,7 +69,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
             <span className="font-semibold">{plan.viewsIncluded}</span> views included
           </Text>
           <Text variant="body" className='font-medium'>
-            <span className="font-semibold">{plan.videosInLibrary.count}</span>
+            <span className="font-semibold">{plan.videosInLibrary.count + " "}</span>
             videos in library ({plan.videosInLibrary.duration} each)
           </Text>
           <Text variant="body" className='font-medium'>
@@ -78,7 +78,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
         </div>
 
         {/* Description */}
-        <Text variant="body" className="mb-6 2xl:mb-8">{plan.description}</Text>
+        <Text variant="body" className="mb-6 2xl:mb-8 font-medium">{plan.description}</Text>
 
         <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient')}>
           {plan.buttonText}
@@ -87,18 +87,24 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
         {/* Features */}
         {plan.features.length > 0 && (
           <div className="mt-6 2xl:mt-8 space-y-3.5 md:space-y-3 2xl:space-y-4">
-            {plan.features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <GradCheckIcon className="w-4 h-4 shrink-0" />
-                <Text variant="body" className="font-medium">{feature}</Text>
-              </div>
-            ))}
+            {plan.features.map((feature, index) => {
+              return (
+                <div key={index} className="flex items-center gap-2">
+                  <GradCheckIcon className="w-4 h-4 shrink-0" />
+                  <Text variant="body" className="font-medium">
+                    {feature.includes("Extra views @") ? <>
+                      Extra views @ <span className="font-bold">{feature.split("Extra views @ ")[1]}</span>
+                    </> : feature}
+                  </Text>
+                </div>
+              )
+            })}
           </div>
         )}
 
         {plan.footerText && (
           <div className='mt-6 2xl:mt-8 h-auto md:h-[120px] 2xl:h-[160px]'>
-            <Text variant="body" className="text-center">{plan.footerText}</Text>
+            <Text variant="body" className="text-center font-medium">{plan.footerText}</Text>
           </div>
         )}
       </div>

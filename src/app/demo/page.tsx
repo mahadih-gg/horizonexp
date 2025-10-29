@@ -54,7 +54,9 @@ const DemoPage = () => {
         <Text variant="section-subheading" className="text-center pt-8 pb-[80px]">
           Short-form built for every industry, every audience. See how Horizon&apos;s short-
           <br className="hidden md:block" />
-          form engine can transform engagement across industries.
+          form engine can transform engagement
+          <br className="block md:hidden" />
+          across industries.
         </Text>
       </section>
 

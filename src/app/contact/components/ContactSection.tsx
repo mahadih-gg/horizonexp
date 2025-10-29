@@ -138,8 +138,8 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div className="sm:col-span-2 flex justify-end">
-                <Button type="submit" className="w-full md:w-auto">
+              <div className="sm:col-span-2 flex justify-center md:justify-end">
+                <Button type="submit">
                   Submit
                 </Button>
               </div>

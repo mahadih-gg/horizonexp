@@ -1,7 +1,7 @@
 "use client"
 
 import SectionHeader from '@/components/common/SectionHeader';
-import { Button } from '@/components/ui/button';
+import SootingStartIcon from '@/components/icons/sooting-start-icon';
 import { CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -150,17 +150,15 @@ const HowBrandsCanUseHorizonSection = () => {
                   {
                     item.topLabel && (
                       <>
-                        {
-                          index === 0 ? (
-                            <Button className="mb-3.5 md:mb-[18px] 2xl:mb-6 text-xs md:text-sm 2xl:text-lg h-[30px] md:h-[36px] 2xl:h-[42px] px-2 md:px-2 2xl:px-3">
-                              {item.topLabel}
-                            </Button>
-                          ) : (
-                            <span className="inline-block mb-3.5 md:mb-[18px] 2xl:mb-6 text-base md:text-xl 2xl:text-[26px] text-primary-text font-medium">
-                              {item.topLabel}
-                            </span>
-                          )
-                        }
+                        <span className="inline-flex items-center gap-0.5 md:gap-[3px] 2xl:gap-1.5 mb-3.5 md:mb-[18px] 2xl:mb-6 text-base md:text-xl 2xl:text-[26px] text-primary-text font-medium">
+                          {item.topLabel}
+
+                          {
+                            index === 0 && (
+                              <SootingStartIcon className="size-4 md:size-6 2xl:size-8" />
+                            )
+                          }
+                        </span>
                       </>
                     )
                   }
@@ -179,7 +177,7 @@ const HowBrandsCanUseHorizonSection = () => {
                   title={item.title}
                   description={item.description}
                   centered={false}
-                  className='mt-3 2xl:mt-4'
+                  className='mt-6 md:mt-5 2xl:mt-7'
                 />
               </div>
             </SwiperSlide>

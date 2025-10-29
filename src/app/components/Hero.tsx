@@ -22,11 +22,11 @@ const Hero = () => {
   return (
     <section className="container pt-page">
 
-      <Text variant="heading" className="text-center">
+      <Text variant="hero-heading" className="text-center">
         Use short-form videos to <br />
-        <div className="overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
+        <span className="inline-block overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
           <TextRotate words={text} />
-        </div>
+        </span>
       </Text>
 
 

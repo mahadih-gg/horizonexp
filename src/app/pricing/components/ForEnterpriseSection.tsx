@@ -8,6 +8,7 @@ const ForEnterpriseSection = () => {
     <section className="container flex flex-col lg:flex-row gap-0 lg:gap-[75px] 2xl:gap-[100px] items-stretch 2xl:items-center">
       <div className='w-full lg:w-[34.63%] 2xl:w-[34.68%] flex-center'>
         <SectionHeader
+          className="text-center lg:text-left flex flex-col items-center lg:items-start justify-center"
           topLabel="For Enterprise"
           title={<>Ready to scale <br /> beyond limits?</>}
           description={<>
@@ -16,7 +17,6 @@ const ForEnterpriseSection = () => {
             <br />
             Get dedicated support, advanced analytics, and infrastructure engineered to handle enterprise scale effortlessly.
           </>}
-          centered={false}
           extraContent={
             <Button asChild className='lg:inline-flex hidden mt-10'>
               <Link href="/contact">

@@ -37,7 +37,7 @@ const EngageMoreSection = () => {
         description={<>Customers prefer to watch short-form videos instead of reading specs & looking at <br className="hidden md:block" /> static images. Show up with short-form - because video sells faster. </>}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-[27px] 2xl:gap-[36px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-[27px] 2xl:gap-[36px] px-[46px] md:px-0">
         {
           items.map((item, i) => (
             <motion.div
