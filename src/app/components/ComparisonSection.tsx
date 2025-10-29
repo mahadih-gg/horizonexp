@@ -113,7 +113,7 @@ const ComparisonSection = () => {
     // Animate from 100% back to 50%
     const animateTo50 = () => {
       let startTime: number;
-      const duration = 2000; // 2 seconds
+      const duration = 1000; // 1 seconds
       const startPosition = 100;
       const endPosition = 50;
 
