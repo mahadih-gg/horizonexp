@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import HorizonConsole from './HorizonConsole';
+import InfiniteScroll from './InfiniteScroll';
 
 const features = [
   {
@@ -130,13 +131,7 @@ const EverythingYouNeedSection = () => {
             }
           />
           <div className='w-full h-full pt-[54px] md:pt-[58px] 2xl:pt-[80px] pb-[80px] 2xl:pb-[104px]'>
-            <Image
-              src="/assets/images/infinite-scroll.webp"
-              alt="Create playlists and infinite scrolling feeds"
-              width={1419}
-              height={631}
-              className={cn("mx-auto object-contain object-top w-auto md:w-full h-full md:h-auto")}
-            />
+            <InfiniteScroll />
           </div>
         </GradientBg>
 

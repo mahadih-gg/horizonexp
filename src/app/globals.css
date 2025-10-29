@@ -46,6 +46,28 @@
   --radius-4xl: 1.5rem;
   --radius-5xl: 1.75rem;
   --radius-6xl: 2rem;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 @theme {
@@ -73,7 +95,6 @@
   --container-padding-2xl: 8.75rem;
   /* 140px for 2xl breakpoint */
 }
-
 
 @layer base {
   * {
@@ -152,5 +173,15 @@
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-secondary;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
