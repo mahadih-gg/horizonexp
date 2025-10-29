@@ -12,8 +12,6 @@ const ComparisonSection = () => {
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsDragging(true);
-    const startX = e.clientX;
-    const startPosition = sliderPosition;
 
     const handleMouseMove = (e: MouseEvent) => {
       const container = document.querySelector('.comparison-container') as HTMLElement;
@@ -42,7 +40,6 @@ const ComparisonSection = () => {
   const handleTouchStart = (e: React.TouchEvent) => {
     e.preventDefault();
     setIsDragging(true);
-    const startX = e.touches[0].clientX;
 
     const handleTouchMove = (e: TouchEvent) => {
       const container = document.querySelector('.comparison-container') as HTMLElement;

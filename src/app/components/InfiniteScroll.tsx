@@ -1,5 +1,4 @@
 import LogoLoop from '@/components/LogoLoop';
-import Image from 'next/image';
 
 const InfiniteScroll = () => {
 
@@ -71,23 +70,6 @@ const InfiniteScroll = () => {
           item: "w-[131px] md:w-[197px] 2xl:w-[264px]",
           image: "w-full h-auto aspect-72/100 2xl:aspect-66/91 object-contain object-left"
         }}
-      />
-      {/* {marqueeCards.map((card, index) => (
-          <MarqueeCard key={index} index={index} image={card.image} />
-        ))} */}
-    </div>
-  );
-};
-
-const MarqueeCard = ({ image, index }: { image: string, index: number }) => {
-  return (
-    <div>
-      <Image
-        src={image}
-        alt={`Infinite Scroll Card ${index + 1}`}
-        width={264}
-        height={364}
-        className="w-[131px] md:w-[197px] 2xl:w-[264px] aspect-72/100 2xl:aspect-66/91 object-contain object-left"
       />
     </div>
   );
