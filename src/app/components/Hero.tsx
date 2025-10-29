@@ -47,7 +47,7 @@ const Hero = () => {
         </Button>
       </div>
 
-      <GradientBg className="flex-center relative">
+      <GradientBg className="flex-center relative min-h-[484px] sm:min-h-[700px] lg:min-h-[645px] 2xl:min-h-[860px]">
         <ComparisonSection />
       </GradientBg>
 
