@@ -29,35 +29,101 @@ const ResponsiveVideoPlayer = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
   const isInView = useInView(containerRef, {
     once: false,
     amount: 0 // Trigger as soon as any part of the video is visible
   });
 
+  // Sync isPlaying state with actual video state
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const updatePlayingState = () => {
+      setIsPlaying(!video.paused);
+    };
+
+    video.addEventListener('play', updatePlayingState);
+    video.addEventListener('pause', updatePlayingState);
+    video.addEventListener('ended', updatePlayingState);
+
+    return () => {
+      video.removeEventListener('play', updatePlayingState);
+      video.removeEventListener('pause', updatePlayingState);
+      video.removeEventListener('ended', updatePlayingState);
+    };
+  }, []);
+
   // Play/pause video based on visibility
   useEffect(() => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
-    if (isInView && videoRef.current.paused) {
-      videoRef.current.play().catch(console.error);
-    } else if (!isInView && !videoRef.current.paused) {
-      videoRef.current.pause();
-    }
+    const handleVisibilityChange = async () => {
+      // Cancel any pending play operation
+      if (playPromiseRef.current) {
+        try {
+          await playPromiseRef.current;
+        } catch (error) {
+          // Ignore AbortError from cancelled play operations
+          if (error instanceof Error && error.name !== 'AbortError') {
+            console.error('Video play error:', error);
+          }
+        }
+        playPromiseRef.current = null;
+      }
+
+      if (isInView && video.paused) {
+        try {
+          playPromiseRef.current = video.play();
+          await playPromiseRef.current;
+          playPromiseRef.current = null;
+        } catch (error) {
+          if (error instanceof Error && error.name !== 'AbortError') {
+            console.error('Video play error:', error);
+          }
+          playPromiseRef.current = null;
+        }
+      } else if (!isInView && !video.paused) {
+        video.pause();
+      }
+    };
+
+    handleVisibilityChange();
   }, [isInView]);
 
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     setIsPlaying(!!videoRef.current.paused);
-  //   }
-  // }, [videoRef.current?.paused]);
 
-  const handlePlayPause = () => {
-    if (videoRef.current?.paused) {
-      videoRef.current?.play();
-      setIsPlaying(true);
+  const handlePlayPause = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Cancel any pending play operation
+    if (playPromiseRef.current) {
+      try {
+        await playPromiseRef.current;
+      } catch (error) {
+        // Ignore AbortError from cancelled play operations
+        if (error instanceof Error && error.name !== 'AbortError') {
+          console.error('Video play error:', error);
+        }
+      }
+      playPromiseRef.current = null;
+    }
+
+    if (video.paused) {
+      try {
+        playPromiseRef.current = video.play();
+        await playPromiseRef.current;
+        playPromiseRef.current = null;
+      } catch (error) {
+        if (error instanceof Error && error.name !== 'AbortError') {
+          console.error('Video play error:', error);
+        }
+        playPromiseRef.current = null;
+      }
     } else {
-      videoRef.current?.pause();
-      setIsPlaying(false);
+      video.pause();
     }
   }
 

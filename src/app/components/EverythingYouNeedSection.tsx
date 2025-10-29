@@ -98,20 +98,20 @@ const EverythingYouNeedSection = () => {
 
         {
           features.map((feature, index) => (
-            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 md:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
+            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
               <CardHeader
                 animate={false}
                 topLabel={feature.topLabel}
                 title={feature.title}
                 description={feature.description}
               />
-              <CardContent className='pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
+              <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   width={1419}
                   height={631}
-                  className={cn("mx-auto object-contain object-top -mb-9 md:mb-0", feature.imageClassName)}
+                  className={cn("min-w-fit xs:min-w-auto w-[90%] h-auto mx-auto object-cover xs:object-contain object-top xs:-mb-4 sm:mb-0", feature.imageClassName)}
                 />
               </CardContent>
             </Card>
@@ -137,20 +137,20 @@ const EverythingYouNeedSection = () => {
 
         {
           features2.map((feature, index) => (
-            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 md:pb-10 2xl:pb-12 overflow-hidden'>
+            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-10 2xl:pb-12 overflow-hidden'>
               <CardHeader
                 animate={false}
                 topLabel={feature.topLabel}
                 title={feature.title}
                 description={feature.description}
               />
-              <CardContent className='pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
+              <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   width={1419}
                   height={631}
-                  className={cn("mx-auto object-contain object-top -mb-9 md:mb-0", feature.imageClassName)}
+                  className={cn("min-w-fit xs:min-w-auto w-[90%] h-auto mx-auto object-cover xs:object-contain object-top xs:-mb-4 sm:mb-0", feature.imageClassName)}
                 />
               </CardContent>
             </Card>
