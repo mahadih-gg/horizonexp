@@ -7,10 +7,16 @@ import ComparisonSection from "./ComparisonSection";
 
 const Hero = () => {
 
+  // const text = [
+  //   <span key="sell-autopilot" className="text-inherit">sell on <br className="block sm:hidden" /> autopilot</span>,
+  //   <span key="hook-customers" className="text-inherit">hook your customers</span>,
+  //   <span key="turn-traffic" className="text-inherit">turn traffic <br className="block sm:hidden" /> into fans</span>
+  // ]
+
   const text = [
-    <span key="sell-autopilot" className="text-inherit">sell on <br className="block sm:hidden" /> autopilot</span>,
-    <span key="hook-customers" className="text-inherit">hook your customers</span>,
-    <span key="turn-traffic" className="text-inherit">turn traffic <br className="block sm:hidden" /> into fans</span>
+    "sell on autopilot",
+    "hook your customers",
+    "turn traffic into fans"
   ]
 
   return (
@@ -18,13 +24,13 @@ const Hero = () => {
 
       <Text variant="heading" className="text-center">
         Use short-form videos to <br />
-        <div className="overflow-hidden">
-          <TextRotate texts={text} />
+        <div className="overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
+          <TextRotate words={text} />
         </div>
       </Text>
 
 
-      <p className="text-lg 2xl:text-2xl text-primary-text text-center pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
+      <p className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
         Bring immersive short-form video experience to your site, store, <br className="hidden md:block" /> or app that supercharges discovery, engagement and sales.
       </p>
 

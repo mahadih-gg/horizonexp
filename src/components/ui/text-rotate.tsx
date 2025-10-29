@@ -5,61 +5,55 @@ import { AnimatePresence, motion } from "motion/react"
 import { useEffect, useState } from "react"
 
 interface TextRotateProps {
-  texts: React.ReactNode[]
+  words: string[]
+  duration?: number
   className?: string
 }
 
-const TextRotate = ({ texts, className }: TextRotateProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+const TextRotate = ({
+  words,
+  duration = 2100,
+  className
+}: TextRotateProps) => {
+  const [index, setIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % texts.length)
-    }, 3500)
+      setIndex((prev) => (prev + 1) % words.length)
+    }, duration)
 
     return () => clearInterval(interval)
-  }, [texts.length])
+  }, [words.length, duration])
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={currentIndex}
-        initial={{ opacity: 1, y: 70 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{
-          opacity: 1,
-          y: "-100%",
-          transition: {
-            duration: 0.6,
-            // times: [0, 0.2, 0.5, 0.3, 1],
-            ease: "easeOut"
-          }
-        }}
-        transition={{ duration: 0.35 }}
-        className={cn("inline-block text-grad-tertiary pb-4 md:pb-6 2xl:pb-8", className)}
-      >
-        {texts[currentIndex]}
-        {/* {texts[currentIndex].split("").map((char, index) => (
-          <motion.span
-            key={`${currentIndex}-${index}`}
-            className="inline-block text-black"
-            initial={{ opacity: 1, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.3,
-              delay: index * 0.03
-            }}
-            exit={{
-              opacity: 1,
-              y: -60,
-              transition: { duration: 0.3, delay: 0 }
-            }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))} */}
-      </motion.span>
-    </AnimatePresence>
+    <div className={cn("overflow-hidden", className)}>
+      <AnimatePresence mode="wait">
+        <motion.h1
+          key={index}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              delay: 0.2,
+              duration: 0.2,
+              ease: "easeOut"
+            }
+          }}
+          exit={{
+            y: 40,
+            opacity: 0,
+            transition: {
+              duration: 0.2,
+              ease: "easeIn"
+            }
+          }}
+          className="text-center text-grad-tertiary"
+        >
+          {words[index]}
+        </motion.h1>
+      </AnimatePresence>
+    </div>
   )
 }
 

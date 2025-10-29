@@ -7,7 +7,6 @@ import HorizonImpactSection from "./components/HorizonImpactSection";
 import HowBrandsCanUseHorizonSection from "./components/HowBrandsCanUseHorizonSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
-import ReviewsSection from "./components/ReviewsSection";
 import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
@@ -22,7 +21,7 @@ export default function Home() {
       <EverythingYouNeedSection />
       <HorizonImpactSection />
       <WhyHorizonSection />
-      <ReviewsSection />
+      {/* <ReviewsSection /> */}
       <HorizonForEnterpriseSection />
       <LaunchHorizonSection />
       <ConnectSection
