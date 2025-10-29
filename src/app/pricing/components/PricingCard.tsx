@@ -93,7 +93,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
                   <GradCheckIcon className="w-4 h-4 shrink-0" />
                   <Text variant="body" className="font-medium">
                     {feature.includes("Extra views @") ? <>
-                      Extra views @ <span className="font-bold">{feature.split("Extra views @ ")[1]}</span>
+                      Extra views @ <span className="font-semibold">{feature.split("Extra views @ ")[1]}</span>
                     </> : feature}
                   </Text>
                 </div>
