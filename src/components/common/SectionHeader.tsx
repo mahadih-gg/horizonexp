@@ -11,16 +11,17 @@ type Props = {
   centered?: boolean;
   className?: string;
   extraContent?: React.ReactNode;
+  animate?: boolean;
 };
 
-const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent }: Props) => {
+const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent, animate = true }: Props) => {
 
   return (
     <div className={cn('text-primary-text text-left pb-[52px] md:pb-[60px] 2xl:pb-20', centered && 'text-center', className)}>
       {
         topLabel && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={animate ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           // viewport={{ once: true, amount: 0.8 }}
@@ -34,7 +35,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
         )
       }
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={animate ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         // viewport={{ once: true, amount: 0.8 }}
@@ -47,7 +48,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
       {
         description && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={animate ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             // viewport={{ once: true, amount: 0.8 }}
@@ -62,7 +63,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
 
       {!!extraContent &&
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={animate ? { opacity: 0 } : { opacity: 1 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         // viewport={{ once: true, amount: 0.8 }}

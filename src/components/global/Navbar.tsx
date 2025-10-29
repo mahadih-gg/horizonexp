@@ -1,8 +1,10 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { navLinks } from "@/navData";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import CloseIcon from "../icons/close-icon";
 import MenuIcon from "../icons/menu-icon";
@@ -11,6 +13,7 @@ import BrandLogo from "../svg/BrandLogo";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
+  const pathname = usePathname();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -37,11 +40,14 @@ const Navbar = () => {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2! top-1/2 -translate-y-1/2! hidden md:flex items-center justify-center gap-5 2xl:gap-7">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-base 2xl:text-xl font-medium">
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium", isActive && "font-semibold")}>
+                {link.label}
+              </Link>
+            )
+          })}
         </div>
 
         <div className="hidden md:flex items-center gap-2">
@@ -86,25 +92,28 @@ const Navbar = () => {
                   </button>
                 </div>
                 <div className="w-full flex flex-col items-start justify-start gap-8">
-                  {navLinks.map((link, i) => (
-                    <motion.div key={i}
-                      initial={{ opacity: 0, x: -100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -100 }}
-                      transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.1 + 0.2 }}
-                      className="w-full pointer-events-none"
-                    >
-                      <Link
-                        href={link.href}
-                        className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
-                        onClick={closeMobileMenu}
+                  {navLinks.map((link, i) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <motion.div key={i}
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.1 + 0.2 }}
+                        className="w-full pointer-events-none"
                       >
-                        {link.label}
+                        <Link
+                          href={link.href}
+                          className={cn("flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto", isActive && "font-semibold")}
+                          onClick={closeMobileMenu}
+                        >
+                          {link.label}
 
-                        <RightIcon />
-                      </Link>
-                    </motion.div>
-                  ))}
+                          <RightIcon />
+                        </Link>
+                      </motion.div>
+                    )
+                  })}
                 </div>
               </div>
 

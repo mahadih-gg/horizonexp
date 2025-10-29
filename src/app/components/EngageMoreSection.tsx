@@ -14,7 +14,7 @@ const EngageMoreSection = () => {
     },
     {
       heading: "50%",
-      title: <>higher click-throughs than banners, when driven by Short-form feeds.</>,
+      title: <>higher click-throughs than banners via short-form feeds.</>,
       image: "/assets/images/engage-more-2.webp",
     },
     {
@@ -37,7 +37,7 @@ const EngageMoreSection = () => {
         description={<>Customers prefer to watch short-form videos instead of reading specs & looking at <br className="hidden md:block" /> static images. Show up with short-form - because video sells faster. </>}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-7 2xl:gap-[36px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-[27px] 2xl:gap-[36px]">
         {
           items.map((item, i) => (
             <motion.div
@@ -61,7 +61,7 @@ const EngageMoreSection = () => {
                   {item.heading}
                 </h3>
 
-                <p className="w-full text-left text-white text-base 2xl:text-xl font-medium leading-tight z-10">
+                <p className="w-full text-left text-white text-base md:text-[15px] 2xl:text-xl font-medium leading-tight z-10">
                   {item.title}
                 </p>
               </div>

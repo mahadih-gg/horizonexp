@@ -118,7 +118,7 @@ const FeaturesSection = () => {
               <div className="flex-center">
                 <IconComponent className="size-8 md:size-10 2xl:size-[52px]" />
               </div>
-              <h3 className="text-base md:text-lg 2xl:text-xl leading-tight">
+              <h3 className="text-base md:text-lg 2xl:text-xl leading-tight font-medium">
                 {feature.title}
               </h3>
             </div>

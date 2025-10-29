@@ -11,7 +11,7 @@ const ForEnterpriseSection = () => {
           topLabel="For Enterprise"
           title={<>Ready to scale <br /> beyond limits?</>}
           description={<>
-            For brands with larger audiences, Horizon offers custom enterprise pricing tailored to your traffic, integrations, and performance needs py-[50px].
+            For brands with larger audiences, Horizon offers custom enterprise pricing tailored to your traffic, integrations, and performance needs.
             <br />
             <br />
             Get dedicated support, advanced analytics, and infrastructure engineered to handle enterprise scale effortlessly.
@@ -27,13 +27,13 @@ const ForEnterpriseSection = () => {
         />
       </div>
 
-      <div className='w-full lg:w-[54.55%] 2xl:w-[65.32%] rounded-3xl bg-secondary flex-center flex-col py-[30px]'>
+      <div className='w-full lg:w-[54.55%] 2xl:w-[65.32%] rounded-3xl bg-secondary flex-center flex-col py-[30px] overflow-hidden'>
         <Image
           src="/assets/images/ready-to-scale.webp"
           alt="For Enterprise"
-          width={1000}
-          height={1000}
-          className='w-full h-auto object-cover py-[50px]'
+          width={1224}
+          height={708}
+          className='min-w-fit w-full max-h-[340px] xs:max-h-[380px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[530px] 2xl:max-h-[708px] object-contain py-[50px]'
         />
 
         <Button asChild className='lg:hidden inline-flex'>

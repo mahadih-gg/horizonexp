@@ -2,14 +2,45 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button, type ButtonVariant } from "../ui/button";
 
 type Props = {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
+  cta?: {
+    primary?: {
+      label: string;
+      href: string;
+      target?: string;
+      variant?: ButtonVariant;
+    };
+    secondary?: {
+      label: string;
+      href: string;
+      target?: string;
+      variant?: ButtonVariant;
+    };
+  };
 }
 
-const ConnectSection = ({ title, description }: Props) => {
+const defaultCta = {
+  primary: {
+    label: "Start for free",
+    href: "https://app.horizonexp.com/signup",
+    target: "_blank",
+    variant: "default",
+  },
+  secondary: {
+    label: "Visit demo sites",
+    href: "https://demo.horizonexp.com/",
+    target: "_blank",
+    variant: "secondary",
+  },
+};
+
+const ConnectSection = ({ title, description, cta = defaultCta as Props["cta"] }: Props) => {
+  const primary = cta?.primary || defaultCta.primary;
+  const secondary = cta?.secondary || defaultCta.secondary;
   return (
     <section className="container py-section">
       <motion.h2
@@ -33,15 +64,15 @@ const ConnectSection = ({ title, description }: Props) => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex items-center justify-center gap-4"
       >
-        <Button asChild>
-          <Link href="https://app.horizonexp.com/signup" target="_blank">
-            Start for free
+        <Button variant={primary.variant as ButtonVariant} asChild>
+          <Link href={primary.href} target={primary.target as string}>
+            {primary.label}
           </Link>
         </Button>
 
-        <Button variant="secondary" asChild>
-          <Link href="https://demo.horizonexp.com/" target="_blank">
-            Visit demo sites
+        <Button variant={secondary.variant as ButtonVariant} asChild>
+          <Link href={secondary.href} target={secondary.target as string}>
+            {secondary.label}
           </Link>
         </Button>
       </motion.div>

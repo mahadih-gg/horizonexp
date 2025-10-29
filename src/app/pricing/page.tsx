@@ -21,6 +21,19 @@ const PricingPage = () => {
       <ConnectSection
         title={<>Launch your next growth story. <br /> Start today.</>}
         description="Pick a plan, plug in Horizon, and start engaging customers in minutes."
+        cta={{
+          primary: {
+            label: "Start for free",
+            href: "https://app.horizonexp.com/signup",
+            target: "_blank",
+            variant: "default",
+          },
+          secondary: {
+            label: "Contact us",
+            href: "/contact",
+            variant: "secondary",
+          },
+        }}
       />
     </main>
   );
