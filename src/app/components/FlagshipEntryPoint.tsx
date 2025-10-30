@@ -5,7 +5,7 @@ import { EntryPoint, EntryPointSize, EntryPointType } from '@thinkflagship/web-s
 const FlagshipEntryPoint = () => {
   return (
     <EntryPoint
-      id="#473811"
+      id="#935370"
       skeletonType={EntryPointType.RECTANGLE}
       skeletonSize={EntryPointSize.BOLD}
     />
