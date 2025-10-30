@@ -12,27 +12,27 @@ const socialLinks = [
   {
     icon: <LinkedinIcon />,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/horizon",
+    href: "https://www.linkedin.com/company/horizonera",
   },
   {
     icon: <XIcon />,
     label: "X",
-    href: "https://www.x.com/horizon",
+    href: "https://x.com/horizonera",
   },
   {
     icon: <YoutubeIcon />,
     label: "Youtube",
-    href: "https://www.youtube.com/horizon",
+    href: "https://www.youtube.com/@Thehorizonera",
   },
   {
     icon: <TiktokIcon />,
     label: "Tiktok",
-    href: "https://www.tiktok.com/horizon",
+    href: "https://www.tiktok.com/@horizonexp.com",
   },
   {
     icon: <PinterestIcon />,
     label: "Pinterest",
-    href: "https://www.pinterest.com/horizon",
+    href: "https://www.pinterest.com/horizonexp",
   },
 ];
 
@@ -45,7 +45,7 @@ const Footer = () => {
             <BrandLogo variant="white" />
           </Link>
 
-          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-7">
+          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-0 md:gap-7">
             <Link href="/" className="text-white text-base 2xl:text-lg">
               Home
             </Link>

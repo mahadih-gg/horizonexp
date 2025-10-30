@@ -50,12 +50,12 @@ const EngageMoreSection = () => {
               <Image
                 src={item.image}
                 alt={item.title.toString() || "Engage More Section Image"}
-                width={286}
-                height={286}
+                width={382}
+                height={382}
                 className="w-full h-full object-cover"
               />
 
-              <div className="absolute bottom-0 left-0 p-6 md:p-[18px] 2xl:p-6 size-full flex flex-col items-start justify-end">
+              <div className="absolute bottom-0 left-0 p-4 md:p-[18px] 2xl:p-6 size-full flex flex-col items-start justify-end">
 
                 <h3 className="text-white text-[28px] md:text-[30px] 2xl:text-[40px] font-medium pb-2 md:pb-1.5 2xl:pb-2 leading-normal z-10">
                   {item.heading}

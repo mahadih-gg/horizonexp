@@ -74,6 +74,7 @@
   --text-5xl: 40px;
   --text-6xl: 56px;
 
+  --breakpoint-xxs: 23.75rem;
   --breakpoint-xs: 30rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
@@ -165,6 +166,19 @@
     background: linear-gradient(159.67deg, #DCEFFF 0%, #DAEEFF 15.49%, #D3E7FF 35.14%, #D5E3FF 49.5%, #E9EFFF 66.2%, #E9EFFF 84.77%, #E3F1FF 100%);
     @apply rounded-full px-px;
   }
+
+  .bg-grad-border-main {
+    background: linear-gradient(224deg, #5CB2F9 0%, #5CB2F9 45.07%, #A5E4FB 58.32%, #E8CBF6 71.71%, #AE9BDD 97.85%);
+    transition: all 0.9s ease-in-out;
+  }
+
+  /* .bg-grad-border-main:hover {
+    background: linear-gradient(224deg, #5CB2F9 0%, #5CB2F9 45.07%, #A5E4FB 58.32%, #E8CBF6 71.71%, #AE9BDD 97.85%);
+    background-size: 200% 200%;
+    background-position: left center;
+    transition: all 0.9s ease-in-out;
+  } */
+
 
   .text-grad-tertiary {
     display: inline-block;

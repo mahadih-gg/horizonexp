@@ -26,7 +26,7 @@ const enterpriseFeatures = [
     icon: <CoinIcon className="size-[24px] md:size-[22px] 2xl:size-[30px]" />,
     topLabel: "Ad Revenue",
     title: "Ad monetization",
-    description: "Monetize every view with Horizon's built-in ad manager - onboard third-party publishers seamlessly."
+    description: "Monetize every view with Horizon’s built-in ad manager - onboard third-party publishers seamlessly."
   },
   {
     icon: <DatabaseIcon className="size-[24px] md:size-[22px] 2xl:size-[30px]" />,

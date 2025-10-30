@@ -11,28 +11,28 @@ const features = [
   {
     topLabel: "Fast Launch",
     title: "Launch short-form in minutes",
-    description: <>Add a line of code or install a plugin to launch short-form <br className="hidden md:block" /> entry points & video feeds anywhere on your site or app.</>,
+    description: <>Add a line of code or install a plugin to launch short-form <br className="hidden lg:block" /> entry points & video feeds anywhere on your site or app.</>,
     image: "/assets/images/fast-launch.webp",
     imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
   },
   {
     topLabel: "Social Interactions",
     title: "Engage like never before",
-    description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden md:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
+    description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden lg:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
     image: "/assets/images/social-interactions.webp",
     imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
   },
   {
     topLabel: "Sponsored Campaigns",
     title: "Unlock new revenue",
-    description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden md:block" /> product catalog with product and video campaigns.</>,
+    description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
     image: "/assets/images/sponsored-campaigns.webp",
     imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
   },
   {
     topLabel: "Audience Polls",
     title: "Collect customer input with polls",
-    description: <>Launch bite-size polls to capture intent and feedback, <br className="hidden md:block" /> let customers shape your next move.</>,
+    description: <>Launch bite-size polls to capture intent and feedback, <br className="hidden lg:block" /> let customers shape your next move.</>,
     image: "/assets/images/audience-polls.webp",
     imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
   },
@@ -73,7 +73,7 @@ const EverythingYouNeedSection = () => {
   return (
     <section className="container scroll-mt-20 md:scroll-mt-28 2xl:scroll-mt-40" id="features">
       <SectionHeader
-        title={<>Everything you need to grow with <br className="hidden md:block" /> short-form video engagement</>}
+        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement</>}
         topLabel="Features"
       />
 
@@ -123,10 +123,10 @@ const EverythingYouNeedSection = () => {
             animate={false}
             className='px-4'
             topLabel="Infinite Scroll"
-            title={<>Create playlists & infinite <br className='hidden md:block' /> scrolling feeds</>}
+            title={<>Create playlists & infinite <br className='hidden lg:block' /> scrolling feeds</>}
             description={
               <>
-                Use AI to create personalized video feeds or design the exact <br className='hidden md:block' /> viewing journeys you want customers to experience.
+                Use AI to create personalized video feeds or design the exact <br className='hidden lg:block' /> viewing journeys you want customers to experience.
               </>
             }
           />

@@ -57,7 +57,7 @@ const WhyHorizonSection = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base 2xl:text-xl text-primary-text"
+              className="text-base 2xl:text-xl text-primary-text font-medium"
             >
               {feature.description}
             </motion.p>

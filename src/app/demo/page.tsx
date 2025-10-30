@@ -14,7 +14,7 @@ const demoCards = [
     </>,
     imageUrl: "/assets/images/demo-ecom.webp",
     link: "#",
-    buttonText: "View E-commerce demo",
+    buttonText: "View e-commerce demo",
   },
   {
     topLabel: "Telecom",

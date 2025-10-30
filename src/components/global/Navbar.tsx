@@ -83,9 +83,9 @@ const Navbar = () => {
             >
               <div className="w-full">
                 <div className="relative flex items-center justify-end pb-9 mb-6 border-b border-primary/10">
-                  <span className="absolute left-1/2 -translate-x-1/2!">
+                  <Link href="/" className="absolute left-1/2 -translate-x-1/2!">
                     <BrandLogo />
-                  </span>
+                  </Link>
 
                   <button className="text-primary-text text-2xl font-medium" onClick={closeMobileMenu}>
                     <CloseIcon />
