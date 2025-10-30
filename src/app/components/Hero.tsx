@@ -1,7 +1,7 @@
 import GradientBg from "@/components/common/GradientBg";
 import { Button } from "@/components/ui/button";
+import { FlipWords } from "@/components/ui/flip-words";
 import { Text } from "@/components/ui/text";
-import { TextRotate } from "@/components/ui/text-rotate";
 import Link from "next/link";
 import ComparisonSection from "./ComparisonSection";
 
@@ -25,7 +25,8 @@ const Hero = () => {
       <Text variant="hero-heading" className="text-center">
         Use short-form videos to <br />
         <span className="inline-block overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
-          <TextRotate words={text} />
+          {/* <TextRotate words={text} /> */}
+          <FlipWords words={text} />
         </span>
       </Text>
 

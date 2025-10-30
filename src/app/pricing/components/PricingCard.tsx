@@ -2,9 +2,11 @@ import GradCheckIcon from '@/components/icons/grad-check-icon';
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import React from 'react';
 
 export interface PricingPlan {
+  productId?: string;
   name: string;
   price: number;
   priceUnit: string;
@@ -80,8 +82,10 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
         {/* Description */}
         <Text variant="body" className="mb-6 2xl:mb-8 font-medium">{plan.description}</Text>
 
-        <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient')}>
-          {plan.buttonText}
+        <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient')} asChild>
+          <Link href={`http://localhost:3000/signup?productId=${plan.productId}`} target="_blank">
+            {plan.buttonText}
+          </Link>
         </Button>
 
         {/* Features */}
