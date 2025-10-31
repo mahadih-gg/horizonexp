@@ -84,7 +84,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
           <Text variant="body" className="mb-6 2xl:mb-8 font-medium">{plan.description}</Text>
 
           <Button className={cn("w-full", plan.hasButtonGradient && 'bg-black-gradient')} asChild>
-            <Link href={`http://localhost:3000/signup?productId=${plan.productId}`} target="_blank">
+            <Link href={`https://dev.shorts.macintosh-ix88.thinkflagship.com/signup?productId=${plan.productId}`} target="_blank">
               {plan.buttonText}
             </Link>
           </Button>
