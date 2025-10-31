@@ -42,10 +42,10 @@ const Footer = () => {
       <div className='container text-white'>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 md:gap-0">
           <Link href="/">
-            <BrandLogo variant="white" />
+            <BrandLogo variant="white" className="w-auto h-[24px] 2xl:h-[32px]" />
           </Link>
 
-          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-0 md:gap-7">
+          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-0 sm:gap-[40px] lg:gap-[70px] 2xl:gap-[70px]">
             <Link href="/" className="text-white text-base 2xl:text-lg">
               Home
             </Link>
@@ -67,7 +67,7 @@ const Footer = () => {
 
         </div>
         <div className="flex items-center justify-start md:justify-between gap-5">
-          <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon.</span>
+          <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon</span>
           <Link href="/privacy-policy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
         </div>
 

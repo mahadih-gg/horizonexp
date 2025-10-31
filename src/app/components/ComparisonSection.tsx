@@ -1,13 +1,14 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 
 const ComparisonSection = () => {
-  const [sliderPosition, setSliderPosition] = useState(50);
+  const [sliderPosition, setSliderPosition] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -80,11 +81,11 @@ const ComparisonSection = () => {
 
     setHasAnimated(true);
 
-    // Animate from 50% to 100%
+    // Animate from 0% to 100%
     const animateTo100 = () => {
       let startTime: number;
       const duration = 2000; // 2 seconds
-      const startPosition = 50;
+      const startPosition = 0;
       const endPosition = 100;
 
       const animate = (currentTime: number) => {
@@ -102,8 +103,8 @@ const ComparisonSection = () => {
         if (progress < 1) {
           requestAnimationFrame(animate);
         } else {
-          // Start animation back to 50% after a brief pause
-          setTimeout(animateTo50, 500);
+          // Start animation back to 50% immediately
+          animateTo50();
         }
       };
 
@@ -113,7 +114,7 @@ const ComparisonSection = () => {
     // Animate from 100% back to 50%
     const animateTo50 = () => {
       let startTime: number;
-      const duration = 1000; // 1 seconds
+      const duration = 2000; // 1 seconds
       const startPosition = 100;
       const endPosition = 50;
 
@@ -149,7 +150,7 @@ const ComparisonSection = () => {
   return (
     <div className="w-full flex md:flex-row flex-col justify-center items-center px-1 md:px-10 2xl:px-14 gap-5">
       {/* Desktop labels - hidden on mobile */}
-      <h3 className="hidden lg:block text-lg 2xl:text-2xl font-medium">Horizon home</h3>
+      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Horizon home</h3>
       <AnimatePresence mode="wait">
         {/* Mobile labels - only visible on mobile and based on slider position */}
         <motion.h3
@@ -228,7 +229,7 @@ const ComparisonSection = () => {
       </div>
 
       {/* Desktop labels - hidden on mobile */}
-      <h3 className="hidden lg:block text-lg 2xl:text-2xl font-medium">Static home</h3>
+      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition < 50 ? 'opacity-100' : 'opacity-50')}>Static home</h3>
     </div>
   );
 };

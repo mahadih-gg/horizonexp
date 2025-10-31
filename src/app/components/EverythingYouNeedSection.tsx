@@ -98,7 +98,7 @@ const EverythingYouNeedSection = () => {
 
         {
           features.map((feature, index) => (
-            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
+            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden px-5 md:px-10'>
               <CardHeader
                 animate={false}
                 topLabel={feature.topLabel}

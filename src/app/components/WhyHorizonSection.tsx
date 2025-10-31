@@ -41,7 +41,7 @@ const WhyHorizonSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 2xl:gap-9">
         {features.map((feature, index) => (
-          <Card key={index} className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10 pb-10 md:pb-[60px] 2xl:pb-[78px]">
+          <Card key={index} className="flex flex-col items-start justify-start gap-0 px-10 md:px-[30px] 2xl:px-10 py-[60px] md:py-[45px] 2xl:py-[60px]">
             <span>
               {feature.icon}
             </span>
@@ -49,7 +49,7 @@ const WhyHorizonSection = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]"
+              className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px] leading-[110%]"
             >
               {feature.title}
             </motion.h3>

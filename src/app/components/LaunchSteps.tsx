@@ -58,7 +58,7 @@ const LaunchSteps = () => {
           <TabsContent key={section.id} value={section.id} className="mt-0">
             <GradientBg className="flex flex-col items-center justify-center gap-0">
 
-              <div className={cn("relative w-full sm:w-[80%] lg:w-[67.48%] 2xl:w-[60.06%] mx-auto px-2 md:px-0", section.align === "left" ? "mr-[5%] lg:mr-[14.62%]" : "mr-[5%] sm:mr-0 ml-auto sm:-ml-[13.62%] lg:-ml-[14.62%]")}>
+              <div className="relative w-full sm:w-[80%] lg:w-[67.48%] 2xl:w-[60.06%] mx-auto px-2 md:px-0">
                 <motion.div
                   initial={{ opacity: 1, scale: 0.99 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -78,7 +78,7 @@ const LaunchSteps = () => {
                   />
                 </motion.div>
 
-                <div className={cn("absolute bottom-4 md:bottom-9 2xl:bottom-[50px]", section.align === "left" ? "left-[3px] sm:-left-[14.62%]" : "right-[3px] sm:-right-[14.62%]", section.smallImageClass)}>
+                <div className={cn("absolute bottom-4 md:bottom-9 2xl:bottom-[50px]", section.align === "left" ? "left-[3px] sm:-left-[7.5%] 2xl:-left-[14.62%]" : "right-[3px] sm:-right-[7.5%] 2xl:-right-[14.62%]", section.smallImageClass)}>
                   <motion.div
                     initial={{ opacity: 0, x: section.align === "left" ? 100 : -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
