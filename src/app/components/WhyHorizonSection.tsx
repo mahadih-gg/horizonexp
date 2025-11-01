@@ -36,32 +36,29 @@ const WhyHorizonSection = () => {
     <section className='container pb-section'>
       <SectionHeader
         topLabel="Why Horizon"
-        title={<>The world{"'"}s most advanced short-form <br className='hidden md:block' /> video engagement engine - period.</>}
+        title={<>The {"world’s"} most advanced short-form <br className='hidden md:block' /> video engagement engine - period.</>}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 2xl:gap-9">
         {features.map((feature, index) => (
-          <Card key={index} className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10 pb-10 md:pb-[60px] 2xl:pb-[78px]">
-            <span>
-              {feature.icon}
-            </span>
-            <motion.h3
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]"
-            >
-              {feature.title}
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base 2xl:text-xl text-primary-text font-medium"
-            >
-              {feature.description}
-            </motion.p>
-          </Card>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 * index }}
+          >
+            <Card className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10 pb-10 md:pb-[60px] 2xl:pb-[78px]">
+              <span>
+                {feature.icon}
+              </span>
+              <h3 className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]">
+                {feature.title}
+              </h3>
+              <p className="text-base 2xl:text-xl text-primary-text font-medium">
+                {feature.description}
+              </p>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </section>

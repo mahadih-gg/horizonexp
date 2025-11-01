@@ -7,65 +7,73 @@ import Image from 'next/image';
 import HorizonConsole from './HorizonConsole';
 import InfiniteScroll from './InfiniteScroll';
 
-const features = [
+type FeatureType = {
+  topLabel: string;
+  title: string;
+  description: string | React.ReactNode;
+  image: string;
+  imageClassName: string;
+};
+
+const features: FeatureType[] = [
   {
     topLabel: "Fast Launch",
     title: "Launch short-form in minutes",
     description: <>Add a line of code or install a plugin to launch short-form <br className="hidden lg:block" /> entry points & video feeds anywhere on your site or app.</>,
     image: "/assets/images/fast-launch.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-16 sm:mb-0",
   },
   {
     topLabel: "Social Interactions",
     title: "Engage like never before",
     description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden lg:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
     image: "/assets/images/social-interactions.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[402px] 2xl:h-[537px] -mb-[50px] sm:mb-0",
   },
   {
     topLabel: "Sponsored Campaigns",
     title: "Unlock new revenue",
     description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
     image: "/assets/images/sponsored-campaigns.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[402px] 2xl:h-[537px] -mb-6 sm:mb-0",
   },
   {
     topLabel: "Audience Polls",
     title: "Collect customer input with polls",
     description: <>Launch bite-size polls to capture intent and feedback, <br className="hidden lg:block" /> let customers shape your next move.</>,
     image: "/assets/images/audience-polls.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "w-[243px]! sm:w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-5 sm:mb-0",
   },
 ];
 
-const features2 = [
+const features2: FeatureType[] = [
   {
     topLabel: "Invite-only UGC",
     title: "Empower your super fans",
     description: "Invite VIP customers and creators to upload authentic videos that build trust, expand reach, and drive conversions.",
     image: "/assets/images/invite-only-ugc.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[402px] 2xl:h-[537px] -mb-6 sm:mb-0",
   },
   {
     topLabel: "Fastest Streaming",
     title: "Deliver blazing-fast streaming",
     description: "Deliver instant-load video experiences with built-in fail-safes that keep your site or app running at top speed.",
     image: "/assets/images/fast-streaming.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[402px] 2xl:h-[537px] -mb-20 sm:mb-0",
   },
   {
     topLabel: "Analytics",
     title: "Track what truly works",
     description: "Measure performance across every video and entry point to know exactly what drives engagement and sales.",
     image: "/assets/images/analytics.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[310px] sm:h-[402px] 2xl:h-[537px] pb-5",
   },
   {
     topLabel: "Mobile First",
     title: "Own the mobile experience",
     description: "Give shoppers a smooth, fullscreen video experience built for easy scrolling and on-the-go discovery.",
     image: "/assets/images/mobile-first.webp",
-    imageClassName: "h-[263px] md:h-[402px] 2xl:h-[537px]",
+    imageClassName: "h-[272px] sm:h-[402px] 2xl:h-[537px] pb-5",
   },
 ];
 
@@ -98,23 +106,7 @@ const EverythingYouNeedSection = () => {
 
         {
           features.map((feature, index) => (
-            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
-              <CardHeader
-                animate={false}
-                topLabel={feature.topLabel}
-                title={feature.title}
-                description={feature.description}
-              />
-              <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  width={1419}
-                  height={631}
-                  className={cn("min-w-fit xs:min-w-auto w-[90%] h-auto mx-auto object-cover xs:object-contain object-top xs:-mb-4 sm:mb-0", feature.imageClassName)}
-                />
-              </CardContent>
-            </Card>
+            <FeatureCard key={index} feature={feature} />
           ))
         }
 
@@ -137,23 +129,7 @@ const EverythingYouNeedSection = () => {
 
         {
           features2.map((feature, index) => (
-            <Card key={index} className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 sm:pb-10 2xl:pb-12 overflow-hidden'>
-              <CardHeader
-                animate={false}
-                topLabel={feature.topLabel}
-                title={feature.title}
-                description={feature.description}
-              />
-              <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  width={1419}
-                  height={631}
-                  className={cn("min-w-fit xs:min-w-auto w-[90%] h-auto mx-auto object-cover xs:object-contain object-top xs:-mb-4 sm:mb-0", feature.imageClassName)}
-                />
-              </CardContent>
-            </Card>
+            <FeatureCard key={index} feature={feature} />
           ))
         }
 
@@ -170,6 +146,28 @@ const EverythingYouNeedSection = () => {
 
       </div>
     </section>
+  );
+};
+
+const FeatureCard = ({ feature }: { feature: FeatureType }) => {
+  return (
+    <Card className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
+      <CardHeader
+        animate={false}
+        topLabel={feature.topLabel}
+        title={feature.title}
+        description={feature.description}
+      />
+      <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          width={1419}
+          height={631}
+          className={cn("mx-auto object-contain object-top", feature.imageClassName)}
+        />
+      </CardContent>
+    </Card>
   );
 };
 
