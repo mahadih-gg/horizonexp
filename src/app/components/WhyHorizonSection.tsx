@@ -47,11 +47,11 @@ const WhyHorizonSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 * index }}
           >
-            <Card className="flex flex-col items-start justify-start gap-0 p-10 md:p-[30px] 2xl:p-10 pb-10 md:pb-[60px] 2xl:pb-[78px]">
+            <Card className="flex flex-col items-start justify-start gap-0 px-10 md:px-[30px] 2xl:px-10 py-[60px] md:py-[45px] 2xl:py-[60px]">
               <span>
                 {feature.icon}
               </span>
-              <h3 className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px]">
+              <h3 className="text-2xl 2xl:text-[32px] font-medium text-black-gradient pt-5 md:pt-[30px] 2xl:pt-10 pb-5 md:pb-[22px] 2xl:pb-[30px] leading-[110%]">
                 {feature.title}
               </h3>
               <p className="text-base 2xl:text-xl text-primary-text font-medium">

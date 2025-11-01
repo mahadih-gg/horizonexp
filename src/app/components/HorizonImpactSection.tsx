@@ -44,7 +44,7 @@ const HorizonImpactSection = () => {
       <SectionHeader
         className="md:hidden block container"
         topLabel="Horizon Impact"
-        title={<>Horizon turns your site or app into an <br className="hidden lg:block" /> engagement and conversion powerhouse </>}
+        title={<>Horizon turns your site or app into <br className="hidden lg:block" /> a hyper growth powerhouse</>}
       />
 
       <div className='container pt-[40px] md:pt-[60px] 2xl:pt-20 pb-[40px] md:pb-[75px] 2xl:pb-[100px] bg-secondary'>
@@ -52,7 +52,7 @@ const HorizonImpactSection = () => {
         <SectionHeader
           className="md:block hidden"
           topLabel="Horizon Impact"
-          title={<>Horizon turns your site or app into an <br className="hidden lg:block" /> engagement and conversion powerhouse </>}
+          title={<>Horizon turns your site or app into <br className="hidden lg:block" /> a hyper growth powerhouse</>}
         />
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6 px-4 xxs:px-[46px] md:px-0'>

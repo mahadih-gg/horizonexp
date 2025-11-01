@@ -1,7 +1,9 @@
-const BrandLogo = ({ variant = 'default' }: { variant?: 'default' | 'white' }) => (
+import { cn } from "@/lib/utils";
+
+const BrandLogo = ({ variant = 'default', className }: { variant?: 'default' | 'white', className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-auto h-[20px] md:h-[21px] 2xl:h-[28px]"
+    className={cn("w-auto h-[20px] md:h-[21px] 2xl:h-[28px]", className)}
     fill="none"
     viewBox="0 0 118 28"
   >

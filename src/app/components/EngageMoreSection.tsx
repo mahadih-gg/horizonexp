@@ -14,7 +14,7 @@ const EngageMoreSection = () => {
     },
     {
       heading: "50%",
-      title: <>higher click-throughs than banners via short-form feeds.</>,
+      title: <>higher click-throughs than <br /> banners via short-form.</>,
       image: "/assets/images/engage-more-2.webp",
     },
     {
@@ -24,7 +24,7 @@ const EngageMoreSection = () => {
     },
     {
       heading: "80%",
-      title: <>higher purchase likelihood <br /> after watching product videos.</>,
+      title: <>higher purchase likelihood <br /> after watching videos.</>,
       image: "/assets/images/engage-more-4.webp",
     },
   ]
