@@ -17,8 +17,10 @@ const HorizonConsole = () => {
           <Image
             src="/assets/images/horizon-console-left.webp"
             alt="Horizon Console"
-            width={864}
-            height={462}
+            width={2592}
+            height={1386}
+            quality={100}
+            priority
             className="object-cover"
           />
         </motion.div>
@@ -32,8 +34,10 @@ const HorizonConsole = () => {
           <Image
             src="/assets/images/horizon-console-main.webp"
             alt="Horizon Console"
-            width={1015}
-            height={554}
+            width={3045}
+            height={1663}
+            quality={100}
+            priority
             className="w-full object-cover rounded-[10px] md:rounded-3xl 2xl:rounded-[28px]"
             style={{
               boxShadow: "0px 0px 20px 0px #0000000A"
@@ -51,8 +55,10 @@ const HorizonConsole = () => {
           <Image
             src="/assets/images/horizon-console-right.webp"
             alt="Horizon Console"
-            width={864}
-            height={462}
+            width={2592}
+            height={1386}
+            quality={100}
+            priority
             className="object-cover"
           />
         </motion.div>

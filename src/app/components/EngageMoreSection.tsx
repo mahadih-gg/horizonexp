@@ -47,11 +47,14 @@ const EngageMoreSection = () => {
               transition={{ duration: 0.5, delay: 0.2 * i }}
               className="relative w-full aspect-square rounded-3xl md:rounded-2xl 2xl:rounded-3xl bg-secondary overflow-hidden"
             >
+
               <Image
                 src={item.image}
                 alt={item.title.toString() || "Engage More Section Image"}
                 width={382}
                 height={382}
+                quality={100}
+                priority
                 className="w-full h-full object-cover"
               />
 

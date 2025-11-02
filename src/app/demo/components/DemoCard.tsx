@@ -25,6 +25,7 @@ const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, al
       >
 
         <SectionHeader
+          animate={false}
           topLabel={topLabel}
           title={title}
           description={description}
@@ -47,8 +48,10 @@ const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, al
         <Image
           src={imageUrl}
           alt={title}
-          width={1006}
-          height={680}
+          width={1012}
+          height={686}
+          priority
+          quality={100}
           className='w-full h-full object-cover object-left rounded-3xl md:rounded-2xl 2xl:rounded-3xl'
         />
       </CardContent>

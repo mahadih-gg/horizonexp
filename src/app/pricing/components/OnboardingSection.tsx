@@ -11,11 +11,11 @@ const OnboardingSection = () => {
           className="text-white pb-0 md:pb-0 2xl:pb-0 px-4"
           topLabel={<span className="text-white font-medium">Premium Support</span>}
           title={<>Onboarding <br className="block md:hidden" /> made simple</>}
-          description={<>
+          description={<span className="font-medium text-white">
             We{"’"}ll help you go from upload to live - seamlessly connecting Horizon
             <br className="hidden md:block" />
             to your site or app. Contact us for onboarding support.
-          </>}
+          </span>}
           extraContent={
             <Button asChild className='mt-7' variant="secondary">
               <Link href="/contact">

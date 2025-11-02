@@ -16,14 +16,26 @@ const TextRotate = ({
   className
 }: TextRotateProps) => {
   const [index, setIndex] = useState(0)
+  const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
+    // Start animation after 2 second delay
+    const startTimeout = setTimeout(() => {
+      setHasStarted(true)
+    }, 2000)
+
+    return () => clearTimeout(startTimeout)
+  }, [])
+
+  useEffect(() => {
+    if (!hasStarted) return
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length)
     }, duration)
 
     return () => clearInterval(interval)
-  }, [words.length, duration])
+  }, [words.length, duration, hasStarted])
 
   return (
     <div className={cn("overflow-hidden", className)}>
@@ -35,7 +47,7 @@ const TextRotate = ({
             y: 0,
             opacity: 1,
             transition: {
-              delay: 0.2,
+              delay: index === 0 ? 0 : 0.2,
               duration: 0.2,
               ease: "easeOut"
             }

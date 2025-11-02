@@ -1,7 +1,9 @@
+"use client";
+
 import GradientBg from "@/components/common/GradientBg";
 import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
 import { TextRotate } from "@/components/ui/text-rotate";
+import { motion } from "motion/react";
 import Link from "next/link";
 import ComparisonSection from "./ComparisonSection";
 
@@ -21,21 +23,35 @@ const Hero = () => {
 
   return (
     <section className="container pt-page">
-
-      <Text variant="hero-heading" className="text-center">
+      <motion.h1
+        key="hero-heading"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-0.04em]"
+      >
         Use short-form videos to <br />
         <span className="inline-block overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
           <TextRotate words={text} />
           {/* <FlipWords words={text} /> */}
         </span>
-      </Text>
+      </motion.h1>
 
 
-      <p className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
         Bring immersive short-form video experience to your site, store, <br className="hidden md:block" /> or app that supercharges discovery, engagement and sales.
-      </p>
+      </motion.p>
 
-      <div className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20"
+      >
         <Button asChild>
           <Link href="https://app.horizonexp.com/signup" target="_blank">
             Start for free
@@ -46,12 +62,17 @@ const Hero = () => {
             Visit demo sites
           </Link>
         </Button>
-      </div>
+      </motion.div>
 
-      <GradientBg className="flex-center relative min-h-[484px] sm:min-h-[700px] lg:min-h-[645px] 2xl:min-h-[860px]">
-        <ComparisonSection />
-      </GradientBg>
-
+      <motion.div
+        initial={{ opacity: 0, y: 200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <GradientBg className="flex-center relative min-h-[484px] sm:min-h-[700px] lg:min-h-[645px] 2xl:min-h-[860px]">
+          <ComparisonSection />
+        </GradientBg>
+      </motion.div>
     </section>
   );
 };

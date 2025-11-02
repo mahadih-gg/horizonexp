@@ -67,8 +67,8 @@ const InfiniteScroll = () => {
         responsiveGapClasses="gap-1.5 md:gap-2 2xl:gap-2.5"
         ariaLabel="Infinite Scroll"
         responsiveClassName={{
-          item: "w-[131px] md:w-[197px] 2xl:w-[264px]",
-          image: "w-full h-auto aspect-72/100 2xl:aspect-66/91 object-contain object-left"
+          item: "w-[158px] md:w-[213px] 2xl:w-[284px]",
+          image: "w-full h-auto aspect-72/100 object-contain object-left"
         }}
       />
     </div>

@@ -5,7 +5,7 @@ import { navLinks } from "@/navData";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CloseIcon from "../icons/close-icon";
 import MenuIcon from "../icons/menu-icon";
 import RightIcon from "../icons/right-icon";
@@ -24,6 +24,18 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -83,7 +95,7 @@ const Navbar = () => {
             >
               <div className="w-full">
                 <div className="relative flex items-center justify-end pb-9 mb-6 border-b border-primary/10">
-                  <Link href="/" className="absolute left-1/2 -translate-x-1/2!">
+                  <Link href="/" className="absolute left-1/2 -translate-x-1/2!" onClick={closeMobileMenu}>
                     <BrandLogo />
                   </Link>
 

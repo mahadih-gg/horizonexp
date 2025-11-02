@@ -37,7 +37,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
       ${plan.isHighlighted ? 'bg-grad-border-main p-1' : ''}
     `}>
 
-        <div className={cn('bg-secondary px-4 2xl:px-5 py-4 md:py-5 2xl:py-7 flex flex-col rounded-3xl', plan.isHighlighted && 'pb-10 xl:pb-[55px] 2xl:pb-[74px]')}>
+        <div className={cn('bg-secondary px-4 2xl:px-5 py-4 md:py-5 2xl:py-7 flex flex-col rounded-2xl', plan.isHighlighted && 'pb-10 xl:pb-[55px] 2xl:pb-[74px]')}>
           <div className='flex justify-between items-center w-full mb-6 2xl:mb-8'>
             {/* Plan Name */}
             <h3 className="text-[28px] md:text-lg 2xl:text-2xl text-black-gradient font-medium tracking-tight leading-none">{plan.name}</h3>

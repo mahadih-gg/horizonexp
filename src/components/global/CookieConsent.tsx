@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 declare global {
@@ -53,28 +54,28 @@ export default function CookieConsent() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center p-4 pointer-events-none">
-      <div className="bg-white rounded-2xl 2xl:rounded-3xl shadow-lg py-4 px-10 md:py-6 lg:px-20 flex flex-col md:flex-row items-center gap-4 md:gap-6 max-w-4xl w-full pointer-events-auto">
-        <p className="text-base md:text-base lg:text-xl flex-1 text-center md:text-left font-medium">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center pb-[18px] md:pb-[30px] 2xl:pb-10 pointer-events-none">
+      <motion.div
+        initial={{ y: 200 }}
+        animate={{ y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.5, delay: 3, ease: "easeInOut" }}
+        className="bg-white rounded-2xl 2xl:rounded-3xl py-4 px-5 md:py-[18px] md:px-[30px] 2xl:px-10 2xl:py-6 flex items-center gap-4 md:gap-6 max-w-[344px] md:max-w-[345px] 2xl:max-w-[460px] w-full pointer-events-auto"
+        style={{
+          boxShadow: "5px 15px 20px 0px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <p className="text-xs md:text-[10px] 2xl:text-sm flex-1 text-center md:text-left font-medium">
           We use cookies to ensure that we give you the best experience on our website.
         </p>
-        <div className="flex gap-3 md:gap-4 w-full md:w-auto">
-          <Button
-            variant="secondary"
-            onClick={handleReject}
-            className="flex-1 md:flex-none px-5 2xl:px-10"
-          >
-            Reject
-          </Button>
-          <Button
-            variant="default"
-            onClick={handleAccept}
-            className="flex-1 md:flex-none px-5 2xl:px-10"
-          >
-            Allow
-          </Button>
-        </div>
-      </div>
+        <Button
+          variant="default"
+          onClick={handleAccept}
+          className="flex-none px-[18px] 2xl:px-6 h-7 md:h-6 2xl:h-[34px] text-xs md:text-[10px] 2xl:text-sm"
+        >
+          Allow
+        </Button>
+      </motion.div>
     </div>
   );
 }

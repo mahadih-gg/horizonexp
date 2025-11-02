@@ -6,43 +6,43 @@ const FAQSection = () => {
   const faqData = [
     {
       question: "Do you offer a free trial?",
-      answer: "Yes, we offer a 14-day free trial for all new users. You can explore all features of Horizon without any commitment. No credit card required to start your trial."
+      answer: "Yes, we offer a 30-day free trial of our Premium plan. Enjoy premium features of Horizon without any payment during the trial period."
     },
     {
       question: "Is Horizon worth the price?",
-      answer: "Absolutely! Horizon provides enterprise-grade video hosting and streaming capabilities at a fraction of the cost of traditional solutions. Our customers typically see a 40-60% reduction in video hosting costs while gaining better performance and features."
+      answer: "Since implementing Horizon increases CTR, session times, and product/service discovery while reducing bounce rates dramatically - it is very much worth it. Short-form in general is a very high ROI format to drive conversion."
     },
     {
       question: "Do your plan prices include tax fees?",
-      answer: "Our listed prices are exclusive of applicable taxes. Tax rates vary by location and will be calculated at checkout based on your billing address. We comply with all local tax regulations."
+      answer: "When subscribing to one of our paid plans, you only pay the listed price - there are no hidden fees."
     },
     {
       question: "What happens if my total view count grows beyond my current plan?",
-      answer: "If you exceed your plan's view limit, we'll automatically upgrade you to the next tier for that billing cycle. You'll only pay the prorated difference, ensuring you're never charged for overages. We'll also notify you when you're approaching your limit."
+      answer: "If you exceed the view limit on a paid plan, you can upgrade to a higher plan or overages will be billed at the next renewal. Service will not be interrupted."
     },
     {
       question: "How are views calculated?",
-      answer: "Views are counted when a video is played for at least 30 seconds or when 50% of the video duration is watched (whichever comes first). This ensures we only count meaningful engagement, not accidental clicks or brief previews."
+      answer: "Views are counted when a video is played for at least 3 seconds. This ensures we don't count accidental clicks or test runs."
     },
     {
       question: "What happens if I need to upload more or longer videos than my current plan allows?",
-      answer: "You can upgrade your plan at any time through your dashboard. If you need additional storage or bandwidth temporarily, we offer one-time add-ons. For enterprise customers, we can create custom plans to meet your specific needs."
+      answer: "We offer plans with higher upload limits and longer video lengths. If you need even higher limits, contact us and we may be able to help you with a customized plan."
     },
     {
       question: "How do I pay?",
-      answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for enterprise plans. All payments are processed securely through our PCI-compliant payment system. Enterprise customers can also pay via invoice."
+      answer: "We accept all major credit cards. All payments are processed securely through Stripe."
     },
     {
       question: "How do I change my plan?",
-      answer: "You can upgrade or downgrade your plan anytime from your account dashboard. Upgrades take effect immediately with prorated billing. Downgrades take effect at your next billing cycle to ensure you get the full value of your current plan."
+      answer: "You can upgrade or downgrade your plan anytime from the Workspace & Billing section of the Horizon Console. Upgrades take effect immediately with prorated billing. Downgrades take effect at your next billing cycle."
     },
     {
       question: "What kind of support do I receive with Horizon?",
-      answer: "All plans include email support with 24-48 hour response times. Pro and Enterprise plans include priority support with faster response times. Enterprise customers receive dedicated account management and phone support. We also provide comprehensive documentation and video tutorials."
+      answer: "All plans include email support with 24-48 hour response times."
     },
     {
       question: "Can I see a demo of Horizon?",
-      answer: "Yes! You can request a personalized demo by contacting our sales team. We'll show you how Horizon can be customized for your specific use case, including integration examples and performance metrics relevant to your industry."
+      answer: "Yes! Please visit our live demo websites. And you can also request a demo walkthrough by contacting us."
     }
   ];
 

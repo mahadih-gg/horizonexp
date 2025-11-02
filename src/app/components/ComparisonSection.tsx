@@ -81,12 +81,12 @@ const ComparisonSection = () => {
 
     setHasAnimated(true);
 
-    // Animate from 0% to 100%
-    const animateTo100 = () => {
+    // Animate from 0% to 75%
+    const animateTo75 = () => {
       let startTime: number;
       const duration = 2000; // 2 seconds
       const startPosition = 0;
-      const endPosition = 100;
+      const endPosition = 75;
 
       const animate = (currentTime: number) => {
         if (!startTime) startTime = currentTime;
@@ -115,7 +115,7 @@ const ComparisonSection = () => {
     const animateTo50 = () => {
       let startTime: number;
       const duration = 2000; // 1 seconds
-      const startPosition = 100;
+      const startPosition = 75;
       const endPosition = 50;
 
       const animate = (currentTime: number) => {
@@ -139,7 +139,7 @@ const ComparisonSection = () => {
     };
 
     // Start the animation after a brief delay
-    setTimeout(animateTo100, 500);
+    setTimeout(animateTo75, 500);
   };
 
   // Trigger animation when component comes into view
@@ -150,7 +150,7 @@ const ComparisonSection = () => {
   return (
     <div className="w-full flex md:flex-row flex-col justify-center items-center px-1 md:px-10 2xl:px-14 gap-5">
       {/* Desktop labels - hidden on mobile */}
-      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Horizon home</h3>
+      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Static home</h3>
       <AnimatePresence mode="wait">
         {/* Mobile labels - only visible on mobile and based on slider position */}
         <motion.h3
@@ -161,7 +161,7 @@ const ComparisonSection = () => {
           key={sliderPosition > 50 ? 'horizon-home' : 'static-home'}
           className="lg:hidden absolute top-10 xs:top-5 sm:top-10 left-1/2 -translate-x-1/2! text-lg 2xl:text-2xl font-medium z-10 text-primary-text"
         >
-          {sliderPosition > 50 ? 'Horizon home' : 'Static home'}
+          {sliderPosition < 50 ? 'Horizon home' : 'Static home'}
         </motion.h3>
       </AnimatePresence>
       {/* Comparison Container */}
@@ -178,8 +178,8 @@ const ComparisonSection = () => {
           }}
         >
           <Image
-            src="/assets/images/horzion-home.webp"
-            alt="Horizon home layout"
+            src="/assets/images/static-home.webp"
+            alt="Static home layout"
             fill
             className="object-cover"
             priority
@@ -194,8 +194,8 @@ const ComparisonSection = () => {
           }}
         >
           <Image
-            src="/assets/images/static-home.webp"
-            alt="Static home layout"
+            src="/assets/images/horzion-home.webp"
+            alt="Horizon home layout"
             fill
             className="object-cover"
             priority
@@ -229,7 +229,7 @@ const ComparisonSection = () => {
       </div>
 
       {/* Desktop labels - hidden on mobile */}
-      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition < 50 ? 'opacity-100' : 'opacity-50')}>Static home</h3>
+      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition < 50 ? 'opacity-100' : 'opacity-50')}>Horizon home</h3>
     </div>
   );
 };

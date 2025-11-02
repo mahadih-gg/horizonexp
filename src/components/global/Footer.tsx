@@ -83,7 +83,7 @@ const SocialLinks = ({ className }: { className?: string }) => {
   return (
     <div className={cn("flex items-center gap-5", className)}>
       {socialLinks.map((link, index) => (
-        <Link key={index} href={link.href}>
+        <Link key={index} href={link.href} target="_blank">
           {link.icon}
         </Link>
       ))}
