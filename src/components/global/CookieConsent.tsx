@@ -39,18 +39,6 @@ export default function CookieConsent() {
     }
   };
 
-  const handleReject = () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "rejected");
-    setShowBanner(false);
-
-    // Revoke consent for Google Analytics
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: "denied",
-      });
-    }
-  };
-
   if (!showBanner) return null;
 
   return (

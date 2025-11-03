@@ -7,6 +7,12 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+declare global {
+  interface Window {
+    lenis?: Lenis;
+  }
+}
+
 export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -16,7 +22,8 @@ export default function SmoothScroll() {
     });
 
     // Expose lenis on window object
-    (window as any).lenis = lenis;
+    window.lenis = lenis;
+
     lenis.on("scroll", ScrollTrigger.update);
 
     function raf(time: number) {
@@ -27,7 +34,7 @@ export default function SmoothScroll() {
 
     return () => {
       lenis.destroy();
-      delete (window as any).lenis;
+      delete window.lenis;
     };
   }, []);
 
