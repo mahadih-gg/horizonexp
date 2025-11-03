@@ -2,7 +2,7 @@ import { PricingPlan } from '../components/PricingCard';
 
 export const pricingPlans: PricingPlan[] = [
   {
-    productId: "prod_T6dyW3DHecqAlu",
+    productId: "prod_THW7lVOxrAuKAx",
     name: "Starter",
     price: 0,
     priceUnit: "per month",
@@ -20,7 +20,7 @@ export const pricingPlans: PricingPlan[] = [
     hasButtonGradient: false
   },
   {
-    productId: "prod_T6drS8WB8mPcJS",
+    productId: "prod_THW8YfM3Aj1gSN",
     name: "Premium",
     price: 49,
     priceUnit: "per month",
@@ -43,7 +43,7 @@ export const pricingPlans: PricingPlan[] = [
     hasButtonGradient: false
   },
   {
-    productId: "prod_T6dgmTz5waMZtd",
+    productId: "prod_THW8nc7BkHuueB",
     name: "Pro",
     price: 199,
     priceUnit: "per month",
@@ -66,7 +66,7 @@ export const pricingPlans: PricingPlan[] = [
     hasButtonGradient: true
   },
   {
-    productId: "prod_T6dWiTFg3DetXY",
+    productId: "prod_THW8lkVwz8lRut",
     name: "Max",
     price: 499,
     priceUnit: "per month",
