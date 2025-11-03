@@ -21,7 +21,7 @@ const sliderData = [
     imageClassName: "h-[120px] md:h-[126px] 2xl:h-[192px]"
   },
   {
-    topLabel: "Experience our new collection",
+    topLabel: "Experience our collection",
     title: "Demonstrate products",
     description: "Highlight product features, textures, and motion through immersive short-form clips. Let customers see why they should buy.",
     image: "/assets/images/slider/slider-img-2.webp",

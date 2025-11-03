@@ -55,7 +55,7 @@ const Navbar = () => {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium", isActive && "font-semibold")}>
+              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold", link.className)}>
                 {link.label}
               </Link>
             )

@@ -9,9 +9,10 @@ const OnboardingSection = () => {
         <SectionHeader
           animate={false}
           className="text-white pb-0 md:pb-0 2xl:pb-0 px-4"
-          topLabel={<span className="text-white font-medium">Premium Support</span>}
-          title={<>Onboarding <br className="block md:hidden" /> made simple</>}
-          description={<span className="font-medium text-white">
+          topLabel={<span className="text-white font-semibold">Premium Support</span>}
+          topLabelClassName="block -mb-10"
+          title={<span className="leading-[1.40em] text-inherit block -mb-6">Onboarding <br className="block md:hidden" /> made simple</span>}
+          description={<span className="font-normal text-white leading-[1.40em]">
             We{"’"}ll help you go from upload to live - seamlessly connecting Horizon
             <br className="hidden md:block" />
             to your site or app. Contact us for onboarding support.

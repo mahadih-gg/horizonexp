@@ -12,9 +12,10 @@ type Props = {
   className?: string;
   extraContent?: React.ReactNode;
   animate?: boolean;
+  topLabelClassName?: string;
 };
 
-const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent, animate = true }: Props) => {
+const SectionHeader = ({ title, description, topLabel, centered = true, className, extraContent, animate = true, topLabelClassName = '' }: Props) => {
 
   return (
     <div className={cn('text-primary-text text-left pb-[52px] md:pb-[60px] 2xl:pb-20', centered && 'text-center', className)}>
@@ -26,7 +27,7 @@ const SectionHeader = ({ title, description, topLabel, centered = true, classNam
             transition={{ duration: 0.5, delay: 0.2 }}
           // viewport={{ once: true, amount: 0.8 }}
           >
-            <Text variant="top-label" className='pb-4'>
+            <Text variant="top-label" className={cn('pb-4', topLabelClassName)}>
               <span className="text-black-gradient">
                 {topLabel}
               </span>

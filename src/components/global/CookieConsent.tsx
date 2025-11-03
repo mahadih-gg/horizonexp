@@ -62,10 +62,10 @@ export default function CookieConsent() {
         transition={{ duration: 0.5, delay: 3, ease: "easeInOut" }}
         className="bg-white rounded-2xl 2xl:rounded-3xl py-4 px-5 md:py-[18px] md:px-[30px] 2xl:px-10 2xl:py-6 flex items-center gap-4 md:gap-6 max-w-[344px] md:max-w-[345px] 2xl:max-w-[460px] w-full pointer-events-auto"
         style={{
-          boxShadow: "5px 15px 20px 0px rgba(0, 0, 0, 0.1)",
+          boxShadow: "2px 2px 20px 0px rgba(0, 0, 0, 0.06)",
         }}
       >
-        <p className="text-xs md:text-[10px] 2xl:text-sm flex-1 text-center md:text-left font-medium">
+        <p className="text-xs md:text-[10px] 2xl:text-sm flex-1 text-left font-medium">
           We use cookies to ensure that we give you the best experience on our website.
         </p>
         <Button

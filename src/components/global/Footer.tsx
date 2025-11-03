@@ -45,7 +45,7 @@ const Footer = () => {
             <BrandLogo variant="white" className="w-auto h-[24px] 2xl:h-[32px]" />
           </Link>
 
-          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-0 sm:gap-[40px] lg:gap-[70px] 2xl:gap-[70px]">
+          <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-0 sm:gap-[30px] lg:gap-[30px] 2xl:gap-[40px]">
             <Link href="/" className="text-white text-base 2xl:text-lg">
               Home
             </Link>
