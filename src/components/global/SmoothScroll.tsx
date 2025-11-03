@@ -15,6 +15,8 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
+    // Expose lenis on window object
+    (window as any).lenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
 
     function raf(time: number) {
@@ -25,6 +27,7 @@ export default function SmoothScroll() {
 
     return () => {
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, []);
 
