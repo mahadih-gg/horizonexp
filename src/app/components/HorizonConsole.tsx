@@ -16,7 +16,7 @@ const HorizonConsole = () => {
         >
           <Image
             src="/assets/images/horizon-console-left.webp"
-            alt="Horizon Console"
+            alt="Horizon Console Left"
             width={2592}
             height={1386}
             quality={100}
@@ -33,7 +33,7 @@ const HorizonConsole = () => {
         >
           <Image
             src="/assets/images/horizon-console-main.webp"
-            alt="Horizon Console"
+            alt="Horizon Console Main"
             width={3045}
             height={1663}
             quality={100}
@@ -54,7 +54,7 @@ const HorizonConsole = () => {
         >
           <Image
             src="/assets/images/horizon-console-right.webp"
-            alt="Horizon Console"
+            alt="Horizon Console Right"
             width={2592}
             height={1386}
             quality={100}

@@ -7,7 +7,7 @@ import useWindowSize from '@/hooks/useWindowSize';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useMemo } from 'react';
-import HorizonConsole from './HorizonConsole';
+import HorizonConsole2 from './HorizonConsole2';
 import InfiniteScroll from './InfiniteScroll';
 
 type FeatureType = {
@@ -147,7 +147,7 @@ const EverythingYouNeedSection = () => {
             title={<>The control center <br className='md:hidden' /> for short-form <br className='md:hidden' /> engagement</>}
             description="Manage everything from one powerful, no-code dashboard."
           />
-          <HorizonConsole />
+          <HorizonConsole2 />
         </GradientBg>
 
       </div>
