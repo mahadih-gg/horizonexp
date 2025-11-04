@@ -65,11 +65,32 @@ const roobert = localFont({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+
 export const metadata: Metadata = {
   title: "Horizon Short-form Video Engagement Platform",
   description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
   openGraph: {
-    images: ["/assets/images/opengraph.webp"],
+    title: "Horizon Short-form Video Engagement Platform",
+    description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
+    url: siteUrl,
+    siteName: "Horizon",
+    images: [
+      {
+        url: `${siteUrl}/assets/images/opengraph.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Horizon Short-form Video Engagement Platform",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Horizon Short-form Video Engagement Platform",
+    description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
+    images: [`${siteUrl}/assets/images/opengraph.webp`],
   },
 };
 
