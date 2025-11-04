@@ -1,5 +1,10 @@
 import ConnectSection from "@/components/common/ConnectSection";
+import type { Metadata } from "next";
 import ContactSection from "./components/ContactSection";
+
+export const metadata: Metadata = {
+  title: "Horizon | Contact Us",
+};
 
 const ContactPage = () => {
   return (

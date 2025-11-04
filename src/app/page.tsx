@@ -1,4 +1,5 @@
 import ConnectSection from "@/components/common/ConnectSection";
+import type { Metadata } from "next";
 import EngageMoreSection from "./components/EngageMoreSection";
 import EverythingYouNeedSection from "./components/EverythingYouNeedSection";
 import Hero from "./components/Hero";
@@ -9,6 +10,10 @@ import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
 import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
+
+export const metadata: Metadata = {
+  title: "Horizon | Short-form Video Engagement Platform",
+};
 
 export default function Home() {
   return (

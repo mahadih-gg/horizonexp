@@ -17,10 +17,10 @@ type Props = {
 
 const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, align = 'left' }: Props) => {
   return (
-    <div className={cn("bg-transparent flex flex-row justify-between p-0 gap-0! 2xl:gap-0! overflow-hidden", align === 'left' ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col-reverse md:flex-row')}>
+    <div className={cn("bg-transparent flex flex-row justify-between p-0 gap-0! 2xl:gap-0! overflow-hidden", align === 'left' ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row')}>
       <div
-        className={cn('w-full lg:w-[38.7%] 2xl:w-[38.66%] flex flex-col items-center md:items-start justify-center text-center md:text-left pt-6 md:pt-0 pb-10 md:pb-0',
-          align === 'left' ? 'md:pl-[120px] 2xl:pl-[161px]' : 'md:pr-[120px] 2xl:pr-[161px]'
+        className={cn('w-full lg:w-[38.7%] 2xl:w-[38.66%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left pt-6 lg:pt-0 pb-10 lg:pb-0',
+          align === 'left' ? 'lg:pl-[120px] 2xl:pl-[161px]' : 'lg:pr-[120px] 2xl:pr-[161px]'
         )}
       >
 
@@ -30,10 +30,10 @@ const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, al
           title={title}
           description={description}
           centered={false}
-          className={cn('flex flex-col items-center md:items-start justify-center text-center md:text-left',
+          className={cn('flex flex-col items-center lg:items-start justify-center text-center lg:text-left',
           )}
           extraContent={
-            <div className='pt-4 2xl:pt-6'>
+            <div className='pt-10'>
               <Button asChild>
                 <Link href={link} target="_blank">
                   {buttonText}
@@ -52,7 +52,7 @@ const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, al
           height={686}
           priority
           quality={100}
-          className='w-full h-full object-cover object-left rounded-3xl md:rounded-2xl 2xl:rounded-3xl'
+          className={cn("w-full h-full object-cover object-left rounded-3xl lg:rounded-2xl 2xl:rounded-3xl", align === 'left' ? 'lg:object-right' : 'lg:object-left')}
         />
       </CardContent>
     </div>

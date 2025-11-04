@@ -1,6 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { motion } from "motion/react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
@@ -59,10 +60,27 @@ const ContactSection = () => {
   return (
     <section className="container pt-page">
       <div>
-        <Text variant="heading" className="text-center">We&apos;d love to hear from you</Text>
-        <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Drop us a message and our team will get back to you within 24 hours.</Text>
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Text variant="heading" className="text-center">We&apos;d love to hear from you</Text>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Drop us a message and our team will get back to you within 24 hours.</Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
               <FormField
@@ -145,7 +163,7 @@ const ContactSection = () => {
               </div>
             </form>
           </Form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
