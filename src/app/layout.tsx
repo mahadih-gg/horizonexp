@@ -144,7 +144,6 @@ export default function RootLayout({
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
               
               // Set default consent mode - deny until user accepts
               gtag('consent', 'default', {
@@ -152,13 +151,15 @@ export default function RootLayout({
               });
               
               // Check for existing consent
-              if (typeof window !== 'undefined') {
+              try {
                 const consent = localStorage.getItem('cookie-consent');
                 if (consent === 'accepted') {
                   gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                   });
                 }
+              } catch (e) {
+                // localStorage not available
               }
               
               gtag('config', '${GA_ID}');

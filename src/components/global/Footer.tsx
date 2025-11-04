@@ -36,6 +36,8 @@ const socialLinks = [
   },
 ];
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer className="bg-primary pt-20 md:pt-20 pb-[60px] md:pb-20">
@@ -67,7 +69,7 @@ const Footer = () => {
 
         </div>
         <div className="flex items-center justify-start md:justify-between gap-5">
-          <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon</span>
+          <span className="text-white text-sm 2xl:text-lg"> &copy; {CURRENT_YEAR} Horizon</span>
           <Link href="/privacy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
         </div>
 
