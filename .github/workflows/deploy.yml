@@ -1,0 +1,85 @@
+name: Deploy to S3 and CloudFront
+
+on:
+  push:
+    branches: [main]
+
+env:
+  NODE_VERSION: "18"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production # Use GitHub environments for better security
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests (if available)
+        run: npm run test --if-present
+
+      - name: Build project
+        run: npm run build
+        env:
+          NODE_ENV: production
+          NEXT_PUBLIC_DOMAIN: ${{ secrets.NEXT_PUBLIC_DOMAIN }}
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "out" ]; then
+            echo "Build failed - out directory not found"
+            exit 1
+          fi
+          echo "Build output size:"
+          du -sh out/
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync to S3 with cache optimization
+        run: |
+          # Sync with proper cache headers for better performance
+          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }}/ \
+            --delete \
+            --cache-control "public,max-age=31536000" \
+            --exclude "*.html" \
+            --exclude "*.xml" \
+            --exclude "*.txt"
+
+          # Sync HTML files with no-cache for immediate updates  
+          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }}/ \
+            --delete \
+            --cache-control "no-cache" \
+            --include "*.html" \
+            --include "*.xml" \
+            --include "*.txt"
+
+      - name: Invalidate CloudFront
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "CloudFront invalidation created: $INVALIDATION_ID"
+
+      - name: Deployment summary
+        run: |
+          echo "🚀 Deployment completed successfully!"
+          echo "📦 Files synced to S3: ${{ secrets.S3_BUCKET_NAME }}"
+          echo "🔄 CloudFront distribution invalidated: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
+          echo "🌐 Changes should be visible in 1-2 minutes"
