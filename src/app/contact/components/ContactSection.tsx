@@ -1,9 +1,8 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
 import { motion } from "motion/react"
 import { useForm } from "react-hook-form"
-import * as z from "zod"
+import toast from "react-hot-toast"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -18,29 +17,17 @@ import { Input } from "@/components/ui/input"
 import { Text } from '@/components/ui/text'
 import { Textarea } from "@/components/ui/textarea"
 
-const formSchema = z.object({
-  fullName: z.string().min(2, {
-    message: "Full name must be at least 2 characters.",
-  }),
-  company: z.string().min(2, {
-    message: "Company name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  phone: z.string().min(10, {
-    message: "Phone number must be at least 10 characters.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-})
-
-type FormData = z.infer<typeof formSchema>
+// Define the form data type
+type FormData = {
+  fullName: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 const ContactSection = () => {
   const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
       company: "",
@@ -50,11 +37,35 @@ const ContactSection = () => {
     },
   })
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data)
-    // Here you would typically send the data to your backend
-    alert("Thank you for your message! We'll get back to you within 24 hours.")
-    form.reset()
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset
+  } = form
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xgvpjpge', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        // Reset form and show success message on success
+        reset()
+        toast.success("Thank you for your message! We'll get back to you within 24 hours.")
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      toast.error("There was an error submitting your form. Please try again.")
+    }
   }
 
   return (
@@ -82,10 +93,15 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
         >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
               <FormField
-                control={form.control}
+                control={control}
                 name="fullName"
+                rules={{
+                  required: "Full name is required",
+                  minLength: { value: 2, message: "Full name must be at least 2 characters" },
+                  maxLength: { value: 100, message: "Full name must be less than 100 characters" }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Full Name*</FormLabel>
@@ -97,8 +113,13 @@ const ContactSection = () => {
                 )}
               />
               <FormField
-                control={form.control}
+                control={control}
                 name="company"
+                rules={{
+                  required: "Company name is required",
+                  minLength: { value: 2, message: "Company name must be at least 2 characters" },
+                  maxLength: { value: 100, message: "Company name must be less than 100 characters" }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Your Company*</FormLabel>
@@ -111,8 +132,15 @@ const ContactSection = () => {
               />
 
               <FormField
-                control={form.control}
+                control={control}
                 name="email"
+                rules={{
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Please enter a valid email address"
+                  }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Business Email*</FormLabel>
@@ -124,8 +152,13 @@ const ContactSection = () => {
                 )}
               />
               <FormField
-                control={form.control}
+                control={control}
                 name="phone"
+                rules={{
+                  required: "Phone number is required",
+                  minLength: { value: 10, message: "Phone number must be at least 10 characters" },
+                  maxLength: { value: 20, message: "Phone number must be less than 20 characters" }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone*</FormLabel>
@@ -139,8 +172,13 @@ const ContactSection = () => {
 
               <div className="col-span-2">
                 <FormField
-                  control={form.control}
+                  control={control}
                   name="message"
+                  rules={{
+                    required: "Message is required",
+                    minLength: { value: 10, message: "Message must be at least 10 characters" },
+                    maxLength: { value: 1000, message: "Message must be less than 1000 characters" }
+                  }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Send Us a Message*</FormLabel>
@@ -157,8 +195,8 @@ const ContactSection = () => {
               </div>
 
               <div className="sm:col-span-2 flex justify-center md:justify-end">
-                <Button type="submit">
-                  Submit
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </div>
             </form>

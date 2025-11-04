@@ -2,11 +2,14 @@ import CookieConsent from "@/components/global/CookieConsent";
 import Footer from "@/components/global/Footer";
 import Navbar from "@/components/global/Navbar";
 import SmoothScroll from "@/components/global/SmoothScroll";
+import CloseIcon from "@/components/icons/close-icon";
 import Provides from "@/components/providers";
 import "@thinkflagship/web-shorts/dist/styles.css";
+import { CircleCheck } from "lucide-react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -88,6 +91,25 @@ export default function RootLayout({
         </Provides>
 
         <CookieConsent />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            success: {
+              icon: <CircleCheck className="min-w-fit size-5 2xl:size-6 text-[var(--toast-success-icon)]" />,
+              iconTheme: {
+                primary: 'var(--toast-success-icon)',
+                secondary: '#fff',
+              },
+            },
+            error: {
+              icon: <CloseIcon className="min-w-fit size-5 2xl:size-6 text-[var(--toast-error-icon)]" />,
+              iconTheme: {
+                primary: 'var(--toast-error-icon)',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
 
         <Script
           src={GA_SCRIPT_URL}
