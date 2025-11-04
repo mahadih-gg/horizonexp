@@ -32,8 +32,8 @@ const defaultCta = {
   },
   secondary: {
     label: "Visit demo sites",
-    href: "https://demo.horizonexp.com/",
-    target: "_blank",
+    href: "/demo",
+    target: undefined,
     variant: "secondary",
   },
 };

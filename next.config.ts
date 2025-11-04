@@ -4,14 +4,6 @@ const nextConfig: NextConfig = {
   output: "export",
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "horizonexp.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
   }
 
 };
