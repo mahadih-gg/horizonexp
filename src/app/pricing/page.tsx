@@ -6,9 +6,9 @@ import ForEnterpriseSection from "./components/ForEnterpriseSection";
 import OnboardingSection from "./components/OnboardingSection";
 import PricingSection from "./components/PricingSection";
 
-export const metadata: Metadata = {
-  title: "Horizon | Pricing",
-};
+// export const metadata: Metadata = {
+//   title: "Horizon | Pricing",
+// };
 
 const PricingPage = () => {
   return (

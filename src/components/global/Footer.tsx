@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
         <div className="flex items-center justify-start md:justify-between gap-5">
           <span className="text-white text-sm 2xl:text-lg"> &copy; {new Date().getFullYear()} Horizon</span>
-          <Link href="/privacy-policy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
+          <Link href="/privacy" className="text-white text-sm 2xl:text-lg underline">Privacy Policy</Link>
         </div>
 
         <div className="pt-10 flex md:hidden">

@@ -12,7 +12,7 @@ import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
 export const metadata: Metadata = {
-  title: "Horizon | Short-form Video Engagement Platform",
+  title: "Horizon Short-form Video Engagement Platform",
 };
 
 export default function Home() {

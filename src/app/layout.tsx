@@ -66,8 +66,8 @@ const roobert = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Horizon",
-  description: "Horizon is a platform for creating and managing short-form video engagement campaigns.",
+  title: "Horizon Short-form Video Engagement Platform",
+  description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
   openGraph: {
     images: ["/assets/images/opengraph.webp"],
   },

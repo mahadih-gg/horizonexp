@@ -1,14 +1,15 @@
 import ConnectSection from "@/components/common/ConnectSection";
-import ContactSection from "./components/ContactSection";
+import type { Metadata } from "next";
+import PrivacySection from "./components/PrivacySection";
 
 // export const metadata: Metadata = {
-//   title: "Horizon | Contact Us",
+//   title: "Horizon | Privacy Policy",
 // };
 
-const ContactPage = () => {
+const PrivacyPage = () => {
   return (
     <main>
-      <ContactSection />
+      <PrivacySection />
 
       <ConnectSection
         title={<>Your next growth <br /> chapter starts here.</>}
@@ -31,4 +32,5 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default PrivacyPage;
+
