@@ -40,7 +40,7 @@ const ContactSection = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
     reset
   } = form
 

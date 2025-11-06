@@ -4,6 +4,7 @@ import Navbar from "@/components/global/Navbar";
 import SmoothScroll from "@/components/global/SmoothScroll";
 import CloseIcon from "@/components/icons/close-icon";
 import Provides from "@/components/providers";
+import StructuredData from "@/components/StructuredData";
 import "@thinkflagship/web-shorts/dist/styles.css";
 import { CircleCheck } from "lucide-react";
 import type { Metadata } from "next";
@@ -68,8 +69,38 @@ const roobert = localFont({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
 
 export const metadata: Metadata = {
-  title: "Horizon Short-form Video Engagement Platform",
-  description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Horizon Short-form Video Engagement Platform",
+    template: "%s | Horizon"
+  },
+  description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales. The world's most advanced short-form video engagement engine with native streaming, social commerce, and enterprise-grade performance.",
+  keywords: [
+    "short-form video",
+    "video engagement platform",
+    "social commerce",
+    "shoppable video",
+    "video streaming",
+    "video platform",
+    "video engagement",
+    "interactive video",
+    "video monetization",
+    "enterprise video platform",
+    "video analytics",
+    "video experience",
+    "TikTok-style video",
+    "Instagram Reels style",
+    "video content management",
+    "video CMS"
+  ],
+  authors: [{ name: "Horizon", url: siteUrl }],
+  creator: "Flagship Technology Inc.",
+  publisher: "Flagship Technology Inc.",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Horizon Short-form Video Engagement Platform",
     description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
@@ -91,7 +122,29 @@ export const metadata: Metadata = {
     title: "Horizon Short-form Video Engagement Platform",
     description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
     images: [`${siteUrl}/assets/images/opengraph.webp`],
+    creator: "@horizonera",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when available
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+    // yahoo: 'your-yahoo-verification-code',
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  category: "Technology",
 };
 
 export default function RootLayout({
@@ -102,6 +155,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roobert.variable} antialiased`}>
+        <StructuredData />
         <SmoothScroll />
         <Provides>
           <header className="sticky top-0 z-50 backdrop-blur-2xl! bg-background/16">

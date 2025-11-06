@@ -34,9 +34,9 @@ const NotFound = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight max-w-2xl"
           >
-            The page you're looking for doesn't exist or has been moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
             <br className="hidden md:block" />
-            Let's get you back on track.
+            Let&apos;s get you back on track.
           </motion.p>
 
           <motion.div
