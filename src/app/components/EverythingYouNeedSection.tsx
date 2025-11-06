@@ -36,14 +36,14 @@ const EverythingYouNeedSection = () => {
       title: "Engage like never before",
       description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden lg:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
       image: !isMobile ? "/assets/images/social-interactions.webp" : "/assets/images/social-interactions-mobile.webp",
-      imageClassName: "h-[402px] 2xl:h-[537px] -mb-[50px] sm:mb-0",
+      imageClassName: "h-[402px] 2xl:h-[537px] -mb-[80px] xs:-mb-[20px] sm:mb-0 -ml-[2px] sm:ml-auto",
     },
     {
       topLabel: "Sponsored Campaigns",
       title: "Unlock new revenue",
       description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
       image: !isMobile ? "/assets/images/sponsored-campaigns.webp" : "/assets/images/sponsored-campaigns-mobile.webp",
-      imageClassName: "h-[402px] 2xl:h-[537px] -mb-6 sm:mb-0",
+      imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0",
     },
     {
       topLabel: "Audience Polls",
@@ -60,7 +60,7 @@ const EverythingYouNeedSection = () => {
       title: "Empower your super fans",
       description: "Invite VIP customers and creators to upload authentic videos that build trust, expand reach, and drive conversions.",
       image: !isMobile ? "/assets/images/invite-only-ugc.webp" : "/assets/images/invite-only-ugc-mobile.webp",
-      imageClassName: "h-[402px] 2xl:h-[537px] -mb-6 sm:mb-0",
+      imageClassName: "w-[281px] sm:w-auto mx-auto h-full sm:h-[402px] 2xl:h-[537px] mb-0 xs:-mb-4.5 sm:mb-0 ml-[18px] xs:ml-auto",
     },
     {
       topLabel: "Fastest Streaming",
