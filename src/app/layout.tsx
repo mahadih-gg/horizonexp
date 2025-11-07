@@ -16,9 +16,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "./globals.css";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-SRL5B83B95';
-const GA_SCRIPT_URL = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-
 const roobert = localFont({
   src: [
     {
@@ -187,39 +184,18 @@ export default function RootLayout({
         />
 
         <Script
-          src={GA_SCRIPT_URL}
+          src="https://www.googletagmanager.com/gtag/js?id=G-SRL5B83B95"
           strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              
-              // Set default consent mode - deny until user accepts
-              gtag('consent', 'default', {
-                'analytics_storage': 'denied'
-              });
-              
-              // Check for existing consent
-              try {
-                const consent = localStorage.getItem('cookie-consent');
-                if (consent === 'accepted') {
-                  gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
-                  });
-                }
-              } catch (e) {
-                // localStorage not available
-              }
-              
-              gtag('config', '${GA_ID}');
-            `,
-          }}
-        />
+            gtag('config', 'G-SRL5B83B95');
+          `}
+        </Script>
       </body>
     </html>
   );
