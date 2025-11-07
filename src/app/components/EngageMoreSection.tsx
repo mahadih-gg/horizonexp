@@ -50,7 +50,7 @@ const EngageMoreSection = () => {
 
               <Image
                 src={item.image}
-                alt={item.title.toString() || "Engage More Section Image"}
+                alt={`${item.heading} - ${typeof item.title === 'string' ? item.title : 'Engage more with short-form video'}`}
                 width={382}
                 height={382}
                 quality={100}

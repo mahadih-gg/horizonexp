@@ -46,7 +46,7 @@ const LaunchSteps = () => {
   return (
     <div className="">
       <Tabs defaultValue="add-site" className="w-full">
-        <TabsList className=" flex flex-col md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-1 md:gap-0 mx-auto">
+        <TabsList className="w-full flex flex-col md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-1 md:gap-0 mx-auto">
           {tabSections.map((section) => (
             <TabsTrigger key={section.id} value={section.id}>
               {section.label}
