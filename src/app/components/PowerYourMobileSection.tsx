@@ -7,7 +7,7 @@ const PowerYourMobileSection = () => {
 
       <SectionHeader
         title={<>Power your mobile and web with native <br className="hidden md:block" /> short-form video experiences</>}
-        description={<>Meet Horizon - the plug-and-play short-form video <br className="hidden md:block" /> engagement platform that turns attention into revenue.</>}
+      // description={<>Meet Horizon - the plug-and-play short-form video <br className="hidden md:block" /> engagement platform that turns attention into revenue.</>}
       />
 
       <div className="relative w-full rounded-3xl overflow-hidden">
