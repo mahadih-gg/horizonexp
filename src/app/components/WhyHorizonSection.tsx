@@ -36,7 +36,7 @@ const WhyHorizonSection = () => {
     <section className='container pb-section'>
       <SectionHeader
         topLabel="Why Horizon"
-        title={<>The {"world’s"} most advanced short-form <br className='hidden md:block' /> video engagement engine - period.</>}
+        title={<>The only Tiktok-grade short-form <br className='hidden md:block' /> video engine for the internet</>}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 2xl:gap-9">

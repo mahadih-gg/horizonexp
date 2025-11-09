@@ -43,7 +43,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
-        Bring immersive short-form video experience to your site, store, <br className="hidden md:block" /> or app that supercharges discovery, engagement and sales.
+        Skyrocket customer engagement, conversion, and retention with <br className="hidden md:block" /> ultra-fast, shoppable short-form video experience
       </motion.p>
 
       <motion.div

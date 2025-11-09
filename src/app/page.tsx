@@ -1,6 +1,5 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import type { Metadata } from "next";
-import EngageMoreSection from "./components/EngageMoreSection";
 import EverythingYouNeedSection from "./components/EverythingYouNeedSection";
 import Hero from "./components/Hero";
 import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSection";
@@ -85,9 +84,9 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <EngageMoreSection />
-      <PowerYourMobileSection />
+      {/* <EngageMoreSection /> */}
       <SeeHorizonSection />
+      <PowerYourMobileSection />
       <HowBrandsCanUseHorizonSection />
       <EverythingYouNeedSection />
       <HorizonImpactSection />
@@ -96,7 +95,7 @@ export default function Home() {
       <HorizonForEnterpriseSection />
       <LaunchHorizonSection />
       <ConnectSection
-        title={<>Ready to grow <br className="block md:hidden" /> with short-<br className="block md:hidden" />form video? <br /> Start free today.</>}
+        title={<>Start free today.</>}
         description="Join the new generation of brands turning attention into sales with short-form engagement."
       />
     </main>
