@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const FlipWords = ({
   words,
@@ -13,7 +13,7 @@ export const FlipWords = ({
   className?: string;
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [index, setIndex] = useState(0)
   const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
@@ -25,41 +25,37 @@ export const FlipWords = ({
     return () => clearTimeout(startTimeout)
   }, [])
 
-  const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
-    setIsAnimating(true);
-  }, [currentWord, words]);
-
   useEffect(() => {
     if (!hasStarted) return
 
-    if (!isAnimating)
-      setTimeout(() => {
-        startAnimation();
-      }, duration);
-  }, [isAnimating, duration, startAnimation, hasStarted]);
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length)
+    }, duration)
+
+    return () => clearInterval(interval)
+  }, [words.length, duration, hasStarted])
+
+  useEffect(() => {
+    const word = words[index] || words[0];
+    setCurrentWord(word);
+  }, [index])
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
+    <AnimatePresence mode="wait">
       <motion.div
         key={currentWord}
-        // initial={{
-        //   opacity: 0,
-        //   y: 10,
-        // }}
-        // animate={{
-        //   opacity: 1,
-        //   y: 0,
-        // }}
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
         transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
+          // type: "spring",
+          // stiffness: 100,
+          // damping: 10,
         }}
         exit={{
           opacity: 0,
@@ -67,10 +63,9 @@ export const FlipWords = ({
           x: 5,
           filter: "blur(1px)",
           scale: 1.02,
-          position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-foreground px-2",
+          "z-10 inline-block relative text-center text-foreground px-2",
           className
         )}
       >

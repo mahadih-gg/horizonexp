@@ -35,7 +35,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full xsm:w-[400px] md:w-full mx-auto"
+          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full xsm:w-[400px] md:w-[520px] mlg:w-full mx-auto"
         >
           <span className="text-black-gradient">The best short-form video</span> <br />
           {/* <br className="hidden xxs:block mlg:hidden" /> */}
@@ -60,7 +60,7 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20"
       >
-        <Button asChild variant="shine">
+        <Button asChild>
           <Link href="https://app.horizonexp.com/signup" target="_blank">
             Start for free
           </Link>

@@ -165,8 +165,11 @@ const ComparisonSection = () => {
         </motion.h3>
       </AnimatePresence>
       {/* Comparison Container */}
-      <div
+      <motion.div
         ref={containerRef}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
         className="comparison-container w-full sm:w-[95%] md:w-[85%] lg:w-[70.24%] 2xl:w-[76%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]"
         style={{ aspectRatio: '1.52/1' }}
       >
@@ -182,7 +185,6 @@ const ComparisonSection = () => {
             alt="Horizon home layout"
             fill
             className="object-cover"
-            priority
           />
         </div>
 
@@ -198,7 +200,6 @@ const ComparisonSection = () => {
             alt="Static home layout"
             fill
             className="object-cover"
-            priority
           />
         </div>
 
@@ -226,7 +227,7 @@ const ComparisonSection = () => {
           <ChevronLeft strokeWidth={2.5} className="size-4 md:size-4 2xl:size-5 text-primary-text" />
           <ChevronRight strokeWidth={2.5} className="size-4 md:size-4 2xl:size-5 text-primary-text" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Desktop labels - hidden on mobile */}
       <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Horizon home</h3>
