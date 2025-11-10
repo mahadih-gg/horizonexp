@@ -167,9 +167,14 @@ const ComparisonSection = () => {
       {/* Comparison Container */}
       <motion.div
         ref={containerRef}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 10,
+          delay: 0.4,
+        }}
         className="comparison-container w-full sm:w-[95%] md:w-[85%] lg:w-[70.24%] 2xl:w-[76%] mx-auto relative overflow-hidden rounded-xl md:rounded-[20px] 2xl:rounded-[24px]"
         style={{ aspectRatio: '1.52/1' }}
       >
