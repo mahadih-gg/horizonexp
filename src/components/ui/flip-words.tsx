@@ -14,8 +14,17 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [hasStarted, setHasStarted] = useState(false)
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
+  useEffect(() => {
+    // Start animation after 2 second delay
+    const startTimeout = setTimeout(() => {
+      setHasStarted(true)
+    }, 2000)
+
+    return () => clearTimeout(startTimeout)
+  }, [])
+
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -23,11 +32,13 @@ export const FlipWords = ({
   }, [currentWord, words]);
 
   useEffect(() => {
+    if (!hasStarted) return
+
     if (!isAnimating)
       setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+  }, [isAnimating, duration, startAnimation, hasStarted]);
 
   return (
     <AnimatePresence
@@ -36,14 +47,15 @@ export const FlipWords = ({
       }}
     >
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
+        key={currentWord}
+        // initial={{
+        //   opacity: 0,
+        //   y: 10,
+        // }}
+        // animate={{
+        //   opacity: 1,
+        //   y: 0,
+        // }}
         transition={{
           type: "spring",
           stiffness: 100,
@@ -51,19 +63,17 @@ export const FlipWords = ({
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 1.2,
+          y: -5,
+          x: 5,
+          filter: "blur(1px)",
+          scale: 1.02,
           position: "absolute",
         }}
         className={cn(
           "z-10 inline-block relative text-left text-foreground px-2",
           className
         )}
-        key={currentWord}
       >
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
@@ -84,7 +94,7 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+                className="inline-block text-black-gradient px-px"
               >
                 {letter}
               </motion.span>

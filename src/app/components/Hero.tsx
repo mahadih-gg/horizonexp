@@ -2,7 +2,7 @@
 
 import GradientBg from "@/components/common/GradientBg";
 import { Button } from "@/components/ui/button";
-import { TextRotate } from "@/components/ui/text-rotate";
+import { FlipWords } from "@/components/ui/flip-words";
 import { motion } from "motion/react";
 import Link from "next/link";
 import ComparisonSection from "./ComparisonSection";
@@ -22,9 +22,9 @@ const Hero = () => {
   // ]
 
   const text = [
-    "websites",
-    "apps",
-    "stores"
+    "solution for websites",
+    "solution for stores",
+    "solution for apps",
   ]
 
   return (
@@ -35,12 +35,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-0.04em] w-full xsm:w-[400px] md:w-full mx-auto"
+          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full xsm:w-[400px] md:w-full mx-auto"
         >
-          The best short-form video <br className="hidden lg:block" />
-          solution for{" "} <br className="hidden xxs:block mlg:hidden" />
-          <TextRotate words={text} className="inline-block overflow-hidden w-52 xxs:w-[260px] 2xl:w-[350px] text-left xxs:text-center mlg:text-left -mb-2.5" />
-          {/* <FlipWords words={text} /> */}
+          <span className="text-black-gradient">The best short-form video</span> <br />
+          {/* <br className="hidden xxs:block mlg:hidden" /> */}
+          {/* <TextRotate words={text} className="inline-block overflow-hidden w-52 xxs:w-[260px] 2xl:w-[350px] text-left xxs:text-center mlg:text-left -mb-2.5" /> */}
+          {/* <TextRotate words={text} /> */}
+          <FlipWords words={text} />
         </motion.h1>
       </div>
 

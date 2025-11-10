@@ -38,7 +38,7 @@ const TextRotate = ({
   }, [words.length, duration, hasStarted])
 
   return (
-    <div className={cn("overflow-hidden", className)}>
+    <div className={cn("overflow-hidden text-black-gradient", className)}>
       <AnimatePresence mode="wait">
         <motion.span
           key={index}
@@ -60,7 +60,7 @@ const TextRotate = ({
               ease: "easeIn"
             }
           }}
-          className="text-grad-tertiary"
+          className="text-inherit px-1"
         >
           {words[index]}
         </motion.span>
