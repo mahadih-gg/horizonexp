@@ -43,7 +43,7 @@ const EverythingYouNeedSection = () => {
       title: "Unlock new revenue",
       description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
       image: !isMobile ? "/assets/images/sponsored-campaigns.webp" : "/assets/images/sponsored-campaigns-mobile.webp",
-      imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0",
+      imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0 -ml-[16px] sm:ml-auto",
     },
     {
       topLabel: "Audience Polls",
