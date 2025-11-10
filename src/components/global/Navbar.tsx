@@ -64,7 +64,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <Button variant="ghost" asChild>
-            <Link href="https://app.horizonexp.com/login" target="_blank">
+            <Link href="https://app.horizonexp.com/signin" target="_blank">
               Login
             </Link>
           </Button>
@@ -137,7 +137,8 @@ const Navbar = () => {
                 className="w-full flex flex-col gap-8 border-t border-primary/10 py-5"
               >
                 <Link
-                  href="/login"
+                  href="https://app.horizonexp.com/signin"
+                  target="_blank"
                   className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
                   onClick={closeMobileMenu}
                 >
