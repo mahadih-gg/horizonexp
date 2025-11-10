@@ -201,3 +201,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-hover:hover {
+  box-shadow: inset 0 2px #fff6, inset 0 -2px #0000004d;
+}
+
+.shine-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0000, #fff6, #0000);
+  transition: left 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.shine-hover:hover::before {
+  left: 100%;
+}

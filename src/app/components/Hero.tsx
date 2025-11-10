@@ -60,7 +60,7 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20"
       >
-        <Button asChild>
+        <Button asChild variant="shine">
           <Link href="https://app.horizonexp.com/signup" target="_blank">
             Start for free
           </Link>
