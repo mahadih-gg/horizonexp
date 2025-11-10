@@ -60,7 +60,7 @@ const TextRotate = ({
               ease: "easeIn"
             }
           }}
-          className="text-center text-grad-tertiary"
+          className="text-grad-tertiary"
         >
           {words[index]}
         </motion.span>

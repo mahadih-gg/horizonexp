@@ -15,27 +15,34 @@ const Hero = () => {
   //   <span key="turn-traffic" className="text-inherit">turn traffic <br className="block sm:hidden" /> into fans</span>
   // ]
 
+  // const text = [
+  //   "sell on autopilot",
+  //   "hook your customers",
+  //   "turn traffic into fans"
+  // ]
+
   const text = [
-    "sell on autopilot",
-    "hook your customers",
-    "turn traffic into fans"
+    "websites",
+    "apps",
+    "stores"
   ]
 
   return (
     <section className="container pt-page">
-      <motion.h1
-        key="hero-heading"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-0.04em]"
-      >
-        Use short-form videos to <br />
-        <span className="inline-block overflow-hidden max-w-[300px] xs:max-w-full mx-auto">
-          <TextRotate words={text} />
+      <div className="flex-center">
+        <motion.h1
+          key="hero-heading"
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none text-primary-text tracking-[-0.04em] w-full xsm:w-[400px] md:w-full mx-auto"
+        >
+          The best short-form video <br className="hidden lg:block" />
+          solution for{" "} <br className="hidden xxs:block mlg:hidden" />
+          <TextRotate words={text} className="inline-block overflow-hidden w-52 xxs:w-[260px] 2xl:w-[350px] text-left xxs:text-center mlg:text-left -mb-2.5" />
           {/* <FlipWords words={text} /> */}
-        </span>
-      </motion.h1>
+        </motion.h1>
+      </div>
 
 
       <motion.p
