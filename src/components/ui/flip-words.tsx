@@ -65,7 +65,7 @@ export const FlipWords = ({
           scale: 1.02,
         }}
         className={cn(
-          "z-10 inline-block relative text-center text-foreground px-2",
+          "z-10 inline-block relative text-center w-full xsm:w-[400px] md:w-[500px] mlg:w-full mx-auto",
           className
         )}
       >
@@ -89,7 +89,7 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block text-black-gradient px-px"
+                className="inline-block text-black-gradient px-px -mx-px"
               >
                 {letter}
               </motion.span>

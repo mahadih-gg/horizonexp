@@ -27,17 +27,27 @@ const Hero = () => {
     "solution for apps",
   ]
 
+  const heading = "The best short-form video".split(" ");
   return (
-    <section className="container pt-page">
+    <section className="container pt-[68px] md:pt-[90px] 2xl:pt-[120px]">
       <div className="flex-center">
         <motion.h1
           key="hero-heading"
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-center text-[56px] md:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full xsm:w-[400px] md:w-[520px] mlg:w-full mx-auto"
+          className="inline-block text-center text-[64px] xxs:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto"
         >
-          <span className="text-black-gradient">The best short-form video</span> <br />
+
+          {heading.map((word, i) => (
+            <span
+              key={i + word}
+              className="text-black-gradient"
+            >
+              {word}&nbsp;
+            </span>
+          ))}
+          <br />
           {/* <br className="hidden xxs:block mlg:hidden" /> */}
           {/* <TextRotate words={text} className="inline-block overflow-hidden w-52 xxs:w-[260px] 2xl:w-[350px] text-left xxs:text-center mlg:text-left -mb-2.5" /> */}
           {/* <TextRotate words={text} /> */}
@@ -50,7 +60,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-lg 2xl:text-2xl text-primary-text text-center pt-4 md:pt-6 2xl:pt-8 pb-7 md:pb-[30px] 2xl:pb-10 font-medium leading-tight">
+        className="text-lg 2xl:text-2xl text-primary-text text-center pt-6 2xl:pt-8 pb-[30px] 2xl:pb-10 font-medium leading-tight">
         Skyrocket customer engagement, conversion, and retention with <br className="hidden md:block" /> ultra-fast, shoppable short-form video experience
       </motion.p>
 
