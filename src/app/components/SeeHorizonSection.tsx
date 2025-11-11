@@ -10,7 +10,7 @@ const SeeHorizonSection = () => {
         title="See Horizon in action"
         className="flex items-center justify-start md:justify-between text-left"
         extraContent={
-          <Button asChild className="hidden md:inline-flex">
+          <Button asChild variant="secondary" className="hidden md:inline-flex">
             <Link href="/demo">
               Visit demo sites
             </Link>
@@ -21,7 +21,7 @@ const SeeHorizonSection = () => {
       <FlagshipEntryPoint />
 
       <div className="flex items-center justify-center md:hidden pt-[52px]">
-        <Button asChild>
+        <Button asChild variant="secondary">
           <Link href="/demo">
             Visit demo sites
           </Link>

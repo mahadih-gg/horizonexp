@@ -14,26 +14,14 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [index, setIndex] = useState(0)
-  const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    // Start animation after 2 second delay
-    const startTimeout = setTimeout(() => {
-      setHasStarted(true)
-    }, 2000)
-
-    return () => clearTimeout(startTimeout)
-  }, [])
-
-  useEffect(() => {
-    if (!hasStarted) return
-
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length)
     }, duration)
 
     return () => clearInterval(interval)
-  }, [words.length, duration, hasStarted])
+  }, [words.length, duration])
 
   useEffect(() => {
     const word = words[index] || words[0];

@@ -29,7 +29,7 @@ const Hero = () => {
 
   const heading = "The best short-form video".split(" ");
   return (
-    <section className="container pt-[68px] md:pt-[90px] 2xl:pt-[120px]">
+    <section className="container pt-[62px] md:pt-[90px] 2xl:pt-[120px]">
       <div className="flex-center">
         <motion.h1
           key="hero-heading"
@@ -68,7 +68,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center justify-center gap-3 pb-[52px] md:pb-[60px] 2xl:pb-20"
+        className="flex items-center justify-center gap-3 pb-[60px] 2xl:pb-20"
       >
         <Button asChild>
           <Link href="https://app.horizonexp.com/signup" target="_blank">

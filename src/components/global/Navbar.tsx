@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container relative flex items-center justify-between py-3 md:py-4 2xl:py-5">
+      <nav className="container relative flex items-center justify-between pt-6 pb-3 md:pt-5 md:pb-4 2xl:pt-5 2xl:pb-5">
 
         <div className="flex items-center justify-start">
           <button className="inline-block md:hidden mr-4" onClick={toggleMobileMenu}>
