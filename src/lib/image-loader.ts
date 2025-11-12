@@ -20,45 +20,66 @@ export default function imageLoader({
   
   // Check if this is an asset image that should be optimized
   if (src.includes('/assets/images/')) {
-    // Available sizes from optimization script
+    // Available sizes from optimization script (in ascending order)
     const AVAILABLE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
     
-    // Handle undefined, NaN, or invalid width values
-    // When using 'fill' prop, Next.js might pass undefined or a very large value
-    // For fill images (undefined width), use -original.webp which is always created
-    // This ensures the image loads even if the source image is smaller than our size presets
+    // ============================================================================
+    // UNIVERSAL FIX: Screen-size and zoom-level agnostic image loading strategy
+    // ============================================================================
+    // 
+    // Problem Analysis:
+    // 1. Fill images: Width is calculated dynamically based on container size, which varies
+    //    with screen size, zoom level, and viewport. This can produce unpredictable widths.
+    // 2. Explicit width images: May request sizes (like 3840w) that don't exist if the
+    //    original image is smaller than that size.
+    // 3. Zoom scenarios:
+    //    - Zoom out 50%: viewport effectively doubles (1920px → 3840px)
+    //    - Zoom out 67%: viewport becomes ~1.5x (1920px → ~2865px)
+    //    - Zoom out 75%: viewport becomes ~1.33x (1920px → ~2560px)
+    //    - Zoom in: less problematic but still needs handling
+    // 4. Screen sizes: Mobile (320-768px), Tablet (768-1024px), Desktop (1024-1920px),
+    //    Ultra-wide (1920px+), 4K displays (3840px+)
+    //
+    // Solution Strategy:
+    // - The optimization script creates sizes up to the original image width only
+    // - We can't check file existence at runtime in static export
+    // - Therefore, we use a conservative approach: use optimized sizes only when safe,
+    //   fall back to -original.webp (which always exists) when uncertain
+    //
+    // ============================================================================
+    
+    // Step 1: Handle undefined, NaN, or invalid width values
+    // This covers fill images and edge cases where width calculation fails
     if (!width || isNaN(width) || !isFinite(width) || width <= 0) {
       const originalPath = `/assets/optimized/${baseName}-original.webp`;
       if (process.env.NODE_ENV === 'development') {
-        console.log(`Image Loader: ${src} (fill/undefined) → ${originalPath}`);
+        console.log(`Image Loader: ${src} (invalid/undefined width) → ${originalPath}`);
       }
       return originalPath;
     }
     
-    // Find the closest size that's >= requested width
-    // If no size is found (width is larger than all sizes), use the largest available
-    const targetSize = AVAILABLE_SIZES.find(s => s >= width) || AVAILABLE_SIZES[AVAILABLE_SIZES.length - 1];
-    
-    // CRITICAL FIX: If the requested size is larger than what might exist,
-    // use -original.webp as fallback. The optimization script only creates sizes
-    // up to the original image width, so if we request 3840w but the image is only
-    // 2592px wide, that file won't exist. Using -original.webp ensures it always works.
-    // 
-    // For images with very large explicit widths (like 2592, 3045), if they request
-    // 3840w but the original is smaller, we should use -original.webp instead.
-    // However, we can't check file existence at runtime in static export, so we use
-    // a heuristic: if requested width is > 2048, use -original.webp to be safe.
-    // This covers the cases where images request 3840w but the file doesn't exist.
-    if (width > 2048) {
+    // Step 2: Handle very large widths (zoom out scenarios, ultra-wide displays, 4K)
+    // When width > 1920px, we risk requesting 3840w which might not exist.
+    // Using -original.webp ensures it works at all zoom levels and screen sizes.
+    // This threshold (1920px) is chosen because:
+    // - It's the largest "common" desktop size
+    // - Anything larger is likely from zoom or ultra-wide displays
+    // - The optimization script may not have created larger sizes
+    if (width > 1920) {
       const originalPath = `/assets/optimized/${baseName}-original.webp`;
       if (process.env.NODE_ENV === 'development') {
-        console.log(`Image Loader: ${src} (${width}px > 2048, using original) → ${originalPath}`);
+        console.log(`Image Loader: ${src} (${width}px > 1920, using original for zoom/screen compatibility) → ${originalPath}`);
       }
       return originalPath;
     }
     
+    // Step 3: For widths <= 1920px, use optimized sizes
+    // Find the closest size that's >= requested width
+    // This ensures we use the smallest appropriate size for better performance
+    // If no size is found (shouldn't happen with our sizes), use the largest available
+    const targetSize = AVAILABLE_SIZES.find(s => s >= width) || AVAILABLE_SIZES[AVAILABLE_SIZES.length - 1];
+    
     // Return optimized version with absolute path for static export
-    // Always ensure the path starts with / for absolute paths
     const optimizedPath = `/assets/optimized/${baseName}-${targetSize}w.webp`;
     
     // Debug logging (only in development)
