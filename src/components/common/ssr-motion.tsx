@@ -1,11 +1,11 @@
-// components/ssr-motion.tsx
+// src/components/common/ssr-motion.tsx
 "use client";
 
 import {
   AnimatePresence,
   motion,
   useReducedMotion,
-  type HTMLMotionProps,
+  type MotionProps,
 } from "motion/react";
 import * as React from "react";
 
@@ -23,13 +23,18 @@ type PolymorphicProps<E extends React.ElementType> = {
   as?: E;
 } & Omit<React.ComponentPropsWithoutRef<E>, "as">;
 
+/**
+ * We rely on MotionProps instead of HTMLMotionProps<any>.
+ * That keeps things generic (polymorphic `as`) without `any`.
+ */
 type SSRMotionProps<E extends React.ElementType> = PolymorphicProps<E> &
   BaseProps &
-  Omit<HTMLMotionProps<any>, "as" | "transition"> & {
-    transition?: HTMLMotionProps<any>["transition"];
+  // Allow standard MotionProps but let us redefine "transition" explicitly
+  Omit<MotionProps, "transition"> & {
+    transition?: MotionProps["transition"];
   };
 
-// ----- utils
+// ---------- utils
 
 const useMounted = () => {
   const [mounted, setMounted] = React.useState(false);
@@ -66,20 +71,21 @@ const preset = (name: VariantName, reduced: boolean) => {
 const mergeTransition = (
   duration?: number,
   delay?: number,
-  base?: HTMLMotionProps<any>["transition"]
-): HTMLMotionProps<any>["transition"] => ({
+  base?: MotionProps["transition"]
+): MotionProps["transition"] => ({
   duration: duration ?? 0.6,
   delay: delay ?? 0,
   ease: [0.22, 1, 0.36, 1],
   ...(base || {}),
 });
 
-// ----- components
+// ---------- components
 
 /**
  * SSRMotion
- * Hooks are called unconditionally every render (no rules-of-hooks violations).
- * We choose the rendered element and props based on `mounted`.
+ * - Hooks are called on every render (no rules-of-hooks violations).
+ * - Server: renders a plain element (no motion props) to avoid mismatch.
+ * - Client: upgrades to motion element and applies motion props.
  */
 export function SSRMotion<E extends React.ElementType = "div">(
   props: SSRMotionProps<E>
@@ -108,31 +114,36 @@ export function SSRMotion<E extends React.ElementType = "div">(
   const prefersReduced = useReducedMotion();
   const Component = (as || "div") as React.ElementType;
 
-  // Always compute motion wrapper — hook order stays constant.
-  const MotionComponent = React.useMemo(() => motion(Component as any), [Component]);
+  // Always define to keep hook order stable
+  const MotionComponent = React.useMemo(
+    () => motion(Component as React.ComponentType),
+    [Component]
+  );
 
   const presetVariants = variants ?? preset(variant, !!prefersReduced);
   const finalTransition = mergeTransition(duration, delay, transition);
 
   const safeInitial = initial ?? "hidden";
-  const safeAnimate = animate ?? undefined; // set animate="visible" if you want mount animation
+  const safeAnimate = animate ?? undefined; // set animate="visible" for mount-time animation
   const safeWhileInView = whileInView ?? "visible";
 
-  // Choose which element to render
-  const Element: any = mounted ? MotionComponent : Component;
+  // Pick which element we render; types stay generic (no `any`)
+  const Element: React.ElementType = mounted ? MotionComponent : Component;
 
-  // Only pass motion props when mounted; otherwise they’d end up on a plain DOM node
-  const motionOnlyProps = mounted
-    ? {
-      initial: safeInitial,
-      animate: safeAnimate,
-      whileInView: safeWhileInView,
-      exit,
-      variants: presetVariants,
-      transition: finalTransition,
-      viewport: { once, amount: viewportAmount },
-    }
-    : {};
+  // Only pass motion props when mounted (otherwise they’d end up on DOM)
+  const motionOnlyProps: Partial<MotionProps> & {
+    viewport?: { once?: boolean; amount?: number };
+  } = mounted
+      ? {
+        initial: safeInitial,
+        animate: safeAnimate,
+        whileInView: safeWhileInView,
+        exit,
+        variants: presetVariants,
+        transition: finalTransition,
+        viewport: { once, amount: viewportAmount },
+      }
+      : {};
 
   return (
     <Element className={className} style={style} {...motionOnlyProps} {...rest}>
@@ -143,7 +154,8 @@ export function SSRMotion<E extends React.ElementType = "div">(
 
 /**
  * SSRStagger
- * Hooks are unconditional; only motion props are conditional on `mounted`.
+ * - Staggers children with variants.
+ * - Server: plain element; Client: motion wrapper.
  */
 export function SSRStagger<E extends React.ElementType = "div">({
   as,
@@ -159,20 +171,25 @@ export function SSRStagger<E extends React.ElementType = "div">({
 }) {
   const mounted = useMounted();
   const Component = (as || "div") as React.ElementType;
-  const MotionComponent = React.useMemo(() => motion(Component as any), [Component]);
-  const Element: any = mounted ? MotionComponent : Component;
+  const MotionComponent = React.useMemo(
+    () => motion(Component as React.ComponentType),
+    [Component]
+  );
+  const Element: React.ElementType = mounted ? MotionComponent : Component;
 
-  const motionOnlyProps = mounted
-    ? {
-      variants: {
-        hidden: {},
-        visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
-      },
-      initial: "hidden" as const,
-      whileInView: "visible" as const,
-      viewport: { once: true, amount: 0.2 },
-    }
-    : {};
+  const motionOnlyProps: Partial<MotionProps> & {
+    viewport?: { once?: boolean; amount?: number };
+  } = mounted
+      ? {
+        variants: {
+          hidden: {},
+          visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
+        },
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true, amount: 0.2 },
+      }
+      : {};
 
   return (
     <Element className={className} style={style} {...motionOnlyProps} {...rest}>
@@ -183,7 +200,7 @@ export function SSRStagger<E extends React.ElementType = "div">({
 
 /**
  * SSRReveal
- * Presence-based show/hide that stays hook-safe.
+ * - Presence-based show/hide with simple fade (+y if motion allowed).
  */
 export function SSRReveal({
   show,
@@ -199,7 +216,7 @@ export function SSRReveal({
   const mounted = useMounted();
   const prefersReduced = useReducedMotion();
 
-  // We can branch the return here; hook order above is fixed already.
+  // Hooks were already run; branching return is safe now.
   if (!mounted) {
     return show ? <div>{children}</div> : null;
   }
