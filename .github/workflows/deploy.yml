@@ -3,7 +3,7 @@ name: Deploy to S3 and CloudFront
 on:
   push:
     branches: [main]
-    
+
   workflow_dispatch:
     inputs:
       branch:
@@ -55,6 +55,15 @@ jobs:
           fi
           echo "Build output size:"
           du -sh out/
+          
+          echo "Checking optimized images..."
+          if [ -d "out/assets/optimized" ]; then
+            OPTIMIZED_COUNT=$(find out/assets/optimized -type f | wc -l)
+            echo "✅ Found $OPTIMIZED_COUNT optimized images"
+          else
+            echo "❌ WARNING: out/assets/optimized directory not found!"
+            exit 1
+          fi
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -83,16 +92,34 @@ jobs:
 
       - name: Invalidate CloudFront
         run: |
+          echo "Creating CloudFront invalidation..."
           INVALIDATION_ID=$(aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*" \
             --query 'Invalidation.Id' \
             --output text)
           echo "CloudFront invalidation created: $INVALIDATION_ID"
+          
+          echo "Waiting for invalidation to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id $INVALIDATION_ID
+          echo "CloudFront invalidation completed!"
+
+      - name: Verify S3 deployment
+        run: |
+          echo "Verifying optimized images in S3..."
+          S3_OPTIMIZED_COUNT=$(aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/assets/optimized/ --recursive | wc -l)
+          echo "✅ Found $S3_OPTIMIZED_COUNT optimized images in S3"
+          
+          # Test a few specific images
+          echo "Testing specific image paths..."
+          aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/assets/optimized/fast-launch-640w.webp && echo "✅ fast-launch image exists" || echo "❌ fast-launch image missing"
+          aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/assets/optimized/audience-polls-640w.webp && echo "✅ audience-polls image exists" || echo "❌ audience-polls image missing"
 
       - name: Deployment summary
         run: |
           echo "🚀 Deployment completed successfully!"
           echo "📦 Files synced to S3: ${{ secrets.S3_BUCKET_NAME }}"
           echo "🔄 CloudFront distribution invalidated: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
-          echo "🌐 Changes should be visible in 1-2 minutes"
+          echo "🌐 Changes should be visible immediately after invalidation completes"
