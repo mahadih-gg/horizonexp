@@ -2,7 +2,7 @@ import BreadcrumbSchema from "@/components/StructuredData/BreadcrumbSchema";
 import type { Metadata } from "next";
 import PrivacySection from "./components/PrivacySection";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+const siteUrl = 'https://horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Horizon Privacy Policy | Data Protection & Privacy",

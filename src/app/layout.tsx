@@ -63,7 +63,7 @@ const roobert = localFont({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+const siteUrl = 'https://horizonexp.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     default: "Horizon Short-form Video Engagement Platform",
     template: "%s | Horizon"
   },
-  description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales. The world's most advanced short-form video engagement engine with native streaming, social commerce, and enterprise-grade performance.",
+  description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
   keywords: [
     "short-form video",
     "video engagement platform",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Horizon Short-form Video Engagement Platform",
-    description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
+    description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
     url: siteUrl,
     siteName: "Horizon",
     images: [

@@ -8,7 +8,7 @@ import ForEnterpriseSection from "./components/ForEnterpriseSection";
 import OnboardingSection from "./components/OnboardingSection";
 import PricingSection from "./components/PricingSection";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+const siteUrl = 'https://horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Horizon Pricing | Short-form Video Engagement Platform",

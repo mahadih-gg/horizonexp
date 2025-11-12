@@ -10,11 +10,11 @@ import PowerYourMobileSection from "./components/PowerYourMobileSection";
 import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+const siteUrl = 'https://horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Horizon Short-form Video Engagement Platform",
-  description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales. Native streaming, social commerce, and enterprise-grade performance.",
+  description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
   keywords: [
     "short-form video",
     "video engagement platform",

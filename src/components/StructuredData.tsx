@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://horizonexp.com';
+const siteUrl = 'https://horizonexp.com';
 
 export default function StructuredData() {
   const organizationSchema = {
@@ -15,12 +15,12 @@ export default function StructuredData() {
       "height": 630
     },
     "image": `${siteUrl}/assets/images/opengraph.webp`,
-    "description": "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales. The world's most advanced short-form video engagement engine with native streaming, social commerce, and enterprise-grade performance.",
+    "description": "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
     "foundingOrganization": {
       "@type": "Organization",
       "name": "Flagship Technology Inc."
     },
-    "foundingDate": "2024",
+    "foundingDate": "2025",
     "sameAs": [
       "https://www.linkedin.com/company/horizonera",
       "https://x.com/horizonera",
