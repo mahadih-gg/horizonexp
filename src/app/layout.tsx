@@ -63,7 +63,7 @@ const roobert = localFont({
   display: "swap",
 });
 
-const siteUrl = 'https://horizonexp.com';
+const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

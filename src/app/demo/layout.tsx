@@ -1,7 +1,7 @@
 import BreadcrumbSchema from "@/components/StructuredData/BreadcrumbSchema";
 import type { Metadata } from "next";
 
-const siteUrl = 'https://horizonexp.com';
+const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Horizon Demo | See Short-form Video in Action",

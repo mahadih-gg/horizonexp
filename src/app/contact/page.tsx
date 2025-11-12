@@ -3,7 +3,7 @@ import BreadcrumbSchema from "@/components/StructuredData/BreadcrumbSchema";
 import type { Metadata } from "next";
 import ContactSection from "./components/ContactSection";
 
-const siteUrl = 'https://horizonexp.com';
+const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Contact Horizon | Get in Touch with Our Team",

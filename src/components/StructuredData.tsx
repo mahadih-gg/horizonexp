@@ -1,4 +1,4 @@
-const siteUrl = 'https://horizonexp.com';
+const siteUrl = 'https://www.horizonexp.com';
 
 export default function StructuredData() {
   const organizationSchema = {

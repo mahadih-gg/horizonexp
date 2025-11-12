@@ -10,7 +10,7 @@ import PowerYourMobileSection from "./components/PowerYourMobileSection";
 import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
-const siteUrl = 'https://horizonexp.com';
+const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
   title: "Horizon Short-form Video Engagement Platform",

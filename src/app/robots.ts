@@ -1,46 +1,35 @@
 import { MetadataRoute } from 'next'
 
-export const dynamic = 'force-static'
+const siteUrl = 'https://www.horizonexp.com'
 
-const siteUrl = 'https://horizonexp.com'
+export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
   return {
+    // Keep it simple: allow everything by default
     rules: [
-      // Default rule for all bots
       {
         userAgent: '*',
         allow: '/',
       },
-      // AI-specific crawlers
-      {
-        userAgent: 'GPTBot', // OpenAI’s crawler
-        allow: '/',
-      },
-      {
-        userAgent: 'ChatGPT-User', // ChatGPT browsing agent
-        allow: '/',
-      },
-      {
-        userAgent: 'Google-Extended', // Google’s Gemini crawler
-        allow: '/',
-      },
-      {
-        userAgent: 'Anthropic-AI', // Claude crawler
-        allow: '/',
-      },
-      {
-        userAgent: 'PerplexityBot', // Perplexity AI
-        allow: '/',
-      },
-      {
-        userAgent: 'CCBot', // CommonCrawl (used by Perplexity and others)
-        allow: '/',
-      },
-      {
-        userAgent: 'Grok', // xAI’s Grok bot
-        allow: '/',
-      },
+
+      // --- Optional: explicitly allow reputable crawlers you care about ---
+      // OpenAI: content for browsing (OAI-SearchBot) and general crawler (GPTBot)
+      { userAgent: 'GPTBot', allow: '/' },         // OpenAI crawler
+      { userAgent: 'OAI-SearchBot', allow: '/' },  // OpenAI search/browsing
+
+      // Google model control token (not a fetcher, but honored in robots)
+      { userAgent: 'Google-Extended', allow: '/' },
+
+      // Anthropic
+      { userAgent: 'ClaudeBot', allow: '/' },
+
+      // Perplexity (two UAs seen: PerplexityBot and Perplexity-User)
+      { userAgent: 'PerplexityBot', allow: '/' },
+      { userAgent: 'Perplexity-User', allow: '/' },
+
+      // Common Crawl
+      { userAgent: 'CCBot', allow: '/' },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
   }

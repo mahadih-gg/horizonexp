@@ -1,43 +1,45 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
 
-export const dynamic = 'force-static';
+// If your site is single-host canonicalized, keep one base:
+const siteUrl = 'https://www.horizonexp.com'
 
-const siteUrl = 'https://horizonexp.com';
+export const dynamic = 'force-static' // ok if you want a static sitemap at build
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const now = new Date().toISOString()
+
+  const routes: MetadataRoute.Sitemap = [
     {
       url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      lastModified: now,
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${siteUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      lastModified: now,
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${siteUrl}/demo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      lastModified: now,
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${siteUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      lastModified: now,
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${siteUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
+      lastModified: now,
+      changeFrequency: 'yearly',
       priority: 0.5,
     },
-  ];
+  ]
 
-  return routes;
+  return routes
 }
-
