@@ -190,6 +190,7 @@ const ComparisonSection = () => {
             alt="Horizon home layout"
             fill
             className="object-cover"
+            sizes="100vw"
           />
         </div>
 
@@ -205,6 +206,7 @@ const ComparisonSection = () => {
             alt="Static home layout"
             fill
             className="object-cover"
+            sizes="100vw"
           />
         </div>
 

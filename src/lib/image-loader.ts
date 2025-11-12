@@ -24,6 +24,28 @@ export default function imageLoader({
     const AVAILABLE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
     
     // ============================================================================
+    // CRITICAL FIX: Always use -original.webp for problematic images
+    // ============================================================================
+    // These 5 specific images have issues with zoom levels (50%, 67%, 75%)
+    // due to width calculation inconsistencies. Using -original.webp ensures
+    // they always load regardless of zoom level or screen size.
+    const PROBLEMATIC_IMAGES = [
+      'horzion-home',
+      'static-home',
+      'horizon-console-left',
+      'horizon-console-main',
+      'horizon-console-right'
+    ];
+    
+    if (PROBLEMATIC_IMAGES.includes(baseName)) {
+      const originalPath = `/assets/optimized/${baseName}-original.webp`;
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Image Loader: ${src} (problematic image, always using original) → ${originalPath}`);
+      }
+      return originalPath;
+    }
+    
+    // ============================================================================
     // UNIVERSAL FIX: Screen-size and zoom-level agnostic image loading strategy
     // ============================================================================
     // 

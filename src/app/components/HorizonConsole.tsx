@@ -22,6 +22,7 @@ const HorizonConsole = () => {
             quality={100}
             priority
             className="object-cover"
+            sizes="(max-width: 1920px) 100vw, 1920px"
           />
         </motion.div>
 
@@ -39,6 +40,7 @@ const HorizonConsole = () => {
             quality={100}
             priority
             className="w-full object-cover rounded-[10px] md:rounded-3xl 2xl:rounded-[28px]"
+            sizes="(max-width: 1920px) 100vw, 1920px"
             style={{
               boxShadow: "0px 0px 20px 0px #0000000A"
             }}
@@ -60,6 +62,7 @@ const HorizonConsole = () => {
             quality={100}
             priority
             className="object-cover"
+            sizes="(max-width: 1920px) 100vw, 1920px"
           />
         </motion.div>
       </div>
