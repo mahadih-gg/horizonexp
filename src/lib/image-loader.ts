@@ -26,10 +26,15 @@ export default function imageLoader({
     // Find the closest size that's >= requested width
     const targetSize = AVAILABLE_SIZES.find(s => s >= width) || AVAILABLE_SIZES[AVAILABLE_SIZES.length - 1];
     
-    // Return optimized version
+    // Return optimized version with absolute path for static export
     return `/assets/optimized/${baseName}-${targetSize}w.webp`;
   }
 
   // For other images, return original path
   return src;
+}
+
+// Helper function to get optimized image path for any width
+export function getOptimizedImagePath(src: string, width: number = 1200): string {
+  return imageLoader({ src, width });
 }
