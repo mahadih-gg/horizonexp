@@ -31,6 +31,19 @@ async function optimizeImage(inputPath, fileName) {
   try {
     const image = sharp(inputPath);
     const metadata = await image.metadata();
+    
+    // Adjust quality based on original file size
+    const stats = fs.statSync(inputPath);
+    const fileSizeKB = stats.size / 1024;
+    let quality = QUALITY; // 85
+    
+    if (fileSizeKB > 1000) {
+      quality = 75; // Reduce quality for files > 1MB
+      console.log(`  ⚠ Large file detected (${fileSizeKB.toFixed(0)}KB), using quality ${quality}`);
+    } else if (fileSizeKB > 500) {
+      quality = 80; // Slightly reduce for files > 500KB
+      console.log(`  ℹ Medium file (${fileSizeKB.toFixed(0)}KB), using quality ${quality}`);
+    }
 
     for (const size of SIZES) {
       // Skip if image is smaller than target size
@@ -47,17 +60,24 @@ async function optimizeImage(inputPath, fileName) {
           withoutEnlargement: true,
           fit: 'inside',
         })
-        .webp({ quality: QUALITY })
+        .webp({ quality })
         .toFile(outputPath);
 
-      const stats = fs.statSync(outputPath);
-      console.log(`  ✓ ${outputFileName} (${(stats.size / 1024).toFixed(1)}KB)`);
+      const outputStats = fs.statSync(outputPath);
+      const outputSizeKB = (outputStats.size / 1024).toFixed(1);
+      
+      // Warn if output is still very large
+      if (outputStats.size > 300 * 1024) {
+        console.log(`  ⚠ ${outputFileName} (${outputSizeKB}KB) - Consider reducing quality further`);
+      } else {
+        console.log(`  ✓ ${outputFileName} (${outputSizeKB}KB)`);
+      }
     }
 
     // Also create an original-size optimized version
     const originalOutputPath = path.join(OUTPUT_DIR, `${baseName}-original.webp`);
     await image
-      .webp({ quality: QUALITY })
+      .webp({ quality })
       .toFile(originalOutputPath);
     
     const originalStats = fs.statSync(originalOutputPath);

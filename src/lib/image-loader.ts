@@ -27,7 +27,15 @@ export default function imageLoader({
     const targetSize = AVAILABLE_SIZES.find(s => s >= width) || AVAILABLE_SIZES[AVAILABLE_SIZES.length - 1];
     
     // Return optimized version with absolute path for static export
-    return `/assets/optimized/${baseName}-${targetSize}w.webp`;
+    // Always ensure the path starts with / for absolute paths
+    const optimizedPath = `/assets/optimized/${baseName}-${targetSize}w.webp`;
+    
+    // Debug logging (only in development)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`Image Loader: ${src} (${width}px) → ${optimizedPath}`);
+    }
+    
+    return optimizedPath;
   }
 
   // For other images, return original path
