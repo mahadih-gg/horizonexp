@@ -1,11 +1,12 @@
 
-import FlagshipProvider from "./FlagshipProvider";
 const Provides = ({ children }: { children: React.ReactNode }) => {
 
   return (
-    <FlagshipProvider>
+    <>
+      {/* <FlagshipProvider> */}
       {children}
-    </FlagshipProvider>
+      {/* </FlagshipProvider> */}
+    </>
   );
 };
 

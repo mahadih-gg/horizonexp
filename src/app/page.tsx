@@ -7,7 +7,6 @@ import HorizonImpactSection from "./components/HorizonImpactSection";
 import HowBrandsCanUseHorizonSection from "./components/HowBrandsCanUseHorizonSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
-import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
 const siteUrl = 'https://www.horizonexp.com';
@@ -85,7 +84,7 @@ export default function Home() {
     <main className="">
       <Hero />
       {/* <EngageMoreSection /> */}
-      <SeeHorizonSection />
+      {/* <SeeHorizonSection /> */}
       <PowerYourMobileSection />
       <HowBrandsCanUseHorizonSection />
       <EverythingYouNeedSection />
