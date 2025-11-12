@@ -48,13 +48,13 @@ export default function CookieConsent() {
         animate={{ y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.5, delay: 3, ease: "easeInOut" }}
-        className="bg-white rounded-2xl 2xl:rounded-3xl py-4 px-5 md:py-[18px] md:px-[30px] 2xl:px-10 2xl:py-6 flex items-center gap-4 md:gap-6 max-w-[344px] md:max-w-[345px] 2xl:max-w-[460px] w-full pointer-events-auto"
+        className="bg-white rounded-2xl 2xl:rounded-3xl py-4 px-5 md:py-[18px] md:px-[30px] 2xl:px-10 2xl:py-6 flex items-center gap-2 md:gap-3 max-w-[345px] md:max-w-[355px] 2xl:max-w-[460px] w-full pointer-events-auto"
         style={{
           boxShadow: "2px 2px 20px 0px rgba(0, 0, 0, 0.06)",
         }}
       >
-        <p className="text-xs md:text-[10px] 2xl:text-sm flex-1 text-left font-medium">
-          We use cookies to ensure that we give you the best experience on our website.
+        <p className="text-sm 2xl:text-lg flex-1 text-left font-medium leading-tight">
+          We use cookies to ensure the best user experience on our website.
         </p>
         <Button
           variant="default"
