@@ -1,6 +1,6 @@
 "use client";
 
-import { EntryPoint, EntryPointSize, EntryPointType } from '@thinkflagship/web-shorts';
+import { EntryPoint, EntryPointSize, EntryPointType } from '@thinkflagship/horizon-web-shorts';
 
 const FlagshipEntryPoint = () => {
   return (

@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/global/SmoothScroll";
 import CloseIcon from "@/components/icons/close-icon";
 import Provides from "@/components/providers";
 import StructuredData from "@/components/StructuredData";
-import "@thinkflagship/web-shorts/dist/styles.css";
+import "@thinkflagship/horizon-web-shorts/styles.css";
 import { CircleCheck } from "lucide-react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
