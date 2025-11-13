@@ -1,6 +1,6 @@
 "use client";
 
-import { FlagshipContainer } from "@thinkflagship/web-shorts";
+import { FlagshipContainer } from "@thinkflagship/horizon-web-shorts";
 import React from 'react';
 
 const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
