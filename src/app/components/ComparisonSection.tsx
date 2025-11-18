@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
+import imageLoader from "@/lib/image-loader";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -189,6 +190,7 @@ const ComparisonSection = () => {
             src="/assets/images/horzion-home.webp"
             alt="Horizon home layout"
             fill
+            loader={imageLoader}
             className="object-cover"
             sizes="100vw"
           />
@@ -205,6 +207,7 @@ const ComparisonSection = () => {
             src="/assets/images/static-home.webp"
             alt="Static home layout"
             fill
+            loader={imageLoader}
             className="object-cover"
             sizes="100vw"
           />
