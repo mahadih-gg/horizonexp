@@ -36,7 +36,7 @@ const DemoPage = () => {
         Show your freshest products in a swipeable <br /> feed so visitors always see what&apos;s new first.
       </>,
       SvgComponent: isMobile ? NewArrivalsSvgSm : NewArrivalsSvg,
-      link: "#",
+      link: "/demo/new-arrivals",
       buttonText: "View demo",
     },
     {
@@ -45,7 +45,7 @@ const DemoPage = () => {
         Surface what&apos;s hot right now so shoppers <br /> follow social proof and move faster.
       </>,
       SvgComponent: isMobile ? TrendingSvgSm : TrendingSvg,
-      link: "#",
+      link: "/demo/trending",
       buttonText: "View demo",
     },
     {
@@ -54,7 +54,7 @@ const DemoPage = () => {
         Show the product in real use cases so <br /> customers can visualize ownership.
       </>,
       SvgComponent: isMobile ? SeeItInActionSvgSm : SeeItInActionSvg,
-      link: "#",
+      link: "/demo/see-it-in-action",
       buttonText: "View demo",
     },
     {
@@ -63,7 +63,7 @@ const DemoPage = () => {
         Turn real customer videos into a proof wall <br /> so visitors trust you more and hesitate less.
       </>,
       SvgComponent: isMobile ? UserReviewSvgSm : UserReviewSvg,
-      link: "#",
+      link: "/demo/user-review",
       buttonText: "View demo",
     },
     {
@@ -72,7 +72,7 @@ const DemoPage = () => {
         Recommend the next logical product so <br /> you quietly increase AOV.
       </>,
       SvgComponent: isMobile ? NextBestBuySvgSm : NextBestBuySvg,
-      link: "#",
+      link: "/demo/next-best-buy",
       buttonText: "View demo",
     },
     {
@@ -81,7 +81,7 @@ const DemoPage = () => {
         Highlight content from your customers and <br /> fans so your brand feels alive.
       </>,
       SvgComponent: isMobile ? UgcSvgSm : UgcSvg,
-      link: "#",
+      link: "/demo/ugc",
       buttonText: "View demo",
     },
     {
@@ -90,7 +90,7 @@ const DemoPage = () => {
         Hook visitors with bold, snackable clips that <br /> instantly show why your product matters.
       </>,
       SvgComponent: isMobile ? WebsiteHeroSvgSm : WebsiteHeroSvg,
-      link: "#",
+      link: "/demo/website-hero",
       buttonText: "View demo",
     },
     {
@@ -99,7 +99,7 @@ const DemoPage = () => {
         Walk visitors through how it works in quick, <br /> swipeable steps so they &quot;get it&quot; in seconds.
       </>,
       SvgComponent: isMobile ? WebsiteExplainerSvgSm : WebsiteExplainerSvg,
-      link: "#",
+      link: "/demo/website-explainer",
       buttonText: "View demo",
     },
   ];

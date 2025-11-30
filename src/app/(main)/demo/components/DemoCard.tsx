@@ -17,7 +17,7 @@ const DemoCard = ({ title, description, SvgComponent, link, buttonText }: Props)
         <h2 className='text-base md:text-[15px] 2xl:text-xl font-semibold'>{title}</h2>
         <p className='text-base md:text-[15px] 2xl:text-xl pt-3 md:pt-0 pb-3 md:pb-[18px] 2xl:pb-6'>{description}</p>
         <Button asChild variant="white" className='text-base md:text-[15px] 2xl:text-xl'>
-          <Link href={link} target="_blank">
+          <Link href={link}>
             {buttonText}
           </Link>
         </Button>

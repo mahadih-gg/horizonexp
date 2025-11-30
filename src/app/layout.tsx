@@ -1,6 +1,4 @@
 import CookieConsent from "@/components/global/CookieConsent";
-import Footer from "@/components/global/Footer";
-import Navbar from "@/components/global/Navbar";
 import SmoothScroll from "@/components/global/SmoothScroll";
 import CloseIcon from "@/components/icons/close-icon";
 import Provides from "@/components/providers";
@@ -155,11 +153,7 @@ export default function RootLayout({
         <StructuredData />
         <SmoothScroll />
         <Provides>
-          <header className="sticky top-0 z-50 backdrop-blur-2xl! bg-white/16">
-            <Navbar />
-          </header>
           {children}
-          <Footer />
         </Provides>
 
         <CookieConsent />
