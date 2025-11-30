@@ -1,13 +1,15 @@
 'use client';
 
-import { Menu, ShoppingBag } from "lucide-react";
+import CartIcon from "@/components/icons/cart-icon";
+import MenuIcon2 from "@/components/icons/menu-icon2";
+import PoweredByHorizon from "@/components/svg/PoweredByHorizon";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
 const demoRoutes: Record<string, { title: string; description: string }> = {
   '/demo/new-arrivals': {
     title: 'New Arrivals',
-    description: 'Show your freshest products in a swipeable feed so visitors always see what\'s new first.',
+    description: 'Show your freshest products in a swipeable feed.',
   },
   '/demo/trending': {
     title: 'Trending',
@@ -51,28 +53,28 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <main>
-      <header className="sticky top-0 z-50">
+      <header>
         {/* Top Banner */}
-        <div className="bg-primary text-white text-center py-2 px-4">
-          <p className="text-sm md:text-base text-white">
+        <div className="bg-primary text-white text-center py-2 2xl:py-2.5 px-4">
+          <p className="text-sm xl:text-base text-white">
             {demoInfo.title} - {demoInfo.description}
           </p>
         </div>
 
         {/* Navigation Bar */}
-        <nav className="bg-white border-b border-gray-200">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-14 md:h-16">
+        <nav className="border-b border-secondary">
+          <div className="container">
+            <div className="flex items-center justify-between h-16 md:h-[84px]">
               {/* Hamburger Menu */}
               <button
                 className="p-2 hover:bg-gray-100 rounded-md transition-colors"
                 aria-label="Menu"
               >
-                <Menu className="w-6 h-6 text-primary" />
+                <MenuIcon2 />
               </button>
 
               {/* Brand Name */}
-              <h1 className="text-lg md:text-xl font-semibold text-primary">
+              <h1 className="text-lg md:text-2xl font-medium text-primary">
                 YOUR BRAND
               </h1>
 
@@ -81,13 +83,20 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
                 className="p-2 hover:bg-gray-100 rounded-md transition-colors"
                 aria-label="Shopping bag"
               >
-                <ShoppingBag className="w-6 h-6 text-primary" />
+                <CartIcon />
               </button>
             </div>
           </div>
         </nav>
       </header>
-      {children}
+
+      <main className="container pt-8 md:pt-[45px] 2xl:pt-[60px]">
+        {children}
+      </main>
+
+      <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
+        <PoweredByHorizon />
+      </footer>
     </main>
   );
 };
