@@ -22,9 +22,9 @@ const DemoCard = ({ title, description, SvgComponent, link, buttonText }: Props)
           </Link>
         </Button>
       </div>
-      <div className="w-full overflow-hidden flex justify-end items-end -mt-7">
-        <div className='w-4/5 flex justify-end items-end'>
-          <SvgComponent className='h-[392px] md:h-[357px] 2xl:h-[475px] w-auto  flex justify-end items-end' />
+      <div className="w-full overflow-hidden flex justify-end items-end mt-12 sm:mt-5 xl:-mt-7">
+        <div className='w-full md:w-4/5 flex justify-end items-end'>
+          <SvgComponent className='w-full md:w-auto h-auto md:h-[357px] 2xl:h-[475px] flex justify-end items-end' />
         </div>
       </div>
     </div>

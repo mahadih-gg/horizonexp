@@ -1,9 +1,9 @@
+import { cn } from "@/lib/utils";
 
 const UserReviewSvg = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="580"
-    height="475"
+    className={cn("w-[570px] h-[475px]", className)}
     fill="none"
     viewBox="0 0 580 475"
   >

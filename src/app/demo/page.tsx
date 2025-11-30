@@ -2,18 +2,32 @@
 
 import ConnectSection from "@/components/common/ConnectSection";
 import NewArrivalsSvg from "@/components/svg/NewArrivalsSvg";
+import NewArrivalsSvgSm from "@/components/svg/NewArrivalsSvgSm";
 import NextBestBuySvg from "@/components/svg/NextBestBuySvg";
+import NextBestBuySvgSm from "@/components/svg/NextBestBuySvgSm";
 import SeeItInActionSvg from "@/components/svg/SeeItInActionSvg";
+import SeeItInActionSvgSm from "@/components/svg/SeeItInActionSvgSm";
 import TrendingSvg from "@/components/svg/TrendingSvg";
+import TrendingSvgSm from "@/components/svg/TrendingSvgSm";
 import UgcSvg from "@/components/svg/UgcSvg";
+import UgcSvgSm from "@/components/svg/UgcSvgSm";
 import UserReviewSvg from "@/components/svg/UserReviewSvg";
+import UserReviewSvgSm from "@/components/svg/UserReviewSvgSm";
 import WebsiteExplainerSvg from "@/components/svg/WebsiteExplainerSvg";
+import WebsiteExplainerSvgSm from "@/components/svg/WebsiteExplainerSvgSm";
 import WebsiteHeroSvg from "@/components/svg/WebsiteHeroSvg";
+import WebsiteHeroSvgSm from "@/components/svg/WebsiteHeroSvgSm";
 import { Text } from "@/components/ui/text";
+import useWindowSize from "@/hooks/useWindowSize";
 import { motion } from "motion/react";
+import { useMemo } from "react";
 import DemoCard from "./components/DemoCard";
 
 const DemoPage = () => {
+
+  const { width } = useWindowSize();
+
+  const isMobile = useMemo(() => width < 480, [width]);
 
   const demoCards = [
     {
@@ -21,7 +35,7 @@ const DemoPage = () => {
       description: <>
         Show your freshest products in a swipeable <br /> feed so visitors always see what&apos;s new first.
       </>,
-      SvgComponent: NewArrivalsSvg,
+      SvgComponent: isMobile ? NewArrivalsSvgSm : NewArrivalsSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -30,7 +44,7 @@ const DemoPage = () => {
       description: <>
         Surface what&apos;s hot right now so shoppers <br /> follow social proof and move faster.
       </>,
-      SvgComponent: TrendingSvg,
+      SvgComponent: isMobile ? TrendingSvgSm : TrendingSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -39,7 +53,7 @@ const DemoPage = () => {
       description: <>
         Show the product in real use cases so <br /> customers can visualize ownership.
       </>,
-      SvgComponent: SeeItInActionSvg,
+      SvgComponent: isMobile ? SeeItInActionSvgSm : SeeItInActionSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -48,7 +62,7 @@ const DemoPage = () => {
       description: <>
         Turn real customer videos into a proof wall <br /> so visitors trust you more and hesitate less.
       </>,
-      SvgComponent: UserReviewSvg,
+      SvgComponent: isMobile ? UserReviewSvgSm : UserReviewSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -57,7 +71,7 @@ const DemoPage = () => {
       description: <>
         Recommend the next logical product so <br /> you quietly increase AOV.
       </>,
-      SvgComponent: NextBestBuySvg,
+      SvgComponent: isMobile ? NextBestBuySvgSm : NextBestBuySvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -66,7 +80,7 @@ const DemoPage = () => {
       description: <>
         Highlight content from your customers and <br /> fans so your brand feels alive.
       </>,
-      SvgComponent: UgcSvg,
+      SvgComponent: isMobile ? UgcSvgSm : UgcSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -75,7 +89,7 @@ const DemoPage = () => {
       description: <>
         Hook visitors with bold, snackable clips that <br /> instantly show why your product matters.
       </>,
-      SvgComponent: WebsiteHeroSvg,
+      SvgComponent: isMobile ? WebsiteHeroSvgSm : WebsiteHeroSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -84,7 +98,7 @@ const DemoPage = () => {
       description: <>
         Walk visitors through how it works in quick, <br /> swipeable steps so they &quot;get it&quot; in seconds.
       </>,
-      SvgComponent: WebsiteExplainerSvg,
+      SvgComponent: isMobile ? WebsiteExplainerSvgSm : WebsiteExplainerSvg,
       link: "#",
       buttonText: "View demo",
     },
@@ -138,7 +152,7 @@ const DemoPage = () => {
 
       <ConnectSection
         title="Don’t see the use case you need?"
-        description="Contact us and we’ll put together a custom demo for your brand."
+        description={<>Contact us and we’ll put together a <br /> custom demo for your brand.</>}
         cta={{
           primary: {
             label: "Start for free",
