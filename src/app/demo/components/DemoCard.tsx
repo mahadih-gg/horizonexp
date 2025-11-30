@@ -1,60 +1,32 @@
-import SectionHeader from '@/components/common/SectionHeader';
 import { Button } from '@/components/ui/button';
-import { CardContent } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import Link from 'next/link';
+import { ComponentType } from 'react';
 
 type Props = {
-  topLabel: string;
   title: string;
   description: string | React.ReactNode;
-  imageUrl: string;
+  SvgComponent: ComponentType<{ className?: string }>;
   link: string;
   buttonText: string;
-  align?: 'left' | 'right';
 };
 
-const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, align = 'left' }: Props) => {
+const DemoCard = ({ title, description, SvgComponent, link, buttonText }: Props) => {
   return (
-    <div className={cn("bg-transparent flex flex-row justify-between p-0 gap-0! 2xl:gap-0! overflow-hidden", align === 'left' ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row')}>
-      <div
-        className={cn('w-full lg:w-[38.7%] 2xl:w-[38.66%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left pt-6 lg:pt-0 pb-10 lg:pb-0',
-          align === 'left' ? 'lg:pl-[120px] 2xl:pl-[161px]' : 'lg:pr-[120px] 2xl:pr-[161px]'
-        )}
-      >
-
-        <SectionHeader
-          animate={false}
-          topLabel={topLabel}
-          title={title}
-          description={description}
-          centered={false}
-          className={cn('flex flex-col items-center lg:items-start justify-center text-center lg:text-left',
-          )}
-          extraContent={
-            <div className='pt-10'>
-              <Button asChild>
-                <Link href={link} target="_blank">
-                  {buttonText}
-                </Link>
-              </Button>
-            </div>
-          }
-        />
-
+    <div className="bg-secondary rounded-3xl lg:rounded-4xl 2xl:rounded-6xl overflow-hidden pt-7 pl-7 md:pt-[45px] md:pl-[45px] 2xl:pt-[60px] 2xl:pl-[60px]">
+      <div className="flex flex-col items-start justify-center text-left pr-7 md:pr-[45px] 2xl:pr-[60px]">
+        <h2 className='text-base md:text-[15px] 2xl:text-xl font-semibold'>{title}</h2>
+        <p className='text-base md:text-[15px] 2xl:text-xl pt-3 md:pt-0 pb-3 md:pb-[18px] 2xl:pb-6'>{description}</p>
+        <Button asChild variant="white" className='text-base md:text-[15px] 2xl:text-xl'>
+          <Link href={link} target="_blank">
+            {buttonText}
+          </Link>
+        </Button>
       </div>
-      <CardContent className='w-full lg:w-[61.3%] 2xl:w-[61.34%] overflow-hidden aspect-119/100 lg:aspect-auto h-auto lg:h-[510px] 2xl:h-[680px]'>
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={1012}
-          height={686}
-          priority
-          quality={100}
-          className={cn("w-full h-full object-cover object-left rounded-3xl lg:rounded-2xl 2xl:rounded-3xl", align === 'left' ? 'lg:object-right' : 'lg:object-left')}
-        />
-      </CardContent>
+      <div className="w-full overflow-hidden flex justify-end items-end -mt-7">
+        <div className='w-4/5 flex justify-end items-end'>
+          <SvgComponent className='h-[392px] md:h-[357px] 2xl:h-[475px] w-auto  flex justify-end items-end' />
+        </div>
+      </div>
     </div>
   );
 }

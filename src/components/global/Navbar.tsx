@@ -70,7 +70,7 @@ const Navbar = () => {
           </Button>
           <Button asChild>
             <Link href="https://app.horizonexp.com/signup" target="_blank">
-              Start for free
+              Launch free
             </Link>
           </Button>
         </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
                   className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
                   onClick={closeMobileMenu}
                 >
-                  Start for free
+                  Launch free
                   <RightIcon />
                 </Link>
 

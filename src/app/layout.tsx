@@ -155,7 +155,7 @@ export default function RootLayout({
         <StructuredData />
         <SmoothScroll />
         <Provides>
-          <header className="sticky top-0 z-50 backdrop-blur-2xl! bg-background/16">
+          <header className="sticky top-0 z-50 backdrop-blur-2xl! bg-white/16">
             <Navbar />
           </header>
           {children}

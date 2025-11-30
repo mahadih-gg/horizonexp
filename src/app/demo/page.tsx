@@ -1,56 +1,92 @@
 'use client';
 
 import ConnectSection from "@/components/common/ConnectSection";
+import NewArrivalsSvg from "@/components/svg/NewArrivalsSvg";
+import NextBestBuySvg from "@/components/svg/NextBestBuySvg";
+import SeeItInActionSvg from "@/components/svg/SeeItInActionSvg";
+import TrendingSvg from "@/components/svg/TrendingSvg";
+import UgcSvg from "@/components/svg/UgcSvg";
+import UserReviewSvg from "@/components/svg/UserReviewSvg";
+import WebsiteExplainerSvg from "@/components/svg/WebsiteExplainerSvg";
+import WebsiteHeroSvg from "@/components/svg/WebsiteHeroSvg";
 import { Text } from "@/components/ui/text";
-import useWindowSize from "@/hooks/useWindowSize";
 import { motion } from "motion/react";
-import { useMemo } from "react";
 import DemoCard from "./components/DemoCard";
 
 const DemoPage = () => {
 
-  const { width } = useWindowSize();
-  const isMobile = useMemo(() => width < 768, [width]);
-
   const demoCards = [
     {
-      topLabel: "E-commerce",
-      title: "Convert browsers into buyers",
+      title: "New Arrivals",
       description: <>
-        Showcase products in an interactive, Insta-style feed that turns browsing into buying.
-        <br />
-        <br />
-        With shoppable overlays, personalized recommendations, and seamless checkout integrations, Horizon helps you capture attention, increase session time, and convert views into sales.
+        Show your freshest products in a swipeable <br /> feed so visitors always see what&apos;s new first.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo-ecom.webp" : "/assets/images/demo-ecom-xl.webp",
-      link: "https://demo.horizonexp.com/ecom",
-      buttonText: "View e-commerce demo",
+      SvgComponent: NewArrivalsSvg,
+      link: "#",
+      buttonText: "View demo",
     },
     {
-      topLabel: "Telecom",
-      title: "Engage every subscriber",
+      title: "Trending",
       description: <>
-        Reimagine customer engagement with short-form journeys.
-        <br />
-        <br />
-        From personalized data packs to loyalty campaigns and product education, Horizon makes it easy to engage subscribers in a format they love -driving upsells, retention, and greater customer value.
+        Surface what&apos;s hot right now so shoppers <br /> follow social proof and move faster.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo-telco.webp" : "/assets/images/demo-telco-xl.webp",
-      link: "https://demo.horizonexp.com/telco",
-      buttonText: "View telco demo",
+      SvgComponent: TrendingSvg,
+      link: "#",
+      buttonText: "View demo",
     },
     {
-      topLabel: "Sports",
-      title: "Turn fans into superfans",
+      title: "See It in Action",
       description: <>
-        Turn fans into superfans with short-form. Share highlights, exclusive behind-the-scenes clips, merch drops, and interactive polls - all in one feed.
-        <br />
-        <br />
-        Horizon keeps audiences engaged before, during, and after the game, unlocking new revenue and deeper fan loyalty.
+        Show the product in real use cases so <br /> customers can visualize ownership.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo-sports.webp" : "/assets/images/demo-sports-xl.webp",
-      link: "https://demo.horizonexp.com/sports",
-      buttonText: "View sports demo",
+      SvgComponent: SeeItInActionSvg,
+      link: "#",
+      buttonText: "View demo",
+    },
+    {
+      title: "User Review",
+      description: <>
+        Turn real customer videos into a proof wall <br /> so visitors trust you more and hesitate less.
+      </>,
+      SvgComponent: UserReviewSvg,
+      link: "#",
+      buttonText: "View demo",
+    },
+    {
+      title: "Next Best Buy",
+      description: <>
+        Recommend the next logical product so <br /> you quietly increase AOV.
+      </>,
+      SvgComponent: NextBestBuySvg,
+      link: "#",
+      buttonText: "View demo",
+    },
+    {
+      title: "UGC",
+      description: <>
+        Highlight content from your customers and <br /> fans so your brand feels alive.
+      </>,
+      SvgComponent: UgcSvg,
+      link: "#",
+      buttonText: "View demo",
+    },
+    {
+      title: "Website Hero",
+      description: <>
+        Hook visitors with bold, snackable clips that <br /> instantly show why your product matters.
+      </>,
+      SvgComponent: WebsiteHeroSvg,
+      link: "#",
+      buttonText: "View demo",
+    },
+    {
+      title: "Website Explainer",
+      description: <>
+        Walk visitors through how it works in quick, <br /> swipeable steps so they &quot;get it&quot; in seconds.
+      </>,
+      SvgComponent: WebsiteExplainerSvg,
+      link: "#",
+      buttonText: "View demo",
     },
   ];
 
@@ -63,7 +99,7 @@ const DemoPage = () => {
           transition={{ duration: 0.8 }}
         >
           <Text variant="heading" className="text-center">
-            Experience Horizon in action
+            Experience Horizon in action.
           </Text>
         </motion.div>
 
@@ -73,11 +109,9 @@ const DemoPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Text variant="section-subheading" className="text-center pt-8 pb-[80px]">
-            Short-form built for every industry, every audience. See how Horizon&apos;s short-
+            Click into demos for each use case and see how Horizon upgrades
             <br className="hidden md:block" />
-            form engine can transform engagement
-            <br className="block md:hidden" />
-            across industries.
+            your site with conversion-ready video feeds.
           </Text>
         </motion.div>
       </section>
@@ -88,25 +122,23 @@ const DemoPage = () => {
         transition={{ duration: 0.5 }}
         className="container"
       >
-        <div className="grid gap-10 md:gap-[75px] 2xl:gap-[100px]">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-6 2xl:gap-8">
           {demoCards.map((card, i) => (
             <DemoCard
               key={card.title}
-              topLabel={card.topLabel}
-              imageUrl={card.imageUrl}
+              SvgComponent={card.SvgComponent}
               title={card.title}
               description={card.description}
               link={card.link}
               buttonText={card.buttonText}
-              align={i % 2 !== 0 ? 'left' : 'right'}
             />
           ))}
         </div>
       </motion.section>
 
       <ConnectSection
-        title="Don’t see your industry demo?"
-        description="Request a custom plan through our contact form, we’ll be happy to tailor one just for you."
+        title="Don’t see the use case you need?"
+        description="Contact us and we’ll put together a custom demo for your brand."
         cta={{
           primary: {
             label: "Start for free",
