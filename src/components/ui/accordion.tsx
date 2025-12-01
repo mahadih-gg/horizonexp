@@ -51,8 +51,8 @@ function AccordionTrigger({
             <ChevronDownIcon className="text-primary pointer-events-none size-4 md:size-5 2xl:size-6 shrink-0 translate-y-0.5 transition-transform duration-200" />
           ) : (
             <div className="relative shrink-0 size-4 md:size-5 2xl:size-6">
-              <PlusIcon className="text-primary pointer-events-none size-4 md:size-5 2xl:size-6 shrink-0 translate-y-0.5 transition-opacity duration-200 absolute inset-0 opacity-100" />
-              <MinusIcon className="text-primary pointer-events-none size-4 md:size-5 2xl:size-6 shrink-0 translate-y-0.5 transition-opacity duration-200 absolute inset-0 opacity-0" />
+              <PlusIcon color="#98A1BC" className="text-primary pointer-events-none size-4 md:size-5 2xl:size-6 shrink-0 translate-y-0.5 transition-opacity duration-200 absolute inset-0 opacity-100" />
+              <MinusIcon color="#98A1BC" className="text-primary pointer-events-none size-4 md:size-5 2xl:size-6 shrink-0 translate-y-0.5 transition-opacity duration-200 absolute inset-0 opacity-0" />
             </div>
           )
         }

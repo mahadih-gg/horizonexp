@@ -33,7 +33,7 @@ const DemoPage = () => {
     {
       title: "New Arrivals",
       description: <>
-        Show your freshest products in a swipeable <br /> feed so visitors always see what&apos;s new first.
+        Show your freshest products in a swipeable <br className="hidden md:block" /> feed so visitors always see what&apos;s new first.
       </>,
       SvgComponent: isMobile ? NewArrivalsSvgSm : NewArrivalsSvg,
       link: "/demo/new-arrivals",
@@ -42,7 +42,7 @@ const DemoPage = () => {
     {
       title: "Trending",
       description: <>
-        Surface what&apos;s hot right now so shoppers <br /> follow social proof and move faster.
+        Surface what&apos;s hot right now so shoppers <br className="hidden md:block" /> follow social proof and move faster.
       </>,
       SvgComponent: isMobile ? TrendingSvgSm : TrendingSvg,
       link: "/demo/trending",
@@ -51,7 +51,7 @@ const DemoPage = () => {
     {
       title: "See It in Action",
       description: <>
-        Show the product in real use cases so <br /> customers can visualize ownership.
+        Show the product in real use cases so <br className="hidden md:block" /> customers can visualize ownership.
       </>,
       SvgComponent: isMobile ? SeeItInActionSvgSm : SeeItInActionSvg,
       link: "/demo/see-it-in-action",
@@ -60,7 +60,7 @@ const DemoPage = () => {
     {
       title: "User Review",
       description: <>
-        Turn real customer videos into a proof wall <br /> so visitors trust you more and hesitate less.
+        Turn real customer videos into a proof wall <br className="hidden md:block" /> so visitors trust you more and hesitate less.
       </>,
       SvgComponent: isMobile ? UserReviewSvgSm : UserReviewSvg,
       link: "/demo/user-review",
@@ -69,7 +69,7 @@ const DemoPage = () => {
     {
       title: "Next Best Buy",
       description: <>
-        Recommend the next logical product so <br /> you quietly increase AOV.
+        Recommend the next logical product so <br className="hidden md:block" /> you quietly increase AOV.
       </>,
       SvgComponent: isMobile ? NextBestBuySvgSm : NextBestBuySvg,
       link: "/demo/next-best-buy",
@@ -78,7 +78,7 @@ const DemoPage = () => {
     {
       title: "UGC",
       description: <>
-        Highlight content from your customers and <br /> fans so your brand feels alive.
+        Highlight content from your customers and <br className="hidden md:block" /> fans so your brand feels alive.
       </>,
       SvgComponent: isMobile ? UgcSvgSm : UgcSvg,
       link: "/demo/ugc",
@@ -87,7 +87,7 @@ const DemoPage = () => {
     {
       title: "Website Hero",
       description: <>
-        Hook visitors with bold, snackable clips that <br /> instantly show why your product matters.
+        Hook visitors with bold, snackable clips that <br className="hidden md:block" /> instantly show why your product matters.
       </>,
       SvgComponent: isMobile ? WebsiteHeroSvgSm : WebsiteHeroSvg,
       link: "/demo/website-hero",
@@ -96,7 +96,7 @@ const DemoPage = () => {
     {
       title: "Website Explainer",
       description: <>
-        Walk visitors through how it works in quick, <br /> swipeable steps so they &quot;get it&quot; in seconds.
+        Walk visitors through how it works in quick, <br className="hidden md:block" /> swipeable steps so they &quot;get it&quot; in seconds.
       </>,
       SvgComponent: isMobile ? WebsiteExplainerSvgSm : WebsiteExplainerSvg,
       link: "/demo/website-explainer",

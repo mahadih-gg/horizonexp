@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const OnboardingSection = () => {
   return (
-    <section className="container py-section">
+    <section className="container">
       <div className="bg-[url('/assets/images/premium-support.webp')] bg-cover bg-bottom! md:bg-center w-full aspect-191/342 md:aspect-191/100 rounded-3xl pb-10 md:pb-11 2xl:pb-[60px] flex justify-center items-end">
         <SectionHeader
           animate={false}

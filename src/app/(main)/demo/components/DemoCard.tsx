@@ -30,8 +30,8 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
           </Link>
         </Button>
       </div>
-      <div className="w-full overflow-hidden flex justify-end items-end mt-12 sm:mt-5 xl:-mt-7">
 
+      <div className={cn("w-full overflow-hidden flex justify-end items-end", variant == "slider" ? "mt-12 sm:mt-5 xl:-mt-7" : "mt-12 sm:mt-5 xl:-mt-7")}>
         {
           variant === "slider" && (
             <div className='pb-7 md:pb-[45px] 2xl:pb-[60px]'>

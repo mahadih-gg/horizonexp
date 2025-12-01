@@ -7,7 +7,6 @@ import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSectio
 import HorizonImpactSection from "./components/HorizonImpactSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
-import WhyHorizonSection from "./components/WhyHorizonSection";
 
 const siteUrl = 'https://www.horizonexp.com';
 
@@ -89,7 +88,7 @@ export default function Home() {
       <DemoSlider />
       <EverythingYouNeedSection />
       <HorizonImpactSection />
-      <WhyHorizonSection />
+      {/* <WhyHorizonSection /> */}
       {/* <ReviewsSection /> */}
       <HorizonForEnterpriseSection />
       <LaunchHorizonSection />

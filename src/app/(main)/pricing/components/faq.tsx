@@ -47,7 +47,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="container">
+    <section className="container py-section">
 
       <SectionHeader
         title="Pricing FAQs"

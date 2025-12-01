@@ -47,7 +47,7 @@ const SeeItInActionDemoPage = () => {
             <div className="flex gap-2 2xl:gap-3 overflow-hidden">
               {
                 Array.from({ length: 3 }).map((_, index) => (
-                  <div key={index} className="w-[332px] min-w-[332px] lg:w-[374px] lg:min-w-[374px] 2xl:w-[498px] 2xl:min-w-[498px] bg-secondary h-[290px] lg:h-[373px] 2xl:h-[432px]" />
+                  <div key={index} className="w-[80%] min-w-[80%] sm:w-[332px] sm:min-w-[332px] lg:w-[374px] lg:min-w-[374px] 2xl:w-[498px] 2xl:min-w-[498px] bg-secondary h-[290px] lg:h-[373px] 2xl:h-[432px]" />
                 ))
               }
             </div>

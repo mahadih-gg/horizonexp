@@ -13,31 +13,31 @@ const demoRoutes: Record<string, { title: string; description: string }> = {
   },
   '/demo/trending': {
     title: 'Trending',
-    description: 'Surface what\'s hot right now so shoppers follow social proof and move faster.',
+    description: 'Highlight what’s trending now in one continuous swipe.',
   },
   '/demo/see-it-in-action': {
     title: 'See It in Action',
-    description: 'Show the product in real use cases so customers can visualize ownership.',
+    description: 'Let shoppers see the product in real-world use.',
   },
   '/demo/user-review': {
     title: 'User Review',
-    description: 'Turn real customer videos into a proof wall so visitors trust you more and hesitate less.',
+    description: 'Turn customer reviews into quick, trust-building video clips.',
   },
   '/demo/next-best-buy': {
     title: 'Next Best Buy',
-    description: 'Recommend the next logical product so you quietly increase AOV.',
+    description: 'Recommend smart add-ons and alternatives.',
   },
   '/demo/ugc': {
     title: 'UGC',
-    description: 'Highlight content from your customers and fans so your brand feels alive.',
+    description: 'Bring real user videos on-site for instant social proof.',
   },
   '/demo/website-hero': {
     title: 'Website Hero',
-    description: 'Hook visitors with bold, snackable clips that instantly show why your product matters.',
+    description: 'Turn your hero into a short-form story that hooks fast.',
   },
   '/demo/website-explainer': {
     title: 'Website Explainer',
-    description: 'Walk visitors through how it works in quick, swipeable steps so they "get it" in seconds.',
+    description: 'Break down how it works in a quick swipeable series.',
   },
 };
 
@@ -56,7 +56,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
       <header>
         {/* Top Banner */}
         <div className="bg-primary text-white text-center py-2 2xl:py-2.5 px-4">
-          <p className="text-sm xl:text-base text-white">
+          <p className="text-xs md:text-sm xl:text-base text-white">
             {demoInfo.title} - {demoInfo.description}
           </p>
         </div>

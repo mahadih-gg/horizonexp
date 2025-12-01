@@ -2,9 +2,7 @@ const StarIcon2 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      className="size-3.5 3xl:size-5"
+      className="size-3.5 2xl:size-5"
       fill="none"
       viewBox="0 0 20 20"
     >
