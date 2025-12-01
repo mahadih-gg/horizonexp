@@ -62,7 +62,7 @@ const SeeItInActionDemoPage = () => {
             <EntryPoint
               id="#753401"
               skeletonType={EntryPointType.RECTANGLE}
-              skeletonSize={EntryPointSize.BOLD}
+              skeletonSize={EntryPointSize.COMPACT}
             />
           </div>
         </div>
