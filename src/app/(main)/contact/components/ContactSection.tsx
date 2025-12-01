@@ -76,7 +76,7 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Text variant="heading" className="text-center">We&apos;d love to hear from you</Text>
+          <Text variant="heading" className="text-center">We{"’"}d love to hear from you.</Text>
         </motion.div>
 
         <motion.div

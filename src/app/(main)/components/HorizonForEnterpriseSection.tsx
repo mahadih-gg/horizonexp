@@ -53,7 +53,7 @@ const HorizonForEnterpriseSection = () => {
     <section className="container pb-section">
       <SectionHeader
         topLabel="Horizon for enterprise"
-        title={<>Enterprise grade short-form engagement, <br /> built for speed, scale, and reliability</>}
+        title={<>Enterprise grade short-form engagement, <br /> built for speed, scale, and reliability.</>}
       // description={<>Horizon delivers enterprise-grade <br className="block xs:hidden" /> performance, built to scale to <br className="block xs:hidden" /> 50 million+ MAU.</>}
       />
 

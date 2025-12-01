@@ -107,7 +107,7 @@ const FeaturesSection = () => {
   return (
     <section className="container py-section">
       <SectionHeader
-        title="All plans include these features"
+        title="All plans include these features."
       />
 
       <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-[48px] md:gap-x-12 md:gap-y-[105px] 2xl:gap-x-[60px] 2xl:gap-y-[140px]">

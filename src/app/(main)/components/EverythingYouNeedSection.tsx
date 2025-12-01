@@ -87,7 +87,7 @@ const EverythingYouNeedSection = () => {
   return (
     <section className="container scroll-mt-20 md:scroll-mt-28 2xl:scroll-mt-40" id="features">
       <SectionHeader
-        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement</>}
+        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement.</>}
         topLabel="Features"
       />
 
@@ -157,7 +157,7 @@ const EverythingYouNeedSection = () => {
 
 const FeatureCard = ({ feature }: { feature: FeatureType }) => {
   return (
-    <Card className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden'>
+    <Card className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden rounded-4xl 2xl:rounded-6xl'>
       <CardHeader
         animate={false}
         topLabel={feature.topLabel}

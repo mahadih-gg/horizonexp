@@ -5,7 +5,7 @@ const LaunchHorizonSection = () => {
   return (
     <section className="container">
       <SectionHeader
-        title="Launch Horizon in 4 easy steps"
+        title="Launch Horizon in 4 easy steps."
       />
 
       <LaunchSteps />
