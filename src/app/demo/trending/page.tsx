@@ -9,9 +9,9 @@ const TrendingDemoPage = () => {
       <div className="pt-8 md:pt-[45px] 2xl:pt-[60px]">
         <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>Trending Now</h2>
         <EntryPoint
-          id="#935370"
-          skeletonType={EntryPointType.CIRCLE}
-          skeletonSize={EntryPointSize.BOLD}
+          id="#049999"
+          skeletonType={EntryPointType.RECTANGLE}
+          skeletonSize={EntryPointSize.STANDARD}
         />
       </div>
     </section>

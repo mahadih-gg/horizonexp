@@ -60,8 +60,8 @@ const SeeItInActionDemoPage = () => {
             <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>See it in Action</h2>
 
             <EntryPoint
-              id="#935370"
-              skeletonType={EntryPointType.CIRCLE}
+              id="#753401"
+              skeletonType={EntryPointType.RECTANGLE}
               skeletonSize={EntryPointSize.BOLD}
             />
           </div>

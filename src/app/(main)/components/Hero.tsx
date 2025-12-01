@@ -62,7 +62,7 @@ const Hero = () => {
         </Button>
         <Button variant="secondary" asChild>
           <Link href="/demo">
-            Visit demo sites
+            Explore demo
           </Link>
         </Button>
       </SSRMotion>

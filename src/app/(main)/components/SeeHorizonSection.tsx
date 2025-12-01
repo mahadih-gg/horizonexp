@@ -12,7 +12,7 @@ const SeeHorizonSection = () => {
         extraContent={
           <Button asChild variant="secondary" className="hidden md:inline-flex">
             <Link href="/demo">
-              Visit demo sites
+              Explore demo
             </Link>
           </Button>
         }
@@ -23,7 +23,7 @@ const SeeHorizonSection = () => {
       <div className="flex items-center justify-center md:hidden pt-[52px]">
         <Button asChild variant="secondary">
           <Link href="/demo">
-            Visit demo sites
+            Explore demo
           </Link>
         </Button>
       </div>

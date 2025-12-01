@@ -13,8 +13,8 @@ const WebsiteExplainerDemoPage = () => {
 
       <div className="py-10 md:py-8 2xl:py-11">
         <EntryPoint
-          id="#935370"
-          skeletonType={EntryPointType.CIRCLE}
+          id="#859422"
+          skeletonType={EntryPointType.RECTANGLE}
           skeletonSize={EntryPointSize.BOLD}
         />
       </div>

@@ -16,8 +16,8 @@ const NextBestBuyDemoPage = () => {
       </h1>
       <div className="pt-8 2xl:pt-[45px]">
         <EntryPoint
-          id="#935370"
-          skeletonType={EntryPointType.CIRCLE}
+          id="#143635"
+          skeletonType={EntryPointType.RECTANGLE}
           skeletonSize={EntryPointSize.BOLD}
         />
       </div>

@@ -12,7 +12,7 @@ const UgcDemoPage = () => {
         </h2>
 
         <EntryPoint
-          id="#935370"
+          id="#596207"
           skeletonType={EntryPointType.CIRCLE}
           skeletonSize={EntryPointSize.BOLD}
         />

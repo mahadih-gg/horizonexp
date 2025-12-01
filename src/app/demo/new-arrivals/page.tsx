@@ -7,7 +7,7 @@ const NewArrivalsDemoPage = () => {
     <section className='pt-8 md:pt-[45px] 2xl:pt-[60px]'>
       <div className="pb-8 md:pb-[45px] 2xl:pb-[60px]">
         <EntryPoint
-          id="#935370"
+          id="#237950"
           skeletonType={EntryPointType.CIRCLE}
           skeletonSize={EntryPointSize.BOLD}
         />

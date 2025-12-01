@@ -62,7 +62,7 @@ const UserReviewDemoPage = () => {
             <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>User Reviews</h2>
 
             <EntryPoint
-              id="#935370"
+              id="#926343"
               skeletonType={EntryPointType.CIRCLE}
               skeletonSize={EntryPointSize.BOLD}
             />
