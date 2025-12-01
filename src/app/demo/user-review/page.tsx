@@ -36,7 +36,7 @@ const UserReviewDemoPage = () => {
 
 
   return (
-    <section className='px-0 lg:px-[32px] 2xl:px-[80px]'>
+    <section className='pt-8 md:pt-[45px] 2xl:pt-[60px] px-0 lg:px-[32px] 2xl:px-[80px]'>
       {/* Product Detail Section */}
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 2xl:gap-[52px]">
         <div className='w-full lg:w-[65%]'>
@@ -59,6 +59,8 @@ const UserReviewDemoPage = () => {
 
           {/* See it in Action Section */}
           <div className="py-8 lg:py-[45px] 2xl:py-[60px]">
+            <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>User Reviews</h2>
+
             <EntryPoint
               id="#935370"
               skeletonType={EntryPointType.CIRCLE}
