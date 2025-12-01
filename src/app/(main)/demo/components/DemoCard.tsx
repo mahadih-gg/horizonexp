@@ -47,7 +47,7 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
           )
         }
 
-        <div className='w-full md:w-4/5 flex justify-start items-end'>
+        <div className={cn('w-full md:w-4/5 flex items-end', variant === "slider" ? "justify-start" : "justify-end")}>
           {SvgComponent && (
             <SvgComponent className='w-full md:w-auto h-auto md:h-[357px] 2xl:h-[475px] flex justify-end items-end' />
           )}

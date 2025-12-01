@@ -10,7 +10,7 @@ const WebsiteHeroDemoPage = () => {
       <h1 className='text-center text-[56px] 2xl:text-[77px] font-medium leading-none tracking-[-0.02em]'>
         Your product/<br className='block sm:hidden' />service <br className='hidden sm:block' /> head<span className='inline sm:hidden'>-</span><br className='block sm:hidden' />line goes here
       </h1>
-      <div className="py-10 md:py-8 2xl:py-11 max-w-[678px] 2xl:max-w-[888px] mx-auto">
+      <div className="py-10 md:py-8 2xl:py-11 max-w-[530px] lg:max-w-[678px] 2xl:max-w-[888px] mx-auto">
         <EntryPoint
           id="#626206"
           skeletonType={EntryPointType.CIRCLE}

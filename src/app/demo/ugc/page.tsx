@@ -11,11 +11,13 @@ const UgcDemoPage = () => {
           Follow our top users
         </h2>
 
-        <EntryPoint
-          id="#596207"
-          skeletonType={EntryPointType.CIRCLE}
-          skeletonSize={EntryPointSize.BOLD}
-        />
+        <div className='max-w-[776px] lg:max-w-[954px] 2xl:max-w-[1248px] mx-auto'>
+          <EntryPoint
+            id="#596207"
+            skeletonType={EntryPointType.CIRCLE}
+            skeletonSize={EntryPointSize.BOLD}
+          />
+        </div>
       </div>
     </section>
   );

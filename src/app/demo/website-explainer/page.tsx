@@ -11,7 +11,7 @@ const WebsiteExplainerDemoPage = () => {
         See how our product works
       </h1>
 
-      <div className="py-10 md:py-8 2xl:py-11">
+      <div className="py-10 md:py-8 2xl:py-11 max-w-[1208px] 2xl:max-w-[1593px] mx-auto">
         <EntryPoint
           id="#859422"
           skeletonType={EntryPointType.RECTANGLE}
