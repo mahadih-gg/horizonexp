@@ -122,7 +122,7 @@
 @layer utilities {
 
   .container {
-    @apply max-w-full mx-auto px-6 md:px-8 xl:px-[105px];
+    @apply max-w-full mx-auto px-6 md:px-8 xl:px-[105px] 2xl:px-[140px];
   }
 
   .pt-page {

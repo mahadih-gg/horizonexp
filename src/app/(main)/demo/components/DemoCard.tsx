@@ -31,10 +31,10 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
         </Button>
       </div>
 
-      <div className={cn("w-full overflow-hidden flex justify-end items-end", variant == "slider" ? "mt-12 sm:mt-5 xl:-mt-7" : "mt-12 sm:mt-5 xl:-mt-7")}>
+      <div className={cn("w-full overflow-hidden flex justify-end items-end", variant == "slider" ? "mt-12 md:-mt-5 xl:-mt-7" : "mt-12 sm:mt-5 xl:-mt-7")}>
         {
           variant === "slider" && (
-            <div className='pb-7 md:pb-[45px] 2xl:pb-[60px]'>
+            <div className='pb-7 md:pb-[45px] 2xl:pb-[60px] pr-5'>
               <Button
                 asChild
                 className='hidden md:inline-flex text-base md:text-[15px] 2xl:text-xl min-w-fit'
@@ -47,18 +47,18 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
           )
         }
 
-        <div className={cn('w-full md:w-4/5 flex items-end', variant === "slider" ? "justify-start" : "justify-end")}>
+        <div className={cn('w-full md:w-4/5 flex items-end', variant === "slider" ? "justify-end" : "justify-end")}>
           {SvgComponent && (
             <SvgComponent className='w-full md:w-auto h-auto md:h-[357px] 2xl:h-[475px] flex justify-end items-end' />
           )}
           {imageUrl && (
-            <div className='h-[220px] md:h-[427px] 2xl:h-[569px] w-full md:w-auto flex justify-start items-end overflow-hidden'>
+            <div className='h-[220px] md:h-[427px] 2xl:h-[569px] w-full md:w-auto flex justify-end 2xl:justify-start items-end overflow-hidden'>
               <Image
                 src={imageUrl}
                 alt={title}
                 width={577}
                 height={569}
-                className='w-full md:w-auto h-full min-w-fit object-left'
+                className='w-full md:w-auto h-full object-left-top object-cover min-h-[220px] md:min-h-[427px] 2xl:min-h-[569px]'
               />
             </div>
           )}
