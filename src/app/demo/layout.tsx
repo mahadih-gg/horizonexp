@@ -90,7 +90,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
         </nav>
       </header>
 
-      <main className="container pt-8 md:pt-[45px] 2xl:pt-[60px]">
+      <main className="container">
         {children}
       </main>
 
