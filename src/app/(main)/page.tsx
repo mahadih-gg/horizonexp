@@ -7,6 +7,7 @@ import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSectio
 import HorizonImpactSection from "./components/HorizonImpactSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
+import ShortFormBenefitsSection from "./components/ShortFormBenefitsSection";
 
 const siteUrl = 'https://www.horizonexp.com';
 
@@ -86,6 +87,7 @@ export default function Home() {
       {/* <SeeHorizonSection /> */}
       <PowerYourMobileSection />
       <DemoSlider />
+      <ShortFormBenefitsSection />
       <EverythingYouNeedSection />
       <HorizonImpactSection />
       {/* <WhyHorizonSection /> */}
