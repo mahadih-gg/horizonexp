@@ -1,13 +1,12 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import type { Metadata } from "next";
+import DemoSlider from "./components/DemoSlider";
 import EverythingYouNeedSection from "./components/EverythingYouNeedSection";
 import Hero from "./components/Hero";
 import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSection";
 import HorizonImpactSection from "./components/HorizonImpactSection";
-import HowBrandsCanUseHorizonSection from "./components/HowBrandsCanUseHorizonSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
 import PowerYourMobileSection from "./components/PowerYourMobileSection";
-import SeeHorizonSection from "./components/SeeHorizonSection";
 import WhyHorizonSection from "./components/WhyHorizonSection";
 
 const siteUrl = 'https://www.horizonexp.com';
@@ -85,9 +84,9 @@ export default function Home() {
     <main className="">
       <Hero />
       {/* <EngageMoreSection /> */}
-      <SeeHorizonSection />
+      {/* <SeeHorizonSection /> */}
       <PowerYourMobileSection />
-      <HowBrandsCanUseHorizonSection />
+      <DemoSlider />
       <EverythingYouNeedSection />
       <HorizonImpactSection />
       <WhyHorizonSection />
