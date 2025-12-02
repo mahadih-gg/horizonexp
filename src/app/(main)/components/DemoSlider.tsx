@@ -172,7 +172,7 @@ const DemoSlider = () => {
           ))}
         </Swiper>
 
-        <div className='container flex items-center justify-end pt-6 md:pt-[18px] 3xl:pt-6'>
+        <div className='container flex items-center justify-center pt-6 md:pt-[18px] 3xl:pt-6'>
           <div className='flex items-center justify-between gap-5 2xl:gap-6 bg-secondary rounded-full p-2.5'>
             <button
               onClick={handlePrev}

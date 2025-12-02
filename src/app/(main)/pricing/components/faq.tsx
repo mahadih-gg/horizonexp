@@ -6,7 +6,7 @@ const FAQSection = () => {
   const faqData = [
     {
       question: "Do you offer a free trial?",
-      answer: "Yes, we offer a 30-day free trial of our Premium plan. Enjoy premium features of Horizon without any payment during the trial period."
+      answer: "Yes, we offer a 14-day free trial of our Premium plan. Enjoy premium features of Horizon without any payment during the trial period."
     },
     {
       question: "Is Horizon worth the price?",
@@ -47,7 +47,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="container py-section">
+    <section className="container">
 
       <SectionHeader
         title="Pricing FAQs"

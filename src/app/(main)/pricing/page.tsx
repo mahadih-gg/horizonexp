@@ -110,12 +110,11 @@ const PricingPage = () => {
 
         <FeaturesSection />
 
-        <ForEnterpriseSection />
-
         <FAQSection />
 
         <OnboardingSection />
 
+        <ForEnterpriseSection />
 
         <ConnectSection
           title={<>Launch your next growth story. <br /> Start today.</>}

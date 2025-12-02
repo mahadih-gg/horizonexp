@@ -32,7 +32,7 @@ export const pricingPlans: PricingPlan[] = [
     },
     websitesStores: "1",
     description: "Best for websites/stores with up to 10k visitors",
-    buttonText: "Start 30-day free trial",
+    buttonText: "Start 14-day free trial",
     features: [
       "Remove Powered by Horizon",
       "Premium CTA styles",
