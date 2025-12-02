@@ -132,7 +132,7 @@ const ResponsiveVideoPlayer = ({
       <video
         ref={videoRef}
         src={isMobile ? mobileVideoSrc : desktopVideoSrc}
-        className={cn("aspect-191/320 md:aspect-82/43 rounded-3xl md:rounded-2xl 2xl:rounded-3xl", className)}
+        className={cn("aspect-191/320 md:aspect-82/43 rounded-4xl 2xl:rounded-6xl", className)}
         poster={poster}
         preload={preload}
         muted
@@ -151,7 +151,7 @@ const ResponsiveVideoPlayer = ({
           )
         }
       </button>
-      <div className='absolute inset-0 border-4 border-white rounded-3xl md:rounded-2xl 2xl:rounded-3xl' />
+      <div className='absolute inset-0 border-4 border-white rounded-4xl 2xl:rounded-6xl' />
     </div>
   );
 };
