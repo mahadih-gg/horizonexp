@@ -52,7 +52,7 @@ const NotFound = () => {
             </Button>
             <Button variant="secondary" asChild>
               <Link href="/demo">
-                Explore demo
+                Visit Demo Sites
               </Link>
             </Button>
           </motion.div>

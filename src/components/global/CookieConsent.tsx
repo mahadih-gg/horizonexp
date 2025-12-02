@@ -59,7 +59,7 @@ export default function CookieConsent() {
         <Button
           variant="default"
           onClick={handleAccept}
-          className="flex-none px-[18px] 2xl:px-[25px] h-[25px] md:h-[25px] 2xl:h-[34px] text-sm 2xl:text-lg w-16 md:w-16 2xl:w-[85px]"
+          className="flex-none px-[18px] 2xl:px-[25px] h-[25px] md:h-[25px] 2xl:h-[34px] text-xs md:text-[10px] 2xl:text-sm w-16 md:w-16 2xl:w-[85px]"
         >
           Allow
         </Button>

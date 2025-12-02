@@ -52,7 +52,53 @@ jobs:
           fi
           echo "Build output size:"
           du -sh out/
-          echo "✅ Build output verified successfully"
+
+          echo ""
+          echo "Checking optimized images..."
+          if [ ! -d "out/assets/optimized" ]; then
+            echo "❌ CRITICAL: out/assets/optimized directory not found!"
+            exit 1
+          fi
+
+          OPTIMIZED_COUNT=$(find out/assets/optimized -type f -name "*.webp" | wc -l)
+          echo "✅ Found $OPTIMIZED_COUNT optimized WebP images"
+
+          if [ "$OPTIMIZED_COUNT" -lt 400 ]; then
+            echo "❌ WARNING: Expected at least 400 optimized images, found only $OPTIMIZED_COUNT"
+            exit 1
+          fi
+
+          # Verify critical images exist
+          echo ""
+          echo "Verifying critical images..."
+          CRITICAL_IMAGES=(
+            "invite-only-ugc-640w.webp"
+            "invite-only-ugc-mobile-640w.webp"
+            "fast-launch-640w.webp"
+            "analytics-640w.webp"
+            "audience-polls-640w.webp"
+            "opengraph-1200w.webp"
+            "horizon-console-1920w.webp"
+          )
+
+          MISSING_COUNT=0
+          for img in "${CRITICAL_IMAGES[@]}"; do
+            if [ -f "out/assets/optimized/$img" ]; then
+              echo "  ✅ $img"
+            else
+              echo "  ❌ MISSING: $img"
+              MISSING_COUNT=$((MISSING_COUNT + 1))
+            fi
+          done
+
+          if [ "$MISSING_COUNT" -gt 0 ]; then
+            echo ""
+            echo "❌ CRITICAL: $MISSING_COUNT critical images are missing!"
+            exit 1
+          fi
+
+          echo ""
+          echo "✅ All critical images verified successfully"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -97,10 +143,43 @@ jobs:
 
       - name: Verify S3 deployment
         run: |
-          echo "Verifying S3 deployment..."
-          FILE_COUNT=$(aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/ --recursive | wc -l)
-          echo "✅ Found $FILE_COUNT files in S3"
-          echo "✅ S3 deployment verified successfully"
+          echo "Verifying optimized images in S3..."
+          S3_OPTIMIZED_COUNT=$(aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/assets/optimized/ --recursive | grep -c "\.webp$" || echo "0")
+          echo "✅ Found $S3_OPTIMIZED_COUNT optimized WebP images in S3"
+
+          if [ "$S3_OPTIMIZED_COUNT" -lt 400 ]; then
+            echo "❌ WARNING: Expected at least 400 images in S3, found only $S3_OPTIMIZED_COUNT"
+          fi
+
+          # Test critical images
+          echo ""
+          echo "Testing critical image paths in S3..."
+          CRITICAL_IMAGES=(
+            "invite-only-ugc-640w.webp"
+            "invite-only-ugc-mobile-640w.webp"
+            "fast-launch-640w.webp"
+            "analytics-640w.webp"
+            "audience-polls-640w.webp"
+            "opengraph-1200w.webp"
+          )
+
+          MISSING_COUNT=0
+          for img in "${CRITICAL_IMAGES[@]}"; do
+            if aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}/assets/optimized/$img > /dev/null 2>&1; then
+              echo "  ✅ $img exists in S3"
+            else
+              echo "  ❌ $img missing in S3"
+              MISSING_COUNT=$((MISSING_COUNT + 1))
+            fi
+          done
+
+          if [ "$MISSING_COUNT" -gt 0 ]; then
+            echo ""
+            echo "⚠️  WARNING: $MISSING_COUNT critical images missing in S3"
+          else
+            echo ""
+            echo "✅ All critical images verified in S3"
+          fi
 
       - name: Deployment summary
         run: |

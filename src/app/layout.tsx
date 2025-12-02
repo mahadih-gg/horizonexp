@@ -1,4 +1,6 @@
 import CookieConsent from "@/components/global/CookieConsent";
+import Footer from "@/components/global/Footer";
+import Navbar from "@/components/global/Navbar";
 import SmoothScroll from "@/components/global/SmoothScroll";
 import CloseIcon from "@/components/icons/close-icon";
 import Provides from "@/components/providers";
@@ -103,7 +105,7 @@ export const metadata: Metadata = {
     siteName: "Horizon",
     images: [
       {
-        url: `${siteUrl}/assets/images/opengraph.webp`,
+        url: `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
         width: 1200,
         height: 630,
         alt: "Horizon Short-form Video Engagement Platform",
@@ -116,7 +118,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Horizon Short-form Video Engagement Platform",
     description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
-    images: [`${siteUrl}/assets/images/opengraph.webp`],
+    images: [`${siteUrl}/assets/optimized/opengraph-1200w.webp`],
     creator: "@horizonera",
   },
   robots: {
@@ -153,7 +155,11 @@ export default function RootLayout({
         <StructuredData />
         <SmoothScroll />
         <Provides>
+          <header className="sticky top-0 z-50 backdrop-blur-2xl! bg-background/16">
+            <Navbar />
+          </header>
           {children}
+          <Footer />
         </Provides>
 
         <CookieConsent />

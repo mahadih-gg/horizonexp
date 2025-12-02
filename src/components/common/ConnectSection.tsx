@@ -31,7 +31,7 @@ const defaultCta = {
     variant: "default",
   },
   secondary: {
-    label: "Explore demo",
+    label: "Visit demo sites",
     href: "/demo",
     target: undefined,
     variant: "secondary",
@@ -47,7 +47,7 @@ const ConnectSection = ({ title, description, cta = defaultCta as Props["cta"] }
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-[48px] md:text-6xl 2xl:text-[76px] font-medium tracking-tight text-primary-text text-center leading-[1.10em]">
+        className="text-5xl md:text-6xl 2xl:text-[76px] font-medium tracking-tight text-primary-text text-center">
         {title}
       </motion.h2>
       <motion.p
