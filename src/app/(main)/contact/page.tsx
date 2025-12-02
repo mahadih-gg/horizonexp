@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Horizon",
     images: [
       {
-        url: `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
+        url: `${siteUrl}/assets/images/opengraph.webp`,
         width: 1200,
         height: 630,
         alt: "Contact Horizon",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Horizon | Get in Touch with Our Team",
     description: "Contact the Horizon team to learn more about our short-form video engagement platform.",
-    images: [`${siteUrl}/assets/optimized/opengraph-1200w.webp`],
+    images: [`${siteUrl}/assets/images/opengraph.webp`],
   },
   robots: {
     index: true,

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Horizon",
     images: [
       {
-        url: `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
+        url: `${siteUrl}/assets/images/opengraph.webp`,
         width: 1200,
         height: 630,
         alt: "Horizon Privacy Policy",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Horizon Privacy Policy | Data Protection & Privacy",
     description: "Read Horizon's privacy policy to understand how we collect, use, and protect your data.",
-    images: [`${siteUrl}/assets/optimized/opengraph-1200w.webp`],
+    images: [`${siteUrl}/assets/images/opengraph.webp`],
   },
   robots: {
     index: true,

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Horizon",
     images: [
       {
-        url: `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
+        url: `${siteUrl}/assets/images/opengraph.webp`,
         width: 1200,
         height: 630,
         alt: "Horizon Pricing",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Horizon Pricing | Short-form Video Engagement Platform",
     description: "Choose the perfect Horizon plan for your business. Start free with our starter plan or scale with enterprise solutions.",
-    images: [`${siteUrl}/assets/optimized/opengraph-1200w.webp`],
+    images: [`${siteUrl}/assets/images/opengraph.webp`],
   },
   robots: {
     index: true,
