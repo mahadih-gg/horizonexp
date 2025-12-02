@@ -1,6 +1,5 @@
 import SectionHeader from '@/components/common/SectionHeader';
 import { Button } from '@/components/ui/button';
-import imageLoader from '@/lib/image-loader';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,7 +29,6 @@ const ForEnterpriseSection = () => {
 
       <div className='w-full lg:w-[54.55%] 2xl:w-[65.32%] rounded-3xl bg-secondary flex-center flex-col py-[30px] overflow-hidden'>
         <Image
-          loader={imageLoader}
           src="/assets/images/ready-to-scale.webp"
           alt="For Enterprise"
           width={1224}

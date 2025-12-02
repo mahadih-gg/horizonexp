@@ -1,7 +1,7 @@
 export default function imageLoader({
   src,
   width,
-  quality,
+  quality: _quality,
 }: {
   src: string;
   width?: number;
@@ -17,12 +17,12 @@ export default function imageLoader({
   if (!fileName) return src;
 
   const baseName = fileName.replace(/\.(jpg|jpeg|png|webp)$/i, '');
-  
+
   // Check if this is an asset image that should be optimized
   if (src.includes('/assets/images/')) {
     // Available sizes from optimization script (in ascending order)
     const AVAILABLE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
-    
+
     // ============================================================================
     // CRITICAL FIX: Always use -original.webp for problematic images
     // ============================================================================
@@ -36,7 +36,7 @@ export default function imageLoader({
       'horizon-console-main',
       'horizon-console-right'
     ];
-    
+
     if (PROBLEMATIC_IMAGES.includes(baseName)) {
       const originalPath = `/assets/optimized/${baseName}-original.webp`;
       if (process.env.NODE_ENV === 'development') {
@@ -44,7 +44,7 @@ export default function imageLoader({
       }
       return originalPath;
     }
-    
+
     // ============================================================================
     // UNIVERSAL FIX: Screen-size and zoom-level agnostic image loading strategy
     // ============================================================================
@@ -69,7 +69,7 @@ export default function imageLoader({
     //   fall back to -original.webp (which always exists) when uncertain
     //
     // ============================================================================
-    
+
     // Step 1: Handle undefined, NaN, or invalid width values
     // This covers fill images and edge cases where width calculation fails
     if (!width || isNaN(width) || !isFinite(width) || width <= 0) {
@@ -79,7 +79,7 @@ export default function imageLoader({
       }
       return originalPath;
     }
-    
+
     // Step 2: Handle very large widths (zoom out scenarios, ultra-wide displays, 4K)
     // When width > 1920px, we risk requesting 3840w which might not exist.
     // Using -original.webp ensures it works at all zoom levels and screen sizes.
@@ -94,21 +94,21 @@ export default function imageLoader({
       }
       return originalPath;
     }
-    
+
     // Step 3: For widths <= 1920px, use optimized sizes
     // Find the closest size that's >= requested width
     // This ensures we use the smallest appropriate size for better performance
     // If no size is found (shouldn't happen with our sizes), use the largest available
     const targetSize = AVAILABLE_SIZES.find(s => s >= width) || AVAILABLE_SIZES[AVAILABLE_SIZES.length - 1];
-    
+
     // Return optimized version with absolute path for static export
     const optimizedPath = `/assets/optimized/${baseName}-${targetSize}w.webp`;
-    
+
     // Debug logging (only in development)
     if (process.env.NODE_ENV === 'development') {
       console.log(`Image Loader: ${src} (${width}px) → ${optimizedPath}`);
     }
-    
+
     return optimizedPath;
   }
 
