@@ -3,6 +3,7 @@
 import CartIcon from "@/components/icons/cart-icon";
 import MenuIcon2 from "@/components/icons/menu-icon2";
 import PoweredByHorizon from "@/components/svg/PoweredByHorizon";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
@@ -56,7 +57,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
       <header>
         {/* Top Banner */}
         <div className="bg-primary text-white text-center py-2 2xl:py-2.5 px-4">
-          <p className="text-xs md:text-sm xl:text-base text-white">
+          <p className="text-xs md:text-sm xl:text-base text-white font-medium">
             {demoInfo.title} - {demoInfo.description}
           </p>
         </div>
@@ -95,7 +96,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
       </main>
 
       <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
-        <PoweredByHorizon />
+        <Link href="/"> <PoweredByHorizon /> </Link>
       </footer>
     </main>
   );

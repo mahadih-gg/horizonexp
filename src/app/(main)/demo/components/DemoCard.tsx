@@ -25,7 +25,7 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
           variant={variant === "slider" ? "default" : "white"}
           className={cn('text-base md:text-[15px] 2xl:text-xl', variant === "slider" && "inline-flex md:hidden")}
         >
-          <Link href={link}>
+          <Link href={link} target='_blank'>
             {buttonText}
           </Link>
         </Button>
@@ -39,7 +39,7 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
                 asChild
                 className='hidden md:inline-flex text-base md:text-[15px] 2xl:text-xl min-w-fit'
               >
-                <Link href={link}>
+                <Link href={link} target='_blank'>
                   {buttonText}
                 </Link>
               </Button>

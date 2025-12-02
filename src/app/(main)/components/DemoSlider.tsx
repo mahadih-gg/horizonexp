@@ -5,7 +5,7 @@ import useWindowSize from '@/hooks/useWindowSize';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Mousewheel, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import DemoCard from '../demo/components/DemoCard';
 
@@ -126,11 +126,18 @@ const DemoSlider = () => {
 
       <div className="relative">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Mousewheel]}
           spaceBetween={24}
           slidesPerView={1.25}
           centeredSlides={true}
           loop={true}
+          longSwipes={false}
+          mousewheel={{
+            forceToAxis: true,
+            releaseOnEdges: true,
+            thresholdDelta: 15,
+            sensitivity: 1.2,
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1.25,
