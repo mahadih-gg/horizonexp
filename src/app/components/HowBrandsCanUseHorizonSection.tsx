@@ -3,10 +3,10 @@
 import SectionHeader from '@/components/common/SectionHeader';
 import SootingStartIcon from '@/components/icons/sooting-start-icon';
 import { CardHeader } from '@/components/ui/card';
+import imageLoader from '@/lib/image-loader';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import imageLoader from '@/lib/image-loader';
 import { useRef, useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Navigation } from 'swiper/modules';
