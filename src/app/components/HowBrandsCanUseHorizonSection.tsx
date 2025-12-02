@@ -6,6 +6,7 @@ import { CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import imageLoader from '@/lib/image-loader';
 import { useRef, useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -164,6 +165,7 @@ const HowBrandsCanUseHorizonSection = () => {
                   }
 
                   <Image
+                    loader={imageLoader}
                     width={519}
                     height={192}
                     src={item.image}

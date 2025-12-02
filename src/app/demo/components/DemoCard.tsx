@@ -1,6 +1,7 @@
 import SectionHeader from '@/components/common/SectionHeader';
 import { Button } from '@/components/ui/button';
 import { CardContent } from '@/components/ui/card';
+import imageLoader from '@/lib/image-loader';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -46,6 +47,7 @@ const DemoCard = ({ topLabel, title, description, imageUrl, link, buttonText, al
       </div>
       <CardContent className='w-full lg:w-[61.3%] 2xl:w-[61.34%] overflow-hidden aspect-119/100 lg:aspect-auto h-auto lg:h-[510px] 2xl:h-[680px]'>
         <Image
+          loader={imageLoader}
           src={imageUrl}
           alt={title}
           width={1012}

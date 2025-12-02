@@ -1,5 +1,6 @@
 "use client"
 
+import imageLoader from '@/lib/image-loader';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 
@@ -15,6 +16,7 @@ const HorizonConsole = () => {
           className='w-[80%] absolute top-1/2 -translate-y-1/2! -left-[10%]'
         >
           <Image
+            loader={imageLoader}
             src="/assets/images/horizon-console-left.webp"
             alt="Horizon Console Left"
             width={2592}
@@ -33,6 +35,7 @@ const HorizonConsole = () => {
           className='w-full relative top-0 left-0 z-10 flex-center'
         >
           <Image
+            loader={imageLoader}
             src="/assets/images/horizon-console-main.webp"
             alt="Horizon Console Main"
             width={3045}
@@ -55,6 +58,7 @@ const HorizonConsole = () => {
           className='w-[80%] absolute top-1/2 -translate-y-1/2! -right-[10%]'
         >
           <Image
+            loader={imageLoader}
             src="/assets/images/horizon-console-right.webp"
             alt="Horizon Console Right"
             width={2592}

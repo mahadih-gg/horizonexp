@@ -1,6 +1,7 @@
 "use client"
 
 import SectionHeader from "@/components/common/SectionHeader";
+import imageLoader from "@/lib/image-loader";
 import { motion } from "motion/react";
 import Image from "next/image";
 
@@ -49,6 +50,7 @@ const EngageMoreSection = () => {
             >
 
               <Image
+                loader={imageLoader}
                 src={item.image}
                 alt={`${item.heading} - ${typeof item.title === 'string' ? item.title : 'Engage more with short-form video'}`}
                 width={382}

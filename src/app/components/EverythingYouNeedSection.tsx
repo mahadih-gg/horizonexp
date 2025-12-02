@@ -4,6 +4,7 @@ import GradientBg from '@/components/common/GradientBg';
 import SectionHeader from '@/components/common/SectionHeader';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import useWindowSize from '@/hooks/useWindowSize';
+import imageLoader from '@/lib/image-loader';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useMemo } from 'react';
@@ -101,6 +102,7 @@ const EverythingYouNeedSection = () => {
           />
           <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
             <Image
+              loader={imageLoader}
               src="/assets/images/make-your-videos-shoppable.webp"
               alt="Make your videos shoppable"
               width={1419}
@@ -166,6 +168,7 @@ const FeatureCard = ({ feature }: { feature: FeatureType }) => {
       />
       <CardContent className='w-full pt-[36px] md:pt-[43px] 2xl:pt-[58px]'>
         <Image
+          loader={imageLoader}
           src={feature.image}
           alt={feature.title}
           width={1419}

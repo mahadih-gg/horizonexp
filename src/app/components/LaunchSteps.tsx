@@ -3,6 +3,7 @@
 
 import GradientBg from "@/components/common/GradientBg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import imageLoader from "@/lib/image-loader";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -66,6 +67,7 @@ const LaunchSteps = () => {
                   className="rounded-[10px] md:rounded-3xl 2xl:rounded-[28px]"
                 >
                   <Image
+                    loader={imageLoader}
                     src={section.primaryImage}
                     alt={section.label}
                     width={985}
@@ -86,6 +88,7 @@ const LaunchSteps = () => {
                     className="w-full h-full"
                   >
                     <Image
+                      loader={imageLoader}
                       src={section.smallImage}
                       alt={`${section.label} detail`}
                       width={373}
