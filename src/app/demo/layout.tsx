@@ -96,7 +96,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
       </main>
 
       <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
-        <Link href="/"> <PoweredByHorizon /> </Link>
+        <Link href="/demo"> <PoweredByHorizon /> </Link>
       </footer>
     </main>
   );
