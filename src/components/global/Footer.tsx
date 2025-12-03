@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { navLinks } from "@/navData";
 import Link from "next/link";
 import LinkedinIcon from "../icons/linkedin-icon";
-import PinterestIcon from "../icons/pinterest-icon";
 import TiktokIcon from "../icons/tiktok-icon";
 import XIcon from "../icons/x-icon";
 import YoutubeIcon from "../icons/youtube-icon";
@@ -29,11 +28,11 @@ const socialLinks = [
     label: "Tiktok",
     href: "https://www.tiktok.com/@horizonexp.com",
   },
-  {
-    icon: <PinterestIcon />,
-    label: "Pinterest",
-    href: "https://www.pinterest.com/horizonexp",
-  },
+  // {
+  //   icon: <PinterestIcon />,
+  //   label: "Pinterest",
+  //   href: "https://www.pinterest.com/horizonexp",
+  // },
 ];
 
 const CURRENT_YEAR = new Date().getFullYear();

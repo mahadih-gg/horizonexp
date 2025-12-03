@@ -87,7 +87,7 @@ const EverythingYouNeedSection = () => {
   return (
     <section className="container scroll-mt-20 md:scroll-mt-28 2xl:scroll-mt-40" id="features">
       <SectionHeader
-        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement.</>}
+        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement</>}
         topLabel="Features"
       />
 

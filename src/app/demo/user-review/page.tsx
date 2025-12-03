@@ -20,7 +20,7 @@ const UserReviewDemoPage = () => {
     {
       value: 'productInfo',
       title: 'Product Information',
-      content: 'The Watch Pro X is built for people who want more than notifications on their wrist — they want a companion that quietly elevates their entire day. Crafted from aerospace-grade aluminum with a bezel-less sapphire display, it feels light, sharp, and impossibly premium.',
+      content: 'The seat combines faux leather back add a luxurious style in your home decor. Thick sponge, wide armrest and soft ottoman provide more comfort on sitting.  This accent chair has 17.8 inches seat height suits for most. The matching stool is good for relieving the tired of whole day.',
     },
     {
       value: 'sizesFits',
@@ -96,7 +96,7 @@ const ProductInformation = ({ accordionItems, className }: { accordionItems: Acc
 
       <div className='w-full flex flex-row lg:flex-col items-center lg:items-start justify-between gap-2'>
         <h1 className="text-[32px] 2xl:text-[42px] font-medium text-primary-text mb-3 lg:mb-4">
-          Watch Pro X
+          Swivel Accent Chair
         </h1>
 
         <div className="hidden lg:block mb-3 lg:mb-4">
@@ -104,7 +104,7 @@ const ProductInformation = ({ accordionItems, className }: { accordionItems: Acc
         </div>
 
         <p className="text-xl lg:text-2xl 2xl:text-3xl font-semibold text-primary-text pb-2.5 lg:pb-0">
-          $75
+          $159
         </p>
       </div>
       {/* Collapsible Sections */}

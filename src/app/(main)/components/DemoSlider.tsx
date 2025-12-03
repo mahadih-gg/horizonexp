@@ -21,21 +21,12 @@ const DemoSlider = () => {
 
   const demoCards = [
     {
-      title: "New Arrivals",
+      title: "User Review",
       description: <>
-        Show your freshest products <br /> in a swipeable feed so visitors <br /> always see what&apos;s new first.
+        Turn real customer videos into a <br /> proof wall so visitors trust you <br /> more and hesitate less.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo/new-arrivals-sm.webp" : "/assets/images/demo/new-arrivals.webp",
-      link: "/demo/new-arrivals",
-      buttonText: "Watch this demo →",
-    },
-    {
-      title: "Website Explainer",
-      description: <>
-        Walk visitors through how it <br /> works in quick, swipeable steps <br /> so they &quot;get it&quot; in seconds.
-      </>,
-      imageUrl: isMobile ? "/assets/images/demo/website-explainer-sm.webp" : "/assets/images/demo/website-explainer.webp",
-      link: "/demo/website-explainer",
+      imageUrl: isMobile ? "/assets/images/demo/user-review-sm.webp" : "/assets/images/demo/user-review.webp",
+      link: "/demo/user-review",
       buttonText: "Watch this demo →",
     },
     {
@@ -66,12 +57,21 @@ const DemoSlider = () => {
       buttonText: "Watch this demo →",
     },
     {
-      title: "See It in Action",
+      title: "Website Explainer",
       description: <>
-        Show the product in real use <br /> cases so customers can <br /> visualize ownership.
+        Walk visitors through how it <br /> works in quick, swipeable steps <br /> so they &quot;get it&quot; in seconds.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo/see-it-in-action-sm.webp" : "/assets/images/demo/see-it-in-action.webp",
-      link: "/demo/see-it-in-action",
+      imageUrl: isMobile ? "/assets/images/demo/website-explainer-sm.webp" : "/assets/images/demo/website-explainer.webp",
+      link: "/demo/website-explainer",
+      buttonText: "Watch this demo →",
+    },
+    {
+      title: "New Arrivals",
+      description: <>
+        Show your freshest products <br /> in a swipeable feed so visitors <br /> always see what&apos;s new first.
+      </>,
+      imageUrl: isMobile ? "/assets/images/demo/new-arrivals-sm.webp" : "/assets/images/demo/new-arrivals.webp",
+      link: "/demo/new-arrivals",
       buttonText: "Watch this demo →",
     },
     {
@@ -84,12 +84,12 @@ const DemoSlider = () => {
       buttonText: "Watch this demo →",
     },
     {
-      title: "User Review",
+      title: "See It in Action",
       description: <>
-        Turn real customer videos into a <br /> proof wall so visitors trust you <br /> more and hesitate less.
+        Show the product in real use <br /> cases so customers can <br /> visualize ownership.
       </>,
-      imageUrl: isMobile ? "/assets/images/demo/user-review-sm.webp" : "/assets/images/demo/user-review.webp",
-      link: "/demo/user-review",
+      imageUrl: isMobile ? "/assets/images/demo/see-it-in-action-sm.webp" : "/assets/images/demo/see-it-in-action.webp",
+      link: "/demo/see-it-in-action",
       buttonText: "Watch this demo →",
     },
   ];
@@ -116,9 +116,9 @@ const DemoSlider = () => {
       <SectionHeader
         title={
           <>
-            Use cases that drive conversion.
+            Use cases that drive conversion
             <br />
-            Explore Horizon experience for your key pages.
+            Explore Horizon experience for your key pages
           </>
         }
         className="container"

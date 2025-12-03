@@ -27,7 +27,7 @@ const ShortFormBenefitsSection = () => {
   return (
     <section className='container pb-section'>
       <SectionHeader
-        title={<>Your site needs its own short-form <br className="hidden lg:block" /> layer now. Here{"’"}s why.</>}
+        title={<>Your site needs its own short-form <br className="hidden lg:block" /> layer now. Here{"’"}s why</>}
       />
 
       <Swiper

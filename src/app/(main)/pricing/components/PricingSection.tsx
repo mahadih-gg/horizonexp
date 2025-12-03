@@ -14,7 +14,7 @@ const PricingSection = () => {
         transition={{ duration: 0.8 }}
       >
         <Text variant="heading" className="text-center">
-          Short-form engagement <br /> for every business.
+          Short-form engagement <br /> for every business
         </Text>
       </motion.div>
 

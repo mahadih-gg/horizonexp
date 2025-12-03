@@ -113,7 +113,7 @@ const DemoPage = () => {
           transition={{ duration: 0.8 }}
         >
           <Text variant="heading" className="text-center">
-            Experience Horizon in action.
+            Experience Horizon in action
           </Text>
         </motion.div>
 

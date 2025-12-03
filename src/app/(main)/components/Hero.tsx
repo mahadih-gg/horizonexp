@@ -7,9 +7,9 @@ import ComparisonSection from "./ComparisonSection";
 
 const Hero = () => {
   const text = [
-    "solution for websites.",
-    "solution for stores.",
-    "solution for apps.",
+    "solution for websites",
+    "solution for stores",
+    "solution for apps",
   ]
 
   const heading = "The best short-form video".split(" ");

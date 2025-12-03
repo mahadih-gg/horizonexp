@@ -95,7 +95,7 @@ export default function Home() {
       <HorizonForEnterpriseSection />
       <LaunchHorizonSection />
       <ConnectSection
-        title={<>Start free today.</>}
+        title={<>Start free today</>}
         description="Join the new generation of brands turning attention into sales with short-form engagement."
       />
     </main>

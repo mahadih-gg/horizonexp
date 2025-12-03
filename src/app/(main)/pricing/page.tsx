@@ -117,7 +117,7 @@ const PricingPage = () => {
         <ForEnterpriseSection />
 
         <ConnectSection
-          title={<>Launch your next growth story. <br /> Start today.</>}
+          title={<>Launch your next growth story <br /> Start today</>}
           description="Pick a plan, plug in Horizon, and start engaging customers in minutes."
           cta={{
             primary: {
