@@ -10,11 +10,11 @@ export default function StructuredData() {
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
+      "url": `${siteUrl}/assets/images/opengraph.webp`,
       "width": 1200,
       "height": 630
     },
-    "image": `${siteUrl}/assets/optimized/opengraph-1200w.webp`,
+    "image": `${siteUrl}/assets/images/opengraph.webp`,
     "description": "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
     "foundingOrganization": {
       "@type": "Organization",
@@ -59,7 +59,7 @@ export default function StructuredData() {
       "name": "Horizon",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/assets/optimized/opengraph-1200w.webp`
+        "url": `${siteUrl}/assets/images/opengraph.webp`
       }
     },
     "potentialAction": {
@@ -155,7 +155,7 @@ export default function StructuredData() {
       "bestRating": "5",
       "worstRating": "1"
     },
-    "screenshot": `${siteUrl}/assets/optimized/horizon-console-1920w.webp`,
+    "screenshot": `${siteUrl}/assets/images/horizon-console.webp`,
     "softwareVersion": "1.0",
     "releaseNotes": "Latest version includes enhanced streaming, improved analytics, and expanded customization options."
   };

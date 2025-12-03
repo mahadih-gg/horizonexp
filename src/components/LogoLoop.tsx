@@ -1,6 +1,5 @@
 'use client';
 
-import imageLoader from '@/lib/image-loader';
 import Image from 'next/image';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -305,7 +304,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
           </span>
         ) : (
           <Image
-            loader={imageLoader}
             className={cx(
               'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
               '[-webkit-user-drag:none] pointer-events-none',
