@@ -3,11 +3,18 @@
 import CartIcon from "@/components/icons/cart-icon";
 import MenuIcon2 from "@/components/icons/menu-icon2";
 import PoweredByHorizon from "@/components/svg/PoweredByHorizon";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
-const demoRoutes: Record<string, { title: string; description: string }> = {
+type DemoRoute = {
+  title?: string;
+  description: string;
+  brand?: string | React.ReactNode;
+};
+
+const demoRoutes: Record<string, DemoRoute> = {
   '/demo/new-arrivals': {
     title: 'New Arrivals',
     description: 'Show your freshest products in a swipeable feed.',
@@ -40,13 +47,22 @@ const demoRoutes: Record<string, { title: string; description: string }> = {
     title: 'Website Explainer',
     description: 'Break down how it works in a quick swipeable series.',
   },
+  '/demo/afghan-wireless': {
+    title: '',
+    description: 'Horizon Demo for Afghan Wireless',
+    brand: <Image src="/assets/images/demo/afghan-wireless-logo.webp" alt="Afghan Wireless" width={30} height={30} className="size-5 md:size-[22px] 2xl:size-[30px]" />,
+  }
 };
 
 const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   const demoInfo = useMemo(() => {
-    return demoRoutes[pathname] || {
+    const normalizedPathname = pathname.replace(/\/$/, '');
+    const routeKey = Object.keys(demoRoutes).find(
+      key => key.replace(/\/$/, '') === normalizedPathname
+    );
+    return routeKey ? demoRoutes[routeKey] : {
       title: 'New Arrivals',
       description: 'Show your freshest products in a swipeable feed so visitors always see what\'s new first.',
     };
@@ -58,7 +74,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
         {/* Top Banner */}
         <div className="bg-primary text-white text-center py-2 2xl:py-2.5 px-4">
           <p className="text-xs md:text-sm xl:text-base text-white font-medium">
-            {demoInfo.title} - {demoInfo.description}
+            {demoInfo?.title} {demoInfo?.title && "-"} {demoInfo.description}
           </p>
         </div>
 
@@ -76,7 +92,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
 
               {/* Brand Name */}
               <h1 className="text-lg md:text-2xl font-medium text-primary">
-                YOUR BRAND
+                {demoInfo?.brand ?? "YOUR BRAND"}
               </h1>
 
               {/* Shopping Bag Icon */}
