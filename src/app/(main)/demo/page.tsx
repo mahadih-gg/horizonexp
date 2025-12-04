@@ -124,7 +124,7 @@ const DemoPage = () => {
         >
           <Text variant="section-subheading" className="text-center pt-8 pb-[80px]">
             Click into demos for each use case and see how Horizon upgrades
-            <br className="hidden md:block" />
+            <br className="hidden md:block" />{" "}
             your site with conversion-ready video feeds.
           </Text>
         </motion.div>
