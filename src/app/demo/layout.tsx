@@ -80,8 +80,8 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Navigation Bar */}
         <nav className="border-b border-secondary">
-          <div className="container">
-            <div className="flex items-center justify-between h-16 md:h-[84px]">
+          <div className="demo-container">
+            <div className="flex items-center justify-between h-16 md:h-[84px] px-0 2xl:px-[50px]">
               {/* Hamburger Menu */}
               <button
                 className="p-2 hover:bg-gray-100 rounded-md transition-colors"
@@ -107,7 +107,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
         </nav>
       </header>
 
-      <main className="container">
+      <main className="demo-container">
         {children}
       </main>
 

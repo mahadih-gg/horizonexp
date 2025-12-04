@@ -20,7 +20,7 @@ const AfghanWirelessDemoPage = () => {
         height={357}
         className="bg-secondary h-[478px] md:h-[251px] 2xl:h-[357px] object-cover object-top"
       />
-      <div className="pt-8 md:pt-[45px] 2xl:pt-[60px]">
+      <div className="pt-8 md:pt-[45px] 2xl:pt-[37px]">
         <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>Trending Now</h2>
         <EntryPoint
           id="#517095"

@@ -125,6 +125,10 @@
     @apply max-w-full mx-auto px-6 md:px-8 xl:px-[105px] 2xl:px-[140px];
   }
 
+  .demo-container {
+    @apply max-w-full mx-auto px-7 lg:px-[36px] 2xl:px-[66px];
+  }
+
   .pt-page {
     @apply pt-[56px] md:pt-[74px] 2xl:pt-[100px];
   }
