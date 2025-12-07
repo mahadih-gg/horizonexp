@@ -70,7 +70,7 @@ const MTBDemoPage = () => {
           />
         </div>
 
-        <div>
+        <div className="block md:hidden">
           <MtbHeading title="Rewards & Privileges" />
           <div className="px-4">
             <EntryPoint
@@ -81,7 +81,7 @@ const MTBDemoPage = () => {
           </div>
         </div>
 
-        <div className="pt-8">
+        <div className="pt-8 md:pt-0">
           <MtbHeading title="Contact & Services" className="mb-0" />
 
           <Image
