@@ -152,7 +152,7 @@ const DemoPage = () => {
 
       <ConnectSection
         title="Don’t see the use case you need?"
-        description={<>Contact us and we’ll put together a <br /> custom demo for your brand.</>}
+        description={<>Contact us and we{"’"}ll put together a <br /> custom demo for your brand.</>}
         cta={{
           primary: {
             label: "Start for free",

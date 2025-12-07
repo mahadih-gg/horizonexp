@@ -3,6 +3,7 @@
 import CartIcon from "@/components/icons/cart-icon";
 import MenuIcon2 from "@/components/icons/menu-icon2";
 import PoweredByHorizon from "@/components/svg/PoweredByHorizon";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -51,8 +52,13 @@ const demoRoutes: Record<string, DemoRoute> = {
     title: '',
     description: 'Horizon Demo for Afghan Wireless',
     brand: <Image src="/assets/images/demo/afghan-wireless-logo.webp" alt="Afghan Wireless" width={30} height={30} className="size-5 md:size-[22px] 2xl:size-[30px]" />,
+  },
+  '/demo/mtb': {
+    title: '',
+    description: 'Horizon Demo for MTB Bank',
   }
 };
+
 
 const DemoLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -68,6 +74,12 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
     };
   }, [pathname]);
 
+
+  const isClientDemoPage = useMemo(() => {
+    const pages = ['/demo/mtb', '/demo/mtb/'];
+    return pages.includes(pathname);
+  }, [pathname]);
+
   return (
     <main>
       <header>
@@ -79,41 +91,43 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* Navigation Bar */}
-        <nav className="border-b border-secondary">
-          <div className="demo-container">
-            <div className="flex items-center justify-between h-16 md:h-[84px] px-0 2xl:px-[50px]">
-              {/* Hamburger Menu */}
-              <button
-                className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                aria-label="Menu"
-              >
-                <MenuIcon2 />
-              </button>
+        {!isClientDemoPage && (
+          <nav className="border-b border-secondary">
+            <div className="demo-container">
+              <div className="flex items-center justify-between h-16 md:h-[84px] px-0 2xl:px-[50px]">
+                {/* Hamburger Menu */}
+                <button
+                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+                  aria-label="Menu"
+                >
+                  <MenuIcon2 />
+                </button>
 
-              {/* Brand Name */}
-              <h1 className="text-lg md:text-2xl font-medium text-primary">
-                {demoInfo?.brand ?? "YOUR BRAND"}
-              </h1>
+                {/* Brand Name */}
+                <h1 className="text-lg md:text-2xl font-medium text-primary">
+                  {demoInfo?.brand ?? "YOUR BRAND"}
+                </h1>
 
-              {/* Shopping Bag Icon */}
-              <button
-                className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                aria-label="Shopping bag"
-              >
-                <CartIcon />
-              </button>
+                {/* Shopping Bag Icon */}
+                <button
+                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+                  aria-label="Shopping bag"
+                >
+                  <CartIcon />
+                </button>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>)}
       </header>
 
-      <main className="demo-container">
+      <main className={cn(!isClientDemoPage && "demo-container")}>
         {children}
       </main>
 
-      <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
+      {!isClientDemoPage && <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
         <Link href="/demo"> <PoweredByHorizon /> </Link>
       </footer>
+      }
     </main>
   );
 };
