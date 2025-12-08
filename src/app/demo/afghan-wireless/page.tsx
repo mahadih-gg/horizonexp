@@ -14,48 +14,23 @@ const AfghanWirelessDemoPage = () => {
 
   const { width } = useWindowSize();
 
-  const isMobile = useMemo(() => width < 768, [width]);
-
+  const isMobile = useMemo(() => !!width && width < 768, [width]);
 
   const images = [
     {
-      src: isMobile ? "/assets/images/demo/afghan-wireless/afghan-wireless-sm.webp" : "/assets/images/demo/afghan-wireless/afghan-wireless.webp",
+      src: isMobile ? "/assets/images/demo/afghan-wireless/1-sm.webp" : "/assets/images/demo/afghan-wireless/1.webp",
       alt: "Afghan Wireless",
       width: 1788,
       height: 490,
     },
     {
-      src: "/assets/images/demo/afghan-wireless/1.webp",
+      src: isMobile ? "/assets/images/demo/afghan-wireless/2-sm.webp" : "/assets/images/demo/afghan-wireless/2.webp",
       alt: "Afghan Wireless",
       width: 1788,
       height: 490,
     },
     {
-      src: "/assets/images/demo/afghan-wireless/2.webp",
-      alt: "Afghan Wireless",
-      width: 1788,
-      height: 490,
-    },
-    {
-      src: "/assets/images/demo/afghan-wireless/3.webp",
-      alt: "Afghan Wireless",
-      width: 1788,
-      height: 490,
-    },
-    {
-      src: "/assets/images/demo/afghan-wireless/4.webp",
-      alt: "Afghan Wireless",
-      width: 1788,
-      height: 490,
-    },
-    {
-      src: "/assets/images/demo/afghan-wireless/5.webp",
-      alt: "Afghan Wireless",
-      width: 1788,
-      height: 490,
-    },
-    {
-      src: "/assets/images/demo/afghan-wireless/6.webp",
+      src: isMobile ? "/assets/images/demo/afghan-wireless/3-sm.webp" : "/assets/images/demo/afghan-wireless/3.webp",
       alt: "Afghan Wireless",
       width: 1788,
       height: 490,
@@ -87,17 +62,24 @@ const AfghanWirelessDemoPage = () => {
         pagination={{ clickable: true }}
         spaceBetween={0}
         slidesPerView={1}
+        loop={true}
         className="afghan-wireless-swiper h-[390px] md:h-[368px] 2xl:h-[490px]"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="w-full h-[390px] md:h-[368px] 2xl:h-[490px] object-cover object-top"
-            />
+            {
+              !!width ? (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="w-full h-[390px] md:h-[368px] 2xl:h-[490px] object-cover object-top"
+                />
+              ) : (
+                <div className="w-full h-[390px] md:h-[368px] 2xl:h-[490px] bg-[#F1F4F7]" />
+              )
+            }
           </SwiperSlide>
         ))}
       </Swiper>
