@@ -51,7 +51,7 @@ const demoRoutes: Record<string, DemoRoute> = {
   '/demo/afghan-wireless': {
     title: '',
     description: 'Horizon Demo for Afghan Wireless',
-    brand: <Image src="/assets/images/demo/afghan-wireless-logo.webp" alt="Afghan Wireless" width={30} height={30} className="size-5 md:size-[22px] 2xl:size-[30px]" />,
+    brand: <Image src="/assets/images/demo/afghan-wireless/afghan-wireless-logo.webp" alt="Afghan Wireless" width={30} height={30} className="size-5 md:size-[22px] 2xl:size-[30px]" />,
   },
   '/demo/mtb': {
     title: '',
