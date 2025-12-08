@@ -70,18 +70,25 @@ const MTBDemoPage = () => {
           />
         </div>
 
-        <div className="block md:hidden">
+        <div>
           <MtbHeading title="Rewards & Privileges" />
-          <div className="px-4">
+          <div className="px-4 block md:hidden">
             <EntryPoint
               id="#969110"
               skeletonType={EntryPointType.BLOCK}
               skeletonSize={EntryPointSize.BLOCK_OF_4}
             />
           </div>
+          <div className="px-4 hidden md:block">
+            <EntryPoint
+              id="#168047"
+              skeletonType={EntryPointType.RECTANGLE}
+              skeletonSize={EntryPointSize.COMPACT}
+            />
+          </div>
         </div>
 
-        <div className="pt-8 md:pt-0">
+        <div className="pt-8">
           <MtbHeading title="Contact & Services" className="mb-0" />
 
           <Image
