@@ -56,7 +56,15 @@ const demoRoutes: Record<string, DemoRoute> = {
   '/demo/mtb': {
     title: '',
     description: 'Horizon Demo for MTB Bank',
-  }
+  },
+  '/demo/beauty': {
+    title: '',
+    description: 'Horizon Demo',
+  },
+  '/demo/beauty/product': {
+    title: '',
+    description: 'Horizon Demo',
+  },
 };
 
 
@@ -94,7 +102,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
         {!isClientDemoPage && (
           <nav className="border-b border-secondary">
             <div className="demo-container">
-              <div className="flex items-center justify-between h-16 md:h-[84px] px-0 2xl:px-[50px]">
+              <div className="flex items-center justify-between h-16 md:h-[84px]">
                 {/* Hamburger Menu */}
                 <button
                   className="p-2 hover:bg-gray-100 rounded-md transition-colors"
