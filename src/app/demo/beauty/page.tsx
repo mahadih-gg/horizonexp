@@ -12,7 +12,7 @@ const BeautyDemoPage = () => {
   const isMobile = useMemo(() => !!width && width < 768, [width]);
 
   return (
-    <section className='pt-8 md:pt-[45px] 2xl:pt-[60px]'>
+    <section>
       {/* <div className='pb-8 md:pb-[30px] 2xl:pb-10'>
         <EntryPoint
           id="#348249"
@@ -26,10 +26,10 @@ const BeautyDemoPage = () => {
         alt="Beauty"
         width={430}
         height={580}
-        className="w-full h-[420px] md:h-[435px] 2xl:h-[580px] object-cover rounded-3xl 2xl:rounded-5xl"
+        className="w-full h-auto xs:h-auto md:h-[435px] 2xl:h-[580px] object-contain xs:object-cover"
       />
 
-      <div className="pt-8 md:pt-[45px] 2xl:pt-[37px]">
+      <div className="pt-8 md:pt-[30px] 2xl:pt-10">
         <h2 className='text-left text-xl 2xl:text-[28px] font-medium pb-4 2xl:pb-5'>Trending Now</h2>
         <EntryPoint
           id="#781647"

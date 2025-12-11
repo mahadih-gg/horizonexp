@@ -100,7 +100,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Navigation Bar */}
         {!isClientDemoPage && (
-          <nav className="border-b border-secondary">
+          <nav className="">
             <div className="demo-container">
               <div className="flex items-center justify-between h-16 md:h-[84px]">
                 {/* Hamburger Menu */}
