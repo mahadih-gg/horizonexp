@@ -65,6 +65,14 @@ const demoRoutes: Record<string, DemoRoute> = {
     title: '',
     description: 'Horizon Demo',
   },
+  '/demo/launch': {
+    title: '',
+    description: 'Horizon Demo',
+  },
+  '/demo/launch/product': {
+    title: '',
+    description: 'Horizon Demo',
+  },
 };
 
 
