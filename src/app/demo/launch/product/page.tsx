@@ -20,12 +20,12 @@ const accordionItems = [
   {
     value: 'productInfo',
     title: 'Product Information',
-    content: 'Reveal your radiance with Color Crush Blush! Available in 6 shades, from pink to iridescent coral, it melts into the skin for an instant healthy glow.',
+    content: 'This knit top, crafted from a soft, touchable material, offers a warm and comfortable fit. The simple round neck and hidden button closure create a clean, streamlined look.',
   },
   {
     value: 'customerReviews',
     title: 'Customer Reviews',
-    content: 'Available in multiple sizes to fit your wrist perfectly.',
+    content: 'This knit top, crafted from a soft, touchable material, offers a warm and comfortable fit. The simple round neck and hidden button closure create a clean, streamlined look.',
   },
   {
     value: 'composition',
