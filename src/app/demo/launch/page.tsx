@@ -26,7 +26,7 @@ const LaunchDemoPage = () => {
         alt="Launch"
         width={isMobile ? 430 : 1793}
         height={isMobile ? 420 : 628}
-        className="w-full h-auto xs:h-auto md:h-[471px] 2xl:h-[628px] object-contain xs:object-cover rounded-3xl 2xl:rounded-5xl"
+        className="w-full h-auto xs:h-auto object-contain rounded-3xl 2xl:rounded-5xl"
       />
 
       <div className="pt-8 md:pt-[30px] 2xl:pt-10">
