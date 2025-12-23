@@ -24,8 +24,8 @@ importers:
         specifier: ^1.1.13
         version: 1.1.13(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@thinkflagship/horizon-web-shorts':
-        specifier: ^1.0.9
-        version: 1.0.9(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(csstype@3.1.3)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(use-sync-external-store@1.6.0(react@19.2.1))
+        specifier: ^1.0.10
+        version: 1.0.10(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(csstype@3.1.3)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(use-sync-external-store@1.6.0(react@19.2.1))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1121,8 +1121,8 @@ packages:
   '@tailwindcss/postcss@4.1.15':
     resolution: {integrity: sha512-IZh8IT76KujRz6d15wZw4eoeViT4TqmzVWNNfpuNCTKiaZUwgr5vtPqO4HjuYDyx3MgGR5qgPt1HMzTeLJyA3g==}
 
-  '@thinkflagship/horizon-web-shorts@1.0.9':
-    resolution: {integrity: sha512-q32QYdnxbta/1vxeFbfQE1ozBEiYwx/Fbza/ihm83IO0B8oCfke4vQOkHl9uXw27vx059O68DPJHM7U7FdgtOg==}
+  '@thinkflagship/horizon-web-shorts@1.0.10':
+    resolution: {integrity: sha512-wJJvVqySmDSQ+hAiHpVYJEbzsjHa/R9kzawtSSpKwtMUJHVaBQTVU01+gHDGbRaGzKn5W3HYZLImEUJsce8r4A==}
     peerDependencies:
       react: '>=16.8.0 <20'
       react-dom: '>=16.8.0 <20'
@@ -3730,7 +3730,7 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.1.15
 
-  '@thinkflagship/horizon-web-shorts@1.0.9(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(csstype@3.1.3)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(use-sync-external-store@1.6.0(react@19.2.1))':
+  '@thinkflagship/horizon-web-shorts@1.0.10(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(csstype@3.1.3)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(use-sync-external-store@1.6.0(react@19.2.1))':
     dependencies:
       '@apollo/client': 3.14.0(@types/react@19.2.2)(graphql@16.12.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@otplib/preset-browser': 12.0.1
