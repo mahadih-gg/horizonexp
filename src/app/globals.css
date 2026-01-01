@@ -161,6 +161,10 @@
     background: linear-gradient(180deg, #F9FCFD 0%, #FCF2F8 40.41%, #FCEEF6 54.73%, #F4F2F8 68.23%, #E7ECFC 100%);
   }
 
+  .bg-gradient-footer {
+    background: linear-gradient(180deg, #132D5D 0%, #353C82 49.52%, #6BADED 100%);
+  }
+
   .bg-black-gradient {
     background: linear-gradient(0deg, #7A8FA4 0%, #1C2B33 60%);
   }

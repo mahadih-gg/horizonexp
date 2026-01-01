@@ -7,16 +7,13 @@ type PropsType = {
 
 const XIcon: React.FC<PropsType> = ({ className }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
     className={cn("size-[24px]", className)}
     fill="none"
-    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="24" fill="#fff" rx="12"></rect>
-    <path
-      fill="#1C2B33"
-      d="M15.775 5.97h1.992l-4.375 4.982 5.112 6.758h-4.011l-3.141-4.107-3.596 4.107H5.764l4.635-5.328L5.504 5.97h4.11l2.838 3.751zm-.698 10.57h1.105L9.034 7.098H7.847z"
-    ></path>
+    <rect width="24" height="24" rx="12" fill="white" />
+    <path d="M15.7748 5.9707H17.7675L13.3923 10.9524L18.5039 17.7101H14.4926L11.352 13.6035L7.75649 17.7101H5.76382L10.3989 12.3819L5.50391 5.9707H9.61487L12.4523 9.72212L15.7748 5.9707ZM15.0774 16.5405H16.182L9.0344 7.09699H7.84746L15.0774 16.5405Z" fill="#5781C4" />
   </svg>
 );
 

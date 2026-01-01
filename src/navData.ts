@@ -5,18 +5,18 @@ export const navLinks = [
     className: "w-[60.5px] 2xl:w-[80px]",
   },
   {
+    label: "Use cases",
+    href: "/demo",
+    className: "w-[90px]",
+  },
+  {
     label: "Pricing",
     href: "/pricing",
     className: "w-[50px] 2xl:w-[66px]",
   },
   {
-    label: "Demo",
-    href: "/demo",
-    className: "w-[44px] 2xl:w-[58px]",
-  },
-  {
-    label: "Contact",
+    label: "Get demo",
     href: "/contact",
-    className: "w-[62px] 2xl:w-[82px]",
+    className: "w-[92px]",
   },
 ];

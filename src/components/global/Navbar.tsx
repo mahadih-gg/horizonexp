@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/navData";
+import { useFooterStore } from "@/store/footerStore";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,7 +14,9 @@ import BrandLogo from "../svg/BrandLogo";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
+
   const pathname = usePathname();
+  const { isTouchingTop } = useFooterStore();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -47,7 +50,7 @@ const Navbar = () => {
           </button>
 
           <Link href="/">
-            <BrandLogo />
+            <BrandLogo variant={isTouchingTop ? "white" : "default"} />
           </Link>
         </div>
 
@@ -55,7 +58,7 @@ const Navbar = () => {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold", link.className)}>
+              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold", isTouchingTop && "text-white", link.className)}>
                 {link.label}
               </Link>
             )
@@ -63,7 +66,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" asChild>
+          <Button variant="ghost" className={cn(isTouchingTop && "text-white")} asChild>
             <Link href="https://app.horizonexp.com/signin" target="_blank">
               Login
             </Link>
@@ -120,7 +123,6 @@ const Navbar = () => {
                           onClick={closeMobileMenu}
                         >
                           {link.label}
-
                           <RightIcon />
                         </Link>
                       </motion.div>
