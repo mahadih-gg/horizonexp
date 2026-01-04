@@ -6,14 +6,14 @@
 :root {
 
   --background: #FFFFFF;
-  --foreground: #1C2B33;
-  --primary: #1C2B33;
-  --secondary: #F1F4F7;
+  --foreground: #002253;
+  --primary: #002253;
+  --secondary: #EFF8FF;
   --muted: #F6FAFE;
   --destructive: #FF4172;
   --cta: #0164E0;
-  --primary-text: #1C2B33;
-  --black-gradient: linear-gradient(180deg, #7A8FA4 0%, #1C2B33 60%);
+  --primary-text: #002253;
+  --black-gradient: linear-gradient(180deg, #7A8FA4 0%, #002253 60%);
   --grad-tertiary: linear-gradient(142deg, #F4CFE1 50.68%, #A4D3FF 101.36%);
 }
 
@@ -166,12 +166,12 @@
   }
 
   .bg-black-gradient {
-    background: linear-gradient(0deg, #7A8FA4 0%, #1C2B33 60%);
+    background: linear-gradient(0deg, #7A8FA4 0%, #002253 60%);
   }
 
   .text-black-gradient {
     display: inline-block;
-    background: linear-gradient(0deg, #7A8FA4 0%, #1C2B33 60%);
+    background: linear-gradient(0deg, #7A8FA4 0%, #002253 60%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;

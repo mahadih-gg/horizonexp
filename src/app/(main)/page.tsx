@@ -1,13 +1,10 @@
 import ConnectSection from "@/components/common/ConnectSection";
 import type { Metadata } from "next";
 import DemoSlider from "./components/DemoSlider";
-import EverythingYouNeedSection from "./components/EverythingYouNeedSection";
+import FeaturesSection from "./components/FeaturesSection";
 import Hero from "./components/Hero";
-import HorizonForEnterpriseSection from "./components/HorizonForEnterpriseSection";
 import HorizonImpactSection from "./components/HorizonImpactSection";
 import LaunchHorizonSection from "./components/LaunchHorizonSection";
-import PowerYourMobileSection from "./components/PowerYourMobileSection";
-import ShortFormBenefitsSection from "./components/ShortFormBenefitsSection";
 
 const siteUrl = 'https://www.horizonexp.com';
 
@@ -83,20 +80,20 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
+      <HorizonImpactSection />
       {/* <EngageMoreSection /> */}
       {/* <SeeHorizonSection /> */}
-      <PowerYourMobileSection />
+      {/* <PowerYourMobileSection /> */}
       <DemoSlider />
-      <ShortFormBenefitsSection />
-      <EverythingYouNeedSection />
-      <HorizonImpactSection />
+      {/* <ShortFormBenefitsSection /> */}
+      <FeaturesSection />
       {/* <WhyHorizonSection /> */}
       {/* <ReviewsSection /> */}
-      <HorizonForEnterpriseSection />
+      {/* <HorizonForEnterpriseSection /> */}
       <LaunchHorizonSection />
       <ConnectSection
-        title={<>Start free today</>}
-        description="Join the new generation of brands turning attention into sales with short-form engagement."
+        title={<>Ready to launch shoppable videos?</>}
+        description="Horizon works with any website, storefront, or mobile app. Get started in minutes."
       />
     </main>
   );

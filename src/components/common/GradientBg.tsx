@@ -9,9 +9,7 @@ const GradientBg = ({ className, children }: Props) => {
   return (
     <div
       className={cn('w-full min-h-[484px] md:min-h-[645px] 2xl:min-h-[860px] rounded-4xl 2xl:rounded-6xl', className)}
-      style={{
-        background: 'linear-gradient(180deg, #F9FCFD 0%, #FCF2F8 40.41%, #FCEEF6 54.73%, #F4F2F8 68.23%, #E7ECFC 100%)'
-      }}
+      style={{ background: 'linear-gradient(180deg, #FBFDFF 4%, #B4E9FD 80%, #BAD9FD 100%)' }}
     >
       {children}
     </div>

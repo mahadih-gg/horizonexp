@@ -8,78 +8,69 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useMemo } from 'react';
 import HorizonConsole2 from './HorizonConsole2';
-import InfiniteScroll from './InfiniteScroll';
 
 type FeatureType = {
-  topLabel: string;
+  topLabel?: string;
   title: string;
   description: string | React.ReactNode;
   image: string;
   imageClassName: string;
 };
 
-const EverythingYouNeedSection = () => {
+const FeaturesSection = () => {
 
   const { width } = useWindowSize();
   const isMobile = useMemo(() => width < 480, [width]);
 
   const features: FeatureType[] = useMemo(() => [
     {
-      topLabel: "Fast Launch",
-      title: "Launch short-form in minutes",
-      description: <>Add a line of code or install a plugin to launch short-form <br className="hidden lg:block" /> entry points & video feeds anywhere on your site or app.</>,
+      title: "Create playlists or personalized loops",
+      description: <>Select the exact sequence of videos you want customers to <br className="hidden lg:block" /> experience or let AI create personalized video journeys.</>,
       image: "/assets/images/fast-launch.webp",
       imageClassName: "w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-16 sm:mb-0",
     },
     {
-      topLabel: "Social Interactions",
       title: "Engage like never before",
       description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden lg:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
       image: !isMobile ? "/assets/images/social-interactions.webp" : "/assets/images/social-interactions-mobile.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-[80px] xs:-mb-[20px] sm:mb-0 -ml-[2px] sm:ml-auto",
     },
     {
-      topLabel: "Sponsored Campaigns",
-      title: "Unlock new revenue",
+      title: "Collect customer insight with polls",
+      description: <>Create and add polls on any video to capture feedback <br className="hidden lg:block" /> and let customers shape your next move.</>,
+      image: "/assets/images/audience-polls.webp",
+      imageClassName: "w-[243px] sm:w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-5 sm:mb-0",
+    },
+    {
+      title: "Unlock new revenue with ads",
       description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
       image: !isMobile ? "/assets/images/sponsored-campaigns.webp" : "/assets/images/sponsored-campaigns-mobile.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0 -ml-[16px] sm:ml-auto",
-    },
-    {
-      topLabel: "Audience Polls",
-      title: "Collect customer input with polls",
-      description: <>Launch bite-size polls to capture intent and feedback, <br className="hidden lg:block" /> let customers shape your next move.</>,
-      image: "/assets/images/audience-polls.webp",
-      imageClassName: "w-[243px] sm:w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-5 sm:mb-0",
     },
   ], [isMobile]);
 
   const features2: FeatureType[] = [
     {
-      topLabel: "Invite-only UGC",
-      title: "Empower your super fans",
-      description: "Invite VIP customers and creators to upload authentic videos that build trust, expand reach, and drive conversions.",
+      title: "Ultra fast streaming",
+      description: <>Instant-load video experience with built-in protections <br className="hidden lg:block" /> that keep your website or app running at top speed.</>,
       image: !isMobile ? "/assets/images/invite-only-ugc.webp" : "/assets/images/invite-only-ugc-mobile.webp",
       imageClassName: "w-[281px] sm:w-auto mx-auto h-full sm:h-[402px] 2xl:h-[537px] mb-0 xs:-mb-4.5 sm:mb-0 ml-[18px] xs:ml-auto",
     },
     {
-      topLabel: "Fastest Streaming",
-      title: "Deliver blazing-fast streaming",
-      description: "Deliver instant-load video experiences with built-in fail-safes that keep your site or app running at top speed.",
+      title: "Own the mobile experience",
+      description: <>Delight customers with a smooth, fullscreen video experience <br className="hidden lg:block" /> built for easy scrolling and fast discovery.</>,
       image: "/assets/images/fast-streaming.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-20 sm:mb-0",
     },
     {
-      topLabel: "Analytics",
-      title: "Track what truly works",
-      description: "Measure performance across every video and entry point to know exactly what drives engagement and sales.",
+      title: "Empower your super fans",
+      description: <>Invite customers and creators to upload their own video content <br className="hidden lg:block" /> to showcase on your website or app.</>,
       image: "/assets/images/analytics.webp",
       imageClassName: "h-[310px] sm:h-[402px] 2xl:h-[537px] pb-5",
     },
     {
-      topLabel: "Mobile First",
-      title: "Own the mobile experience",
-      description: "Give shoppers a smooth, fullscreen video experience built for easy scrolling and on-the-go discovery.",
+      title: "Track what truly works",
+      description: <>Measure performance across every video and every carousel to <br className="hidden lg:block" /> know exactly what is driving engagement and sales.</>,
       image: "/assets/images/mobile-first.webp",
       imageClassName: "h-[272px] sm:h-[402px] 2xl:h-[537px] pb-5",
     },
@@ -87,25 +78,23 @@ const EverythingYouNeedSection = () => {
   return (
     <section className="container scroll-mt-20 md:scroll-mt-28 2xl:scroll-mt-40" id="features">
       <SectionHeader
-        title={<>Everything you need to grow with <br className="hidden lg:block" /> short-form video engagement</>}
-        topLabel="Features"
+        title={<>Everything you need to grow your <br className="hidden lg:block" /> business with shoppable videos</>}
       />
 
       <div className='flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-6 2xl:gap-8 w-full'>
-        <GradientBg className='py-[30px] 2xl:py-10 md:col-span-2 overflow-hidden'>
+        <GradientBg className='min-h-[382px] pt-[30px] 2xl:pt-10 pb-[87px] md:pb-0 md:col-span-2 overflow-hidden'>
           <CardHeader
             animate={false}
-            topLabel="Shoppable Overlays"
-            title={<>Make your videos <br className="block md:hidden" /> shoppable</>}
-            description={<>Turn attention into action with <br className="block md:hidden" /> shoppable CTAs that capture attention <br className="block md:hidden" /> and drive purchases directly from videos.</>}
+            title={<>The only shoppable video platform that <br className="hidden md:block" /> works everywhere you do</>}
+            description={<>Launch on Shopify, Wordpress, Woocommerce, Wix, Webflow, Framer <br className="hidden md:block" /> and many more without any complex technical integration.</>}
           />
-          <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
+          <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] flex justify-center items-start'>
             <Image
-              src="/assets/images/make-your-videos-shoppable.webp"
-              alt="Make your videos shoppable"
-              width={1419}
-              height={631}
-              className="min-w-fit md:min-w-auto w-auto md:w-full h-[373px] md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px] mx-auto object-contain object-top"
+              src={isMobile ? "/assets/images/shoppable-platform-mobile.webp" : "/assets/images/shoppable-platform.webp"}
+              alt="The only shoppable video platform"
+              width={isMobile ? 375 : 1640}
+              height={isMobile ? 211 : 533}
+              className="w-full h-auto object-contain"
             />
           </div>
         </GradientBg>
@@ -116,20 +105,20 @@ const EverythingYouNeedSection = () => {
           ))
         }
 
-        <GradientBg className='py-10 w-full md:col-span-2'>
+        <GradientBg className='py-[30px] 2xl:py-10 md:col-span-2 overflow-hidden'>
           <CardHeader
             animate={false}
-            className='px-4'
-            topLabel="Infinite Scroll"
-            title={<>Create playlists & infinite <br className='hidden lg:block' /> scrolling feeds</>}
-            description={
-              <>
-                Use AI to create personalized video feeds or design the exact <br className='hidden lg:block' /> viewing journeys you want customers to experience.
-              </>
-            }
+            title={<>Create high converting CTAs</>}
+            description={<>Use customizable shoppable video CTAs to draw your <br className="hidden lg:block" /> customer’s attention and drive more purchases.</>}
           />
-          <div className='w-full h-full pt-[54px] md:pt-[58px] 2xl:pt-[80px] pb-[80px] 2xl:pb-[104px]'>
-            <InfiniteScroll />
+          <div className='w-full h-full pt-10 md:pt-[45px] 2xl:pt-[60px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
+            <Image
+              src="/assets/images/make-your-videos-shoppable.webp"
+              alt="Make your videos shoppable"
+              width={1419}
+              height={631}
+              className="min-w-fit md:min-w-auto w-auto md:w-full h-[373px] md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px] mx-auto object-contain object-top"
+            />
           </div>
         </GradientBg>
 
@@ -143,13 +132,10 @@ const EverythingYouNeedSection = () => {
           <CardHeader
             animate={false}
             className='px-4'
-            topLabel="Horizon Console"
-            title={<>The control center <br className='md:hidden' /> for short-form <br className='md:hidden' /> engagement</>}
-            description="Manage everything from one powerful, no-code dashboard."
-          />
+            title="The control center for Shoppable Videos & beyond"
+            description={<>Manage video content, carousels, ads, ugc, and user experience from <br className="hidden lg:block" /> one powerful, no-code dashboard.</>} />
           <HorizonConsole2 />
         </GradientBg>
-
       </div>
     </section>
   );
@@ -177,4 +163,4 @@ const FeatureCard = ({ feature }: { feature: FeatureType }) => {
   );
 };
 
-export default EverythingYouNeedSection;
+export default FeaturesSection;

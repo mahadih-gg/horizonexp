@@ -1,7 +1,9 @@
+"use client";
+
 import GradientBg from "@/components/common/GradientBg";
 import { SSRMotion } from "@/components/common/ssr-motion";
 import { Button } from "@/components/ui/button";
-import { FlipWords } from "@/components/ui/flip-words";
+import { EntryPoint, EntryPointSize, EntryPointType } from "@thinkflagship/horizon-web-shorts";
 import Link from "next/link";
 import ComparisonSection from "./ComparisonSection";
 
@@ -12,7 +14,7 @@ const Hero = () => {
     "solution for apps",
   ]
 
-  const heading = "The best short-form video".split(" ");
+  const heading = "The best shoppable video".split(" ");
   return (
     <section className="container pt-[62px] md:pt-[90px] 2xl:pt-[120px]">
       <div className="flex-center">
@@ -34,10 +36,20 @@ const Hero = () => {
             </span>
           ))}
           <br />
-          <FlipWords words={text} />
+          {/* <FlipWords words={text} /> */}
+          <span className="text-black-gradient pr-1">
+            solution for your website & app
+          </span>
         </SSRMotion>
       </div>
 
+      <div className="py-10 md:py-8 2xl:py-11 max-w-[530px] lg:max-w-[678px] 2xl:max-w-[888px] mx-auto">
+        <EntryPoint
+          id="#626206"
+          skeletonType={EntryPointType.CIRCLE}
+          skeletonSize={EntryPointSize.BOLD}
+        />
+      </div>
 
       <SSRMotion
         as="p"
@@ -45,27 +57,38 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-lg 2xl:text-2xl text-primary-text text-center pt-6 2xl:pt-8 pb-[30px] 2xl:pb-10 font-medium leading-tight">
-        Skyrocket customer engagement, conversion, and retention with <br className="hidden md:block" /> ultra-fast, shoppable short-form video experience
+        Launch swipeable, shoppable video feeds on your site or <br className="hidden md:block" /> app in minutes - convert more visitors into buyers.
       </SSRMotion>
 
-      <SSRMotion
-        as="div"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center justify-center gap-3 pb-[60px] 2xl:pb-20"
-      >
-        <Button asChild>
-          <Link href="https://app.horizonexp.com/signup" target="_blank">
-            Start for free
-          </Link>
-        </Button>
-        <Button variant="secondary" asChild>
-          <Link href="/demo">
-            Explore demo
-          </Link>
-        </Button>
-      </SSRMotion>
+      <div className="pb-[60px] 2xl:pb-20">
+        <SSRMotion
+          as="div"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex items-center justify-center gap-3"
+        >
+          <Button asChild>
+            <Link href="https://app.horizonexp.com/signup" target="_blank">
+              Start for free
+            </Link>
+          </Button>
+          <Button variant="secondary" asChild>
+            <Link href="/contact">
+              Book a demo
+            </Link>
+          </Button>
+        </SSRMotion>
+        <SSRMotion
+          as="p"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center text-xs 2xl:text-base font-medium text-primary-text pt-[18px] 2xl:pt-6"
+        >
+          No credit card required to signup
+        </SSRMotion>
+      </div>
 
       <SSRMotion
         as="div"

@@ -116,12 +116,37 @@ const DemoSlider = () => {
       <SectionHeader
         title={
           <>
-            Use cases that drive conversion
+            Put Horizon where it converts
             <br />
-            Explore Horizon experience for your key pages
+            <span className='text-primary/40'>See the highest-performing placements</span>
           </>
         }
-        className="container"
+        centered={false}
+        className='container flex items-end justify-between'
+        extraContent={
+          <div className='flex items-center justify-between gap-5 2xl:gap-6 bg-secondary rounded-full p-2.5'>
+            <button
+              onClick={handlePrev}
+              disabled={isBeginning}
+              className={`size-6 2xl:size-8 flex-center active:scale-95 ${isBeginning
+                ? 'opacity-50 cursor-not-allowed'
+                : 'cursor-pointer'
+                }`}
+            >
+              <ChevronLeft className="size-5 2xl:size-6 text-primary" />
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={isEnd}
+              className={`size-6 2xl:size-8 flex-center active:scale-95 ${isEnd
+                ? 'opacity-50 cursor-not-allowed'
+                : 'cursor-pointer'
+                }`}
+            >
+              <ChevronRight className="size-5 2xl:size-6 text-primary" />
+            </button>
+          </div>
+        }
       />
 
       <div className="relative">
@@ -171,31 +196,6 @@ const DemoSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        <div className='container flex items-center justify-center pt-6 md:pt-[18px] 3xl:pt-6'>
-          <div className='flex items-center justify-between gap-5 2xl:gap-6 bg-secondary rounded-full p-2.5'>
-            <button
-              onClick={handlePrev}
-              disabled={isBeginning}
-              className={`size-6 2xl:size-8 flex-center active:scale-95 ${isBeginning
-                ? 'opacity-50 cursor-not-allowed'
-                : 'cursor-pointer'
-                }`}
-            >
-              <ChevronLeft className="size-5 2xl:size-6 text-primary" />
-            </button>
-            <button
-              onClick={handleNext}
-              disabled={isEnd}
-              className={`size-6 2xl:size-8 flex-center active:scale-95 ${isEnd
-                ? 'opacity-50 cursor-not-allowed'
-                : 'cursor-pointer'
-                }`}
-            >
-              <ChevronRight className="size-5 2xl:size-6 text-primary" />
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

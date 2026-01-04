@@ -31,8 +31,8 @@ const defaultCta = {
     variant: "default",
   },
   secondary: {
-    label: "Explore demo",
-    href: "/demo",
+    label: "Book a demo",
+    href: "/contact",
     target: undefined,
     variant: "secondary",
   },

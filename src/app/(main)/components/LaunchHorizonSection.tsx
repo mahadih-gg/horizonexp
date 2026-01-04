@@ -3,7 +3,7 @@ import LaunchSteps from './LaunchSteps';
 
 const LaunchHorizonSection = () => {
   return (
-    <section className="container">
+    <section className="container pt-section">
       <SectionHeader
         title="Launch Horizon in 4 easy steps"
       />
