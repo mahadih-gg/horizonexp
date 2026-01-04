@@ -59,19 +59,21 @@ const ContactPage = () => {
         <ContactSection />
 
         <ConnectSection
-          title={<>Your next growth <br /> chapter starts here.</>}
-          description={<>Reach out, our team will help you find the <br /> perfect Horizon setup for your goals.</>}
+          title={<>Start free. <br /> Go live in minutes.</>}
+          description={<>Try Horizon on your own - or reach out if you want help.</>}
           cta={{
             primary: {
               label: "Start for free",
               href: "https://app.horizonexp.com/signup",
               target: "_blank",
               variant: "default",
+              visible: true,
             },
             secondary: {
-              label: "Contact us",
+              label: "Book a demo",
               href: "/contact",
               variant: "secondary",
+              visible: false,
             },
           }}
         />

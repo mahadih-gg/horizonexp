@@ -10,17 +10,17 @@ const ForEnterpriseSection = () => {
         <SectionHeader
           className="text-center lg:text-left flex flex-col items-center lg:items-start justify-center"
           topLabel="For Enterprise"
-          title={<>Ready to scale <br /> beyond limits?</>}
+          title={<>Need higher <br /> limits?</>}
           description={<>
-            For brands with larger audiences, Horizon offers custom enterprise pricing tailored to your traffic, integrations, and performance needs.
+            For brands with larger audiences, Horizon offers custom enterprise pricing tailored to your traffic and performance needs.
             <br />
             <br />
-            Get dedicated support, advanced analytics, and infrastructure engineered to handle enterprise scale effortlessly.
+            Get dedicated support, customizations, and infrastructure designed to handle enterprise scale effortlessly.
           </>}
           extraContent={
             <Button asChild className='lg:inline-flex hidden mt-10'>
               <Link href="/contact">
-                Contact us
+                Contact sales
               </Link>
             </Button>
           }

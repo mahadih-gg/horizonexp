@@ -14,7 +14,7 @@ const PricingSection = () => {
         transition={{ duration: 0.8 }}
       >
         <Text variant="heading" className="text-center">
-          Short-form engagement <br /> for every business
+          Plans for every stage
         </Text>
       </motion.div>
 
@@ -24,7 +24,7 @@ const PricingSection = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <Text variant="section-subheading" className="text-center pt-8 pb-[100px]">
-          Whether you&apos;re just starting out or serving millions, Horizon makes <br className="hidden md:block" /> short-form engagement effortless to launch, manage, and scale.
+          Start free. Launch fast. Upgrade as you grow.
         </Text>
       </motion.div>
 

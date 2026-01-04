@@ -13,12 +13,14 @@ type Props = {
       href: string;
       target?: string;
       variant?: ButtonVariant;
+      visible?: boolean;
     };
     secondary?: {
       label: string;
       href: string;
       target?: string;
       variant?: ButtonVariant;
+      visible?: boolean;
     };
   };
 }
@@ -29,12 +31,14 @@ const defaultCta = {
     href: "https://app.horizonexp.com/signup",
     target: "_blank",
     variant: "default",
+    visible: true,
   },
   secondary: {
     label: "Book a demo",
     href: "/contact",
     target: undefined,
     variant: "secondary",
+    visible: true,
   },
 };
 
@@ -64,17 +68,21 @@ const ConnectSection = ({ title, description, cta = defaultCta as Props["cta"] }
         transition={{ duration: 0.5, delay: 0.2 }}
         className="flex items-center justify-center gap-4"
       >
-        <Button variant={primary.variant as ButtonVariant} asChild>
-          <Link href={primary.href} target={primary.target as string}>
-            {primary.label}
-          </Link>
-        </Button>
+        {primary.visible && (
+          <Button variant={primary.variant as ButtonVariant} asChild>
+            <Link href={primary.href} target={primary.target as string}>
+              {primary.label}
+            </Link>
+          </Button>
+        )}
 
-        <Button variant={secondary.variant as ButtonVariant} asChild>
-          <Link href={secondary.href} target={secondary.target as string}>
-            {secondary.label}
-          </Link>
-        </Button>
+        {secondary.visible && (
+          <Button variant={secondary.variant as ButtonVariant} asChild>
+            <Link href={secondary.href} target={secondary.target as string}>
+              {secondary.label}
+            </Link>
+          </Button>
+        )}
       </motion.div>
     </section>
   );
