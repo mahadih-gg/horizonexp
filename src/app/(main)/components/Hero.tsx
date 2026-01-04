@@ -16,7 +16,7 @@ const Hero = () => {
 
   const heading = "The best shoppable video".split(" ");
   return (
-    <section className="container pt-[62px] md:pt-[90px] 2xl:pt-[120px]">
+    <section className="container pt-page">
       <div className="flex-center">
         <SSRMotion
           as="h1"
@@ -24,20 +24,20 @@ const Hero = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-center text-[64px] xxs:text-[72px] 2xl:text-[96px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto"
+          className="inline-block text-center text-[48px] xxs:text-[54px] 2xl:text-[72px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto"
         >
 
           {heading.map((word, i) => (
             <span
               key={i + word}
-              className="text-black-gradient"
+              className="text-primary"
             >
               {word}&nbsp;
             </span>
           ))}
           <br />
           {/* <FlipWords words={text} /> */}
-          <span className="text-black-gradient pr-1">
+          <span className="text-primary pr-1">
             solution for your website & app
           </span>
         </SSRMotion>

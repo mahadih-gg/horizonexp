@@ -68,12 +68,12 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <Button variant="ghost" className={cn(isTouchingTop && "text-white")} asChild>
             <Link href="https://app.horizonexp.com/signin" target="_blank">
-              Login
+              Log in
             </Link>
           </Button>
           <Button asChild>
             <Link href="https://app.horizonexp.com/signup" target="_blank">
-              Launch free
+              Start for free
             </Link>
           </Button>
         </div>
@@ -144,7 +144,7 @@ const Navbar = () => {
                   className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
                   onClick={closeMobileMenu}
                 >
-                  Login
+                  Log in
                   <RightIcon />
                 </Link>
 
@@ -154,7 +154,7 @@ const Navbar = () => {
                   className="flex justify-between items-center text-primary-text text-2xl font-medium pointer-events-auto"
                   onClick={closeMobileMenu}
                 >
-                  Launch free
+                  Start for free
                   <RightIcon />
                 </Link>
 

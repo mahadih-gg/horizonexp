@@ -6,7 +6,6 @@ import { useFooterStore } from "@/store/footerStore";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import LinkedinIcon from "../icons/linkedin-icon";
-import TiktokIcon from "../icons/tiktok-icon";
 import XIcon from "../icons/x-icon";
 import YoutubeIcon from "../icons/youtube-icon";
 import FooterLogo from "./FooterLogo";
@@ -27,11 +26,11 @@ const socialLinks = [
     label: "Youtube",
     href: "https://www.youtube.com/@Thehorizonera",
   },
-  {
-    icon: <TiktokIcon className="size-[24px] md:size-[18px] 2xl:size-[24px]" />,
-    label: "Tiktok",
-    href: "https://www.tiktok.com/@horizonexp.com",
-  },
+  // {
+  //   icon: <TiktokIcon className="size-[24px] md:size-[18px] 2xl:size-[24px]" />,
+  //   label: "Tiktok",
+  //   href: "https://www.tiktok.com/@horizonexp.com",
+  // },
   // {
   //   icon: <PinterestIcon />,
   //   label: "Pinterest",

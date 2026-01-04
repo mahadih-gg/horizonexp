@@ -97,7 +97,7 @@ const DemoPage = () => {
           transition={{ duration: 0.8 }}
         >
           <Text variant="heading" className="text-center">
-            Experience Horizon in action
+            See Horizon in action
           </Text>
         </motion.div>
 
@@ -107,9 +107,7 @@ const DemoPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Text variant="section-subheading" className="text-center pt-8 pb-[80px]">
-            Click into demos for each use case and see how Horizon upgrades
-            <br className="hidden md:block" />{" "}
-            your site with conversion-ready video feeds.
+            Explore the most common Horizon use cases teams can launch to drive engagement and conversion.
           </Text>
         </motion.div>
       </section>

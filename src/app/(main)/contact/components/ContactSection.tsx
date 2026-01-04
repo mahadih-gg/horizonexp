@@ -76,7 +76,7 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Text variant="heading" className="text-center">We{"’"}d love to hear from you</Text>
+          <Text variant="heading" className="text-center">Need a hand getting started?</Text>
         </motion.div>
 
         <motion.div
@@ -84,7 +84,7 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Drop us a message and our team will get back to you within 24 hours.</Text>
+          <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Ask us anything - setup, pricing, or use cases. We usually reply within a day.</Text>
         </motion.div>
 
         <motion.div

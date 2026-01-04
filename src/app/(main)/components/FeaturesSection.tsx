@@ -15,6 +15,7 @@ type FeatureType = {
   description: string | React.ReactNode;
   image: string;
   imageClassName: string;
+  rightPadding?: boolean;
 };
 
 const FeaturesSection = () => {
@@ -26,25 +27,26 @@ const FeaturesSection = () => {
     {
       title: "Create playlists or personalized loops",
       description: <>Select the exact sequence of videos you want customers to <br className="hidden lg:block" /> experience or let AI create personalized video journeys.</>,
-      image: "/assets/images/fast-launch.webp",
+      image: "/assets/images/features/feat-1.webp",
       imageClassName: "w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-16 sm:mb-0",
+      rightPadding: false
     },
     {
       title: "Engage like never before",
       description: <>Boost engagement with likes, shares, and comments (spam <br className="hidden lg:block" /> protected by AI) to drive conversation, loyalty, and retention.</>,
-      image: !isMobile ? "/assets/images/social-interactions.webp" : "/assets/images/social-interactions-mobile.webp",
+      image: "/assets/images/features/feat-2.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-[80px] xs:-mb-[20px] sm:mb-0 -ml-[2px] sm:ml-auto",
     },
     {
       title: "Collect customer insight with polls",
       description: <>Create and add polls on any video to capture feedback <br className="hidden lg:block" /> and let customers shape your next move.</>,
-      image: "/assets/images/audience-polls.webp",
+      image: "/assets/images/features/feat-3.webp",
       imageClassName: "w-[243px] sm:w-auto mx-auto h-[402px] 2xl:h-[537px] -mb-5 sm:mb-0",
     },
     {
       title: "Unlock new revenue with ads",
       description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
-      image: !isMobile ? "/assets/images/sponsored-campaigns.webp" : "/assets/images/sponsored-campaigns-mobile.webp",
+      image: !isMobile ? "/assets/images/features/feat-4.webp" : "/assets/images/features/feat-4-mobile.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0 -ml-[16px] sm:ml-auto",
     },
   ], [isMobile]);
@@ -53,26 +55,28 @@ const FeaturesSection = () => {
     {
       title: "Ultra fast streaming",
       description: <>Instant-load video experience with built-in protections <br className="hidden lg:block" /> that keep your website or app running at top speed.</>,
-      image: !isMobile ? "/assets/images/invite-only-ugc.webp" : "/assets/images/invite-only-ugc-mobile.webp",
-      imageClassName: "w-[281px] sm:w-auto mx-auto h-full sm:h-[402px] 2xl:h-[537px] mb-0 xs:-mb-4.5 sm:mb-0 ml-[18px] xs:ml-auto",
+      image: "/assets/images/features/feat-5.webp",
+      imageClassName: "w-full h-auto pb-5",
     },
     {
       title: "Own the mobile experience",
       description: <>Delight customers with a smooth, fullscreen video experience <br className="hidden lg:block" /> built for easy scrolling and fast discovery.</>,
-      image: "/assets/images/fast-streaming.webp",
+      image: "/assets/images/features/feat-6.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-20 sm:mb-0",
     },
     {
       title: "Empower your super fans",
       description: <>Invite customers and creators to upload their own video content <br className="hidden lg:block" /> to showcase on your website or app.</>,
-      image: "/assets/images/analytics.webp",
-      imageClassName: "h-[310px] sm:h-[402px] 2xl:h-[537px] pb-5",
+      image: "/assets/images/features/feat-7.webp",
+      imageClassName: "pb-5",
+      rightPadding: false
     },
     {
       title: "Track what truly works",
       description: <>Measure performance across every video and every carousel to <br className="hidden lg:block" /> know exactly what is driving engagement and sales.</>,
-      image: "/assets/images/mobile-first.webp",
-      imageClassName: "h-[272px] sm:h-[402px] 2xl:h-[537px] pb-5",
+      image: "/assets/images/features/feat-8.webp",
+      imageClassName: "pb-5",
+      rightPadding: false
     },
   ];
   return (
@@ -142,8 +146,11 @@ const FeaturesSection = () => {
 };
 
 const FeatureCard = ({ feature }: { feature: FeatureType }) => {
+
+  const rightPadding = feature.rightPadding ?? true;
+
   return (
-    <Card className='w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden rounded-4xl 2xl:rounded-6xl'>
+    <Card className={cn('w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden rounded-4xl 2xl:rounded-6xl', !rightPadding && 'pr-0 md:pr-0 2xl:pr-0')}>
       <CardHeader
         animate={false}
         topLabel={feature.topLabel}

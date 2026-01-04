@@ -8,9 +8,10 @@ interface CounterProps {
   to: number;
   duration?: number;
   suffix?: string;
+  prefix?: string;
 }
 
-const CounterAnimation = ({ from = 0, to, duration = 1.2, suffix = "" }: CounterProps) => {
+const CounterAnimation = ({ from = 0, to, duration = 1.2, prefix = "", suffix = "" }: CounterProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const [current, setCurrent] = useState(from);
@@ -27,7 +28,8 @@ const CounterAnimation = ({ from = 0, to, duration = 1.2, suffix = "" }: Counter
   }, [inView, from, to, duration]);
 
   return (
-    <span ref={ref} className="text-black-gradient">
+    <span ref={ref} className="text-primary">
+      {prefix}
       {Number.isInteger(to) ? Math.round(current) : current.toFixed(1)}
       {suffix}
     </span>

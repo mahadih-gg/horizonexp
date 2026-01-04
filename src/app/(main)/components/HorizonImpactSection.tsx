@@ -1,7 +1,7 @@
 import ClockIcon from "@/components/icons/clock-icon";
 import CursorIcon from "@/components/icons/cursor-icon";
 import FileSearchIcon from "@/components/icons/file-search-icon";
-import ShoppingCartIcon from "@/components/icons/shopping-cart-icon";
+import UsersIcon from "@/components/icons/users.icon";
 import AndroidSvg from "@/components/svg/AndroidSvg";
 import AppleSvg from "@/components/svg/AppleSvg";
 import ReactSvg from "@/components/svg/ReactSvg";
@@ -39,34 +39,60 @@ const HorizonImpactSection = () => {
     },
   ];
 
-  const impactMetrics = [
+  type ImpactMetricsType = {
+    icon: React.ReactNode;
+    statistic: string;
+    numericValue: number;
+    prefix?: string;
+    suffix: string;
+    description: string | React.ReactNode;
+  }
+
+  const impactMetrics: ImpactMetricsType[] = [
     {
       icon: <CursorIcon />,
       statistic: "15%",
       numericValue: 15,
       suffix: "%",
-      description: "15% avg. CTR → Horizon's CTR is 10x higher than traditional banners."
+      description: <>
+        Average CTR <br />
+        ~16× higher than <br />
+        traditional formats
+      </>
     },
     {
       icon: <ClockIcon />,
       statistic: "96s",
       numericValue: 96,
       suffix: "s",
-      description: "Horizon increases user session time by 96 seconds, enhancing engagement in your store."
+      description: <>
+        Additional session time <br />
+        2.4× longer sessions on <br />
+        average
+      </>
     },
     {
       icon: <FileSearchIcon />,
-      statistic: "10x",
-      numericValue: 10,
+      statistic: "11x",
+      numericValue: 11,
       suffix: "x",
-      description: "10x product visibility → Super fast video scroll unlocks dramatically higher discovery."
+      description: <>
+        Product <br />
+        discovery <br />
+        vs. static grids
+      </>
     },
     {
-      icon: <ShoppingCartIcon />,
-      statistic: "2x",
-      numericValue: 2,
-      suffix: "x",
-      description: "Horizon doubles your conversions as engagement flows straight into checkout."
+      icon: <UsersIcon />,
+      statistic: "-50%",
+      numericValue: 50,
+      prefix: "-",
+      suffix: "%",
+      description: <>
+        Bounce rate <br />
+        reduction after <br />
+        using Horizon
+      </>
     }
   ];
 
@@ -85,7 +111,7 @@ const HorizonImpactSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center flex-wrap gap-4 md:gap-5 pb-[30px] md:pb-[90px] 2xl:pb-[120px]">
           {
             platforms.map((platform, index) => (
-              <div key={index} className="flex items-center justify-center py-3.5 px-[27px] md:py-3.5 md:px-7 2xl:py-5 2xl:px-10">
+              <div key={index} className="flex items-center justify-center">
                 {platform.icon}
               </div>
             ))
@@ -98,7 +124,7 @@ const HorizonImpactSection = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6 px-4 xxs:px-[46px] md:px-0'>
           {impactMetrics.map((metric, index) => (
-            <Card key={index} className="p-[30px] md:p-10"
+            <Card key={index} className="p-10 md:p-5 2xl:p-7 rounded-4xl 2xl:rounded-6xl"
               style={{
                 background: "linear-gradient(180deg, #E8EEFC 0%, rgba(232, 238, 252, 0.3) 100%)"
               }}
@@ -106,7 +132,7 @@ const HorizonImpactSection = () => {
               <CardContent className="flex flex-col items-start justify-start gap-7">
                 <span>{metric.icon}</span>
                 <h2 className="text-[72px] 2xl:text-[96px] font-normal leading-none text-primary-text tracking-[-0.04em] 2xl:tracking-[-0.04em]">
-                  <CounterAnimation to={metric.numericValue} suffix={metric.suffix} />
+                  <CounterAnimation to={metric.numericValue} prefix={metric.prefix} suffix={metric.suffix} />
                 </h2>
                 <p className="text-base md:text-[15px] 2xl:text-xl text-primary-text font-medium">
                   {metric.description}
