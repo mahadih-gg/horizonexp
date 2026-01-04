@@ -92,7 +92,7 @@ const FeaturesSection = () => {
             title={<>The only shoppable video platform that <br className="hidden md:block" /> works everywhere you do</>}
             description={<>Launch on Shopify, Wordpress, Woocommerce, Wix, Webflow, Framer <br className="hidden md:block" /> and many more without any complex technical integration.</>}
           />
-          <div className='w-full h-full pt-[38px] md:pt-[21px] 2xl:pt-[30px] flex justify-center items-start'>
+          <div className='w-full h-full pt-[50px] md:pt-[40px] 2xl:pt-[54px] flex justify-center items-start'>
             <Image
               src={isMobile ? "/assets/images/shoppable-platform-mobile.webp" : "/assets/images/shoppable-platform.webp"}
               alt="The only shoppable video platform"
