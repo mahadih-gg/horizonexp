@@ -24,22 +24,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-center text-[48px] xxs:text-[54px] 2xl:text-[72px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto"
+          className="inline-block text-center text-[48px] xxs:text-[54px] 2xl:text-[72px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto work"
         >
 
-          {heading.map((word, i) => (
-            <span
-              key={i + word}
-              className="text-primary"
-            >
-              {word}&nbsp;
-            </span>
-          ))}
+          The best{" "}
+          <br className="block md:hidden" />
+          shoppable video{" "}
           <br />
-          {/* <FlipWords words={text} /> */}
-          <span className="text-primary pr-1">
-            solution for your website & app
-          </span>
+          solution for your{" "}
+          <br className="block md:hidden" />
+          website & app
         </SSRMotion>
       </div>
 

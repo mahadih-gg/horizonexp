@@ -23,74 +23,74 @@ const DemoSlider = () => {
     {
       title: "Website Hero",
       description: <>
-        Hook visitors with bold, snackable <br /> clips that instantly show why your <br /> product matters.
+        Hook visitors with bite sized clips <br /> that clearly says why your product <br /> and brand matters.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/website-hero-sm.webp" : "/assets/images/demo/website-hero.webp",
       link: "/demo/website-hero",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "New Arrivals",
       description: <>
-        Show your freshest products <br /> in a swipeable feed so visitors <br /> always see what&apos;s new first.
+        Show your newest products <br /> in a shoppable video <br /> carousel.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/new-arrivals-sm.webp" : "/assets/images/demo/new-arrivals.webp",
       link: "/demo/new-arrivals",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "See-It-in-Action",
       description: <>
-        Show the product in real use <br /> cases so customers can <br /> visualize ownership.
+        Show real use cases of <br /> products so customers can <br /> visualize ownership.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/see-it-in-action-sm.webp" : "/assets/images/demo/see-it-in-action.webp",
       link: "/demo/see-it-in-action",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "UGC",
       description: <>
-        Highlight content from your <br /> customers and fans so your <br /> brand feels alive.
+        Spotlight reviews & videos from <br /> your customers and top fans to <br /> improve relatability.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/ugc-sm.webp" : "/assets/images/demo/ugc.webp",
       link: "/demo/ugc",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "Website Explainer",
       description: <>
-        Walk visitors through how it <br /> works in quick, swipeable steps <br /> so they &quot;get it&quot; in seconds.
+        Walk visitors through how it <br /> works with bite-sized clips so <br /> they “get it” within seconds.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/website-explainer-sm.webp" : "/assets/images/demo/website-explainer.webp",
       link: "/demo/website-explainer",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "Next Best Buy",
       description: <>
-        Recommend the next logical <br /> product so you quietly increase <br /> AOV.
+        After a purchase, recommend <br /> more products with video to <br /> increase AOV.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/next-best-buy-sm.webp" : "/assets/images/demo/next-best-buy.webp",
       link: "/demo/next-best-buy",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "Trending",
       description: <>
-        Surface what&apos;s hot right now <br /> so shoppers follow social <br /> proof and move faster.
+        Surface relevant content so <br /> customers can follow along <br /> and make decisions faster.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/trending-sm.webp" : "/assets/images/demo/trending.webp",
       link: "/demo/trending",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
     {
       title: "User Review",
       description: <>
-        Turn real customer videos into a <br /> proof wall so visitors trust you <br /> more and hesitate less.
+        Turn customer feedback into a <br /> wall of proof so prospects <br /> know they can trust your brand.
       </>,
       imageUrl: isMobile ? "/assets/images/demo/user-review-sm.webp" : "/assets/images/demo/user-review.webp",
       link: "/demo/user-review",
-      buttonText: "Watch this demo →",
+      buttonText: "View demo →",
     },
   ];
 
@@ -124,7 +124,7 @@ const DemoSlider = () => {
         centered={false}
         className='container flex items-end justify-between'
         extraContent={
-          <div className='flex items-center justify-between gap-5 2xl:gap-6 bg-secondary rounded-full p-2.5'>
+          <div className='flex items-center justify-between gap-5 2xl:gap-6 bg-[#A9B3D3]/10 rounded-full p-2.5'>
             <button
               onClick={handlePrev}
               disabled={isBeginning}

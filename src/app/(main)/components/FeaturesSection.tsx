@@ -121,7 +121,7 @@ const FeaturesSection = () => {
               alt="Make your videos shoppable"
               width={1419}
               height={631}
-              className="min-w-fit md:min-w-auto w-auto md:w-full h-[373px] md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[90%] 3xl:max-w-[1419px] mx-auto object-contain object-top"
+              className="min-w-fit md:min-w-auto w-auto md:w-full h-[373px] md:h-auto md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[78%] mx-auto object-contain object-top"
             />
           </div>
         </GradientBg>
@@ -150,7 +150,7 @@ const FeatureCard = ({ feature }: { feature: FeatureType }) => {
   const rightPadding = feature.rightPadding ?? true;
 
   return (
-    <Card className={cn('w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden rounded-4xl 2xl:rounded-6xl', !rightPadding && 'pr-0 md:pr-0 2xl:pr-0')}>
+    <Card className={cn('bg-[#F6FAFE] w-full gap-0 md:gap-0 2xl:gap-0 pb-0 px-4 md:px-8 2xl:px-10 sm:pb-[53px] 2xl:pb-[71px] overflow-hidden rounded-4xl 2xl:rounded-6xl', !rightPadding && 'pr-0 md:pr-0 2xl:pr-0')}>
       <CardHeader
         animate={false}
         topLabel={feature.topLabel}

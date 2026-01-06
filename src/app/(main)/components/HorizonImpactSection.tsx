@@ -129,9 +129,9 @@ const HorizonImpactSection = () => {
                 background: "linear-gradient(180deg, #E8EEFC 0%, rgba(232, 238, 252, 0.3) 100%)"
               }}
             >
-              <CardContent className="flex flex-col items-start justify-start gap-7">
+              <CardContent className="flex flex-col items-start justify-start gap-7 2xl:gap-9">
                 <span>{metric.icon}</span>
-                <h2 className="text-[72px] 2xl:text-[96px] font-normal leading-none text-primary-text tracking-[-0.04em] 2xl:tracking-[-0.04em]">
+                <h2 className="text-[69px] 2xl:text-[92px] font-normal leading-none text-primary-text tracking-[-0.04em] 2xl:tracking-[-0.04em]">
                   <CounterAnimation to={metric.numericValue} prefix={metric.prefix} suffix={metric.suffix} />
                 </h2>
                 <p className="text-base md:text-[15px] 2xl:text-xl text-primary-text font-medium">
