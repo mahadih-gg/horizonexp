@@ -8,7 +8,7 @@ const CircleCheckIcon = ({ className }: { className?: string }) => {
       fill="none"
       viewBox="0 0 58 58"
     >
-      <rect width="58" height="58" fill="#1C2B33" rx="29"></rect>
+      <rect width="58" height="58" fill="#002253" rx="29"></rect>
       <path
         stroke="#fff"
         strokeLinecap="round"

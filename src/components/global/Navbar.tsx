@@ -66,12 +66,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" className={cn(isTouchingTop && "text-white")} asChild>
+          <Button variant="ghost" size="navbar" className={cn(isTouchingTop && "text-white")} asChild>
             <Link href="https://app.horizonexp.com/signin" target="_blank">
               Log in
             </Link>
           </Button>
-          <Button asChild>
+          <Button size="navbar" asChild>
             <Link href="https://app.horizonexp.com/signup" target="_blank">
               Start for free
             </Link>

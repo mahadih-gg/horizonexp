@@ -14,14 +14,14 @@ export const PerformanceIcon: React.FC<PerformanceIconProps> = ({ className }) =
       viewBox="0 0 40 40"
     >
       <path
-        stroke="#1C2B33"
+        stroke="#002253"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="3.33"
         d="M35.969 12a4.21 4.21 0 0 0-2.94-3.03C30.425 8.332 20 8.332 20 8.332s-10.424 0-13.03.697a4.21 4.21 0 0 0-2.939 3.03 44 44 0 0 0-.697 8.015c-.017 2.707.217 5.41.697 8.075a4.21 4.21 0 0 0 2.94 2.91c2.605.696 13.029.696 13.029.696s10.424 0 13.03-.697a4.21 4.21 0 0 0 2.939-3.03c.473-2.625.706-5.287.697-7.954A44 44 0 0 0 35.969 12"
       ></path>
       <path
-        stroke="#1C2B33"
+        stroke="#002253"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="3.33"

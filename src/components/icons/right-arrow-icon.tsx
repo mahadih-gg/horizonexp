@@ -12,7 +12,7 @@ const RightArrowIcon: React.FC<PropsType> = ({ className }) => {
       viewBox="0 0 18 18"
     >
       <path
-        stroke="#1C2B33"
+        stroke="#002253"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"

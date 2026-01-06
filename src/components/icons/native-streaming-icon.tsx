@@ -14,7 +14,7 @@ export const NativeStreamingIcon: React.FC<NativeStreamingIconProps> = ({ classN
       viewBox="0 0 40 40"
     >
       <path
-        stroke="#1C2B33"
+        stroke="#002253"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="3.33"

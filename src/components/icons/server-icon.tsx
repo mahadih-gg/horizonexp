@@ -13,7 +13,7 @@ const ServerIcon: React.FC<PropsType> = ({ className }) => (
     viewBox="0 0 30 30"
   >
     <path
-      stroke="#1C2B33"
+      stroke="#002253"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="1.875"

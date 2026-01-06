@@ -29,7 +29,7 @@ const SmileIcon: React.FC<PropsType> = ({ className }) => (
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#7A8FA4"></stop>
-        <stop offset="0.6" stopColor="#1C2B33"></stop>
+        <stop offset="0.6" stopColor="#002253"></stop>
       </linearGradient>
     </defs>
   </svg>
