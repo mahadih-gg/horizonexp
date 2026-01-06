@@ -166,12 +166,12 @@
   }
 
   .bg-black-gradient {
-    background: linear-gradient(0deg, #7A8FA4 0%, #002253 60%);
+    background: linear-gradient(0deg, #6E8193 0%, #002253 60%);
   }
 
   .text-black-gradient {
     display: inline-block;
-    background: linear-gradient(0deg, #7A8FA4 0%, #002253 60%);
+    background: linear-gradient(0deg, #6E8193 0%, #002253 60%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -184,6 +184,10 @@
   .bg-grad-border {
     background: linear-gradient(159.67deg, #DCEFFF 0%, #DAEEFF 15.49%, #D3E7FF 35.14%, #D5E3FF 49.5%, #E9EFFF 66.2%, #E9EFFF 84.77%, #E3F1FF 100%);
     @apply rounded-full px-px;
+  }
+
+  .bg-grad-tag {
+    background: linear-gradient(360deg, #FFFFFF 0.02%, #B4E9FD 48.01%, #BAD9FD 71.01%, #CDDAFA 85%, #FBFDFF 100%);
   }
 
   .bg-grad-border-main {

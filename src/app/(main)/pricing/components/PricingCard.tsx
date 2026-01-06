@@ -44,12 +44,12 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
 
             {/* Label */}
             <div className={cn(
-              "opacity-0 h-[36px] md:h-[31px] 2xl:h-[42px] rounded-full overflow-hidden flex-center",
+              "opacity-0 h-[36px] md:h-[31px] 2xl:h-[42px] rounded-full overflow-hidden flex-center bg-grad-tag",
               plan.label && 'opacity-100',
-              plan.isHighlighted && 'bg-grad-border'
+              plan.isHighlighted && 'bg-grad-tag'
             )}>
               <span className={cn(
-                "inline-flex items-center justify-center h-full bg-white text-sm md:text-xs 2xl:text-base font-semibold px-3.5 md:px-3.5 2xl:px-[18px] rounded-full",
+                "inline-flex items-center justify-center h-full text-sm md:text-xs 2xl:text-base font-semibold px-3.5 md:px-3.5 2xl:px-[18px] rounded-full",
                 plan.isHighlighted && 'w-full h-[calc(100%-1.5px)]'
               )}>
                 {plan.label ?? 'Free'}
