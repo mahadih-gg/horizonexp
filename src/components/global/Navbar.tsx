@@ -56,9 +56,12 @@ const Navbar = () => {
 
         <div className="absolute left-1/2 -translate-x-1/2! top-1/2 -translate-y-1/2! hidden md:flex items-center justify-center gap-5 2xl:gap-7">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+            const normalizedHref = link.href === "/" ? "/" : link.href.replace(/\/$/, "");
+            const isActive = normalizedPathname === normalizedHref;
+            console.log(link.href, pathname);
             return (
-              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold", isTouchingTop && "text-white", link.className)}>
+              <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold!", isTouchingTop && "text-white", link.className)}>
                 {link.label}
               </Link>
             )
@@ -108,7 +111,9 @@ const Navbar = () => {
                 </div>
                 <div className="w-full flex flex-col items-start justify-start gap-8">
                   {navLinks.map((link, i) => {
-                    const isActive = pathname === link.href;
+                    const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+                    const normalizedHref = link.href === "/" ? "/" : link.href.replace(/\/$/, "");
+                    const isActive = normalizedPathname === normalizedHref;
                     return (
                       <motion.div key={i}
                         initial={{ opacity: 0, x: -100 }}
