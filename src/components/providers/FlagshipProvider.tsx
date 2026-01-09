@@ -11,8 +11,6 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
   const licenseKey = useMemo(() => {
     const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 
-    console.log("??>>", normalizedPathname)
-
     switch (normalizedPathname) {
       case "/demo/afghan-wireless":
         return "pk_live_7a5a452a5bc5fac219b8a1700411b159a0fd774aedd7dd08.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWZnaGFuIFdpcmVsZXNzIiwicGxhdGZvcm1UeXBlIjoiV0VCIiwiZG9tYWluIjp7ImRvbWFpbiI6Imh0dHBzOi8vd3d3Lmhvcml6b25leHAuY29tL2RlbW8vYWZnaGFuLXdpcmVsZXNzLyIsInZlcmlmaWVkIjpmYWxzZX0sImV4cGlyZXNBdCI6IjIxMjUtMTEtMTBUMTU6Mzk6NDIuNzkwWiIsImNyZWF0ZWRCeSI6IjY4ZmM3NTJlZTFmODhmY2FhODE0Nzc4OSIsInRlbmFudElkIjoiNjkzMWE3NzVkMDMzNGUxZmNhOGE4YmQ2IiwiX2lkIjoiNjkzMWFiM2U5ZjhjYzRkZDNlYzg4Yjc0IiwidG9rZW5UeXBlIjoiYWNjZXNzIiwiaWF0IjoxNzY0ODYyNzgyLCJleHAiOjQ5MTg0NjI3ODJ9.9Pa8EAmsAvvC3KSPQDbgFdIX_a2hkOOSPyDQHhnFqAc";
