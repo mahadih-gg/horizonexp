@@ -9,7 +9,9 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   const licenseKey = useMemo(() => {
-    const normalizedPathname = pathname.replace(/\/$/, "");
+    const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+
+    console.log("??>>", normalizedPathname)
 
     switch (normalizedPathname) {
       case "/demo/afghan-wireless":

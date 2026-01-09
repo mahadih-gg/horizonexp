@@ -59,7 +59,6 @@ const Navbar = () => {
             const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
             const normalizedHref = link.href === "/" ? "/" : link.href.replace(/\/$/, "");
             const isActive = normalizedPathname === normalizedHref;
-            console.log(link.href, pathname);
             return (
               <Link key={link.href} href={link.href} className={cn("text-base 2xl:text-xl font-medium inline-block transition-all duration-300 hover:opacity-80", isActive && "font-semibold!", isTouchingTop && "text-white", link.className)}>
                 {link.label}
