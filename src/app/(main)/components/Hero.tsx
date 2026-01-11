@@ -37,11 +37,11 @@ const Hero = () => {
         </SSRMotion>
       </div>
 
-      <div className="py-10 md:py-8 2xl:py-11 max-w-[1208px] 2xl:max-w-[1593px] mx-auto">
+      <div className="py-10 md:py-8 2xl:py-11 max-w-[913.5px] 2xl:max-w-[1218px] mx-auto">
         <EntryPoint
-          id="#935370"
+          id="#849221"
           skeletonType={EntryPointType.RECTANGLE}
-          skeletonSize={EntryPointSize.BOLD}
+          skeletonSize={EntryPointSize.STANDARD}
         />
       </div>
 
