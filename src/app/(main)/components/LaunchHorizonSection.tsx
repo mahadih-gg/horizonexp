@@ -4,7 +4,7 @@ import LaunchSteps from './LaunchSteps';
 const LaunchHorizonSection = () => {
   return (
     <section className="container pt-section">
-      <SectionHeader title="Launch shoppable video in 4 easy steps" />
+      <SectionHeader title="Launch short-form video in 4 easy steps" />
 
       <LaunchSteps />
     </section>

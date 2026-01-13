@@ -117,7 +117,7 @@ const PricingPage = () => {
         <ForEnterpriseSection />
 
         <ConnectSection
-          title={<>Start free. <br /> Launch shoppable video today.</>}
+          title={<>Start free. <br /> Launch short-form video today.</>}
           description="Pick a plan, paste the snippet, and go live in minutes."
         />
       </main>

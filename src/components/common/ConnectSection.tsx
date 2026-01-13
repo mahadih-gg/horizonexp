@@ -34,7 +34,7 @@ const defaultCta = {
     visible: true,
   },
   secondary: {
-    label: "Book a demo",
+    label: "Get a demo",
     href: "/contact",
     target: undefined,
     variant: "secondary",

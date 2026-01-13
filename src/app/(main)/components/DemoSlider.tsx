@@ -118,7 +118,7 @@ const DemoSlider = () => {
           <>
             Put Horizon where it converts
             <br />
-            <span className='text-primary/40'>See the highest-performing placements</span>
+            <span className='text-primary/40'>See the highest-ROI placements</span>
           </>
         }
         centered={false}

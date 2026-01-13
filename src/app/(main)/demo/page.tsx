@@ -134,7 +134,7 @@ const DemoPage = () => {
 
       <ConnectSection
         title="Start with any layout. Go live in minutes."
-        description={<>Pick a layout. Paste the snippet on your site/app. You’re live.</>}
+        description="Pick a layout. Paste the snippet on your site, app, or store. You’re live."
       />
 
     </main>

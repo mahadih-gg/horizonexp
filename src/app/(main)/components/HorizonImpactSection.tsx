@@ -1,7 +1,7 @@
-import ClockIcon from "@/components/icons/clock-icon";
-import CursorIcon from "@/components/icons/cursor-icon";
-import FileSearchIcon from "@/components/icons/file-search-icon";
-import UsersIcon from "@/components/icons/users.icon";
+import DollarIcon from "@/components/icons/dollar-icon";
+import PlaySquareIcon from "@/components/icons/play-square-icon";
+import ShoppingBagIcon from "@/components/icons/shopping-bag-icon";
+import ZapIcon from "@/components/icons/zap-icon";
 import AndroidSvg from "@/components/svg/AndroidSvg";
 import AppleSvg from "@/components/svg/AppleSvg";
 import ReactSvg from "@/components/svg/ReactSvg";
@@ -50,48 +50,41 @@ const HorizonImpactSection = () => {
 
   const impactMetrics: ImpactMetricsType[] = [
     {
-      icon: <CursorIcon />,
-      statistic: "15%",
-      numericValue: 15,
+      icon: <PlaySquareIcon />,
+      statistic: "78%",
+      numericValue: 78,
       suffix: "%",
       description: <>
-        Average CTR <br />
-        ~16× higher than <br />
-        traditional formats
+        of online users prefer to learn
+        about a product through a <br />
+        short-form video.
       </>
     },
     {
-      icon: <ClockIcon />,
-      statistic: "96s",
-      numericValue: 96,
-      suffix: "s",
-      description: <>
-        Additional session time <br />
-        2.4× longer sessions on <br />
-        average
-      </>
-    },
-    {
-      icon: <FileSearchIcon />,
-      statistic: "11x",
-      numericValue: 11,
-      suffix: "x",
-      description: <>
-        Product <br />
-        discovery <br />
-        vs. static grids
-      </>
-    },
-    {
-      icon: <UsersIcon />,
-      statistic: "-50%",
-      numericValue: 50,
-      prefix: "-",
+      icon: <ShoppingBagIcon />,
+      statistic: "30%",
+      numericValue: 30,
       suffix: "%",
       description: <>
-        Bounce rate <br />
-        reduction after <br />
-        using Horizon
+        potential lift in conversion <br /> rates when brands implement <br /> shoppable video experiences.
+      </>
+    },
+    {
+      icon: <DollarIcon />,
+      statistic: "41%",
+      numericValue: 41,
+      suffix: "%",
+      description: <>
+        of viewers who watch <br /> shoppable videos end up <br /> making a purchase.
+      </>
+    },
+    {
+      icon: <ZapIcon />,
+      statistic: "80%",
+      numericValue: 80,
+      suffix: "%",
+      description: <>
+        increase in landing-page <br /> conversions reported when <br /> video is added to the page
       </>
     }
   ];
@@ -119,7 +112,7 @@ const HorizonImpactSection = () => {
         </div>
 
         <p className="text-center text-lg 2xl:text-2xl font-medium text-primary/40 pb-10 md:pb-[30px] 2xl:pb-10">
-          Proven impact with leading global brands
+          Short-form video is the highest-ROI conversion format today
         </p>
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6 px-4 xxs:px-[46px] md:px-0'>

@@ -82,14 +82,14 @@ const FeaturesSection = () => {
   return (
     <section className="container scroll-mt-20 md:scroll-mt-28 2xl:scroll-mt-40" id="features">
       <SectionHeader
-        title={<>Everything you need to grow your <br className="hidden lg:block" /> business with shoppable videos</>}
+        title={<>Everything you need to grow your <br className="hidden lg:block" /> business with short-form videos</>}
       />
 
       <div className='flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-6 2xl:gap-8 w-full'>
         <GradientBg className='min-h-[382px] pt-[30px] 2xl:pt-10 pb-[87px] md:pb-0 md:col-span-2 overflow-hidden'>
           <CardHeader
             animate={false}
-            title={<>The only shoppable video platform that <br className="hidden md:block" /> works everywhere you do</>}
+            title={<>The only short-form video platform that <br className="hidden md:block" /> works everywhere you do</>}
             description={<>Launch on Shopify, Wordpress, Woocommerce, Wix, Webflow, Framer <br className="hidden md:block" /> and many more without any complex technical integration.</>}
           />
           <div className='w-full h-full pt-[50px] md:pt-[40px] 2xl:pt-[54px] flex justify-center items-start'>
@@ -112,7 +112,7 @@ const FeaturesSection = () => {
         <GradientBg className='py-[30px] 2xl:py-10 md:col-span-2 overflow-hidden'>
           <CardHeader
             animate={false}
-            title={<>Create high converting CTAs</>}
+            title={<>Create high converting shoppable CTAs</>}
             description={<>Use customizable shoppable video CTAs to draw your <br className="hidden lg:block" /> customer’s attention and drive more purchases.</>}
           />
           <div className='w-full h-full pt-10 md:pt-[45px] 2xl:pt-[60px] pb-11 md:pb-6 2xl:pb-8 flex justify-center items-start'>
@@ -136,7 +136,7 @@ const FeaturesSection = () => {
           <CardHeader
             animate={false}
             className='px-4'
-            title="The control center for Shoppable Videos & beyond"
+            title="The control center for your short-form experiences"
             description={<>Manage video content, carousels, ads, ugc, and user experience from <br className="hidden lg:block" /> one powerful, no-code dashboard.</>} />
           <HorizonConsole2 />
         </GradientBg>

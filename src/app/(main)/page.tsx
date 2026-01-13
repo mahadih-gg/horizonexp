@@ -92,8 +92,8 @@ export default function Home() {
       {/* <HorizonForEnterpriseSection /> */}
       <LaunchHorizonSection />
       <ConnectSection
-        title={<>Ready to launch shoppable videos?</>}
-        description="Horizon works with any website, storefront, or mobile app. Get started in minutes."
+        title={<>Ready to launch your short-form video feed?</>}
+        description="Turn your existing videos into a swipe-native, TikTok-grade experience that lifts engagement and conversion."
       />
     </main>
   );
