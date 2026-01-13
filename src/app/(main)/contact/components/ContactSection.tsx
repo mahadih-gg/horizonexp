@@ -22,7 +22,7 @@ type FormData = {
   fullName: string;
   company: string;
   email: string;
-  phone: string;
+  phone?: string;
   message: string;
 }
 
@@ -69,28 +69,28 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="container pt-page">
+    <section className="container pt-[100px] md:pt-[105px] 2xl:pt-[140px]">
       <div>
         <motion.div
-          initial={{ opacity: 0, y: -40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Text variant="heading" className="text-center">Need a hand getting started?</Text>
+          <Text variant="heading" className="text-center">Need help with anything else?</Text>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Text variant="section-subheading" className="text-center pt-8 pb-[60px]">Ask us anything - setup, pricing, or use cases. We usually reply within a day.</Text>
+          <Text variant="section-subheading" className="text-center pt-8 mb-[52px] md:mb-[60px] 2xl:mb-[80px]">Ask us about setup, pricing, use cases, or anything Horizon-related. We usually reply within a business day.</Text>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Form {...form}>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-x-[30px] gap-y-[30px] md:gap-y-6 md:gap-x-[30px] 2xl:gap-x-10 2xl:gap-y-8">
@@ -155,13 +155,13 @@ const ContactSection = () => {
                 control={control}
                 name="phone"
                 rules={{
-                  required: "Phone number is required",
+                  required: false,
                   minLength: { value: 10, message: "Phone number must be at least 10 characters" },
                   maxLength: { value: 20, message: "Phone number must be less than 20 characters" }
                 }}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone*</FormLabel>
+                    <FormLabel>Phone</FormLabel>
                     <FormControl>
                       <Input type="tel" {...field} />
                     </FormControl>
@@ -196,7 +196,7 @@ const ContactSection = () => {
 
               <div className="sm:col-span-2 flex justify-center md:justify-end">
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Submitting..." : "Submit"}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </div>
             </form>

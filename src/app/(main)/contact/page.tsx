@@ -2,6 +2,7 @@ import ConnectSection from "@/components/common/ConnectSection";
 import BreadcrumbSchema from "@/components/StructuredData/BreadcrumbSchema";
 import type { Metadata } from "next";
 import ContactSection from "./components/ContactSection";
+import GetDemoSection from "./components/GetDemoSection";
 
 const siteUrl = 'https://www.horizonexp.com';
 
@@ -56,11 +57,14 @@ const ContactPage = () => {
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
       <main>
+
+        <GetDemoSection />
+
         <ContactSection />
 
         <ConnectSection
-          title={<>Start free. <br /> Go live in minutes.</>}
-          description={<>Try Horizon on your own - or reach out if you want help.</>}
+          title={<>Bring the short-form <br /> magic to your own site.</>}
+          description={<>Go from static pages to a scroll-stopping video feed that drives <br /> engagement, discovery, and conversion.</>}
           cta={{
             primary: {
               label: "Start for free",
