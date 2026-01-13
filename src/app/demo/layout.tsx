@@ -57,14 +57,6 @@ const demoRoutes: Record<string, DemoRoute> = {
     title: '',
     description: 'Horizon Demo for MTB Bank',
   },
-  '/demo/beauty': {
-    title: '',
-    description: 'Horizon Demo',
-  },
-  '/demo/beauty/product': {
-    title: '',
-    description: 'Horizon Demo',
-  },
   '/demo/launch': {
     title: '',
     description: 'Horizon Demo',
@@ -72,6 +64,66 @@ const demoRoutes: Record<string, DemoRoute> = {
   '/demo/launch/product': {
     title: '',
     description: 'Horizon Demo',
+  },
+  '/demo/restaurant': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "RESTAURANT BRAND"
+  },
+  '/demo/restaurant/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FOOD BRAND"
+  },
+  '/demo/home': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "HOME BRAND"
+  },
+  '/demo/home/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FURNITURE BRAND"
+  },
+  '/demo/fashion': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FASHION BRAND"
+  },
+  '/demo/fashion/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FASHION BRAND"
+  },
+  '/demo/electronics': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "ELECTRONICS BRAND"
+  },
+  '/demo/electronics/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "ELECTRONICS BRAND"
+  },
+  '/demo/fitness': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FITNESS BRAND"
+  },
+  '/demo/fitness/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "FITNESS BRAND"
+  },
+  '/demo/beauty': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "BEAUTY BRAND"
+  },
+  '/demo/beauty/product': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "BEAUTY BRAND"
   },
 };
 

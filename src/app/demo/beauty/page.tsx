@@ -6,7 +6,7 @@ const LaunchDemoPage = () => {
   return (
     <CustomDemoPage
       imageSrc="beauty"
-      heading="Trending Now"
+      heading="Header text"
       epCircleId="#277337"
       epRectangleId="#921979"
     />
