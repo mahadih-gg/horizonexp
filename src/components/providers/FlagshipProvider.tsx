@@ -13,6 +13,11 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
 
     const customDemoRoutes = [
       "/demo/restaurant",
+      "/demo/home",
+      "/demo/fashion",
+      "/demo/electronics",
+      "/demo/fitness",
+      "/demo/beauty",
     ];
 
     switch (normalizedPathname) {

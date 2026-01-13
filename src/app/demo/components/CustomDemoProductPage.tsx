@@ -20,27 +20,10 @@ interface CustomDemoProductPageProps {
   title: string;
   price: number;
   collectionLabel: string;
+  accordionItems: AccordionItem[];
 }
 
-const accordionItems = [
-  {
-    value: 'productInfo',
-    title: 'Product Information',
-    content: 'This knit top, crafted from a soft, touchable material, offers a warm and comfortable fit. The simple round neck and hidden button closure create a clean, streamlined look.',
-  },
-  {
-    value: 'customerReviews',
-    title: 'Customer Reviews',
-    content: 'This knit top, crafted from a soft, touchable material, offers a warm and comfortable fit. The simple round neck and hidden button closure create a clean, streamlined look.',
-  },
-  {
-    value: 'composition',
-    title: 'Composition',
-    content: 'Free shipping on orders over $50. 30-day return policy.',
-  },
-];
-
-const CustomDemoProductPage = ({ imageSrc, title, price, collectionLabel }: CustomDemoProductPageProps) => {
+const CustomDemoProductPage = ({ imageSrc, title, price, collectionLabel, accordionItems }: CustomDemoProductPageProps) => {
 
   const { width } = useWindowSize();
   const isMobile = useMemo(() => !!width && width < 768, [width]);
@@ -50,7 +33,7 @@ const CustomDemoProductPage = ({ imageSrc, title, price, collectionLabel }: Cust
       {/* Product Detail Section */}
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 2xl:gap-[52px]">
         <div className='w-full lg:w-[65%]'>
-          <ProductInformation className="block lg:hidden" collectionLabel={collectionLabel} title={title} price={price} />
+          <ProductInformation className="block lg:hidden" collectionLabel={collectionLabel} title={title} price={price} accordionItems={accordionItems} />
 
           <div className="w-full overflow-hidden">
             <Image
@@ -68,7 +51,7 @@ const CustomDemoProductPage = ({ imageSrc, title, price, collectionLabel }: Cust
         </div>
 
         <div className='hidden lg:block lg:w-[31.64%] xl:w-[490px]'>
-          <ProductInformation className="w-full" collectionLabel={collectionLabel} title={title} price={price} />
+          <ProductInformation className="w-full" collectionLabel={collectionLabel} title={title} price={price} accordionItems={accordionItems} />
         </div>
       </div>
     </section>
@@ -76,7 +59,7 @@ const CustomDemoProductPage = ({ imageSrc, title, price, collectionLabel }: Cust
 };
 
 
-const ProductInformation = ({ className, collectionLabel, title, price }: { className?: string, collectionLabel: string, title: string, price: number }) => {
+const ProductInformation = ({ className, collectionLabel, title, price, accordionItems }: { className?: string, collectionLabel: string, title: string, price: number, accordionItems: AccordionItem[] }) => {
   return (
     <div className={cn("w-full h-full flex-1 px-0 md:px-4 lg:px-0 flex flex-col justify-between", className)}>
       <div>

@@ -5,10 +5,10 @@ import CustomDemoPage from '@/app/demo/components/CustomDemoPage';
 const LaunchDemoPage = () => {
   return (
     <CustomDemoPage
-      imageSrc="beauty"
+      imageSrc="home"
       heading="Trending Now"
-      epCircleId="#277337"
-      epRectangleId="#921979"
+      epCircleId="#802125"
+      epRectangleId="#793019"
     />
   );
 };
