@@ -88,9 +88,10 @@ const FeaturesSection = () => {
       <div className='flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-6 2xl:gap-8 w-full'>
         <GradientBg className='min-h-[382px] pt-[30px] 2xl:pt-10 pb-[87px] md:pb-0 md:col-span-2 overflow-hidden'>
           <CardHeader
+            className='px-6'
             animate={false}
             title={<>The only short-form video platform that <br className="hidden md:block" /> works everywhere you do</>}
-            description={<>Launch on Shopify, Wordpress, Woocommerce, Wix, Webflow, Framer <br className="hidden md:block" /> and many more without any complex technical integration.</>}
+            description={<span className='pt-2 inline-block'>Launch on Shopify, Wordpress, Woocommerce, Wix, Webflow, Framer <br className="hidden md:block" /> and many more without any complex technical integration.</span>}
           />
           <div className='w-full h-full pt-[50px] md:pt-[40px] 2xl:pt-[54px] flex justify-center items-start'>
             <Image

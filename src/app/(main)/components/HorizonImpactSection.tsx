@@ -55,8 +55,8 @@ const HorizonImpactSection = () => {
       numericValue: 78,
       suffix: "%",
       description: <>
-        of online users prefer to learn <br />
-        about a product through a <br />
+        of online users prefer to learn <br className="hidden md:block" />
+        about a product through a <br className="hidden md:block" />
         short-form video.
       </>
     },
@@ -66,7 +66,7 @@ const HorizonImpactSection = () => {
       numericValue: 30,
       suffix: "%",
       description: <>
-        potential lift in conversion <br /> rates when brands implement <br /> shoppable video experiences.
+        potential lift in conversion <br className="hidden md:block" /> rates when brands implement <br className="hidden md:block" /> shoppable video experiences.
       </>
     },
     {
@@ -75,7 +75,7 @@ const HorizonImpactSection = () => {
       numericValue: 41,
       suffix: "%",
       description: <>
-        of viewers who watch <br /> shoppable videos end up <br /> making a purchase.
+        of viewers who watch <br className="hidden md:block" /> shoppable videos end up <br className="hidden md:block" /> making a purchase.
       </>
     },
     {
@@ -84,7 +84,7 @@ const HorizonImpactSection = () => {
       numericValue: 80,
       suffix: "%",
       description: <>
-        increase in landing-page <br /> conversions reported when <br /> video is added to the page.
+        increase in landing-page <br className="hidden md:block" /> conversions reported when <br className="hidden md:block" /> video is added to the page.
       </>
     }
   ];

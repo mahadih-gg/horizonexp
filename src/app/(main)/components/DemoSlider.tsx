@@ -173,6 +173,10 @@ const DemoSlider = () => {
               spaceBetween: 20,
             },
             1280: {
+              slidesPerView: 2.5,
+              spaceBetween: 24,
+            },
+            1600: {
               slidesPerView: 2.0475,
               spaceBetween: 24,
             },

@@ -11,7 +11,7 @@ const DemoPage = () => {
 
   const { width } = useWindowSize();
 
-  const isMobile = useMemo(() => width < 480, [width]);
+  const isMobile = useMemo(() => !!width && width < 768, [width]);
 
   const demoCards = [
     {
@@ -19,7 +19,7 @@ const DemoPage = () => {
       description: <>
         Hook visitors with bite sized clips that clearly <br className="hidden md:block" /> says why your product and brand matters.
       </>,
-      imageUrl: "/assets/images/demo/website-hero.webp",
+      imageUrl: isMobile ? "/assets/images/demo/website-hero-sm.webp" : "/assets/images/demo/website-hero.webp",
       link: "/demo/website-hero",
       buttonText: "View demo",
     },
@@ -28,7 +28,7 @@ const DemoPage = () => {
       description: <>
         Walk visitors through how it works with bite- <br className="hidden md:block" /> sized clips so they “get it” within seconds.
       </>,
-      imageUrl: "/assets/images/demo/website-explainer.webp",
+      imageUrl: isMobile ? "/assets/images/demo/website-explainer-sm.webp" : "/assets/images/demo/website-explainer.webp",
       link: "/demo/website-explainer",
       buttonText: "View demo",
     },
@@ -37,7 +37,7 @@ const DemoPage = () => {
       description: <>
         Show your newest products in a shoppable <br className="hidden md:block" /> video carousel.
       </>,
-      imageUrl: "/assets/images/demo/new-arrivals.webp",
+      imageUrl: isMobile ? "/assets/images/demo/new-arrivals-sm.webp" : "/assets/images/demo/new-arrivals.webp",
       link: "/demo/new-arrivals",
       buttonText: "View demo",
     },
@@ -46,7 +46,7 @@ const DemoPage = () => {
       description: <>
         Surface relevant content so customers can <br className="hidden md:block" /> follow along and make decisions faster.
       </>,
-      imageUrl: "/assets/images/demo/trending.webp",
+      imageUrl: isMobile ? "/assets/images/demo/trending-sm.webp" : "/assets/images/demo/trending.webp",
       link: "/demo/trending",
       buttonText: "View demo",
     },
@@ -55,7 +55,7 @@ const DemoPage = () => {
       description: <>
         Show real use cases of products so <br className="hidden md:block" /> customers can visualize ownership.
       </>,
-      imageUrl: "/assets/images/demo/see-it-in-action.webp",
+      imageUrl: isMobile ? "/assets/images/demo/see-it-in-action-sm.webp" : "/assets/images/demo/see-it-in-action.webp",
       link: "/demo/see-it-in-action",
       buttonText: "View demo",
     },
@@ -64,7 +64,7 @@ const DemoPage = () => {
       description: <>
         Turn customer feedback into a wall of proof <br className="hidden md:block" /> so prospects know they can trust your brand.
       </>,
-      imageUrl: "/assets/images/demo/user-review.webp",
+      imageUrl: isMobile ? "/assets/images/demo/user-review-sm.webp" : "/assets/images/demo/user-review.webp",
       link: "/demo/user-review",
       buttonText: "View demo",
     },
@@ -73,7 +73,7 @@ const DemoPage = () => {
       description: <>
         After a purchase, recommend more <br className="hidden md:block" /> products with video to increase AOV.
       </>,
-      imageUrl: "/assets/images/demo/next-best-buy.webp",
+      imageUrl: isMobile ? "/assets/images/demo/next-best-buy-sm.webp" : "/assets/images/demo/next-best-buy.webp",
       link: "/demo/next-best-buy",
       buttonText: "View demo",
     },
@@ -82,7 +82,7 @@ const DemoPage = () => {
       description: <>
         Spotlight reviews & videos from your <br className="hidden md:block" />  customers and top fans to improve relatability.
       </>,
-      imageUrl: "/assets/images/demo/ugc.webp",
+      imageUrl: isMobile ? "/assets/images/demo/ugc-sm.webp" : "/assets/images/demo/ugc.webp",
       link: "/demo/ugc",
       buttonText: "View demo",
     },

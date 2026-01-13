@@ -52,13 +52,13 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
             <SvgComponent className='w-full md:w-auto h-auto md:h-[357px] 2xl:h-[475px] flex justify-end items-end' />
           )}
           {imageUrl && (
-            <div className='h-[220px] md:h-[427px] 2xl:h-[569px] w-full md:w-auto flex justify-end 2xl:justify-start items-end overflow-hidden'>
+            <div className='h-[392px] md:h-[357px] 2xl:h-[569px] w-full md:w-auto flex justify-end 2xl:justify-start items-end overflow-hidden'>
               <Image
                 src={imageUrl}
                 alt={title}
                 width={570}
                 height={475}
-                className='w-full md:w-auto h-full object-left-bottom min-h-[220px] md:min-h-[356px] 2xl:min-h-[475px] object-contain'
+                className='w-full md:w-auto h-full object-left-top object-cover min-h-[392px] md:min-h-[357px] 2xl:min-h-[475px]'
               />
             </div>
           )}

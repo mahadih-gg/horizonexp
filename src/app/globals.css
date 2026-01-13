@@ -88,10 +88,10 @@
   /* 840px */
   --breakpoint-lg: 64rem;
   /* 1024px */
-  --breakpoint-xl: 80rem;
-  /* 1280px */
-  --breakpoint-2xl: 96rem;
-  /* 1536px */
+  --breakpoint-xl: 90rem;
+  /* 1440px */
+  --breakpoint-2xl: 100rem;
+  /* 1600px */
 
   /* Container configuration - using padding instead of max-width */
   --container-padding: 1.5rem;
