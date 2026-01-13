@@ -115,9 +115,9 @@ const HorizonImpactSection = () => {
           Short-form video is the highest-ROI conversion format today
         </p>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6 px-4 xxs:px-[46px] md:px-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 md:gap-[18px] 2xl:gap-6'>
           {impactMetrics.map((metric, index) => (
-            <Card key={index} className="p-10 md:p-5 2xl:p-7 rounded-4xl 2xl:rounded-6xl"
+            <Card key={index} className="p-[30px] md:p-5 2xl:p-7 rounded-4xl 2xl:rounded-6xl max-w-[290px] md:max-w-full mx-auto md:mx-0"
               style={{
                 background: "linear-gradient(180deg, #E8EEFC 0%, rgba(232, 238, 252, 0.3) 100%)"
               }}

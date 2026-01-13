@@ -112,6 +112,7 @@ const FeaturesSection = () => {
 
         <GradientBg className='py-[30px] 2xl:py-10 md:col-span-2 overflow-hidden'>
           <CardHeader
+            className='px-6'
             animate={false}
             title={<>Create high converting shoppable CTAs</>}
             description={<>Use customizable shoppable video CTAs to draw your <br className="hidden lg:block" /> customer’s attention and drive more purchases.</>}
