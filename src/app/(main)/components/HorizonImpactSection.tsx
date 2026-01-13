@@ -55,7 +55,7 @@ const HorizonImpactSection = () => {
       numericValue: 78,
       suffix: "%",
       description: <>
-        of online users prefer to learn
+        of online users prefer to learn <br />
         about a product through a <br />
         short-form video.
       </>
@@ -84,7 +84,7 @@ const HorizonImpactSection = () => {
       numericValue: 80,
       suffix: "%",
       description: <>
-        increase in landing-page <br /> conversions reported when <br /> video is added to the page
+        increase in landing-page <br /> conversions reported when <br /> video is added to the page.
       </>
     }
   ];

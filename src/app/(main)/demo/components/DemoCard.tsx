@@ -56,9 +56,9 @@ const DemoCard = ({ variant = "page", title, description, SvgComponent, imageUrl
               <Image
                 src={imageUrl}
                 alt={title}
-                width={577}
-                height={569}
-                className='w-full md:w-auto h-full object-left-top object-cover min-h-[220px] md:min-h-[427px] 2xl:min-h-[569px]'
+                width={570}
+                height={475}
+                className='w-full md:w-auto h-full object-left-bottom min-h-[220px] md:min-h-[356px] 2xl:min-h-[475px] object-contain'
               />
             </div>
           )}

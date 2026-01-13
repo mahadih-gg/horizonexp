@@ -1,9 +1,8 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
-import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -150,9 +149,10 @@ const ComparisonSection = () => {
   return (
     <div className="w-full flex md:flex-row flex-col justify-center items-center px-1 md:px-10 2xl:px-14 gap-5">
       {/* Desktop labels - hidden on mobile */}
-      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition < 50 ? 'opacity-100' : 'opacity-50')}>Horizon site</h3>
-      <AnimatePresence mode="wait">
-        {/* Mobile labels - only visible on mobile and based on slider position */}
+      {/* <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition < 50 ? 'opacity-100' : 'opacity-50')}>Horizon site</h3> */}
+
+      {/* Mobile labels - only visible on mobile and based on slider position */}
+      {/* <AnimatePresence mode="wait">
         <motion.h3
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -163,7 +163,7 @@ const ComparisonSection = () => {
         >
           {sliderPosition > 50 ? 'Horizon Site' : 'Static Site'}
         </motion.h3>
-      </AnimatePresence>
+      </AnimatePresence> */}
       {/* Comparison Container */}
       <motion.div
         ref={containerRef}
@@ -237,7 +237,7 @@ const ComparisonSection = () => {
       </motion.div>
 
       {/* Desktop labels - hidden on mobile */}
-      <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Static Site</h3>
+      {/* <h3 className={cn("hidden lg:block text-lg 2xl:text-2xl font-medium", sliderPosition > 50 ? 'opacity-100' : 'opacity-50')}>Static Site</h3> */}
     </div>
   );
 };

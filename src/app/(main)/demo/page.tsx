@@ -17,7 +17,7 @@ const DemoPage = () => {
     {
       title: "Website Hero",
       description: <>
-        Hook visitors with bold, snackable clips that <br className="hidden md:block" /> instantly show why your product matters.
+        Hook visitors with bite sized clips that clearly <br className="hidden md:block" /> says why your product and brand matters.
       </>,
       imageUrl: "/assets/images/demo/website-hero.webp",
       link: "/demo/website-hero",
@@ -26,7 +26,7 @@ const DemoPage = () => {
     {
       title: "Website Explainer",
       description: <>
-        Walk visitors through how it works in quick, <br className="hidden md:block" /> swipeable steps so they &quot;get it&quot; in seconds.
+        Walk visitors through how it works with bite- <br className="hidden md:block" /> sized clips so they “get it” within seconds.
       </>,
       imageUrl: "/assets/images/demo/website-explainer.webp",
       link: "/demo/website-explainer",
@@ -35,7 +35,7 @@ const DemoPage = () => {
     {
       title: "New Arrivals",
       description: <>
-        Show your freshest products in a swipeable <br className="hidden md:block" /> feed so visitors always see what&apos;s new first.
+        Show your newest products in a shoppable <br className="hidden md:block" /> video carousel.
       </>,
       imageUrl: "/assets/images/demo/new-arrivals.webp",
       link: "/demo/new-arrivals",
@@ -44,16 +44,16 @@ const DemoPage = () => {
     {
       title: "Trending",
       description: <>
-        Surface what&apos;s hot right now so shoppers <br className="hidden md:block" /> follow social proof and move faster.
+        Surface relevant content so customers can <br className="hidden md:block" /> follow along and make decisions faster.
       </>,
       imageUrl: "/assets/images/demo/trending.webp",
       link: "/demo/trending",
       buttonText: "View demo",
     },
     {
-      title: "See It in Action",
+      title: "See-it-in-Action",
       description: <>
-        Show the product in real use cases so <br className="hidden md:block" /> customers can visualize ownership.
+        Show real use cases of products so <br className="hidden md:block" /> customers can visualize ownership.
       </>,
       imageUrl: "/assets/images/demo/see-it-in-action.webp",
       link: "/demo/see-it-in-action",
@@ -62,7 +62,7 @@ const DemoPage = () => {
     {
       title: "User Review",
       description: <>
-        Turn real customer videos into a proof wall <br className="hidden md:block" /> so visitors trust you more and hesitate less.
+        Turn customer feedback into a wall of proof <br className="hidden md:block" /> so prospects know they can trust your brand.
       </>,
       imageUrl: "/assets/images/demo/user-review.webp",
       link: "/demo/user-review",
@@ -71,7 +71,7 @@ const DemoPage = () => {
     {
       title: "Next Best Buy",
       description: <>
-        Recommend the next logical product so <br className="hidden md:block" /> you quietly increase AOV.
+        After a purchase, recommend more <br className="hidden md:block" /> products with video to increase AOV.
       </>,
       imageUrl: "/assets/images/demo/next-best-buy.webp",
       link: "/demo/next-best-buy",
@@ -80,7 +80,7 @@ const DemoPage = () => {
     {
       title: "UGC",
       description: <>
-        Highlight content from your customers and <br className="hidden md:block" /> fans so your brand feels alive.
+        Spotlight reviews & videos from your <br className="hidden md:block" />  customers and top fans to improve relatability.
       </>,
       imageUrl: "/assets/images/demo/ugc.webp",
       link: "/demo/ugc",

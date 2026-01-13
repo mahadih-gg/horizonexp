@@ -45,7 +45,7 @@ const FeaturesSection = () => {
     },
     {
       title: "Unlock new revenue with ads",
-      description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> product catalog with product and video campaigns.</>,
+      description: <>Monetize with sponsored deals and ads, or promote your <br className="hidden lg:block" /> own product catalog with product and video campaigns.</>,
       image: !isMobile ? "/assets/images/features/feat-4.webp" : "/assets/images/features/feat-4-mobile.webp",
       imageClassName: "h-[402px] 2xl:h-[537px] -mb-[85px] sm:mb-0 -ml-[16px] sm:ml-auto",
     },

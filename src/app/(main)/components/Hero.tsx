@@ -26,13 +26,13 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="inline-block text-center text-[48px] xxs:text-[54px] 2xl:text-[72px] font-medium leading-none tracking-[-0.04em] w-full sm:w-[540px] md:w-[580px] mlg:w-full mx-auto work"
         >
-          The short-form video platform for{" "}
+          The short-form video platform{" "}
           <br className="hidden lg:block" />
-          websites, apps, and stores
+          for websites, apps & stores
         </SSRMotion>
       </div>
 
-      <div className="py-10 md:py-8 2xl:py-11 max-w-[930.5px] 2xl:max-w-[1218px] mx-auto">
+      <div className="py-8 md:py-[30px] 2xl:py-10 max-w-[930.5px] 2xl:max-w-[1218px] mx-auto">
         <EntryPoint
           id="#849221"
           skeletonType={EntryPointType.RECTANGLE}
@@ -45,7 +45,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-lg 2xl:text-2xl text-primary-text text-center pt-6 2xl:pt-8 pb-[30px] 2xl:pb-10 font-medium leading-tight">
+        className="text-lg 2xl:text-2xl text-primary-text text-center pb-[30px] 2xl:pb-10 font-medium leading-tight">
         Launch swipeable shoppable video on Shopify, Wordpress, Woocom and <br className="hidden md:block" /> more in minutes - skyrocket engagement, discovery, and conversion.
       </SSRMotion>
 

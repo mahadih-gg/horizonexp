@@ -9,18 +9,18 @@ const OnboardingSection = () => {
         <SectionHeader
           animate={false}
           className="text-white pb-0 md:pb-0 2xl:pb-0 px-4"
-          topLabel={<span className="text-white font-semibold">Premium Support</span>}
+          topLabel={<span className="text-white font-semibold">Guided Setup</span>}
           topLabelClassName="block -mb-10"
-          title={<span className="leading-[1.40em] text-inherit block -mb-6">Onboarding <br className="block md:hidden" /> made simple</span>}
+          title={<span className="leading-[1.40em] text-inherit block -mb-6">Get assisted setup from our team</span>}
           description={<span className="font-normal text-white leading-[1.40em]">
-            We{"’"}ll help you go from upload to live - seamlessly connecting Horizon
+            Most teams launch Horizon in minutes.
             <br className="hidden md:block" />
-            to your site or app. Contact us for onboarding support.
+            If you want help setting things up, we’re here.
           </span>}
           extraContent={
             <Button asChild className='mt-7' variant="secondary">
               <Link href="/contact">
-                Contact us
+                Get setup help
               </Link>
             </Button>
           }

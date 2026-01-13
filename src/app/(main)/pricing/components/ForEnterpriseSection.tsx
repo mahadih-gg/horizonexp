@@ -11,12 +11,12 @@ const ForEnterpriseSection = () => {
           className="text-center lg:text-left flex flex-col items-center lg:items-start justify-center"
           topLabel="For Enterprise"
           title={<>Need higher <br /> limits?</>}
-          description={<>
+          description={<span className='md:pr-[45px] 2xl:pr-[60px] inline-block'>
             For brands with larger audiences, Horizon offers custom enterprise pricing tailored to your traffic and performance needs.
             <br />
             <br />
             Get dedicated support, customizations, and infrastructure designed to handle enterprise scale effortlessly.
-          </>}
+          </span>}
           extraContent={
             <Button asChild className='lg:inline-flex hidden mt-10'>
               <Link href="/contact">
@@ -27,7 +27,11 @@ const ForEnterpriseSection = () => {
         />
       </div>
 
-      <div className='w-full lg:w-[54.55%] 2xl:w-[65.32%] rounded-3xl bg-secondary flex-center flex-col py-[30px] overflow-hidden'>
+      <div className='w-full lg:w-[54.55%] 2xl:w-[65.32%] rounded-3xl flex-center flex-col py-[30px] overflow-hidden'
+        style={{
+          background: "linear-gradient(180deg, #FBFDFF 4%, #B4E9FD 80%, #BAD9FD 100%)"
+        }}
+      >
         <Image
           src="/assets/images/ready-to-scale.webp"
           alt="For Enterprise"
