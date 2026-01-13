@@ -7,7 +7,7 @@ export const navLinks = [
   {
     label: "Use cases",
     href: "/demo",
-    className: "w-[90px]",
+    className: "w-[72px] 2xl:w-[90px]",
   },
   {
     label: "Pricing",
@@ -17,6 +17,6 @@ export const navLinks = [
   {
     label: "Get demo",
     href: "/contact",
-    className: "w-[92px]",
+    className: "w-[73px] 2xl:w-[92px]",
   },
 ];
