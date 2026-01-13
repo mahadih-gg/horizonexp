@@ -1,9 +1,11 @@
 'use client';
 
+import useWindowSize from '@/hooks/useWindowSize';
 import { cn } from '@/lib/utils';
 import { EntryPoint, EntryPointSize, EntryPointType } from '@thinkflagship/horizon-web-shorts';
 import { ChevronRight, Plus } from 'lucide-react';
 import Image from 'next/image';
+import { useMemo } from 'react';
 
 const VideoMenuDemoPage = () => {
 
@@ -76,20 +78,30 @@ const VideoMenuDemoPage = () => {
     },
   ];
 
-  const foodItems1 = foodItems.slice(0, 3);
-  const foodItems2 = foodItems.slice(3);
+  const { width } = useWindowSize();
+  const isMobile = useMemo(() => !!width && width < 768, [width]);
+
+
+  const foods = useMemo(() => {
+
+    const foodItems1 = foodItems.slice(0, 3);
+    const foodItems2 = foodItems.slice(3);
+    const reversedFoodItems1 = foodItems.slice(0, 3).reverse();
+
+    return isMobile ? [foodItems1, foodItems2, reversedFoodItems1] : [foodItems1, foodItems2];
+  }, [isMobile, foodItems]);
 
   return (
-    <section className='pt-[162px] md:pt-[45px] 2xl:pt-10'>
+    <section className='pt-10 md:pt-[33px] 2xl:pt-[45px]'>
       <h1 className='text-center text-[20px] 2xl:text-[28px] font-medium leading-none tracking-[-0.02em]'>
         Explore Our Best Sellers
       </h1>
 
-      <div className="pt-5 md:pt-[27px] 2xl:pt-[36px] pb-12 md:pb-[75px] 2xl:pb-[100px]">
+      <div className="pt-5 md:pt-[27px] 2xl:pt-[36px] pb-12 md:pb-[75px] 2xl:pb-[100px] px-0 md:px-[60px] 2xl:px-[82px]">
         <EntryPoint
           id="#058286"
           skeletonType={EntryPointType.RECTANGLE}
-          skeletonSize={EntryPointSize.BOLD}
+          skeletonSize={EntryPointSize.STANDARD}
         />
       </div>
 
@@ -112,7 +124,7 @@ const VideoMenuDemoPage = () => {
 
 
         <div className="grid gap-[26px] md:gap-[56px] 2xl:gap-y-[70px] overflow-hidden mt-12 md:mt-[52px] 2xl:mt-[70px]">
-          {[foodItems1, foodItems2].map((item, i) => {
+          {foods.map((item, i) => {
             return (
               <div key={i} className='flex gap-[26px] md:gap-[52px] 2xl:gap-[75px] '>
                 {

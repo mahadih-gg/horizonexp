@@ -178,7 +178,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
                 </button>
 
                 {/* Brand Name */}
-                <h1 className="text-lg md:text-2xl font-medium text-primary">
+                <h1 className="text-lg 2xl:text-2xl font-medium text-primary">
                   {demoInfo?.brand ?? "YOUR BRAND"}
                 </h1>
 
