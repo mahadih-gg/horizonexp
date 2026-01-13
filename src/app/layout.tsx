@@ -66,27 +66,21 @@ const siteUrl = 'https://www.horizonexp.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Horizon Short-form Video Engagement Platform",
+    default: "Horizon | Short-form video for websites, apps & stores",
     template: "%s | Horizon"
   },
-  description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
+  description: "Turn your site into an immersive, swipeable, shoppable video feed. Launch short-form video on any website, app, or store in minutes.",
   keywords: [
     "short-form video",
-    "video engagement platform",
-    "social commerce",
     "shoppable video",
-    "video streaming",
-    "video platform",
-    "video engagement",
-    "interactive video",
-    "video monetization",
-    "enterprise video platform",
-    "video analytics",
-    "video experience",
-    "TikTok-style video",
-    "Instagram Reels style",
-    "video content management",
-    "video CMS"
+    "video commerce",
+    "AI commerce",
+    "TikTok-style feed",
+    "video for ecommerce",
+    "video for web",
+    "video for apps",
+    "video shopping",
+    "Horizon"
   ],
   authors: [{ name: "Horizon", url: siteUrl }],
   creator: "Flagship Technology Inc.",
