@@ -18,6 +18,7 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
       "/demo/electronics",
       "/demo/fitness",
       "/demo/beauty",
+      "/demo/video-menu",
     ];
 
     switch (normalizedPathname) {

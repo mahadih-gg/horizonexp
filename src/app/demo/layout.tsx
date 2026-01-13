@@ -125,6 +125,12 @@ const demoRoutes: Record<string, DemoRoute> = {
     description: 'Horizon Demo',
     brand: "BEAUTY BRAND"
   },
+  '/demo/video-menu': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "RESTAURANT BRAND"
+  },
+
 };
 
 

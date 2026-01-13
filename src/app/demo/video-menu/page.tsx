@@ -37,44 +37,47 @@ const VideoMenuDemoPage = () => {
       name: "Basil Cheese Pizza",
       category: "Vegetarian",
       price: 9.54,
-      image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-1.webp"
     },
     {
       id: 2,
       name: "Peri Peri Fries",
       category: "Vegetarian",
       price: 2.99,
-      image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-2.webp"
     },
     {
       id: 3,
       name: "Drum Sticks",
       category: "Non-Veg",
       price: 5.54,
-      image: "https://images.unsplash.com/photo-1626645738192-c2a33ec136e5?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-3.webp"
     },
     {
       id: 4,
       name: "Chicken Nuggets",
       category: "Non-Veg",
       price: 3.99,
-      image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-4.webp"
     },
     {
       id: 5,
       name: "Margherita",
       category: "Vegetarian",
       price: 8.54,
-      image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-5.webp"
     },
     {
       id: 6,
       name: "Chicken Tenders",
       category: "Non-Veg",
       price: 4.54,
-      image: "https://images.unsplash.com/photo-1626087926916-7fd017cd3453?w=400&h=300&fit=crop"
+      image: "/assets/images/menu/menu-6.webp"
     },
   ];
+
+  const foodItems1 = foodItems.slice(0, 3);
+  const foodItems2 = foodItems.slice(3);
 
   return (
     <section className='pt-[162px] md:pt-[45px] 2xl:pt-10'>
@@ -82,15 +85,15 @@ const VideoMenuDemoPage = () => {
         Explore Our Best Sellers
       </h1>
 
-      <div className="py-10 md:py-8 2xl:py-11">
+      <div className="pt-5 md:pt-[27px] 2xl:pt-[36px] pb-12 md:pb-[75px] 2xl:pb-[100px]">
         <EntryPoint
-          id="#859422"
+          id="#058286"
           skeletonType={EntryPointType.RECTANGLE}
           skeletonSize={EntryPointSize.BOLD}
         />
       </div>
 
-      <div>
+      <div className='max-w-[716px] md:max-w-[1097px] 2xl:max-w-[1464px] mx-auto'>
         <h2 className='text-center text-[30px] 2xl:text-[40px] font-medium leading-none tracking-[-0.02em] pb-4 md:pb-[27px] 2xl:pb-[36px]'>
           Explore Our Menu
         </h2>
@@ -102,36 +105,44 @@ const VideoMenuDemoPage = () => {
             </div>
           ))}
 
-          <div className='absolute right-0 top-0 size-4 bg-white -mt-0.5'>
+          <div className='absolute right-0 top-0 h-4 w-10 bg-white flex items-center justify-end'>
             <ChevronRight />
           </div>
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[26px] md:gap-x-[52px] md:gap-y-[56px] 2xl:gap-x-[75px] 2xl:gap-y-[70px] mt-8 md:mt-6 2xl:mt-8">
-          {foodItems.map((item) => {
+        <div className="grid gap-[26px] md:gap-[56px] 2xl:gap-y-[70px] overflow-hidden mt-12 md:mt-[52px] 2xl:mt-[70px]">
+          {[foodItems1, foodItems2].map((item, i) => {
             return (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl border-2 border-[#E5EBEE] overflow-hidden flex"
-              >
-                <div className="flex-1 flex flex-col justify-between pt-3 pl-4 2xl:pt-[18px] 2xl:pl-5 pb-3 2xl:pb-4">
-                  <h3 className="text-xs 2xl:text-sm font-semibold text-primary mb-1.5 2xl:mb-2">{item.name}</h3>
-                  <p className="text-xs 2xl:text-sm font-medium text-[#1C2B33]/30 mb-2.5 2xl:mb-3 leading-2">{item.category}</p>
-                  <p className="text-xs 2xl:text-sm font-medium text-primary mb-3 2xl:mb-[18px] leading-5">${item.price.toFixed(2)}</p>
-                  <button className="size-[18px] 2xl:size-6 bg-primary rounded-full flex items-center justify-center p-1">
-                    <Plus color='white' />
-                  </button>
-                </div>
-                <div className="relative w-[106px] 2xl:w-[142px]">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                </div>
+              <div key={i} className='flex gap-[26px] md:gap-[52px] 2xl:gap-[75px] '>
+                {
+                  item.map((item, j) => {
+                    return (
+                      <div
+                        key={j}
+                        className="bg-white rounded-xl border-2 border-[#E5EBEE] overflow-hidden flex min-w-[328px] 2xl:min-w-[438px]"
+                      >
+                        <div className="flex-1 flex flex-col justify-between pt-3 pl-4 2xl:pt-[18px] 2xl:pl-5 pb-3 2xl:pb-4">
+                          <h3 className="text-xs 2xl:text-sm font-semibold text-primary mb-1.5 2xl:mb-2">{item.name}</h3>
+                          <p className="text-xs 2xl:text-sm font-medium text-[#1C2B33]/30 mb-2.5 2xl:mb-3 leading-2">{item.category}</p>
+                          <p className="text-xs 2xl:text-sm font-medium text-primary mb-3 2xl:mb-[18px] leading-5">${item.price.toFixed(2)}</p>
+                          <button className="size-[18px] 2xl:size-6 bg-primary rounded-full flex items-center justify-center p-1">
+                            <Plus color='white' />
+                          </button>
+                        </div>
+                        <div className="relative w-[106px] 2xl:w-[142px]">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 50vw, 33vw"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })
+                }
               </div>
             );
           })}
