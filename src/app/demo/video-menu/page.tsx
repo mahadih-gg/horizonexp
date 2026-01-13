@@ -81,7 +81,7 @@ const VideoMenuDemoPage = () => {
 
   return (
     <section className='pt-[162px] md:pt-[45px] 2xl:pt-10'>
-      <h1 className='text-center text-[30px] 2xl:text-[40px] font-medium leading-none tracking-[-0.02em]'>
+      <h1 className='text-center text-[20px] 2xl:text-[28px] font-medium leading-none tracking-[-0.02em]'>
         Explore Our Best Sellers
       </h1>
 
@@ -94,7 +94,7 @@ const VideoMenuDemoPage = () => {
       </div>
 
       <div className='max-w-[716px] md:max-w-[1097px] 2xl:max-w-[1464px] mx-auto'>
-        <h2 className='text-center text-[30px] 2xl:text-[40px] font-medium leading-none tracking-[-0.02em] pb-4 md:pb-[27px] 2xl:pb-[36px]'>
+        <h2 className='text-center text-[20px] 2xl:text-[28px] font-medium leading-none tracking-[-0.02em] pb-4 md:pb-[27px] 2xl:pb-[36px]'>
           Explore Our Menu
         </h2>
 

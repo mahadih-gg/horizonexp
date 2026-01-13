@@ -158,7 +158,7 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
     <main>
       <header className={cn(isClientDemoPage && "sticky top-0 z-20")}>
         {/* Top Banner */}
-        <div className="bg-primary text-white text-center py-2 2xl:py-2.5 px-4">
+        <div className="bg-[#1C2B33] text-white text-center py-2 2xl:py-2.5 px-4">
           <p className="text-xs md:text-sm xl:text-base text-white font-medium">
             {demoInfo?.title ? `${demoInfo.title} - ${demoInfo.description}` : demoInfo?.description}
           </p>
