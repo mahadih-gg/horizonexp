@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
+  applicationName: "Horizon",
   title: "Horizon Demo | See Short-form Video in Action",
   description: "Experience Horizon's short-form video engagement platform with interactive demos for e-commerce, telecom, and sports industries. See how Horizon transforms engagement across industries.",
   keywords: [

@@ -5,6 +5,7 @@ import PrivacySection from "./components/PrivacySection";
 const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
+  applicationName: "Horizon",
   title: "Horizon Privacy Policy | Data Protection & Privacy",
   description: "Read Horizon's privacy policy to understand how we collect, use, and protect your data. Learn about our commitment to data privacy and security.",
   keywords: [

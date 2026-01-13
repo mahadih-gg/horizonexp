@@ -11,6 +11,7 @@ import PricingSection from "./components/PricingSection";
 const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
+  applicationName: "Horizon",
   title: "Horizon Pricing | Short-form Video Engagement Platform",
   description: "Choose the perfect Horizon plan for your business. Start free with our starter plan or scale with enterprise solutions. Transparent pricing with no hidden fees.",
   keywords: [

@@ -7,11 +7,12 @@ const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "Horizon",
   title: {
-    default: "Horizon Short-form Video Engagement Platform",
+    default: "Horizon | Short-form video for websites, apps & stores",
     template: "%s | Horizon"
   },
-  description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
+  description: " Turn your site into an immersive, swipeable, shoppable video feed. Launch short-form video on any website, app, or store in minutes.",
   keywords: [
     "short-form video",
     "video engagement platform",
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Horizon Short-form Video Engagement Platform",
-    description: "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
+    title: "Horizon | Short-form video for websites, apps & stores",
+    description: " Turn your site into an immersive, swipeable, shoppable video feed. Launch short-form video on any website, app, or store in minutes.",
     url: siteUrl,
     siteName: "Horizon",
     images: [
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
         url: `${siteUrl}/assets/images/opengraph.webp`,
         width: 1200,
         height: 630,
-        alt: "Horizon Short-form Video Engagement Platform",
+        alt: "Horizon | Short-form video for websites, apps & stores",
       },
     ],
     locale: "en_US",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Horizon Short-form Video Engagement Platform",
+    title: "Horizon | Short-form video for websites, apps & stores",
     description: "Bring immersive short-form video experience to your site, store, or app that supercharges discovery, engagement and sales.",
     images: [`${siteUrl}/assets/images/opengraph.webp`],
     creator: "@horizonera",

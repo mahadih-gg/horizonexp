@@ -7,6 +7,7 @@ import GetDemoSection from "./components/GetDemoSection";
 const siteUrl = 'https://www.horizonexp.com';
 
 export const metadata: Metadata = {
+  applicationName: "Horizon",
   title: "Contact Horizon | Get in Touch with Our Team",
   description: "Contact the Horizon team to learn more about our short-form video engagement platform. Get help with implementation, pricing, or enterprise solutions.",
   keywords: [

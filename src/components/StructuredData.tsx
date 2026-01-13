@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Horizon",
-    "alternateName": "Horizon Short-form Video Engagement Platform",
+    "alternateName": "Horizon | Short-form video for websites, apps & stores",
     "legalName": "Flagship Technology Inc.",
     "url": siteUrl,
     "logo": {
@@ -15,7 +15,7 @@ export default function StructuredData() {
       "height": 630
     },
     "image": `${siteUrl}/assets/images/opengraph.webp`,
-    "description": "Skyrocket customer engagement, conversion, and retention with ultra-fast, shoppable short-form video experience",
+    "description": " Turn your site into an immersive, swipeable, shoppable video feed. Launch short-form video on any website, app, or store in minutes.",
     "foundingOrganization": {
       "@type": "Organization",
       "name": "Flagship Technology Inc."
