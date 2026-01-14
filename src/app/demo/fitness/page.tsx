@@ -6,7 +6,7 @@ const LaunchDemoPage = () => {
   return (
     <CustomDemoPage
       imageSrc="fitness"
-      heading="Header text"
+      heading="See Strength in Motion"
       epCircleId="#245261"
       epRectangleId="#906546"
     />

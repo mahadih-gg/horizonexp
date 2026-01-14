@@ -6,7 +6,7 @@ const LaunchDemoPage = () => {
   return (
     <CustomDemoPage
       imageSrc="electronics"
-      heading="Header text"
+      heading="Explore Our Smart Lineup"
       epCircleId="#783269"
       epRectangleId="#959121"
     />
