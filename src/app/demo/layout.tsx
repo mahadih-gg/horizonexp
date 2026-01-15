@@ -130,7 +130,11 @@ const demoRoutes: Record<string, DemoRoute> = {
     description: 'Horizon Demo',
     brand: "RESTAURANT BRAND"
   },
-
+  '/demo/education': {
+    title: '',
+    description: 'Horizon Demo',
+    brand: "EDUCATION BRAND"
+  },
 };
 
 
