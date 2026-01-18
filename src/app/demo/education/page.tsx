@@ -8,8 +8,7 @@ const LaunchDemoPage = () => {
       imageSrc="education"
       heading="Explore Our Most In-Demand Courses"
       epCircleId="#926385"
-      epRectangleId="#501419
-      "
+      epRectangleId="#501419"
     />
   );
 };
