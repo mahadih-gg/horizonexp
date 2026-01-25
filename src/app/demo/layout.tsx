@@ -152,57 +152,63 @@ const DemoLayout = ({ children }: { children: React.ReactNode }) => {
     };
   }, [pathname]);
 
-
   const isClientDemoPage = useMemo(() => {
     const pages = ['/demo/mtb', '/demo/mtb/'];
     return pages.includes(pathname);
   }, [pathname]);
 
+  const isNoHeaderDemoPage = useMemo(() => {
+    const pages = ['/demo/undp', '/demo/undp/'];
+    return pages.includes(pathname);
+  }, [pathname]);
+
   return (
     <main>
-      <header className={cn(isClientDemoPage && "sticky top-0 z-20")}>
-        {/* Top Banner */}
-        <div className="bg-[#1C2B33] text-white text-center py-2 2xl:py-2.5 px-4">
-          <p className="text-xs md:text-sm xl:text-base text-white font-medium">
-            {demoInfo?.title ? `${demoInfo.title} - ${demoInfo.description}` : demoInfo?.description}
-          </p>
-        </div>
+      {!isNoHeaderDemoPage && (
+        <header className={cn(isClientDemoPage && "sticky top-0 z-20")}>
+          {/* Top Banner */}
+          <div className="bg-[#1C2B33] text-white text-center py-2 2xl:py-2.5 px-4">
+            <p className="text-xs md:text-sm xl:text-base text-white font-medium">
+              {demoInfo?.title ? `${demoInfo.title} - ${demoInfo.description}` : demoInfo?.description}
+            </p>
+          </div>
 
-        {/* Navigation Bar */}
-        {!isClientDemoPage && (
-          <nav className="">
-            <div className="demo-container">
-              <div className="flex items-center justify-between h-16 md:h-[84px]">
-                {/* Hamburger Menu */}
-                <button
-                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                  aria-label="Menu"
-                >
-                  <MenuIcon2 />
-                </button>
+          {/* Navigation Bar */}
+          {!isClientDemoPage && !isNoHeaderDemoPage && (
+            <nav className="">
+              <div className="demo-container">
+                <div className="flex items-center justify-between h-16 md:h-[84px]">
+                  {/* Hamburger Menu */}
+                  <button
+                    className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+                    aria-label="Menu"
+                  >
+                    <MenuIcon2 />
+                  </button>
 
-                {/* Brand Name */}
-                <h1 className="text-lg 2xl:text-2xl font-medium text-primary">
-                  {demoInfo?.brand ?? "YOUR BRAND"}
-                </h1>
+                  {/* Brand Name */}
+                  <h1 className="text-lg 2xl:text-2xl font-medium text-primary">
+                    {demoInfo?.brand ?? "YOUR BRAND"}
+                  </h1>
 
-                {/* Shopping Bag Icon */}
-                <button
-                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                  aria-label="Shopping bag"
-                >
-                  <CartIcon />
-                </button>
+                  {/* Shopping Bag Icon */}
+                  <button
+                    className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+                    aria-label="Shopping bag"
+                  >
+                    <CartIcon />
+                  </button>
+                </div>
               </div>
-            </div>
-          </nav>)}
-      </header>
+            </nav>)}
+        </header>
+      )}
 
-      <main className={cn(!isClientDemoPage && "demo-container")}>
+      <main className={cn(!isClientDemoPage && !isNoHeaderDemoPage && "demo-container")}>
         {children}
       </main>
 
-      {!isClientDemoPage && <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
+      {!isClientDemoPage && !isNoHeaderDemoPage && <footer className="flex-center pt-8 pb-8 md:pt-8 md:pb-9 2xl:pt-[45px] 2xl:pb-[45px]">
         <Link href="/demo"> <PoweredByHorizon /> </Link>
       </footer>
       }
