@@ -6,6 +6,19 @@ import Image from "next/image";
 const UndpDemoPage = () => {
   return (
     <section>
+      <div className="bg-[#FAFAFA] max-h-[115px] mb-11 sticky top-0 z-50"
+        style={{
+          boxShadow: "0px 3px 6px 0px #0000001A",
+        }}
+      >
+        <Image
+          src="/assets/images/demo/undp/nav.webp"
+          alt="UNDP nav"
+          width={1920}
+          height={122}
+          className="w-full h-auto"
+        />
+      </div>
       <div>
         <Image
           src="/assets/images/demo/undp/top.webp"
