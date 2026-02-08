@@ -2,7 +2,13 @@
 
 import ReviewSvg from "@/components/svg/ReviewsSvg";
 import { Marquee } from "@/components/ui/marquee";
-import { Check, Facebook, Instagram, Linkedin, Mail, Twitter, Youtube } from "lucide-react";
+import { Check } from "lucide-react";
+import HmFacebookIcon from "@/components/icons/hm-facebook-icon";
+import HmInstagramIcon from "@/components/icons/hm-instagram-icon";
+import HmPinterestIcon from "@/components/icons/hm-pinterest-icon";
+import HmTiktokIcon from "@/components/icons/hm-tiktok-icon";
+import HmXIcon from "@/components/icons/hm-x-icon";
+import HmYoutubeIcon from "@/components/icons/hm-youtube-icon";
 import Image from "next/image";
 
 const HardMarketPage = () => {
@@ -297,12 +303,12 @@ const HardMarketPage = () => {
             Copyright {new Date().getFullYear()} by Fahim Salam
           </span>
           <div className="flex gap-2 2xl:gap-3 order-1 md:order-2">
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="Facebook"><Facebook className="size-4 2xl:size-5" /></a>
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="Twitter"><Twitter className="size-4 2xl:size-5" /></a>
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="Instagram"><Instagram className="size-4 2xl:size-5" /></a>
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="LinkedIn"><Linkedin className="size-4 2xl:size-5" /></a>
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="YouTube"><Youtube className="size-4 2xl:size-5" /></a>
-            <a href="#" className="size-8 2xl:size-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition" aria-label="Email"><Mail className="size-4 2xl:size-5" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Facebook"><HmFacebookIcon className="size-[32px] 2xl:size-[42px]" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="X"><HmXIcon className="size-[32px] 2xl:size-[42px]" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Instagram"><HmInstagramIcon className="size-[32px] 2xl:size-[42px]" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Pinterest"><HmPinterestIcon className="size-[32px] 2xl:size-[42px]" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="TikTok"><HmTiktokIcon className="size-[32px] 2xl:size-[42px]" /></a>
+            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="YouTube"><HmYoutubeIcon className="size-[32px] 2xl:size-[42px]" /></a>
           </div>
           <span className="text-[#1C2B33] text-base 2xl:text-xl font-semibold order-3">Built by Nuport & Horizon</span>
         </div>
