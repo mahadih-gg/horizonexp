@@ -117,6 +117,13 @@
   body {
     @apply bg-background text-foreground;
   }
+
+}
+
+/* LP pages: force Inter over global Roobert (outside layer so it wins) */
+.font-inter-page,
+.font-inter-page * {
+  font-family: var(--font-inter), "Inter", sans-serif !important;
 }
 
 @layer utilities {
@@ -202,7 +209,6 @@
     transition: all 0.9s ease-in-out;
   } */
 
-
   .text-grad-tertiary {
     display: inline-block;
     background: linear-gradient(90deg, #F4CFE1 0%, #A4D3FF 50%, #F4CFE1 100%);
@@ -245,4 +251,12 @@
 
 .shine-hover:hover::before {
   left: 100%;
+}
+
+.hm-container {
+  @apply w-full px-[36px] lg:px-[50px] 2xl:px-[66px];
+}
+
+.hm-container-lg-l {
+  @apply w-full pl-[36px] lg:pl-[50px] 2xl:pl-[66px] pr-[36px] lg:pr-0 2xl:pr-0;
 }
