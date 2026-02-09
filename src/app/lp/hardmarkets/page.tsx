@@ -10,9 +10,9 @@ import HmTiktokIcon from "@/components/icons/hm-tiktok-icon";
 import HmXIcon from "@/components/icons/hm-x-icon";
 import HmYoutubeIcon from "@/components/icons/hm-youtube-icon";
 import Image from "next/image";
+import { OrderFormSection } from "./components/OrderFormSection";
 
 const HardMarketPage = () => {
-
   const headerItems = [
     "Free delivery across Bangladesh",
     "Limited-Time Launch Offer",
@@ -187,114 +187,7 @@ const HardMarketPage = () => {
         </div>
       </section>
 
-      {/* 7. Order Form */}
-      <section className="hm-container my-[72px] lg:my-[86px] 2xl:my-[115px]">
-        <h2 className="text-[42px] md:text-[57px] font-bold text-[#1C2B33] mb-[22px] 2xl:mb-[30px]">Order now</h2>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center bg-[#F7F7F7] p-[36px] lg:p-[46px] 2xl:p-[64px] rounded-[12px]">
-          <div className="w-full">
-            <p className="text-[#1C2B33] text-base lg:text-xl 2xl:text-[26px] mb-5 2xl:mb-[26px]">Please complete this form with your details.</p>
-            <form className="space-y-4 lg:space-y-5 2xl:space-y-6">
-              <div>
-                <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
-                  Full Name <span className="text-red-600">*</span>
-                </label>
-                <div className="grid grid-cols-2 gap-3 2xl:gap-4">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
-                  E-mail <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="example@example.com"
-                  className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                />
-              </div>
-              <div>
-                <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
-                  Contact Number <span className="text-red-600">*</span>
-                </label>
-                <div className="grid grid-cols-2 gap-3 2xl:gap-4">
-                  <input
-                    type="text"
-                    placeholder="Area Code"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
-                  Quantity <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="number"
-                  min={1}
-                  className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white"
-                />
-              </div>
-              <div>
-                <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
-                  Shipping Address <span className="text-red-600">*</span>
-                </label>
-                <div className="space-y-3 2xl:space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Street Address"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="City"
-                    className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
-                  />
-                </div>
-              </div>
-
-              <Image
-                src="/assets/images/lp/hard-market/hero.webp"
-                alt="Hard Markets by Fahim Salam"
-                width={557}
-                height={871}
-                className="w-full block lg:hidden h-[320px] lg:h-[645px] 2xl:h-[868px] aspect-557/871 object-center object-contain"
-              />
-
-              <div className="flex justify-center lg:flex-start">
-                <button
-                  type="submit"
-                  className="min-w-[129px] h-[50px] lg:min-w-[157px] lg:h-[58px] 2xl:min-w-[210px] 2xl:h-[78px] px-4 2xl:px-6 mt-2 bg-[#0B61CD] text-white font-bold text-lg lg:text-[22px] 2xl:text-[29px] rounded-[11px] lg:rounded-[14px] 2xl:rounded-[18px] hover:opacity-90 transition cursor-pointer"
-                >
-                  ORDER NOW
-                </button>
-              </div>
-            </form>
-          </div>
-          <div className="relative hidden lg:flex justify-center h-full">
-            <Image
-              src="/assets/images/lp/hard-market/hero.webp"
-              alt="Hard Markets by Fahim Salam"
-              width={557}
-              height={871}
-              className="h-[320px] lg:h-[645px] 2xl:h-[868px] aspect-557/871 object-center object-contain"
-            />
-          </div>
-        </div>
-      </section>
+      <OrderFormSection />
 
       {/* 8. Footer */}
       <footer className="hm-container py-6 2xl:py-8">
