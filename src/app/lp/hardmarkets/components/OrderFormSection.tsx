@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import toast from "react-hot-toast";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { z } from "zod";
 
 const orderFormSchema = z.object({
@@ -12,12 +12,18 @@ const orderFormSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
   areaCode: z.string().min(1, "Area code is required"),
   phone: z.string().min(1, "Phone number is required"),
-  quantity: z.number().min(1, "Quantity must be at least 1"),
+  quantity: z
+    .union([z.string(), z.number()])
+    .refine((v) => {
+      const n = typeof v === "number" ? v : v === "" ? NaN : Number(v);
+      return !Number.isNaN(n) && n >= 1;
+    }, "Quantity must be at least 1")
+    .transform((v) => (typeof v === "number" ? v : v === "" ? 0 : Number(v))),
   streetAddress: z.string().min(1, "Street address is required"),
   city: z.string().min(1, "City is required"),
 });
 
-type OrderFormValues = z.infer<typeof orderFormSchema>;
+type OrderFormValues = z.input<typeof orderFormSchema>;
 
 const defaultOrderValues: OrderFormValues = {
   firstName: "",
@@ -25,7 +31,7 @@ const defaultOrderValues: OrderFormValues = {
   email: "",
   areaCode: "",
   phone: "",
-  quantity: 1,
+  quantity: "",
   streetAddress: "",
   city: "",
 };
@@ -43,10 +49,14 @@ export const OrderFormSection = () => {
 
   const onOrderSubmit = async (data: OrderFormValues) => {
     try {
+      const payload = {
+        ...data,
+        quantity: typeof data.quantity === "number" ? data.quantity : Number(data.quantity) || 0,
+      };
       const response = await fetch("https://formspree.io/f/xnjbnzje", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
@@ -75,7 +85,7 @@ export const OrderFormSection = () => {
               <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
                 Full Name <span className="text-red-600">*</span>
               </label>
-              <div className="grid grid-cols-2 gap-3 2xl:gap-4">
+              <div className="grid lg:grid-cols-2 gap-3 2xl:gap-4">
                 <div>
                   <input
                     {...register("firstName")}
@@ -118,8 +128,8 @@ export const OrderFormSection = () => {
               <label className="block text-[#1C2B33] text-sm md:text-base 2xl:text-lg font-medium mb-1 2xl:mb-2">
                 Contact Number <span className="text-red-600">*</span>
               </label>
-              <div className="grid grid-cols-2 gap-3 2xl:gap-4">
-                <div>
+              <div className="flex flex-row gap-3 2xl:gap-4">
+                <div className="w-2/5 lg:w-1/5">
                   <input
                     {...register("areaCode")}
                     type="text"
@@ -130,7 +140,7 @@ export const OrderFormSection = () => {
                     <p className="mt-1 text-sm text-red-600">{errors.areaCode.message}</p>
                   )}
                 </div>
-                <div>
+                <div className="w-3/5 lg:w-4/5">
                   <input
                     {...register("phone")}
                     type="tel"
@@ -150,8 +160,8 @@ export const OrderFormSection = () => {
               <input
                 {...register("quantity", { valueAsNumber: true })}
                 type="number"
-                min={1}
-                className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white"
+                placeholder="Quantity"
+                className="w-full border border-gray-300 rounded-[10px] 2xl:rounded-xl px-3 py-2.5 2xl:px-4 2xl:py-3 text-base 2xl:text-lg text-[#1C2B33] bg-white placeholder:text-gray-500"
               />
               {errors.quantity && (
                 <p className="mt-1 text-sm text-red-600">{errors.quantity.message}</p>
