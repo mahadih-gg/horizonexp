@@ -11,6 +11,8 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
   const licenseKey = useMemo(() => {
     const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 
+    console.log(normalizedPathname);
+
     const customDemoRoutes = [
       "/demo/restaurant",
       "/demo/home",
@@ -19,10 +21,12 @@ const FlagshipProvider = ({ children }: { children: React.ReactNode }) => {
       "/demo/fitness",
       "/demo/beauty",
       "/demo/video-menu",
-      "/demo/education"
+      "/demo/education",
     ];
 
     switch (normalizedPathname) {
+      case "/lp/hardmarkets":
+        return "pk_live_1dc63d24d004e85ed46039d9ce7893b845ae83b514eda3db.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSG9yaXpvbmV4cCIsInBsYXRmb3JtVHlwZSI6IldFQiIsImRvbWFpbiI6eyJkb21haW4iOiJob3Jpem9uZXhwLmNvbSIsInZlcmlmaWVkIjpmYWxzZX0sImV4cGlyZXNBdCI6IjIxMjUtMTItMjBUMDg6NDM6NTYuMDczWiIsImNyZWF0ZWRCeSI6IjY4ZmM3NTJlZTFmODhmY2FhODE0Nzc4OSIsInRlbmFudElkIjoiNjk2NjAzYWY5NWZmMDZmNTA2ZTkzYjIwIiwiX2lkIjoiNjk2NjA1Y2M4MGEzMWZjNTg0ZmVjMDlkIiwidG9rZW5UeXBlIjoiYWNjZXNzIiwiaWF0IjoxNzY4MjkzODM2LCJleHAiOjQ5MjE4OTM4MzZ9.S6-M6ktFZYmHNHbN8kbXzXz4eygMCGsLDyz0m5PM2W8";
       case "/demo/afghan-wireless":
         return "pk_live_7a5a452a5bc5fac219b8a1700411b159a0fd774aedd7dd08.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWZnaGFuIFdpcmVsZXNzIiwicGxhdGZvcm1UeXBlIjoiV0VCIiwiZG9tYWluIjp7ImRvbWFpbiI6Imh0dHBzOi8vd3d3Lmhvcml6b25leHAuY29tL2RlbW8vYWZnaGFuLXdpcmVsZXNzLyIsInZlcmlmaWVkIjpmYWxzZX0sImV4cGlyZXNBdCI6IjIxMjUtMTEtMTBUMTU6Mzk6NDIuNzkwWiIsImNyZWF0ZWRCeSI6IjY4ZmM3NTJlZTFmODhmY2FhODE0Nzc4OSIsInRlbmFudElkIjoiNjkzMWE3NzVkMDMzNGUxZmNhOGE4YmQ2IiwiX2lkIjoiNjkzMWFiM2U5ZjhjYzRkZDNlYzg4Yjc0IiwidG9rZW5UeXBlIjoiYWNjZXNzIiwiaWF0IjoxNzY0ODYyNzgyLCJleHAiOjQ5MTg0NjI3ODJ9.9Pa8EAmsAvvC3KSPQDbgFdIX_a2hkOOSPyDQHhnFqAc";
       case "/demo/mtb":
