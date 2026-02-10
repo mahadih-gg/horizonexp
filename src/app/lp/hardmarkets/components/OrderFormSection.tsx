@@ -213,7 +213,7 @@ export const OrderFormSection = () => {
               className="w-full block lg:hidden h-[320px] lg:h-[645px] 2xl:h-[868px] aspect-557/871 object-center object-contain"
             />
 
-            <div className="flex justify-center lg:flex-start">
+            <div className="w-full flex justify-center lg:justify-start">
               <button
                 type="submit"
                 disabled={isSubmitting}

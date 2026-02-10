@@ -61,7 +61,7 @@ const HardMarketPage = () => {
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-[#1C2B33] text-sm md:text-base">
                   {/* <Check className="size-5 shrink-0 text-[#07A753] mt-0.5" strokeWidth={2.5} /> */}
-                  <span className="text-base 2xl:text-xl font-bold text-[#1C2B33] leading-[150%] lg:leading-[30px] 2xl:leading-[40px]">✅ {item}</span>
+                  <span className="text-base 2xl:text-xl font-bold text-[#1C2B33] leading-[150%] lg:leading-[30px] 2xl:leading-[40px] capitalize">✅ {item}</span>
                 </li>
               ))}
             </ul>
@@ -113,7 +113,7 @@ const HardMarketPage = () => {
         <div className="hm-container text-base lg:text-xl 2xl:text-[26px]">
           <h2 className="text-[24px] md:text-[32px] font-semibold text-[#1C2B33] mb-5 2xl:mb-[26px]">Book overview</h2>
           <div className="space-y-4 text-[#1C2B33] leading-[30px] 2xl:leading-[40px] mb-6">
-            <p className="text-[#1C2B33] leading-[30px] 2xl:leading-[40px] max-w-[1280px]">
+            <p className="text-[#1C2B33] leading-[30px] 2xl:leading-[40px] max-w-[1280px] 2xl:max-w-[1670px]">
               Forget polished playbooks. HARD MARKETS is a raw field guide forged in eight years of building within Bangladesh&apos;s toughest trenches - where constraints aren&apos;t edge cases, they&apos;re the default.
               <br />
               <br />
