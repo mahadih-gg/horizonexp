@@ -49,10 +49,18 @@ export const OrderFormSection = () => {
 
   const onOrderSubmit = async (data: OrderFormValues) => {
     try {
-      const payload = {
-        ...data,
-        quantity: typeof data.quantity === "number" ? data.quantity : Number(data.quantity) || 0,
-      };
+      const quantity = typeof data.quantity === "number" ? data.quantity : Number(data.quantity) || 0;
+      const message = [
+        `First Name: ${data.firstName}`,
+        `Last Name: ${data.lastName}`,
+        `Email: ${data.email}`,
+        `Area Code: ${data.areaCode}`,
+        `Phone: ${data.phone}`,
+        `Quantity: ${quantity}`,
+        `Street Address: ${data.streetAddress}`,
+        `City: ${data.city}`,
+      ].join("\n");
+      const payload = { message };
       const response = await fetch("https://formspree.io/f/xnjbnzje", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
