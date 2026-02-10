@@ -43,16 +43,20 @@ export const OrderFormSection = () => {
 
   const onOrderSubmit = async (data: OrderFormValues) => {
     try {
-      const res = await fetch("/api/hardmarkets/order", {
+      const response = await fetch("https://formspree.io/f/xnjbnzje", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      const result = await res.json();
-      if (!res.ok) throw new Error(result.error ?? "Failed to submit order");
-      toast.success("Order submitted! We'll be in touch soon.");
-      reset(defaultOrderValues);
+
+      if (response.ok) {
+        toast.success("Order submitted! We'll be in touch soon.");
+        reset(defaultOrderValues);
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (err) {
+      console.error("Error submitting order form:", err);
       toast.error(err instanceof Error ? err.message : "Failed to submit order. Please try again.");
     }
   };
