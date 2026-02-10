@@ -8,6 +8,7 @@ import HmXIcon from "@/components/icons/hm-x-icon";
 import HmYoutubeIcon from "@/components/icons/hm-youtube-icon";
 import ReviewSvg from "@/components/svg/ReviewsSvg";
 import { Marquee } from "@/components/ui/marquee";
+import { EntryPoint, EntryPointSize, EntryPointType } from "@thinkflagship/horizon-web-shorts";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { OrderFormSection } from "./components/OrderFormSection";
@@ -98,6 +99,12 @@ const HardMarketPage = () => {
       {/* 4. Hear from the author */}
       <section className="hm-container">
         <h2 className="text-[42px] md:text-[57px] font-bold text-[#1C2B33] mb-[22px] 2xl:mb-[30px]">Hear from the author</h2>
+
+        <EntryPoint
+          id="#501419"
+          skeletonType={EntryPointType.RECTANGLE}
+          skeletonSize={EntryPointSize.BOLD}
+        />
 
       </section>
 
