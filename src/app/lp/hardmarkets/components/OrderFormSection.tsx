@@ -137,7 +137,7 @@ export const OrderFormSection = () => {
                 Contact Number <span className="text-red-600">*</span>
               </label>
               <div className="flex flex-row gap-3 2xl:gap-4">
-                <div className="w-2/5 lg:w-1/5">
+                <div className="w-2/5 xl:w-1/5">
                   <input
                     {...register("areaCode")}
                     type="text"
@@ -148,7 +148,7 @@ export const OrderFormSection = () => {
                     <p className="mt-1 text-sm text-red-600">{errors.areaCode.message}</p>
                   )}
                 </div>
-                <div className="w-3/5 lg:w-4/5">
+                <div className="w-3/5 xl:w-4/5">
                   <input
                     {...register("phone")}
                     type="tel"
@@ -205,13 +205,15 @@ export const OrderFormSection = () => {
               </div>
             </div>
 
-            <Image
-              src="/assets/images/lp/hard-market/hero.webp"
-              alt="Hard Markets by Fahim Salam"
-              width={557}
-              height={871}
-              className="w-full block lg:hidden h-[320px] lg:h-[645px] 2xl:h-[868px] aspect-557/871 object-center object-contain"
-            />
+            <div className="block lg:hidden pt-[76px] pb-[52px]">
+              <Image
+                src="/assets/images/lp/hard-market/hero.webp"
+                alt="Hard Markets by Fahim Salam"
+                width={557}
+                height={871}
+                className="w-full block lg:hidden h-[320px] lg:h-[645px] 2xl:h-[868px] aspect-557/871 object-center object-contain"
+              />
+            </div>
 
             <div className="w-full flex justify-center lg:justify-start">
               <button

@@ -29,12 +29,12 @@ const HardMarketPage = () => {
       </header>
 
       {/* 3. Hero Section */}
-      <section className="relative hm-container pt-20 2xl:pt-[107px] mb-[72px] lg:mb-[75px] 2xl:mb-[100px]">
-        <div className="flex justify-center lg:hidden gap-4 2xl:gap-[25px] mb-5 2xl:mb-[34px]">
+      <section className="relative hm-container pt-12 lg:pt-20 2xl:pt-[107px] mb-[72px] lg:mb-[75px] 2xl:mb-[100px]">
+        <div className="flex justify-center lg:hidden gap-4 2xl:gap-[25px] mb-[55px]">
           <p className="text-lg 2xl:text-2xl text-[#1C2B33] font-bold underline border-current leading-none">Customer Review</p>
           <ReviewSvg />
         </div>
-        <div className="flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 gap-[65px] lg:gap-16">
           <div className="">
             <div className="hidden lg:flex gap-4 2xl:gap-[22px] mb-5 2xl:mb-7">
               <p className="text-lg 2xl:text-2xl text-[#1C2B33] font-bold underline border-current leading-none">Customer Review</p>
@@ -52,7 +52,25 @@ const HardMarketPage = () => {
               <p className="text-sm 2xl:text-lg">BDT 750/-</p>
             </div>
 
-            <ul className="space-y-2 mb-[56px] 2xl:mb-[75px] pt-[36px] 2xl:pt-[46px]">
+            <div className="block lg:hidden pb-2">
+              <p className="text-[#1C2B33] text-xl 2xl:text-2xl mb-6">By <span className="font-bold text-[#1C2B33]">Fahim Salam</span></p>
+
+              <div className="flex justify-start items-center gap-[23px]">
+                <div className="inline-flex flex-col items-start justify-center min-w-[144px] h-[50px] lg:h-auto py-px px-[15px] bg-[#EDF8FF] font-bold border-[3px] rounded-[10px] border-[#2162A1]">
+                  <span className="text-xs 2xl:text-base">Hardcover</span>
+                  <p className="text-sm 2xl:text-lg">BDT 750/-</p>
+                </div>
+
+                <button
+                  type="button"
+                  className="min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
+                >
+                  BUY NOW
+                </button>
+              </div>
+            </div>
+
+            <ul className="space-y-2 lg:mb-[56px] 2xl:mb-[75px] pt-[36px] 2xl:pt-[46px]">
               {[
                 "Learn why resilience beats brilliance in hard markets",
                 "Avoid copy-pasting Silicon Valley playbooks that don't fit",
@@ -66,21 +84,12 @@ const HardMarketPage = () => {
               ))}
             </ul>
 
-            <p className="block lg:hidden text-[#1C2B33] text-xl 2xl:text-2xl mb-6">By <span className="font-bold text-[#1C2B33]">Fahim Salam</span></p>
-
-            <div className="flex justify-start items-center gap-[23px]">
-              <div className="inline-flex flex-col items-start justify-center lg:hidden min-w-[144px] h-[50px] lg:h-auto py-px px-[15px] bg-[#EDF8FF] font-bold border-[3px] rounded-[10px] border-[#2162A1]">
-                <span className="text-xs 2xl:text-base">Hardcover</span>
-                <p className="text-sm 2xl:text-lg">BDT 750/-</p>
-              </div>
-
-              <button
-                type="button"
-                className="min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
-              >
-                BUY NOW
-              </button>
-            </div>
+            <button
+              type="button"
+              className="hidden lg:inline-block min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
+            >
+              BUY NOW
+            </button>
 
           </div>
           <div className="relative flex justify-center h-full">
@@ -98,7 +107,7 @@ const HardMarketPage = () => {
 
       {/* 4. Hear from the author */}
       <section className="hm-container">
-        <h2 className="text-[42px] md:text-[57px] font-bold text-[#1C2B33] mb-[22px] 2xl:mb-[30px]">Hear from the author</h2>
+        <h2 className="text-[34px] lg:text-[57px] font-bold text-[#1C2B33] mb-[22px] 2xl:mb-[30px]">Hear from the author</h2>
 
         <EntryPoint
           id="#501419"
@@ -153,7 +162,7 @@ const HardMarketPage = () => {
       >
         <div className="flex flex-col-reverse lg:flex-row lg:items-stretch gap-0 lg:gap-5 2xl:gap-6">
           <div className="hm-container-lg-l w-full lg:flex-[52] lg:min-w-0 text-white flex flex-col justify-center pt-[100px] 2xl:pt-[133px] pb-[118px] lg:pb-[76px] 2xl:pb-[102px]">
-            <h2 className="text-[42px] md:text-[57px] font-bold text-white text-center mb-[18px] 2xl:mb-[22px]">Built in Hard Markets</h2>
+            <h2 className="text-[34px] lg:text-[57px] font-bold text-white text-center mb-[18px] 2xl:mb-[22px]">Built in Hard Markets</h2>
             <p className="text-white/95 text-xs md:text-lg 2xl:text-xl text-center mb-[56px] 2xl:mb-[75px] leading-[26px] 2xl:leading-[34px]">No inspiration. No theory. <br /> Just what works.</p>
             <div className="grid grid-cols-3 gap-x-[15px] gap-y-[40px] lg:gap-x-[38px] lg:gap-y-[40px] 2xl:gap-x-[43px] 2xl:gap-y-[53px] mb-[72px] lg:mb-[46px] 2xl:mb-[62px]">
               {[
