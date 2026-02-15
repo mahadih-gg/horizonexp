@@ -80,7 +80,7 @@ export const OrderFormSection = () => {
   };
 
   return (
-    <section className="hm-container my-[72px] lg:my-[86px] 2xl:my-[115px]">
+    <section id="HMOrderForm" className="hm-container my-[72px] lg:my-[86px] 2xl:my-[115px]">
       <h2 className="text-[42px] md:text-[57px] font-bold text-[#1C2B33] mb-[22px] 2xl:mb-[30px]">Order now</h2>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center bg-[#F7F7F7] p-[36px] lg:p-[46px] 2xl:p-[64px] rounded-[12px]">
         <div className="w-full">
