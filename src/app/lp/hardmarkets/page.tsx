@@ -1,11 +1,5 @@
 "use client";
 
-import HmFacebookIcon from "@/components/icons/hm-facebook-icon";
-import HmInstagramIcon from "@/components/icons/hm-instagram-icon";
-import HmPinterestIcon from "@/components/icons/hm-pinterest-icon";
-import HmTiktokIcon from "@/components/icons/hm-tiktok-icon";
-import HmXIcon from "@/components/icons/hm-x-icon";
-import HmYoutubeIcon from "@/components/icons/hm-youtube-icon";
 import ReviewSvg from "@/components/svg/ReviewsSvg";
 import { Marquee } from "@/components/ui/marquee";
 import { EntryPoint, EntryPointSize, EntryPointType } from "@thinkflagship/horizon-web-shorts";
@@ -61,12 +55,12 @@ const HardMarketPage = () => {
                   <p className="text-sm 2xl:text-lg">BDT 750/-</p>
                 </div>
 
-                <button
-                  type="button"
-                  className="min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
+                <a
+                  href="#HMOrderForm"
+                  className="inline-flex items-center justify-center min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
                 >
                   BUY NOW
-                </button>
+                </a>
               </div>
             </div>
 
@@ -84,12 +78,12 @@ const HardMarketPage = () => {
               ))}
             </ul>
 
-            <button
-              type="button"
-              className="hidden lg:inline-block min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
+            <a
+              href="#HMOrderForm"
+              className="hidden lg:inline-flex items-center justify-center min-w-[129px] h-[50px] lg:min-w-[230px] lg:h-[88px] 2xl:min-w-[307px] 2xl:h-[118px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[44px] rounded-[11px] lg:rounded-[20px] 2xl:rounded-[28px] hover:opacity-90 transition cursor-pointer"
             >
               BUY NOW
-            </button>
+            </a>
 
           </div>
           <div className="relative flex justify-center h-full">
@@ -144,12 +138,12 @@ const HardMarketPage = () => {
             Start stronger, fail smarter, and master the world&apos;s most challenging frontiers.
           </p>
 
-          <button
-            type="button"
-            className="min-w-[129px] h-[50px] lg:min-w-[157px] lg:h-[58px] 2xl:min-w-[210px] 2xl:h-[78px] px-4 2xl:px-6 mt-[40px] 2xl:mt-[50px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[22px] 2xl:text-[29px] rounded-[11px] lg:rounded-[14px] 2xl:rounded-[18px] hover:opacity-90 transition cursor-pointer"
+          <a
+            href="#HMOrderForm"
+            className="inline-flex items-center justify-center min-w-[129px] h-[50px] lg:min-w-[157px] lg:h-[58px] 2xl:min-w-[210px] 2xl:h-[78px] px-4 2xl:px-6 mt-[40px] 2xl:mt-[50px] bg-[#0B61CD] text-white font-bold text-lg lg:text-[22px] 2xl:text-[29px] rounded-[11px] lg:rounded-[14px] 2xl:rounded-[18px] hover:opacity-90 transition cursor-pointer"
           >
             BUY NOW
-          </button>
+          </a>
         </div>
       </section>
 
@@ -183,12 +177,12 @@ const HardMarketPage = () => {
             </div>
 
             <div className="flex justify-center">
-              <button
-                type="button"
-                className="min-w-[129px] h-[50px] lg:min-w-[157px] lg:h-[58px] 2xl:min-w-[210px] 2xl:h-[78px] px-4 2xl:px-6 bg-[#0B61CD] text-white font-bold text-lg lg:text-[33px] 2xl:text-[29px] rounded-[11px] lg:rounded-[14px] 2xl:rounded-[18px] hover:opacity-90 transition cursor-pointer"
+              <a
+                href="#HMOrderForm"
+                className="min-w-[129px] h-[50px] lg:min-w-[157px] lg:h-[58px] 2xl:min-w-[210px] 2xl:h-[78px] px-4 2xl:px-6 bg-[#0B61CD] inline-flex items-center justify-center text-white font-bold text-lg lg:text-[33px] 2xl:text-[29px] rounded-[11px] lg:rounded-[14px] 2xl:rounded-[18px] hover:opacity-90 transition cursor-pointer"
               >
                 BUY NOW
-              </button>
+              </a>
             </div>
           </div>
           <div className="w-full lg:flex-[48] lg:min-w-0 aspect-[430/427] lg:aspect-auto lg:self-stretch lg:min-h-0 relative">
@@ -208,18 +202,17 @@ const HardMarketPage = () => {
       {/* 8. Footer */}
       <footer className="hm-container py-6 2xl:py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-0 lg:gap-4 2xl:gap-6">
-          <span className="text-[#1C2B33] text-base 2xl:text-xl font-semibold order-2 md:order-1">
+          <span className="text-[#1C2B33] text-base 2xl:text-xl font-semibold pb-[72px] md:pb-0">
             Copyright {new Date().getFullYear()} by Fahim Salam
           </span>
-          <div className="flex gap-2 2xl:gap-3 order-1 md:order-2 pb-[72px] lg:pb-0">
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Facebook"><HmFacebookIcon className="size-[32px] 2xl:size-[42px]" /></a>
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="X"><HmXIcon className="size-[32px] 2xl:size-[42px]" /></a>
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Instagram"><HmInstagramIcon className="size-[32px] 2xl:size-[42px]" /></a>
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="Pinterest"><HmPinterestIcon className="size-[32px] 2xl:size-[42px]" /></a>
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="TikTok"><HmTiktokIcon className="size-[32px] 2xl:size-[42px]" /></a>
-            <a href="#" className="flex items-center justify-center opacity-90 hover:opacity-100 transition" aria-label="YouTube"><HmYoutubeIcon className="size-[32px] 2xl:size-[42px]" /></a>
-          </div>
-          <span className="text-[#1C2B33] text-base 2xl:text-xl font-semibold order-3">Built by Horizon & Nuport</span>
+
+          <Image
+            src="/assets/images/lp/hard-market/hs-logo-footer.webp"
+            alt="Built by Horizon & Nuport"
+            width={100}
+            height={21}
+            className="w-auto h-4 2xl:h-[21px]"
+          />
         </div>
       </footer>
     </div>
